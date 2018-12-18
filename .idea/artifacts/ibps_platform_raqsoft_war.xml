@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ibps-platform-raqsoft:war">
+    <output-path>$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft/target</output-path>
+    <root id="archive" name="ibps-platform-raqsoft-2.3.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ibps-platform-raqsoft:war exploded" />
+    </root>
+  </artifact>
+</component>

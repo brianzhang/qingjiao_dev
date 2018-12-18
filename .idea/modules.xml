@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/factory-dz/factory-dz.iml" filepath="$PROJECT_DIR$/factory-dz/factory-dz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/ibps-platform-admin.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/ibps-platform-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-base/ibps-platform-base.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-base/ibps-platform-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/ibps-platform-biz.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/ibps-platform-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-demo/ibps-platform-demo.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-demo/ibps-platform-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-ireport/ibps-platform-ireport.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-ireport/ibps-platform-ireport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-org/ibps-platform-org.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-org/ibps-platform-org.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base/ibps-platform-org-base.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base/ibps-platform-org-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-portal/ibps-platform-portal.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-portal/ibps-platform-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft/ibps-platform-raqsoft.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft/ibps-platform-raqsoft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-report/ibps-platform-report.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-report/ibps-platform-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/ibps-platform-root.iml" filepath="$PROJECT_DIR$/ibps-platform-root/ibps-platform-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-static/ibps-platform-static.iml" filepath="$PROJECT_DIR$/ibps-platform-root/modules/platform-static/ibps-platform-static.iml" />
+    </modules>
+  </component>
+</project>

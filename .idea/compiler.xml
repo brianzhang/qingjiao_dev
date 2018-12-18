@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="factory-dz" />
+        <module name="ibps-platform-admin" />
+        <module name="ibps-platform-base" />
+        <module name="ibps-platform-biz" />
+        <module name="ibps-platform-demo" />
+        <module name="ibps-platform-ireport" />
+        <module name="ibps-platform-org" />
+        <module name="ibps-platform-org-base" />
+        <module name="ibps-platform-portal" />
+        <module name="ibps-platform-raqsoft" />
+        <module name="ibps-platform-report" />
+        <module name="ibps-platform-static" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.5">
+      <module name="factory-dz" target="1.7" />
+      <module name="ibps-platform-admin" target="1.7" />
+      <module name="ibps-platform-base" target="1.7" />
+      <module name="ibps-platform-biz" target="1.7" />
+      <module name="ibps-platform-demo" target="1.7" />
+      <module name="ibps-platform-ireport" target="1.7" />
+      <module name="ibps-platform-org" target="1.7" />
+      <module name="ibps-platform-org-base" target="1.7" />
+      <module name="ibps-platform-portal" target="1.7" />
+      <module name="ibps-platform-raqsoft" target="1.7" />
+      <module name="ibps-platform-report" target="1.7" />
+      <module name="ibps-platform-root" target="1.7" />
+      <module name="ibps-platform-static" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

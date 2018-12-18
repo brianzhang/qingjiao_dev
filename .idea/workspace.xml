@@ -1,0 +1,1951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ibps-platform-admin:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f731b64-1098-44de-99b1-bb24d2ff03df" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/factory-dz/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-demo/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-portal/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-static/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-org/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-ireport/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-base/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-report/target/" />
+    <ignored path="$PROJECT_DIR$/ibps-platform-root/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="qingjiao_dev" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="UrlZhiYuanController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-818">
+              <caret line="2274" column="59" lean-forward="false" selection-start-line="2274" selection-start-column="59" selection-end-line="2274" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TemplateParseUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/utils/freemarker/TemplateParseUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templateFinal4.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/templateFinal4.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50190">
+              <caret line="2317" column="65876" lean-forward="false" selection-start-line="2317" selection-start-column="65876" selection-end-line="2317" selection-end-column="65876" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrlZhiYuanTbl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/entity/UrlZhiYuanTbl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2016">
+              <caret line="101" column="28" lean-forward="false" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+              <folding>
+                <element signature="e#5096#5097#0" expanded="true" />
+                <element signature="e#5122#5123#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrlZhiYuan.map.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factory-dz/src/main/resources/com/lc/ibps/urlZhiYuant/persistence/mapping/UrlZhiYuan.map.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1701">
+              <caret line="81" column="63" lean-forward="false" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataSource.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Sequence" />
+        <option value="UML Class" />
+        <option value="Class" />
+      </list>
+    </option>
+    <option name="SCHEME" value="Project" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>填报</find>
+      <find>studentLook</find>
+      <find>查看立题书</find>
+      <find>userid</find>
+      <find>user</find>
+      <find>getByUser</find>
+      <find>queryByUser</find>
+      <find>getBoDef</find>
+      <find>entry</find>
+      <find>findall</find>
+      <find>BpmTaskPo</find>
+      <find>pendingJson</find>
+      <find>cou</find>
+      <find>关闭</find>
+      <find>setRenwushuFile</find>
+      <find>setLitishuBpm</find>
+      <find>list</find>
+      <find>td3</find>
+      <find>word</find>
+      <find>同意</find>
+      <find>infoForW</find>
+      <find>save</find>
+      <find>finalTchDate</find>
+      <find>final_tch_date_</find>
+      <find>fmWord</find>
+      <find>infoForWord</find>
+      <find>getLitish</find>
+      <find>final</find>
+      <find>getL</find>
+      <find>getLiTISHU</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>list</replace>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\bishe\maven\repository\com\lc\ibps\common\ibps-org-model\2.3.1-SNAPSHOT\ibps-org-model-2.3.1-20180417.070903-10.jar!\com\lc\ibps\org</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\factory-dz\src\main</dir>
+      <dir>D:\qingjiao\maven\maven\repository\com\lc\ibps\base\ibps-base-framework-ddd\2.3.1-SNAPSHOT\ibps-base-framework-ddd-2.3.1-20180508.095516-7.jar!\com\lc\ibps\base\framework\persistence\dao</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\src\main\webapp\WEB-INF\view</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\src\main\java\com\lc</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\factory-dz</dir>
+      <dir>D:\qingjiao\qingjiao_dev\qingjiao_dev\factory-dz\src\main\resources\com\lc\ibps</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/platform/bpmn/controller/BpmInstController.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/resources/conf/ibps-app.properties" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanListKaiti.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanListRenwushu.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuanRenwushu.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuanKaiti.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/renwushu04.ftl" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/kaiti.ftl" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/gradp/course/crsTchListDep.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/gradp/course/crsTchListMyStudents.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/gradp/course/crsJobList.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/gradp/course/crsTchListMyStudents.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/Imbort.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/JobStdController.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmnButton.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/CrsTchController.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanEdit.jsp" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/domain/UrlZhiYuan.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-org/src/main/webapp/WEB-INF/view/platform/org/partyEmployeeEdit.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-org/src/main/webapp/js/lc/platform/org/partyEmployee.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanFinals.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/AddStudent.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/admin/controller/DataController.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/gradp/admin/dataListEntity.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanLiTiShu.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-org/src/main/java/com/lc/ibps/platform/org/controller/PartyRoleController.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base/src/main/java/com/lc/ibps/platform/org/controller/PartyPositionBaseController.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/utils/freemarker/TemplateParseUtil.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/src/main/java/com/lc/ibps/platform/script/script/ScriptImpl.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/templateFinal.ftl" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan3.js" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/resources/com/lc/ibps/course/persistence/mapping/JobStd.map.xml" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/resources/com/lc/ibps/urlZhiYuant/persistence/mapping/UrlZhiYuan.map.xml" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/repository/UrlZhiYuanRepository.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/repository/impl/UrlZhiYuanRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/dao/UrlZhiYuanQueryDao.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/dao/impl/UrlZhiYuanQueryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/entity/UrlZhiYuanTbl.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanStudentLook.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanStudentLitishu.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-portal/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/kaitiGroup/kaitiGroupStudentLook.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/patrolp/data/controller/TchInfoController.java" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/CommonPath.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanRenwushu.jsp" />
+        <option value="$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmInst.js" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanInfoForWord.jsp" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/templateFinal4.ftl" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\qingjiao\qingjiao\maven\maven\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="ibps-platform-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="ibps-platform-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/ibps-platform-root/modules/platform-wexin/src/main/vueDev/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <showMembers Scope="true" ProjectPane="true" />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages ProjectPane="false" />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qingjiao_dev" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ibps-platform-admin" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ibps-platform-admin" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ibps-platform-admin" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="lc" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ibps-platform-admin" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="lc" type="1f31426a:PackageElementNode" />
+              <item name="ibps" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ibps-platform-admin" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="utils" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="ibps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="ibps" type="462c0819:PsiDirectoryNode" />
+              <item name="WordWorkspace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="ibps" type="462c0819:PsiDirectoryNode" />
+              <item name="WordWorkspace" type="462c0819:PsiDirectoryNode" />
+              <item name="ftl" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+              <item name="persistence" type="cbb8eebc:String" user="persistence" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+              <item name="persistence" type="cbb8eebc:String" user="persistence" />
+              <item name="dao" type="cbb8eebc:String" user="dao" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+              <item name="persistence" type="cbb8eebc:String" user="persistence" />
+              <item name="dao" type="cbb8eebc:String" user="dao" />
+              <item name="impl" type="cbb8eebc:String" user="impl" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+              <item name="repository" type="cbb8eebc:String" user="repository" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="factory-dz" type="cbb8eebc:String" user="factory-dz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="urlZhiYuan" type="cbb8eebc:String" user="urlZhiYuan" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+              <item name="repository" type="cbb8eebc:String" user="repository" />
+              <item name="impl" type="cbb8eebc:String" user="impl" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="lc" type="cbb8eebc:String" user="lc" />
+              <item name="ibps" type="cbb8eebc:String" user="ibps" />
+              <item name="bishe" type="cbb8eebc:String" user="bishe" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="webapp" type="cbb8eebc:String" user="webapp" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="webapp" type="cbb8eebc:String" user="webapp" />
+              <item name="WEB-INF" type="cbb8eebc:String" user="WEB-INF" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="webapp" type="cbb8eebc:String" user="webapp" />
+              <item name="WEB-INF" type="cbb8eebc:String" user="WEB-INF" />
+              <item name="view" type="cbb8eebc:String" user="view" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="webapp" type="cbb8eebc:String" user="webapp" />
+              <item name="WEB-INF" type="cbb8eebc:String" user="WEB-INF" />
+              <item name="view" type="cbb8eebc:String" user="view" />
+              <item name="bishe" type="cbb8eebc:String" user="bishe" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-admin" type="cbb8eebc:String" user="ibps-platform-admin" />
+              <item name="ibps-platform-root/modules/platform-admin" type="cbb8eebc:String" user="ibps-platform-root/modules/platform-admin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="webapp" type="cbb8eebc:String" user="webapp" />
+              <item name="WEB-INF" type="cbb8eebc:String" user="WEB-INF" />
+              <item name="view" type="cbb8eebc:String" user="view" />
+              <item name="bishe" type="cbb8eebc:String" user="bishe" />
+              <item name="urlZhiYuant" type="cbb8eebc:String" user="urlZhiYuant" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name=".settings" type="cbb8eebc:String" user=".settings" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="modules" type="cbb8eebc:String" user="modules" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="modules" type="cbb8eebc:String" user="modules" />
+              <item name="platform-webapi" type="cbb8eebc:String" user="platform-webapi" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="ibps-platform-root" type="cbb8eebc:String" user="ibps-platform-root" />
+              <item name="modules" type="cbb8eebc:String" user="modules" />
+              <item name="platform-wexin" type="cbb8eebc:String" user="platform-wexin" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="datas&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml&#10;FileOutputStream&#9;PSI&#9;JAVA://java.io.FileOutputStream&#10;urlzhiyuan.m&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/factory-dz/src/main/resources/com/lc/ibps/urlZhiYuant/persistence/mapping/UrlZhiYuan.map.xml&#10;UrlZhiYuanController&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java&#10;data&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml&#10;urlZhiYuanc&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java&#10;urlZhiYuanpo&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/entity/UrlZhiYuanPo.java&#10;bpmInst.js&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmInst.js&#10;bpminstlist&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/platform/bpmn/instance/bpmInstList.jsp&#10;bpmInstc&#9;PSI&#9;JAVA://com.lc.ibps.platform.bpmn.controller.BpmInstController&#10;urlZhiYuanlitishu&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanLiTiShu.jsp&#10;urlZhiYuanService&#9;PSI&#9;JAVA://com.lc.ibps.urlZhiYuan.urlZhiYuant.service.impl.UrlZhiYuanServiceImpl&#10;urlZhiYuan.js&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan.js&#10;urlZhiYuaninfof&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanInfoForWord.jsp&#10;urlZhiYuanrenwushu.jsp&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanRenwushu.jsp&#10;CommonPath&#9;PSI&#9;JAVA://com.lc.ibps.urlZhiYuan.urlZhiYuant.CommonPath&#10;scriptim&#9;PSI&#9;JAVA://com.lc.ibps.platform.script.script.ScriptImpl&#10;urlzhiyuan&#9;PSI&#9;JAVA://com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo&#10;findByUser&#9;PSI&#9;JAVA://com.lc.ibps.bpmn.persistence.dao.BpmTaskQueryDao#findByUser&#10;SelectorDialog.js&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-org-base/src/main/webapp/js/lc/platform/utils/SelectorDialog.js&#10;IDataObject&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/api/ibps-api-bo/2.3.1-SNAPSHOT/ibps-api-bo-2.3.1-20180417.070538-4.jar!/com/lc/ibps/api/bo/model/IDataObject.class&#10;orgexception&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/api/ibps-api-org/2.3.1-SNAPSHOT/ibps-api-org-2.3.1-20180417.070538-4.jar!/com/lc/ibps/api/org/exception/OrgException.class&#10;bpmInstlist&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/platform/bpmn/instance/bpmInstList.jsp&#10;datasou&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml&#10;bpmtask.m&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-biz/2.3.1-SNAPSHOT/ibps-bpmn-biz-2.3.1-20180417.071223-3.jar!/com/lc/ibps/bpmn/persistence/mapping/BpmTask.map.xml&#10;BpmTaskQueryDaoimpl&#9;PSI&#9;JAVA://com.lc.ibps.bpmn.persistence.dao.impl.BpmTaskQueryDaoImpl&#10;BpmTaskRepositoryimpl&#9;PSI&#9;JAVA://com.lc.ibps.bpmn.repository.impl.BpmTaskRepositoryImpl&#10;bpmReceivedProcessc&#9;PSI&#9;JAVA://com.lc.ibps.platform.office.controller.BpmReceivedProcessController&#10;datasour&#9;PSI&#9;JAVA://com.lc.ibps.platform.ds.controller.DataSourceController&#10;PartyEmployee.map.xml&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180918.085516-13.jar!/com/lc/ibps/org/party/persistence/mapping/PartyEmployee.map.xml&#10;partyemp&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/common/ibps-org-biz/2.3.1-SNAPSHOT/ibps-org-biz-2.3.1-20180918.085541-11.jar!/com/lc/ibps/org/party/repository/PartyEmployeeRepository.class&#10;getByStuNum&#9;PSI&#9;JAVA://com.lc.ibps.urlZhiYuan.urlZhiYuant.repository.UrlZhiYuanRepository#getByStuNum&#10;MOBILE&#9;PSI&#9;JAVA://com.lc.ibps.base.validator.core.verification.MobilePhoneValidator&#10;html_doctype.html&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-static/src/main/webapp/commons/include/html_doctype.html&#10;codegen.jsp&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-static/src/main/webapp/commons/page/codegen.jsp&#10;urlzhi&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanList.jsp&#10;urlZhiYuancon&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java&#10;resource.m&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180918.085516-13.jar!/com/lc/ibps/org/auth/persistence/mapping/Resources.map.xml&#10;resources&#9;PSI&#9;JAVA://com.lc.ibps.platform.auth.controller.ResourcesController&#10;urlZhiYuancontroller&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java&#10;partyorgbase&#9;PSI&#9;JAVA://com.lc.ibps.platform.org.controller.PartyOrgBaseController&#10;partyOrg&#9;PSI&#9;JAVA://com.lc.ibps.platform.org.controller.PartyOrgController&#10;partyOrg.m&#9;FILE&#9;jar://D:/qingjiao/maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180918.085516-13.jar!/com/lc/ibps/org/party/persistence/mapping/PartyOrg.map.xml&#10;templateFinal&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/templateFinal.ftl&#10;urlZhiYuanCg.js&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuanCg.js&#10;urlz&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanLiTiShu.jsp&#10;ContextUtil&#9;PSI&#9;JAVA://org.apache.cxf.ws.addressing.ContextUtils&#10;dynamic&#9;FILE&#9;file://D:/qingjiao/qingjiao_dev/qingjiao_dev/ibps-platform-root/modules/platform-static/src/main/webapp/js/dynamic.jsp&#10;bpminstc&#9;PSI&#9;JAVA://com.lc.ibps.platform.bpmn.controller.BpmInstController&#10;partyPositionc&#9;PSI&#9;JAVA://com.lc.ibps.platform.org.controller.PartyPositionBaseController" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.16174184" />
+    <property name="project.structure.side.proportion" value="0.36920223" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\src\main\webapp\WordWorkspace\ftl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lc.ibps.demo.keshes.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\target\ibps\file\20150615" />
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\src\main\resources\conf\prop" />
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-admin\src\main\java\com\lc\ibps\platform\bpmn\controller" />
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules\platform-org-base\src\main\java\com\lc\ibps\platform\job\controller" />
+      <recent name="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root\modules" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.dev">
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/qingjiao_dev/ibps-platform-root/modules/platform-wexin/src/main/vueDev/index.html" />
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.57" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="ibps-platform-admin:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_qingjiao_dev_3" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8883" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ibps-platform-admin:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="dev" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="dev" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-server -XX:PermSize=128M -XX:MaxPermSize=256m " />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <deployment>
+        <artifact name="ibps-platform-admin:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_qingjiao_dev_2" />
+        <option name="HTTP_PORT" value="8888" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60159" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ibps-platform-admin:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="qingjiao" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.57" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$PROJECT_DIR$/../../jdk1.8/jre">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <deployment>
+        <artifact name="ibps-platform-admin:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="tomcat_(1)_qingjiao_dev" />
+        <option name="HTTP_PORT" value="80" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49352" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ibps-platform-admin:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.qingjiao" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.dev" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f731b64-1098-44de-99b1-bb24d2ff03df" name="Default" comment="" />
+      <created>1525761726059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525761726059</updated>
+      <workItem from="1525761733547" duration="3561000" />
+      <workItem from="1525766096563" duration="501000" />
+      <workItem from="1525766643058" duration="5174000" />
+      <workItem from="1525778224627" duration="385000" />
+      <workItem from="1525778659403" duration="14230000" />
+      <workItem from="1525846484912" duration="8339000" />
+      <workItem from="1525857043346" duration="1906000" />
+      <workItem from="1525860681497" duration="10648000" />
+      <workItem from="1525872128731" duration="3645000" />
+      <workItem from="1525920028061" duration="81801000" />
+      <workItem from="1526548415449" duration="11889000" />
+      <workItem from="1526572323010" duration="1318000" />
+      <workItem from="1526577666787" duration="1196000" />
+      <workItem from="1526619376721" duration="57099000" />
+      <workItem from="1526808858086" duration="3655000" />
+      <workItem from="1526814473555" duration="3348000" />
+      <workItem from="1526817892680" duration="47778000" />
+      <workItem from="1527125619788" duration="2521000" />
+      <workItem from="1527130835451" duration="5782000" />
+      <workItem from="1527236786551" duration="1593000" />
+      <workItem from="1527238625853" duration="21092000" />
+      <workItem from="1527823224283" duration="2486000" />
+      <workItem from="1528072886601" duration="1406000" />
+      <workItem from="1528354375215" duration="3065000" />
+      <workItem from="1528376062179" duration="9402000" />
+      <workItem from="1528442308776" duration="624000" />
+      <workItem from="1528689812141" duration="12365000" />
+      <workItem from="1528720265556" duration="12061000" />
+      <workItem from="1528777019547" duration="1552000" />
+      <workItem from="1528804758816" duration="9783000" />
+      <workItem from="1528862409647" duration="5168000" />
+      <workItem from="1528893040132" duration="9737000" />
+      <workItem from="1528964818348" duration="48524000" />
+      <workItem from="1529480072447" duration="13231000" />
+      <workItem from="1529499066763" duration="42799000" />
+      <workItem from="1529828876011" duration="591000" />
+      <workItem from="1529845786373" duration="184000" />
+      <workItem from="1529846317725" duration="1493000" />
+      <workItem from="1529849035795" duration="3410000" />
+      <workItem from="1530003032736" duration="6742000" />
+      <workItem from="1530016056219" duration="945000" />
+      <workItem from="1530017010025" duration="4285000" />
+      <workItem from="1530021603692" duration="7331000" />
+      <workItem from="1530501336932" duration="15061000" />
+      <workItem from="1530522468754" duration="1681000" />
+      <workItem from="1530578991476" duration="28977000" />
+      <workItem from="1530665566628" duration="53347000" />
+      <workItem from="1531116155672" duration="85039000" />
+      <workItem from="1531887417415" duration="1478000" />
+      <workItem from="1531891074208" duration="2472000" />
+      <workItem from="1531894470171" duration="44004000" />
+      <workItem from="1534213213983" duration="3438000" />
+      <workItem from="1535968141275" duration="6796000" />
+      <workItem from="1536141261993" duration="22278000" />
+      <workItem from="1536397950614" duration="2894000" />
+      <workItem from="1536478951338" duration="340000" />
+      <workItem from="1536576974770" duration="36099000" />
+      <workItem from="1537173271106" duration="1486000" />
+      <workItem from="1537175193277" duration="21270000" />
+      <workItem from="1537845436699" duration="1343000" />
+      <workItem from="1539154018073" duration="2281000" />
+      <workItem from="1539164073839" duration="6041000" />
+      <workItem from="1539245208350" duration="4040000" />
+      <workItem from="1539249808191" duration="165000" />
+      <workItem from="1539250356716" duration="10678000" />
+      <workItem from="1539308323796" duration="3039000" />
+      <workItem from="1539313499356" duration="72686000" />
+      <workItem from="1539777866053" duration="17017000" />
+      <workItem from="1540013183767" duration="7067000" />
+      <workItem from="1540113101700" duration="9982000" />
+      <workItem from="1540280390777" duration="14432000" />
+      <workItem from="1540711620988" duration="12985000" />
+      <workItem from="1540815041678" duration="7323000" />
+      <workItem from="1540890266066" duration="5853000" />
+      <workItem from="1541075026593" duration="92202000" />
+      <workItem from="1541945104058" duration="119522000" />
+      <workItem from="1542786610448" duration="13786000" />
+      <workItem from="1542869234871" duration="1311000" />
+      <workItem from="1542871021386" duration="27659000" />
+      <workItem from="1543381967694" duration="28590000" />
+      <workItem from="1544173239307" duration="31447000" />
+      <workItem from="1544626074568" duration="13595000" />
+      <workItem from="1545100720407" duration="878000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1315227000" />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33817428" sideWeight="0.3283582" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.49626866" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22389667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.018656716" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.078891255" sideWeight="0.3137255" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1108742" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3205394" sideWeight="0.67164177" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3360996" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.49733475" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52312773" sideWeight="0.69722813" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.49840087" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.16897655" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.49733475" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.6862745" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31327802" sideWeight="0.49253732" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.086886995" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22014925" sideWeight="0.375" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2750533" sideWeight="0.17531121" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4067164" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35580912" sideWeight="0.4904051" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft/src/main/webapp/js/lc/platform/report/raqsoft/preview.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmTaskCou.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/gradp/course/crsTch.js</url>
+          <line>113</line>
+          <option name="timeStamp" value="428" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan.js</url>
+          <line>65</line>
+          <option name="timeStamp" value="467" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan.js</url>
+          <line>70</line>
+          <option name="timeStamp" value="468" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan.js</url>
+          <line>137</line>
+          <option name="timeStamp" value="469" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/src/main/java/com/lc/ibps/platform/script/script/ScriptImpl.java</url>
+          <line>1079</line>
+          <properties />
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/groupuser/controller/GroupUserController.java</url>
+          <line>1195</line>
+          <properties />
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/groupuser/controller/GroupUserController.java</url>
+          <line>551</line>
+          <properties />
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/JobStdController.java</url>
+          <line>124</line>
+          <properties />
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/JobStdController.java</url>
+          <line>145</line>
+          <properties />
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/CourseController.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="321" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/CourseController.java</url>
+          <line>280</line>
+          <properties />
+          <option name="timeStamp" value="336" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/CourseController.java</url>
+          <line>288</line>
+          <properties />
+          <option name="timeStamp" value="337" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/CourseController.java</url>
+          <line>316</line>
+          <properties />
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/course/controller/JobStdController.java</url>
+          <line>254</line>
+          <properties />
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>878</line>
+          <properties />
+          <option name="timeStamp" value="568" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>883</line>
+          <properties />
+          <option name="timeStamp" value="569" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>464</line>
+          <properties />
+          <option name="timeStamp" value="572" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>531</line>
+          <properties />
+          <option name="timeStamp" value="575" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/src/main/java/com/lc/ibps/platform/script/script/ScriptImpl.java</url>
+          <line>608</line>
+          <properties />
+          <option name="timeStamp" value="576" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/admin/controller/DataController.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="578" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/gradp/admin/controller/DataController.java</url>
+          <line>221</line>
+          <properties />
+          <option name="timeStamp" value="579" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>794</line>
+          <properties />
+          <option name="timeStamp" value="583" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/src/main/java/com/lc/ibps/platform/script/script/ScriptImpl.java</url>
+          <line>910</line>
+          <properties />
+          <option name="timeStamp" value="608" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="609" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java</url>
+          <line>108</line>
+          <properties />
+          <option name="timeStamp" value="610" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java</url>
+          <line>173</line>
+          <properties />
+          <option name="timeStamp" value="611" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java</url>
+          <line>185</line>
+          <properties />
+          <option name="timeStamp" value="613" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>1509</line>
+          <properties />
+          <option name="timeStamp" value="614" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java</url>
+          <line>1581</line>
+          <properties />
+          <option name="timeStamp" value="615" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog>
+          <selected-grouping-rules>
+            <grouping-rule id="XBreakpointGroupingByClassRule" />
+          </selected-grouping-rules>
+        </breakpoints-dialog>
+      </breakpoints-dialog>
+      <option name="time" value="636" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="id" />
+        <watch expression="partyEmployeePo" />
+        <watch expression="tdid" />
+        <watch expression="team" />
+        <watch expression="tdPaths" />
+        <watch expression="pos" />
+        <watch expression="map" />
+        <watch expression="partyEmployeePoGroup" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>tdPaths[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tdPaths</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pos</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>data</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pos.indexOf(fzrPositions)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>urlzhiyuan</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>crsName2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/resources/com/lc/ibps/urlZhiYuant/persistence/mapping/UrlZhiYuan.map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="81" column="63" lean-forward="false" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-biz/2.3.1-SNAPSHOT/ibps-bpmn-biz-2.3.1-20180417.071223-3.jar!/com/lc/ibps/bpmn/repository/BpmTaskRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180918.085516-13.jar!/com/lc/ibps/org/party/persistence/mapping/PartyEntity.map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/domain/UrlZhiYuan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2131">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmTaskListCou.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="126" column="43" lean-forward="true" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/platform/bpmn/bpmTaskListCount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/dao/UrlZhiYuanDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/platform/bpmn/controller/BpmTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="309" column="42" lean-forward="false" selection-start-line="309" selection-start-column="42" selection-end-line="309" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-biz/2.3.1-SNAPSHOT/ibps-bpmn-biz-2.3.1-20180417.071223-3.jar!/com/lc/ibps/bpmn/persistence/mapping/BpmTask.map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12096">
+          <caret line="448" column="4" lean-forward="false" selection-start-line="448" selection-start-column="4" selection-end-line="448" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanStudentLitishu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanTchSee.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanFirst.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanFinals.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanListForJcStudents.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanSecond.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanKaitiTeacherCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2106">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanGet.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanListForLwSh.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/patrolp/data/controller/ClassxxInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="80" column="13" lean-forward="false" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/patrolp/data/controller/TchInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-act/2.3.1-SNAPSHOT/ibps-bpmn-act-2.3.1-20180417.071218-4.jar!/com/lc/ibps/bpmn/activiti/ext/listener/task/AbstractTaskListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/CommonPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/bishe/urlZhiYuant/urlZhiYuan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2457">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanRenwushu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanLiTiShu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="146" lean-forward="false" selection-start-line="27" selection-start-column="146" selection-end-line="27" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/platform/bpmn/instance/bpmInstList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/js/lc/platform/bpmn/bpmInst.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="58" column="82" lean-forward="false" selection-start-line="58" selection-start-column="78" selection-end-line="58" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-biz/src/main/java/com/lc/ibps/platform/script/script/ScriptImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="821" column="45" lean-forward="false" selection-start-line="821" selection-start-column="45" selection-end-line="821" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/platform/bpmn/controller/BpmInstController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-core/4.3.12.RELEASE/spring-core-4.3.12.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-aop/4.3.12.RELEASE/spring-aop-4.3.12.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="737" column="0" lean-forward="false" selection-start-line="737" selection-start-column="0" selection-end-line="737" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-aop/4.3.12.RELEASE/spring-aop-4.3.12.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-aop/4.3.12.RELEASE/spring-aop-4.3.12.RELEASE-sources.jar!/org/springframework/aop/aspectj/MethodInvocationProceedingJoinPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-validator/2.3.1-SNAPSHOT/ibps-base-validator-2.3.1-20180508.095515-7.jar!/com/lc/ibps/base/validator/core/ValidatorManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WEB-INF/view/bishe/urlZhiYuant/urlZhiYuanInfoForWord.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/service/impl/UrlZhiYuanServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-webmvc/4.3.12.RELEASE/spring-webmvc-4.3.12.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="976" column="0" lean-forward="false" selection-start-line="976" selection-start-column="0" selection-end-line="976" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../maven/maven/repository/org/springframework/spring-web/4.3.12.RELEASE/spring-web-4.3.12.RELEASE-sources.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="188" column="0" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/resources/com/lc/ibps/urlZhiYuant/persistence/mapping/UrlZhiYuan.map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="81" column="63" lean-forward="false" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/entity/UrlZhiYuanPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/target/classes/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="1481" column="33" lean-forward="false" selection-start-line="1481" selection-start-column="22" selection-end-line="1481" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/lc/ibps/urlZhiYuan/urlZhiYuant/persistence/entity/UrlZhiYuanTbl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="101" column="28" lean-forward="false" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+          <folding>
+            <element signature="e#5096#5097#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/EMJS_v2.11/jdk1.8/src.zip!/java/io/FileOutputStream.java" />
+    <entry file="jar://D:/EMJS_v2.11/jdk1.8/src.zip!/java/io/ByteArrayOutputStream.java" />
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/webapp/WordWorkspace/ftl/templateFinal4.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50190">
+          <caret line="2317" column="65876" lean-forward="false" selection-start-line="2317" selection-start-column="65876" selection-end-line="2317" selection-end-column="65876" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/resources/conf/dataSource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory-dz/src/main/java/com/utils/freemarker/TemplateParseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-818">
+          <caret line="2274" column="59" lean-forward="false" selection-start-line="2274" selection-start-column="59" selection-end-line="2274" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ibps-platform-admin:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.10.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ibps-platform-admin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.glassfish.jersey.core:jersey-client:sources:2.10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36920223" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="D:\qingjiao\qingjiao_dev\qingjiao_dev\ibps-platform-root" />
+    <option value="clean" />
+  </component>
+</project>

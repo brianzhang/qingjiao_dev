@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ibps-platform-ireport:war">
+    <output-path>$PROJECT_DIR$/ibps-platform-root/modules/platform-ireport/target</output-path>
+    <root id="archive" name="ibps-platform-ireport-2.3.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ibps-platform-ireport:war exploded" />
+    </root>
+  </artifact>
+</component>

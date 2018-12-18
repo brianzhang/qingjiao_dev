@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lc.ibps.form:ibps-bo-biz:2.3.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-biz/2.3.1-SNAPSHOT/ibps-bo-biz-2.3.1-20180919.062437-8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-biz/2.3.1-SNAPSHOT/ibps-bo-biz-2.3.1-20180919.062437-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-biz/2.3.1-SNAPSHOT/ibps-bo-biz-2.3.1-20180919.062437-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

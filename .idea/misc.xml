@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-ireport" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-org" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-portal" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-raqsoft" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-report" />
+    <file type="web" url="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-static" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/factory-dz/pom.xml" />
+        <option value="$PROJECT_DIR$/ibps-platform-root/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
+</project>

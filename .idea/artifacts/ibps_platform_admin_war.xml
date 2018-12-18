@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ibps-platform-admin:war">
+    <output-path>$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/target</output-path>
+    <root id="archive" name="ibps.war">
+      <element id="artifact" artifact-name="ibps-platform-admin:war exploded" />
+    </root>
+  </artifact>
+</component>

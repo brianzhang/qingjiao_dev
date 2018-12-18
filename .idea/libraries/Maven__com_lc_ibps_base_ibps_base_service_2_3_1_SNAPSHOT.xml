@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lc.ibps.base:ibps-base-service:2.3.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-service/2.3.1-SNAPSHOT/ibps-base-service-2.3.1-20180508.095523-7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-service/2.3.1-SNAPSHOT/ibps-base-service-2.3.1-20180508.095523-7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-service/2.3.1-SNAPSHOT/ibps-base-service-2.3.1-20180508.095523-7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
