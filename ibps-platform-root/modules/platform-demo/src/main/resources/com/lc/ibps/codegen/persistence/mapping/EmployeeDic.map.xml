@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.demo.codegen.persistence.entity.EmployeeDicPo">
+	<resultMap id="EmployeeDicPo" type="com.lc.ibps.demo.codegen.persistence.entity.EmployeeDicPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="userId" column="USER_ID_" jdbcType="VARCHAR"/>
+		<result property="dicId" column="DIC_ID_" jdbcType="VARCHAR"/>
+		
+		<result property="userName" column="USER_NAME_" jdbcType="VARCHAR"/>
+		<result property="dicName" column="DIC_NAME_" jdbcType="VARCHAR"/>
+		<result property="catetory" column="CATEGORY" jdbcType="VARCHAR"/>
+		
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,USER_ID_,DIC_ID_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.demo.codegen.persistence.entity.EmployeeDicPo">
+		INSERT INTO T_EMPLOYEE_DIC
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=VARCHAR}, #{dicId,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="EmployeeDicPo">
+		SELECT <include refid="columns"/> FROM T_EMPLOYEE_DIC 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query"  resultMap="EmployeeDicPo">
+		SELECT a.ID_ USER_ID_,a.NAME_ USER_NAME_ FROM T_EMPLOYEE_DIC b, IBPS_PARTY_EMPLOYEE a
+		WHERE B.user_id_ = A.ID_
+		GROUP BY b.USER_ID_
+		ORDER BY b.ID_ DESC
+	</select>
+	
+	<select id="findByIds"   resultMap="EmployeeDicPo">
+		SELECT <include refid="columns"/> FROM T_EMPLOYEE_DIC
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.demo.codegen.persistence.entity.EmployeeDicPo">
+		UPDATE T_EMPLOYEE_DIC SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		USER_ID_=#{userId,jdbcType=VARCHAR},
+		DIC_ID_=#{dicId,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_EMPLOYEE_DIC 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="getDicItemByUserId"  resultMap="EmployeeDicPo" parameterType="java.lang.String">
+		SELECT EC.USER_ID_,EMP.NAME_ USER_NAME_,EC.DIC_ID_,CAT.CATEGORY_KEY_,CAT.NAME_ DIC_NAME_
+			FROM T_EMPLOYEE_DIC EC,IBPS_PARTY_EMPLOYEE EMP,
+				(SELECT ID_,CATEGORY_KEY_,NAME_ FROM IBPS_CAT_TYPE WHERE CATEGORY_KEY_='DIC_TYPE') CAT
+			WHERE EC.USER_ID_ = EMP.ID_
+				AND CAT.ID_ = EC.DIC_ID_
+				<if test="@Ognl@isNotEmpty(userId)">
+				AND EC.USER_ID_ = #{userId}
+				</if>
+				<if test="@Ognl@isNotEmpty(userIds)">
+					AND EC.USER_ID_ IN 
+					<foreach item="id" index="index" collection="userIds" open="(" separator="," close=")">  
+						#{id}  
+					</foreach>
+				</if>
+	</select>
+	
+	<select id="getByUserId"  resultMap="EmployeeDicPo" parameterType="java.lang.String">
+		SELECT <include refid="columns"/> FROM T_EMPLOYEE_DIC
+			WHERE 
+				<if test="@Ognl@isNotEmpty(userId)">
+					USER_ID_ = #{userId}
+				</if>
+	</select>
+	
+</mapper>

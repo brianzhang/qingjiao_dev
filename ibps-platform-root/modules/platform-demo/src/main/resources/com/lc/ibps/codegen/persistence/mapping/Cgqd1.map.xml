@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.demo.codegen.persistence.entity.Cgqd1Po">
+	<resultMap id="Cgqd1Po" type="com.lc.ibps.demo.codegen.persistence.entity.Cgqd1Po">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="parentId" column="PARENT_ID_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="purGoodsItem" column="PUR_GOODS_ITEM_" jdbcType="VARCHAR"/>
+		<result property="purGoodsName" column="PUR_GOODS_NAME_" jdbcType="VARCHAR"/>
+		<result property="purNumber" column="PUR_NUMBER_" jdbcType="NUMERIC"/>
+		<result property="purMarketPrice" column="PUR_MARKET_PRICE_" jdbcType="NUMERIC"/>
+		<result property="purRequireDate" column="PUR_REQUIRE_DATE_" jdbcType="TIMESTAMP"/>
+		<result property="purExplain" column="PUR_EXPLAIN_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,PARENT_ID_,IP_,UPDATE_BY_,UPDATE_TIME_,PUR_GOODS_ITEM_,PUR_GOODS_NAME_,PUR_NUMBER_,PUR_MARKET_PRICE_,PUR_REQUIRE_DATE_,PUR_EXPLAIN_,CREATE_BY_,CREATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.demo.codegen.persistence.entity.Cgqd1Po">
+		INSERT INTO T_CGQD
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{purGoodsItem,jdbcType=VARCHAR}, #{purGoodsName,jdbcType=VARCHAR}, #{purNumber,jdbcType=NUMERIC}, #{purMarketPrice,jdbcType=NUMERIC}, #{purRequireDate,jdbcType=TIMESTAMP}, #{purExplain,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="Cgqd1Po">
+		SELECT <include refid="columns"/> FROM T_CGQD 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="Cgqd1Po">
+		SELECT <include refid="columns"/> FROM T_CGQD
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="Cgqd1Po">
+		SELECT <include refid="columns"/> FROM T_CGQD
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.demo.codegen.persistence.entity.Cgqd1Po">
+		UPDATE T_CGQD SET
+		PARENT_ID_=#{parentId,jdbcType=VARCHAR},
+		IP_=#{ip,jdbcType=VARCHAR},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		PUR_GOODS_ITEM_=#{purGoodsItem,jdbcType=VARCHAR},
+		PUR_GOODS_NAME_=#{purGoodsName,jdbcType=VARCHAR},
+		PUR_NUMBER_=#{purNumber,jdbcType=NUMERIC},
+		PUR_MARKET_PRICE_=#{purMarketPrice,jdbcType=NUMERIC},
+		PUR_REQUIRE_DATE_=#{purRequireDate,jdbcType=TIMESTAMP},
+		PUR_EXPLAIN_=#{purExplain,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_CGQD 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<delete id="deleteByMainId">
+	    DELETE FROM T_CGQD
+	    WHERE
+	    PARENT_ID_=#{mainId}
+	</delete>    
+	
+	<select id="findByMainId" resultMap="Cgqd1Po">
+	    SELECT *
+	    FROM T_CGQD 
+	    WHERE PARENT_ID_=#{mainId}
+	</select>
+	
+</mapper>

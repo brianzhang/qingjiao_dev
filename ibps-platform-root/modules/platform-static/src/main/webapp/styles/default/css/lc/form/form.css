@@ -1,0 +1,33 @@
+.flowchart {
+	display: inline-block;
+	padding: 3px;
+	width: 100%;
+	height: 300px;
+	border: 1px dashed #000;
+	background: url(../../images/logo/flowchart_logo.png) 5px 0px
+		no-repeat;
+}
+
+.flowchart input {
+	border: none;
+	width: 1px;
+	height: 1px;
+}
+.field-header{
+	width: 25%;
+	display: block;
+	float: left;
+	text-align: center;
+ }
+ .radio-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+span.ht-bpm-buttons a {
+    margin-right: 5px;
+}

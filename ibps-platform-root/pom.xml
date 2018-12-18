@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+		<groupId>com.lc.ibps.parent</groupId>
+		<artifactId>ibps-starter-parent</artifactId>
+		<version>2.3.1-SNAPSHOT</version>
+		<relativePath />
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lc.ibps.platform</groupId>
+	<artifactId>ibps-platform-root</artifactId>
+	<version>2.3.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>ibps-platform-root</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>modules/platform-biz</module>
+		<module>modules/platform-demo</module>
+		<module>modules/platform-static</module>
+		<!-- 
+		<module>modules/platform-webapi</module>
+		<module>modules/platform-wexin</module>
+		-->
+		<module>modules/platform-base</module>
+		<module>modules/platform-org-base</module>
+		<module>modules/platform-org</module>
+		<module>modules/platform-portal</module>
+		<module>modules/platform-report</module>
+		<module>modules/platform-ireport</module>
+		<module>modules/platform-raqsoft</module>
+		<module>modules/platform-admin</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+		</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <artifactId>maven-javadoc-plugin</artifactId> <version>2.9</version> 
+				<configuration> <charset>UTF-8</charset> <docencoding>UTF-8</docencoding> 
+				</configuration> <executions> <execution> <id>attach-javadocs</id> <goals> 
+				<goal>jar</goal> </goals> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>ibps-8081</id>
+			<activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+			<distributionManagement>
+				<repository>
+					<id>nexus-releases</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8081/nexus/content/repositories/releases/</url>
+				</repository>
+				<snapshotRepository>
+					<id>nexus-snapshots</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8081/nexus/content/repositories/snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<id>ibps-8081-1</id>
+			<distributionManagement>
+				<repository>
+					<id>nexus-releases</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8081/nexus/content/repositories/releases/</url>
+				</repository>
+				<snapshotRepository>
+					<id>nexus-snapshots</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8081/nexus/content/repositories/snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<id>ibps-8082</id>
+			<distributionManagement>
+				<repository>
+					<id>nexus-releases</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8082/nexus/content/repositories/releases/</url>
+				</repository>
+				<snapshotRepository>
+					<id>nexus-snapshots</id>
+					<name>Local Nexus Repository</name>
+					<url>http://172.16.0.208:8082/nexus/content/repositories/snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.test.demo.persistence.entity.UrlFormSubPo">
+	<resultMap id="UrlFormSubPo" type="com.lc.ibps.test.demo.persistence.entity.UrlFormSubPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="key" column="KEY_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="age" column="AGE_" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,KEY_,NAME_,AGE_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormSubPo">
+		INSERT INTO DEMO_URL_FOM_SUB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{key,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="UrlFormSubPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="UrlFormSubPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB
+		<where>
+			<if test="whereSql!=null">
+				${whereSql}
+			</if>
+		</where>
+		<if test="orderBySql!=null">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="orderBySql==null">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="UrlFormSubPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormSubPo">
+		UPDATE DEMO_URL_FOM_SUB SET
+		KEY_=#{key,jdbcType=VARCHAR},
+		NAME_=#{name,jdbcType=VARCHAR},
+		AGE_=#{age,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM DEMO_URL_FOM_SUB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

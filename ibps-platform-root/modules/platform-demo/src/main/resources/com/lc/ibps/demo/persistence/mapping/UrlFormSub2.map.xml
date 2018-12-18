@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.test.demo.persistence.entity.UrlFormSub2Po">
+	<resultMap id="UrlFormSub2Po" type="com.lc.ibps.test.demo.persistence.entity.UrlFormSub2Po">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="key" column="KEY_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="age" column="AGE_" jdbcType="NUMERIC"/>
+		<result property="parentId" column="PARENT_ID_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,KEY_,NAME_,AGE_,PARENT_ID_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormSub2Po">
+		INSERT INTO DEMO_URL_FOM_SUB_2
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{key,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=NUMERIC}, #{parentId,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="UrlFormSub2Po">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB_2 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="UrlFormSub2Po">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB_2
+		<where>
+			<if test="whereSql!=null">
+				${whereSql}
+			</if>
+		</where>
+		<if test="orderBySql!=null">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="orderBySql==null">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="UrlFormSub2Po">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FOM_SUB_2
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormSub2Po">
+		UPDATE DEMO_URL_FOM_SUB_2 SET
+		KEY_=#{key,jdbcType=VARCHAR},
+		NAME_=#{name,jdbcType=VARCHAR},
+		AGE_=#{age,jdbcType=NUMERIC},
+		PARENT_ID_=#{parentId,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM DEMO_URL_FOM_SUB_2 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<delete id="deleteByMainId">
+	    DELETE FROM DEMO_URL_FOM_SUB_2
+	    WHERE
+	    PARENT_ID_=#{mainId}
+	</delete>    
+	
+	<select id="findByMainId" resultMap="UrlFormSub2Po">
+	    SELECT *
+	    FROM DEMO_URL_FOM_SUB_2 
+	    WHERE PARENT_ID_=#{mainId}
+	</select>
+	
+</mapper>

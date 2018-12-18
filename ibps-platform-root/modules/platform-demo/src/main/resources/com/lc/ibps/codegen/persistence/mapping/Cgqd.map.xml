@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.demo.codegen.persistence.entity.CgqdPo">
+	<resultMap id="CgqdPo" type="com.lc.ibps.demo.codegen.persistence.entity.CgqdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="parentId" column="PARENT_ID_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="purchaseItem" column="PURCHASE_ITEM_" jdbcType="VARCHAR"/>
+		<result property="purItemName" column="PUR_ITEM_NAME_" jdbcType="VARCHAR"/>
+		<result property="purchaseNumber" column="PURCHASE_NUMBER_" jdbcType="NUMERIC"/>
+		<result property="marketRefePrice" column="MARKET_REFE_PRICE_" jdbcType="NUMERIC"/>
+		<result property="demandDate" column="DEMAND_DATE_" jdbcType="TIMESTAMP"/>
+		<result property="description" column="DESCRIPTION_" jdbcType="VARCHAR"/>
+		<result property="operateDate" column="OPERATE_DATE_" jdbcType="TIMESTAMP"/>
+		<result property="operator" column="OPERATOR_" jdbcType="VARCHAR"/>
+		<result property="subtotal" column="SUBTOTAL_" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,PARENT_ID_,IP_,CREATE_BY_,CREATE_TIME_,UPDATE_BY_,UPDATE_TIME_,PURCHASE_ITEM_,PUR_ITEM_NAME_,PURCHASE_NUMBER_,MARKET_REFE_PRICE_,DEMAND_DATE_,DESCRIPTION_,OPERATE_DATE_,OPERATOR_,SUBTOTAL_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.demo.codegen.persistence.entity.CgqdPo">
+		INSERT INTO T_PURCHASEDETAILLIST
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{purchaseItem,jdbcType=VARCHAR}, #{purItemName,jdbcType=VARCHAR}, #{purchaseNumber,jdbcType=NUMERIC}, #{marketRefePrice,jdbcType=NUMERIC}, #{demandDate,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, #{operateDate,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}, #{subtotal,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CgqdPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASEDETAILLIST 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CgqdPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASEDETAILLIST
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CgqdPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASEDETAILLIST
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.demo.codegen.persistence.entity.CgqdPo">
+		UPDATE T_PURCHASEDETAILLIST SET
+		PARENT_ID_=#{parentId,jdbcType=VARCHAR},
+		IP_=#{ip,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		PURCHASE_ITEM_=#{purchaseItem,jdbcType=VARCHAR},
+		PUR_ITEM_NAME_=#{purItemName,jdbcType=VARCHAR},
+		PURCHASE_NUMBER_=#{purchaseNumber,jdbcType=NUMERIC},
+		MARKET_REFE_PRICE_=#{marketRefePrice,jdbcType=NUMERIC},
+		DEMAND_DATE_=#{demandDate,jdbcType=TIMESTAMP},
+		DESCRIPTION_=#{description,jdbcType=VARCHAR},
+		OPERATE_DATE_=#{operateDate,jdbcType=TIMESTAMP},
+		OPERATOR_=#{operator,jdbcType=VARCHAR},
+		SUBTOTAL_=#{subtotal,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PURCHASEDETAILLIST 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<delete id="deleteByMainId">
+	    DELETE FROM T_PURCHASEDETAILLIST
+	    WHERE
+	    PARENT_ID_=#{mainId}
+	</delete>    
+	
+	<select id="findByMainId" resultMap="CgqdPo">
+	    SELECT *
+	    FROM T_PURCHASEDETAILLIST 
+	    WHERE PARENT_ID_=#{mainId}
+	</select>
+	
+</mapper>

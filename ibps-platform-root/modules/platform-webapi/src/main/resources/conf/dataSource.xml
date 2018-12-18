@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSources>
+  <dataSource>
+    <name>默认数据</name>
+    <alias>druid</alias>
+    
+<dbType>mysql</dbType>
+  	<driver>com.mysql.jdbc.Driver</driver>
+	<driverUrl>jdbc:mysql://127.0.0.1:3306/ibps-aomei?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+    <user>root</user>
+    <password></password>
+    
+    <!-- 
+    <dbType>mssql</dbType>
+   	<driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+    <driverUrl>jdbc:sqlserver://127.0.0.1:1433;DatabaseName=ibps_train_school;integratedSecurity=false</driverUrl>
+    <user>sa</user>
+    <password>123456</password>
+    -->
+    
+	<!-- <dbType>oracle</dbType>
+    <driver>oracle.jdbc.OracleDriver</driver>
+    <driverUrl>jdbc:oracle:thin:@192.168.3.203:1521:ORCL</driverUrl>
+    <user>ibps</user>
+    <password>ibps</password>-->
+    
+    <status>actived</status>
+    <isDefault>true</isDefault>
+    <variables>
+      <testOnBorrow>false</testOnBorrow>
+      <testWhileIdle>true</testWhileIdle>
+      <validationQuery>select 1</validationQuery>
+      <maxPoolPreparedStatementPerConnectionSize>20</maxPoolPreparedStatementPerConnectionSize>
+      <removeAbandonedTimeout>1800</removeAbandonedTimeout>
+      <testOnReturn>false</testOnReturn>
+      <maxActive>20</maxActive>
+      <logAbandoned>true</logAbandoned>
+      <poolPreparedStatements>true</poolPreparedStatements>
+      <minIdle>3</minIdle>
+      <maxWait>3600000</maxWait>
+      <removeAbandoned>true</removeAbandoned>
+      <timeBetweenEvictionRunsMillis>3600000</timeBetweenEvictionRunsMillis>
+      <minEvictableIdleTimeMillis>300000</minEvictableIdleTimeMillis>
+      <initialSize>3</initialSize>
+      <filters>stat</filters>
+    </variables>
+  </dataSource>
+</dataSources>

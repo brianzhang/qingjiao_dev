@@ -1,0 +1,109 @@
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd     
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    <security:http auto-config="true" entry-point-ref="loginUrlAuthenticationEntryPointHandler">
+    	<security:intercept-url pattern="/**" access="ROLE_LOGIN"/>
+    	
+    	<security:remember-me key="ibps_remenberPassword"/>
+    	<security:form-login login-page="/login.jsp"></security:form-login>
+		<security:logout logout-url="/logout" logout-success-url="/loginRedirect.htm"/> 
+    	<!-- 防止XSS注入 -->
+    	<security:custom-filter  ref="csrfFilter" after="CAS_FILTER" />
+    	<!-- 防止CSRF攻击 -->
+		<security:custom-filter  ref="xssFilter" before="FORM_LOGIN_FILTER" />
+		
+		<security:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR" />
+		<security:custom-filter position="SWITCH_USER_FILTER" ref="switchUserProcessingFilter"/>
+   	</security:http>
+   	
+   	<!-- 防止XSS注入 -->
+	<bean id="xssFilter" class="com.lc.ibps.web.filter.XssFilter" />
+	<!-- 防止CSRF攻击 -->
+	<bean id="csrfFilter" class="com.lc.ibps.web.filter.CsrfFilter" />
+	<!-- xss url 过滤控制-->
+	<bean id="xssUrl" class="com.lc.ibps.base.web.util.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+				<value>/*</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 需要忽略的CSRF攻击的网站 -->
+	<bean id="csrfUrl" class="com.lc.ibps.base.web.util.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+				<value>/login.*</value>
+				<value>/tokenService/*</value>
+				<value>/loginService/*</value>
+				<value>/rest.*</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="actionPageMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="mobile" value="/mobileLogin.jsp"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+    
+    <security:authentication-manager alias="authenticationManager"><!-- 鉴定管理类 -->  
+        <security:authentication-provider user-service-ref="userDetailProvider"/>
+    </security:authentication-manager>
+    
+    <bean id="userDetailProvider" class="com.lc.ibps.web.security.provider.UserAuthProvider"/>
+    
+     <!-- 用来处理Ajax 超时问题 -->
+    <bean id="loginUrlAuthenticationEntryPointHandler" class="com.lc.ibps.web.security.handler.LoginUrlAuthenticationEntryPointHandler">
+       <property name="loginFormUrl" value="/login.jsp"/>
+    </bean>
+  	 
+  <!--使用Spring security提供的过滤器-->
+	
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+	 <property name="authenticationManager" ref="authenticationManager" />
+	 <property name="accessDecisionManager" ref="accessDecisionManagerHandler" />
+	 <property name="securityMetadataSource" ref="securityMetadataSourceHandler" />
+	</bean>
+ 	<!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+   <bean id="accessDecisionManagerHandler" class="com.lc.ibps.web.security.handler.AccessDecisionManagerHandler"></bean>  
+  
+  	<!-- 需要匿名访问的 -->
+	<bean id="anonymousUrls" class="com.lc.ibps.base.web.util.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+				<value>/login.*</value>
+				 <value>/logout.*</value>
+				  <value>/register.*</value>
+				  <value>/forgotten.*</value>
+				  <value>/getBack.*</value>
+				 <value>/sendSms.htm</value>
+				 <value>/error.htm</value>
+				<value>/loginRedirect.htm</value>
+			    <value>/commons/blank.jsp</value>
+			   <value>/patrolp/schoolboy/schoolBoy/edit.htm</value>
+			 
+				
+				<value>/rest.*</value>
+				<value>/tokenService/loadByWcAccount.htm</value>
+			</list>
+		</property>
+	</bean>
+	
+  
+    <!-- 确定某一资源可以被哪些角色访问 -->
+    <bean id="securityMetadataSourceHandler" class="com.lc.ibps.web.security.handler.SecurityMetadataSourceHandler" />
+    
+       <bean id="switchUserProcessingFilter" class="com.lc.ibps.web.security.filter.MySwitchUserFilter">
+           <property name="userDetailsService" ref="userDetailProvider" />
+           <property name="switchUserUrl" value="/j_spring_security_switch_user" />
+           <property name="exitUserUrl" value="/j_spring_security_exit_user" />
+           <property name="targetUrl" value="/platform/console/main.htm" />
+   </bean> 
+</beans>

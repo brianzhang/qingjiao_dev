@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<!-- 业务注入 -->
+	<context:component-scan base-package="com.lc.ibps">
+		<context:include-filter type="annotation" expression="org.springframework.transaction.annotation.Transactional" />
+	</context:component-scan>
+	<!-- 事务管理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:annotation-driven transaction-manager="jtaTransactionManager" />
+
+	<!-- freemaker引擎 -->
+	<bean id="freemarkerEngine" class="com.lc.ibps.base.core.engine.freemarker.FreemarkerEngine">
+		<property name="configuration" ref="freemarkerConfiguration" />
+	</bean>	  
+	<!-- 文件模版引擎配置 -->
+	<bean id="templateLoader" class="freemarker.cache.StringTemplateLoader"></bean>
+	<bean id="freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="classpath:template/" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	
+	<!-- 当前上下文工具类，这里是注入com.lc.ibps.base.web.context.LoginContext实例。 -->
+	<bean id="loginContext" class="com.lc.ibps.web.context.LoginContext"/>
+	<bean id="contextUtil" class="com.lc.ibps.base.web.context.ContextUtil">
+		<property name="currentContext" ref="loginContext"></property>
+	</bean>
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
+	<!-- 缓存使用 -->
+  	<bean id="iCache" class="com.lc.ibps.components.cache.impl.MemoryCache"></bean>
+  	<!-- <bean id="iCache" class="com.lc.ibps.components.cache.redis.DefaultCacheImpl"></bean> -->
+	<bean id="cacheKeyGenerator" class="com.lc.ibps.components.cache.CacheKeyGenerator" />
+	<bean id="cacheMgr" class="com.lc.ibps.components.cache.CacheManager" />
+	
+    <!--事务配置-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+		  	<tx:method name="get*" read-only="true"  />
+			<tx:method name="is*" read-only="true"/>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="query*" read-only="true"/>
+			<tx:method name="*" isolation="DEFAULT"/>
+		</tx:attributes>
+	</tx:advice>
+    <aop:config proxy-target-class="true">
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.lc.ibps.bpmn.core.engine..*(..))" order="1" />
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.lc.ibps.base.db.table.impl..*(..))" order="1" />
+	</aop:config>
+	
+	<bean id="localeResolver"
+	    class="org.springframework.web.servlet.i18n.SessionLocaleResolver">  
+	</bean>
+
+	<!-- 连接池统计配置 -->
+	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+	    <property name="slowSqlMillis" value="10000" />
+	    <property name="logSlowSql" value="true" />
+	    <property name="mergeSql" value="true" />
+   	</bean>
+   
+   	<!-- 需要匿名访问的 -->
+	<bean id="anonymousUrls" class="com.lc.ibps.base.web.util.RegMatchers">
+		<property name="ingoreUrls">
+			<list>
+			    <value>/commons/*</value>
+			    <value>/js/*</value>
+			    <value>/media/*</value>
+			    <value>/styles/*</value>
+			    <value>/report/*</value>
+			    
+			    <value>/servlet/ValidCode</value>
+			    <value>/servlet/image</value>
+			    <value>/camelServlet</value>
+			    <value>/pinyinServlet</value>
+			    
+			    <value>/tologin.*</value>
+				<value>/login.*</value>
+				<value>/logout.*</value>
+				<value>/register.*</value>
+				<value>/forget.*</value>
+				<value>/sendSms.htm</value>
+				
+				<value>/get400.htm</value>
+				<value>/get403.htm</value>
+				<value>/get404.htm</value>
+				<value>/error.htm</value>
+				<value>/loginRedirect.htm</value>
+			    <value>/commons/blank.jsp</value>
+				
+				<value>/rest.*</value>
+				<value>/tokenService/loadByWcAccount.htm</value>
+				
+				<value>/platform/system/news*</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 地址选项配置 -->
+	<bean id="urlOption" class="com.lc.ibps.base.web.model.UrlOption">
+	    <property name="clientId" value="ibps"/>
+	    <property name="clientSecret" value="123456"/>
+	    <property name="redirectUrl" value="http://localhost:8556/ibps-platform-portal/login.jsp"/>
+	    <property name="codeUrl" value="http://localhost:8556/ibps-platform-portal/authorize.htm"/>
+	    <property name="accessTokenUrl" value="http://localhost:8556/ibps-platform-portal/auth2/access_token.htm"/>
+	    <property name="userUrl" value="http://localhost:8556/ibps-platform-portal/auth2/user.htm"/>
+	    
+		<property name="loginUrl" value="/login.jsp"/>
+	    <property name="successUrl" value="/platform/console/main.htm"/>
+	    <property name="unauthorizedUrl" value="/commons/noRights.jsp"/>
+	    <property name="logoutUrl" value="/logout.htm"/>
+	    <property name="kickoutUrl" value="/login.jsp?kickout"/> 
+	</bean>
+	
+	<bean id="cookieOption" class="com.lc.ibps.base.web.model.CookieOption">
+	</bean>
+</beans>

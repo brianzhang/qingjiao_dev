@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.demo.codegen.persistence.entity.PurchaseDemandPo">
+	<resultMap id="PurchaseDemandPo" type="com.lc.ibps.demo.codegen.persistence.entity.PurchaseDemandPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="projectName" column="PROJECT_NAME_" jdbcType="VARCHAR"/>
+		<result property="purchasePlanCode" column="PUR_PLAN_CODE_" jdbcType="VARCHAR"/>
+		<result property="registerDate" column="REGISTER_DATE_" jdbcType="TIMESTAMP"/>
+		<result property="declareDepart" column="DECLARE_DEPART_" jdbcType="VARCHAR"/>
+		<result property="purchaseOperateOrg" column="PUR_OPERATE_ORG_" jdbcType="VARCHAR"/>
+		<result property="purchaseAmount" column="PURCHASE_AMOUNT_" jdbcType="NUMERIC"/>
+		<result property="purBudgetIndex" column="PUR_BUDGET_INDEX_" jdbcType="VARCHAR"/>
+		<result property="projectType" column="PROJECT_TYPE_" jdbcType="VARCHAR"/>
+		<result property="bidderQualiRequire" column="BIDDER_REQUIRE_" jdbcType="VARCHAR"/>
+		<result property="remark" column="REMARK_" jdbcType="VARCHAR"/>
+		<result property="acceptStatus" column="ACCEPT_STATUS_" jdbcType="VARCHAR"/>
+		<result property="auditStatus" column="AUDIT_STATUS_" jdbcType="VARCHAR"/>
+		<result property="budgetYear" column="BUDGET_YEAR_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,IP_,CREATE_BY_,CREATE_TIME_,UPDATE_BY_,UPDATE_TIME_,PROJECT_NAME_,PUR_PLAN_CODE_,REGISTER_DATE_,DECLARE_DEPART_,PUR_OPERATE_ORG_,PURCHASE_AMOUNT_,PUR_BUDGET_INDEX_,PROJECT_TYPE_,BIDDER_REQUIRE_,REMARK_,ACCEPT_STATUS_,AUDIT_STATUS_,BUDGET_YEAR_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.demo.codegen.persistence.entity.PurchaseDemandPo">
+		INSERT INTO T_PURCHASE_DEMAND
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{projectName,jdbcType=VARCHAR}, #{purchasePlanCode,jdbcType=VARCHAR}, #{registerDate,jdbcType=TIMESTAMP}, #{declareDepart,jdbcType=VARCHAR}, #{purchaseOperateOrg,jdbcType=VARCHAR}, #{purchaseAmount,jdbcType=NUMERIC}, #{purBudgetIndex,jdbcType=VARCHAR}, #{projectType,jdbcType=VARCHAR}, #{bidderQualiRequire,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{acceptStatus,jdbcType=VARCHAR}, #{auditStatus,jdbcType=VARCHAR}, #{budgetYear,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PurchaseDemandPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASE_DEMAND 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PurchaseDemandPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASE_DEMAND
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PurchaseDemandPo">
+		SELECT <include refid="columns"/> FROM T_PURCHASE_DEMAND
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.demo.codegen.persistence.entity.PurchaseDemandPo">
+		UPDATE T_PURCHASE_DEMAND SET
+		IP_=#{ip,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		PROJECT_NAME_=#{projectName,jdbcType=VARCHAR},
+		PUR_PLAN_CODE_=#{purchasePlanCode,jdbcType=VARCHAR},
+		REGISTER_DATE_=#{registerDate,jdbcType=TIMESTAMP},
+		DECLARE_DEPART_=#{declareDepart,jdbcType=VARCHAR},
+		PUR_OPERATE_ORG_=#{purchaseOperateOrg,jdbcType=VARCHAR},
+		PURCHASE_AMOUNT_=#{purchaseAmount,jdbcType=NUMERIC},
+		PUR_BUDGET_INDEX_=#{purBudgetIndex,jdbcType=VARCHAR},
+		PROJECT_TYPE_=#{projectType,jdbcType=VARCHAR},
+		BIDDER_REQUIRE_=#{bidderQualiRequire,jdbcType=VARCHAR},
+		REMARK_=#{remark,jdbcType=VARCHAR},
+		ACCEPT_STATUS_=#{acceptStatus,jdbcType=VARCHAR},
+		AUDIT_STATUS_=#{auditStatus,jdbcType=VARCHAR},
+		BUDGET_YEAR_=#{budgetYear,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PURCHASE_DEMAND 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

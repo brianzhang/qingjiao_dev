@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<desktopColumns xmlns="http://www.bpmhome.cn/desktop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.bpmhome.cn/desktop desktop.xsd">
+	<desktopColumn name="个人信息" 	alias="userInfo" 		 colType="0" dataMode="0" dataFrom="desktopFacadeService.userInfo" 	isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="未读消息" 	alias="unreadMessage" 		 colType="0" dataMode="0" dataFrom="desktopFacadeService.unreadMessage" 	 colUrl="/platform/msg/innerMessage/receive.htm" isPublic="1" isRefesh="0" showEffect="1"/>
+	<desktopColumn name="待办事宜" 	alias="pendingMatters" 	 colType="0" dataMode="0" dataFrom="desktopFacadeService.pendingMatters"  colUrl="/platform/office/bpmReceivedProcess/pending.htm"	isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="公告栏目" 	alias="notice" 	 		 colType="0" dataMode="0" dataFrom="desktopFacadeService.getNews"  		  colUrl="/platform/system/news/list.htm"					isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="已办事宜" 	alias="alreadyMatters" 	 colType="0" dataMode="0" dataFrom="desktopFacadeService.alreadyMatters"  colUrl="/platform/office/bpmReceivedProcess/handled.htm" isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="办结事宜" 	alias="completedMatters" colType="0" dataMode="0" dataFrom="desktopFacadeService.completedMatters" 	 colUrl="/platform/office/bpmReceivedProcess/completed.htm" isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="我的办结" 	alias="myCompleted" 	 colType="0" dataMode="0" dataFrom="desktopFacadeService.myCompleted"  colUrl="/platform/office/bpmInitiatedProcess/myCompleted.htm"	isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="我的请求" 	alias="myRequest" 		 colType="0" dataMode="0" dataFrom="desktopFacadeService.myRequest"  colUrl="/platform/office/bpmInitiatedProcess/myRequest.htm" isPublic="1" isRefesh="0" showEffect="0"/>	
+	<desktopColumn name="新建流程" 	alias="newProcess" 	 	 colType="0" dataMode="0" dataFrom="desktopFacadeService.newProcess" 	 colUrl="/platform/office/bpmInitiatedProcess/newProcess.htm" isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="环形图"  	alias="pieChart" 		 colType="1" dataMode="0" dataFrom="desktopDemoService.pieChart"  	isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="分布图" 	alias="scattergram" 		 colType="1" dataMode="0" dataFrom="desktopDemoService.scattergram"   isPublic="1" isRefesh="1" showEffect="0"/>
+	<desktopColumn name="幻灯片例子" 	alias="slide" 		     colType="0" dataMode="0"  colHeight="450" isPublic="1" isRefesh="0" showEffect="2"/>
+	<desktopColumn name="我的日程 "  	alias="myCalendar" 		 colType="2" dataMode="0" dataFrom="desktopDemoService.myCalendar"  	isPublic="1" isRefesh="0" showEffect="0"/>
+	<desktopColumn name="仪表盘" 		alias="dashboard" 		colType="0" dataMode="0" dataFrom="desktopFacadeService.getDashboard" 	isPublic="1" isRefesh="0" showEffect="0"/>
+</desktopColumns>

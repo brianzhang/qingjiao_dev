@@ -1,0 +1,68 @@
+body, html {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.weui-cells__title {
+    font-size: 17px!important;
+}
+.weui-tabbar {
+  position: fixed;
+}
+.lc-list-cell {
+  padding: 15px 15px;
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  /*width: 90%;*/
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid #c9c9c9;
+}
+.lc-list-box{
+  margin-top: 50px;
+}
+.lc-list-left{
+  float:left;
+  height: 50px;
+}
+.lc-list-left img{
+  border-radius: 50% !important;
+  width: 50px;
+  height: 50px;
+}
+.lc-list-right{
+  position: relative;
+  overflow: hidden;
+  white-space: normal;
+  padding-left: 15px;
+  font-size: 15px;
+  /*text-align: justify;*/
+}
+.lc-float-left{
+  display: inline-block;
+  float: left;
+  margin: 0px 0px 10px 0;
+}
+.lc-list-right-time{
+  /*width: 100%;*/
+  display: inline-block;
+  text-align: right;
+  color: #0877a9;
+  float: right;
+  font-size: .14rem;
+  margin-left: .1rem;
+  margin-right: .05rem;
+}
+.lc-list-right-title{
+  /*float: left;*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.weui-tabbar__label{
+  color: #131212!important;
+}

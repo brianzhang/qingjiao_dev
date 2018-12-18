@@ -1,0 +1,1 @@
+var __ctx='http://localhost:8080/ibps-platform-admin';

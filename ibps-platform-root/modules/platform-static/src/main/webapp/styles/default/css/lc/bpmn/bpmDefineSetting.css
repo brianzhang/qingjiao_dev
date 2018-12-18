@@ -1,0 +1,144 @@
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active{
+    background-color: #726f6f !important;
+    border-color: #bababa;
+    color: #FFFFFF !important;
+}
+.layout-header {
+	background: #e7eaec ;
+	border-bottom: 1px solid  #e5e6e7;
+	font-weight: bold;
+	text-align: center;
+	padding: 4px;
+	position: relative;
+	overflow: hidden;
+}
+.layout-header .layout-header-title {
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+   color: #676a6c;
+}
+.layout-header  .layout-tools {
+    display: inline-block;
+    float: right;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+}
+.layout-header  .layout-tools  a{
+    font-size: 12px;
+}
+.panel-heading {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.panel-body{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    padding-top: 5px !important;
+       padding-bottom: 0 !important;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.layout-footer{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #D9D9D9;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.flowNode{
+cursor: pointer;
+}
+.editing{
+    border: 1px dashed red;
+}
+
+
+
+
+
+.select-list {
+	padding: 0;
+    background: #fff;
+    height: 30px;
+    border: dashed 1px #CCC;
+}
+
+.select-list label {
+    margin: 0;
+    display: table;
+    width: 100%;
+   font-weight: normal;
+   cursor: pointer;
+}
+.select-list  label .plus {
+    font-size: 20px;
+    width: 25px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 7px;
+}
+
+.select-list  .select-empty {
+    padding: 5px 5px 5px 0;
+    text-align: left;
+    line-height: 1;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.select-list .preview-area {
+    width: 28px;
+    height: 30px;
+    padding: 5px 5px 5px 5px;
+    position: relative;
+}
+
+.select-list .select-name {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 25px;
+   margin-top: -4px ;
+    padding: 0 10px;
+    border-radius: 1px;
+    background: #eee;
+}
+
+
+.select-list .actions {
+    position: relative;
+    margin-top: 6px;
+    padding-right: 10px;
+}
+.select-list .actions .rechoose-link {
+    color: #009AFF;
+}
+.select-list .actions .delete-link {
+    color: #FF7466;
+}
+.select-list .actions .rights-link {
+    color: #23c6c8;
+}
+
+.select-item {
+    line-height: 25px;
+    display: inline-block;
+    margin: 2px 0 0 4px;
+    padding: 0 10px;
+    border-radius: 1px;
+    background: #eee;
+}

@@ -1,0 +1,60 @@
+html {
+  font-size: 100px;
+}
+
+body {
+  margin: 0;
+  font-size: .14rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*line-height: 1em;*/
+  /*background-color: #f0efed;*/
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height:0;
+}
+
+.header {
+  position: relative;
+  height: .5rem;
+  /*background-color: #1959a5;*/
+  background-color: #24488D;
+  color: white;
+  font-size: .2rem;
+  line-height: .5rem;
+  text-align: center;
+}
+
+/*     底部按钮     */
+
+.tabbar_box {
+  background-color: #F0F0F0;
+
+}
+.tabbar_box span {
+  font-size: .16rem;
+}
+.tab_left {
+  border-left: 1px solid #c9c9c9;
+}
+
+/*       待办类型、实例状态         */
+.genre {
+  position: relative;
+  height: .25rem;
+  color: #0877a9;
+}

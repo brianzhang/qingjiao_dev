@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.lc.ibps.platform</groupId>
+		<artifactId>ibps-platform-root</artifactId>
+		<version>2.3.1-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lc.ibps.platform</groupId>
+	<artifactId>ibps-platform-portal</artifactId>
+	<version>2.3.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	<properties>
+		<docker.repostory>bpmhome.cn</docker.repostory>
+        <docker.registry.name>lc</docker.registry.name>
+        <maven.build.timestamp.format>yyyyMMdd-hhmmss</maven.build.timestamp.format>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-static</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-static</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-base</artifactId>
+		</dependency>
+		
+		<!--
+		<dependency>
+			<groupId>com.lc.ibps.auth</groupId>
+			<artifactId>ibps-auth-web</artifactId>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>com.lc.ibps.auth</groupId>
+			<artifactId>ibps-auth-server</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lc.ibps.auth</groupId>
+			<artifactId>ibps-auth-register</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>taobao</groupId>
+		  <artifactId>taobao-sdk-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aliyun</groupId>
+		  	<artifactId>aliyun-java-sdk-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+			
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<!-- common-logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<!-- java.util.logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+		<dependency>
+		     <groupId>com.alibaba</groupId>
+		     <artifactId>druid</artifactId>
+		</dependency>
+		<!-- mysql 数据库驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
+		<!-- sqlserver 数据库驱动 
+		<dependency>
+		  	<groupId>com.microsoft.sqlserver</groupId>
+		  	<artifactId>sqljdbc4</artifactId>
+		</dependency>
+		-->
+		<!-- oracle 数据库驱动 
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>oracledriver</artifactId>
+		</dependency>
+		-->		
+		
+		<!-- 在线编译需要依赖 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>provided</scope>
+		</dependency>		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<classesClassifier>classes</classesClassifier>
+				</configuration>
+				<version>2.3</version>
+			</plugin>
+			
+			<!--
+			<plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                
+                <configuration>
+                    <baseImage>docker.io/davidcaste/alpine-tomcat</baseImage>
+                    <entryPoint>["/opt/tomcat/bin/catalina.sh", "run"]</entryPoint>
+                    
+                    <imageName>${docker.repostory}/${project.artifactId}</imageName>
+                    <imageTags>
+                        <imageTag>${maven.build.timestamp}</imageTag>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    
+			        <dockerHost>http://www.bfsip.com:2375</dockerHost>
+                    
+                    <resources>
+                        <resource>
+                            <targetPath>/opt/tomcat/webapps/</targetPath>
+                            <directory>${project.build.directory}</directory>
+             				<include>${project.build.finalName}.war</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+			-->
+		</plugins>
+	</build>
+</project>

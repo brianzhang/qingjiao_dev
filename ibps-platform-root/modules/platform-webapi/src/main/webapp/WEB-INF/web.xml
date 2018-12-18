@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2.5.xsd"
+	version="2.5">
+	<display-name>ibps-platform-webapi</display-name>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root.api</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:conf/ibps-context.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:conf/log4j.xml</param-value>
+	</context-param>
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.lc.ibps.base.web.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>requestThreadFilter</filter-name>
+		<filter-class>com.lc.ibps.web.pubFilter.RequestThreadFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>requestThreadFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.lc.ibps.web.listener.WebApiStartupListener</listener-class>
+	</listener>
+	
+  <!-- ================spring mvc 适配器================ -->  
+  
+	<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:conf/ibps-web-action.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+    <servlet-mapping>  
+        <servlet-name>springMVC</servlet-name>  
+        <url-pattern>/api/webapi/bpmImage/gen</url-pattern>  
+    </servlet-mapping>
+
+<!-- 	<filter> -->
+<!-- 		<filter-name>validCodeFilter</filter-name> -->
+<!-- 		<filter-class>com.lc.ibps.web.filter.ValidCodeFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>validCodeFilter</filter-name> -->
+<!-- 		<url-pattern>/tokenService/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
+<!-- 	<filter> -->
+<!-- 		<filter-name>tokenFilter</filter-name> -->
+<!-- 		<filter-class>com.lc.ibps.web.filter.TokenFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>tokenFilter</filter-name> -->
+<!-- 		<url-pattern>/api/webapi/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
+
+	<servlet>
+	    <servlet-name>jersey-serlvet</servlet-name>
+	    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+           <param-name>javax.ws.rs.Application</param-name>
+           <param-value>com.lc.ibps.web.restConf.RestJaxRsApplication</param-value>
+		</init-param>
+        <init-param>
+            <param-name>jersey.config.server.provider.classnames</param-name>
+            <param-value>
+                com.wordnik.swagger.jersey.listing.ApiListingResourceJSON,
+                com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider,
+                com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider
+            </param-value>
+        </init-param>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>jersey-serlvet</servlet-name>
+	    <url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+        <servlet-name>Jersey2Config</servlet-name>
+        <servlet-class>com.lc.ibps.web.restConf.IbpsJerseyJaxrsConfig</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet> 
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>rest.jsp</welcome-file>
+	</welcome-file-list>
+	
+</web-app>

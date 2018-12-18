@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSources>
+  <dataSource>
+    <name>默认数据</name>
+    <alias>druid</alias>
+    <dbType>mysql</dbType>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <driverUrl>jdbc:mysql://127.0.0.1:3306/ibps_bpm_20170120?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+    <user>root</user>
+    <password>root</password>
+    
+    <status>actived</status>
+    <isDefault>true</isDefault>
+    <variables>
+      <testOnBorrow>false</testOnBorrow>
+      <testWhileIdle>true</testWhileIdle>
+      <validationQuery>select 1</validationQuery>
+      <maxPoolPreparedStatementPerConnectionSize>20</maxPoolPreparedStatementPerConnectionSize>
+      <removeAbandonedTimeout>1800</removeAbandonedTimeout>
+      <testOnReturn>false</testOnReturn>
+      <maxActive>20</maxActive>
+      <logAbandoned>true</logAbandoned>
+      <poolPreparedStatements>true</poolPreparedStatements>
+      <minIdle>3</minIdle>
+      <maxWait>3600000</maxWait>
+      <removeAbandoned>true</removeAbandoned>
+      <timeBetweenEvictionRunsMillis>3600000</timeBetweenEvictionRunsMillis>
+      <minEvictableIdleTimeMillis>300000</minEvictableIdleTimeMillis>
+      <initialSize>3</initialSize>
+      <filters>stat</filters>
+    </variables>
+  </dataSource>
+</dataSources>

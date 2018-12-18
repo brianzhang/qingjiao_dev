@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.test.demo.persistence.entity.DsTestPo">
+	<resultMap id="TestPo" type="com.lc.ibps.test.demo.persistence.entity.DsTestPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="account" column="ACCOUNT_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,ACCOUNT_,NAME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.test.demo.persistence.entity.DsTestPo">
+		INSERT INTO TEST
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TestPo">
+		SELECT <include refid="columns"/> FROM TEST 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TestPo">
+		SELECT <include refid="columns"/> FROM TEST
+		<where>
+			<if test="whereSql!=null">
+				${whereSql}
+			</if>
+		</where>
+		<if test="orderBySql!=null">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="orderBySql==null">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TestPo">
+		SELECT <include refid="columns"/> FROM TEST
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.test.demo.persistence.entity.DsTestPo">
+		UPDATE TEST SET
+		ACCOUNT_=#{account,jdbcType=VARCHAR},
+		NAME_=#{name,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM TEST 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

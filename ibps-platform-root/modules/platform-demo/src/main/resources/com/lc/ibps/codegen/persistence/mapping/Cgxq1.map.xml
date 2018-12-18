@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.demo.codegen.persistence.entity.Cgxq1Po">
+	<resultMap id="Cgxq1Po" type="com.lc.ibps.demo.codegen.persistence.entity.Cgxq1Po">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="purProName" column="PUR_PRO_NAME_" jdbcType="VARCHAR"/>
+		<result property="purPlanCode" column="PUR_PLAN_CODE_" jdbcType="VARCHAR"/>
+		<result property="purRegDate" column="PUR_REG_DATE_" jdbcType="TIMESTAMP"/>
+		<result property="purApplyDept" column="PUR_APPLY_DEPT_" jdbcType="VARCHAR"/>
+		<result property="purOperaDept" column="PUR_OPERA_DEPT_" jdbcType="VARCHAR"/>
+		<result property="purAmount" column="PUR_AMOUNT_" jdbcType="NUMERIC"/>
+		<result property="purBuIndex" column="PUR_BU_INDEX_" jdbcType="VARCHAR"/>
+		<result property="purProType" column="PUR_PRO_TYPE_" jdbcType="VARCHAR"/>
+		<result property="purProBudYear" column="PUR_PRO_BUD_YEAR_" jdbcType="VARCHAR"/>
+		<result property="purZgRequire" column="PUR_ZG_REQUIRE_" jdbcType="VARCHAR"/>
+		<result property="purRemark" column="PUR_REMARK_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,IP_,UPDATE_BY_,UPDATE_TIME_,PUR_PRO_NAME_,PUR_PLAN_CODE_,PUR_REG_DATE_,PUR_APPLY_DEPT_,PUR_OPERA_DEPT_,PUR_AMOUNT_,PUR_BU_INDEX_,PUR_PRO_TYPE_,PUR_PRO_BUD_YEAR_,PUR_ZG_REQUIRE_,PUR_REMARK_,CREATE_BY_,CREATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.demo.codegen.persistence.entity.Cgxq1Po">
+		INSERT INTO T_CGXQ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{purProName,jdbcType=VARCHAR}, #{purPlanCode,jdbcType=VARCHAR}, #{purRegDate,jdbcType=TIMESTAMP}, #{purApplyDept,jdbcType=VARCHAR}, #{purOperaDept,jdbcType=VARCHAR}, #{purAmount,jdbcType=NUMERIC}, #{purBuIndex,jdbcType=VARCHAR}, #{purProType,jdbcType=VARCHAR}, #{purProBudYear,jdbcType=VARCHAR}, #{purZgRequire,jdbcType=VARCHAR}, #{purRemark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="Cgxq1Po">
+		SELECT <include refid="columns"/> FROM T_CGXQ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="Cgxq1Po">
+		SELECT <include refid="columns"/> FROM T_CGXQ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="Cgxq1Po">
+		SELECT <include refid="columns"/> FROM T_CGXQ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.demo.codegen.persistence.entity.Cgxq1Po">
+		UPDATE T_CGXQ SET
+		IP_=#{ip,jdbcType=VARCHAR},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		PUR_PRO_NAME_=#{purProName,jdbcType=VARCHAR},
+		PUR_PLAN_CODE_=#{purPlanCode,jdbcType=VARCHAR},
+		PUR_REG_DATE_=#{purRegDate,jdbcType=TIMESTAMP},
+		PUR_APPLY_DEPT_=#{purApplyDept,jdbcType=VARCHAR},
+		PUR_OPERA_DEPT_=#{purOperaDept,jdbcType=VARCHAR},
+		PUR_AMOUNT_=#{purAmount,jdbcType=NUMERIC},
+		PUR_BU_INDEX_=#{purBuIndex,jdbcType=VARCHAR},
+		PUR_PRO_TYPE_=#{purProType,jdbcType=VARCHAR},
+		PUR_PRO_BUD_YEAR_=#{purProBudYear,jdbcType=VARCHAR},
+		PUR_ZG_REQUIRE_=#{purZgRequire,jdbcType=VARCHAR},
+		PUR_REMARK_=#{purRemark,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_CGXQ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

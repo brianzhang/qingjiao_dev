@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/*-----------------------------------------------------------------------------------*/
+/*	panel-toolbar 顶部按钮组
+/*-----------------------------------------------------------------------------------*/
+.panel-toolbar {
+	clear: both;
+	padding: 0px;
+	margin: 5px 0 5px 0;
+	border: 1px solid #ddd;
+	min-height: 40px;
+	background: #f4f4f4;
+}
+
+.panel-toolbar .buttons {
+	display: inline-block;
+	padding: 0;
+	margin: 5px 0 5px 10px;
+}
+
+.panel-toolbar.buttons>a {
+	margin-top: 5px !important;
+}
+
+.panel-toolbar:after, .panel-toolbar:before {
+	display: table;
+	color: "";
+}
+
+.panel-toolbar .tools {
+	display: inline-block;
+	padding: 5px;
+	float: right;
+	min-height: 40px;
+}
+
+.panel-toolbar.tools>a {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 24px;
+	text-decoration: none;
+	color: #c4c4c4;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.panel-toolbar .tools>a :hover {
+	color: #ababab;
+}
+
+.panel-toolbar .tools .label {
+	margin-right: 5px;
+}
+
+
+.panel-preview {
+  background-color: #fff;
+  padding: 1rem;
+}
+

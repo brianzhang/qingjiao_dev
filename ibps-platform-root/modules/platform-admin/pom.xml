@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.lc.ibps.platform</groupId>
+		<artifactId>ibps-platform-root</artifactId>
+		<version>2.3.1-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lc.ibps.platform</groupId>
+	<artifactId>ibps-platform-admin</artifactId>
+	<version>2.3.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	<properties>
+		<docker.repostory>bpmhome.cn</docker.repostory>
+        <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-static</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+            <groupId>com.hrbeu</groupId>
+            <artifactId>factory-dz</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-static</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-org-base</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-org-base</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-org</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-org</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-report</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-report</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		<!--
+		-->
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-raqsoft</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-raqsoft</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-ireport</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-ireport</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-base</artifactId>
+		</dependency>
+		
+		<!--
+		-->
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-portal</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-portal</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-demo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.platform</groupId>
+			<artifactId>ibps-platform-biz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-upload</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-quartz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-mq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-im</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-codegen</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-poi-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.components</groupId>
+			<artifactId>ibps-component-token</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lc.ibps.report</groupId>
+			<artifactId>ibps-report-biz</artifactId>
+		</dependency>
+		
+		<dependency>
+		  	<groupId>com.baidu</groupId>
+		  	<artifactId>ueditor</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+			
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<!-- common-logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<!-- java.util.logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+		</dependency>
+		<dependency>
+		     <groupId>com.alibaba</groupId>
+		     <artifactId>druid</artifactId>
+		</dependency>
+		<!-- mysql 数据库驱动 
+		-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- sqlserver 数据库驱动 
+		<dependency>
+		  	<groupId>com.microsoft.sqlserver</groupId>
+		  	<artifactId>sqljdbc4</artifactId>
+		</dependency>
+		-->
+		<!-- oracle 数据库驱动 
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>oracledriver</artifactId>
+		</dependency>
+		-->
+		
+		<dependency>
+			<groupId>org.jodconverter</groupId>
+			<artifactId>jodconverter-core</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.openoffice</groupId>
+		  <artifactId>ridl</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.openoffice</groupId>
+		  <artifactId>juh</artifactId>
+		  <exclusions>
+		    	<exclusion>
+		    		<groupId>org.openoffice</groupId>
+		  			<artifactId>jurt</artifactId>
+		    	</exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+		  <groupId>org.openoffice</groupId>
+		  <artifactId>jurt</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.openoffice</groupId>
+		    <artifactId>unoil</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.openoffice</groupId>
+		    <artifactId>bootstrap-connector</artifactId>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>org.openoffice</groupId>
+		  			<artifactId>juh</artifactId>
+		    	</exclusion>
+		    	<exclusion>
+		    		<groupId>org.openoffice</groupId>
+		  			<artifactId>jurt</artifactId>
+		    	</exclusion>
+		    </exclusions>
+		</dependency>
+		
+		<!-- 在线编译需要依赖 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- jersey start -->
+ 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>3.1.0.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>3.1.0.RELEASE</version>
+		</dependency>
+
+ 		<dependency>
+		    <groupId>org.glassfish.jersey.ext</groupId>
+		    <artifactId>jersey-spring3</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.springframework</groupId>
+		            <artifactId>spring-core</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>org.springframework</groupId>
+		            <artifactId>spring-web</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>org.springframework</groupId>
+		            <artifactId>spring-beans</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-json-jackson</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.wordnik</groupId>
+		    <artifactId>swagger-jersey-jaxrs_2.10</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>com.sun.jersey</groupId>
+		            <artifactId>jersey-client</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>com.sun.jersey</groupId>
+		            <artifactId>jersey-core</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>com.sun.jersey</groupId>
+		            <artifactId>jersey-server</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>com.sun.jersey</groupId>
+		            <artifactId>jersey-servlet</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>com.sun.jersey</groupId>
+		            <artifactId>jersey-multipart</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.sun.jersey</groupId>
+		  <artifactId>jersey-servlet</artifactId>
+		</dependency>
+
+		<dependency>
+            <groupId>org.glassfish.jersey.bundles</groupId>
+            <artifactId>jaxrs-ri</artifactId>
+        </dependency>
+         
+        
+        <!-- jersey -->
+	</dependencies>
+	
+	<build>
+		<finalName>ibps</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+			   <groupId>org.apache.tomcat.maven</groupId>
+			   <artifactId>tomcat7-maven-plugin</artifactId>
+			   <version>2.2</version>
+			   <configuration>
+			      <uriEncoding>UTF-8</uriEncoding>
+			   </configuration>
+			</plugin>
+ 			
+			<plugin> 
+				<artifactId>maven-dependency-plugin</artifactId> 
+				<configuration> 
+					<outputDirectory>${project.build.directory}/lib</outputDirectory> 
+					<excludeTransitive>false</excludeTransitive> 
+					<stripVersion>false</stripVersion> 
+				</configuration> 
+			</plugin>
+ 			
+			<plugin>  
+			    <artifactId>maven-antrun-plugin</artifactId>  
+			    <executions>  
+			        <execution>  
+			            <phase>package</phase>  
+			            <goals>  
+			                <goal>run</goal>  
+			            </goals>  
+			            <configuration>  
+			                <tasks>
+			                
+							    <!--下面设置我自己的日期时间格式-->
+							    <tstamp prefix="my">
+							        <format property="day" pattern="yyyy-MM-dd"/>
+							        <format property="time" pattern="HH:mm:ss"/>
+							        <format property="dt" pattern="yyyyMMddHHmmssSSS"/>
+							    </tstamp>
+			                
+			                	<!-- 创建web工程 -->
+								<copy todir="${project.build.directory}/platform-web-${my.dt}/.settings">
+			                    	<fileset dir="../../../pkg/platform-web/.settings"/>
+			                    </copy>
+								<copy todir="${project.build.directory}/platform-web-${my.dt}">
+			                    	<fileset dir="../../../pkg/platform-web/">
+			                    		<include name="**/.classpath"/>
+			                    		<include name="**/.project"/>
+			                    	</fileset>	
+			                    </copy>
+						   		<copy todir="${project.build.directory}/platform-web-${my.dt}/resources/conf">
+						        	<fileset dir="${project.build.directory}/classes/conf"/>
+						        </copy>
+						        <copy todir="${project.build.directory}/platform-web-${my.dt}/resources/template">
+						        	<fileset dir="${project.build.directory}/classes/template"/>
+						        </copy>
+			                    <mkdir dir="${project.build.directory}/platform-web-${my.dt}/src"/>
+			                    <copy todir="${project.build.directory}/platform-web-${my.dt}/web/WEB-INF">
+			                    	<fileset dir="src/main/webapp/WEB-INF">
+			                    		<include name="**/web.xml"/>
+			                    	</fileset>
+			                    </copy>
+			                    <!-- 创建web工程 -->
+			                    
+			                	<!-- 创建jar -->
+						        <copy todir="${project.build.directory}/${project.build.finalName}-${my.dt}/WEB-INF/classes/conf">
+						        	<fileset dir="${project.build.directory}/classes/conf"/>
+						        </copy>
+						        <copy todir="${project.build.directory}/${project.build.finalName}-${my.dt}/WEB-INF/classes/template">
+						        	<fileset dir="${project.build.directory}/classes/template"/>
+						        </copy>
+						    	<copy todir="${project.build.directory}/${project.build.finalName}-${my.dt}/WEB-INF">
+			                    	<fileset dir="src/main/webapp/WEB-INF">
+			                    		<include name="**/web.xml"/>
+			                    	</fileset>
+			                    </copy>
+			                    <copy todir="${project.build.directory}/classes/META-INF/resources">
+			                    	<fileset dir="src/main/webapp"/>
+			                    </copy>
+			                   	<!--<exec executable="cmd.exe" dir="../../../pkg/compress">  
+						            <arg value="/c"/>
+						            <arg value="run.bat"/>
+						        </exec>
+			                   	<copy todir="${project.build.directory}/classes/META-INF/resources" overwrite="true">
+			                    	<fileset dir="../../../pkg/compress/dist"/>
+			                    </copy>-->
+			                    <delete file="${project.build.directory}/classes/META-INF/resources/WEB-INF/web.xml"/>
+			                    <delete dir="${project.build.directory}/classes/conf"/>
+			                    <delete dir="${project.build.directory}/classes/template"/>
+								<property name="jarfilename" value="${project.build.directory}/${project.build.finalName}-${my.dt}.jar"/>
+								<jar jarfile="${jarfilename}" basedir="${project.build.directory}/classes"/> 
+								<!-- 创建jar -->
+								
+								<!-- 创建jar库 -->
+			                    <copy todir="${project.build.directory}/lib">
+			                    	<fileset dir="${project.build.directory}">
+			                    		<include name="${project.build.finalName}-${my.dt}.jar"/>
+			                    	</fileset>
+			                    </copy>
+			                    <!-- 创建jar库 -->
+			                    
+			                    <!-- 创建war -->
+								<war destfile="${project.build.directory}/${project.build.finalName}-${my.dt}.war" webxml="${project.build.directory}/${project.build.finalName}-${my.dt}/WEB-INF/web.xml">  
+						            <!-- 将非jar和非class文件拷贝到war包的对应路径下。      -->
+						            <fileset dir="${project.build.directory}/${project.build.finalName}-${my.dt}"> 
+						                <include name="**/**.*"/>
+						            </fileset>
+						            <!-- 将jar和class文件拷贝到war包的对应路径下。 -->  
+						            <lib dir="${project.build.directory}/lib"/>  
+						        </war>
+						        <!-- 创建war -->
+						        
+						        <!-- 创建web工程，复制jar库 -->
+								<copy todir="${project.build.directory}/platform-web-${my.dt}/web/WEB-INF/lib">
+			                    	<fileset dir="${project.build.directory}/lib"/>			                    
+			                    </copy>
+			                    <!-- 创建web工程，复制jar库 -->
+			                </tasks>  
+			            </configuration>  
+			        </execution>  
+			    </executions>  
+			</plugin>
+			
+			<!--
+			<plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                
+                <configuration>
+                    <baseImage>docker.io/davidcaste/alpine-tomcat</baseImage>
+                    <entryPoint>["/opt/tomcat/bin/catalina.sh", "run"]</entryPoint>
+                    
+                    <imageName>${docker.repostory}/${project.build.finalName}</imageName>
+                    <imageTags>
+                        <imageTag>${maven.build.timestamp}</imageTag>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    
+			        <dockerHost>http://192.168.3.206:2375</dockerHost>
+                    
+                    <resources>
+                        <resource>
+                            <targetPath>/opt/tomcat/webapps/</targetPath>
+                            <directory>${project.build.directory}</directory>
+             				<include>${project.build.finalName}.war</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+            -->
+		</plugins>
+	</build>
+</project>

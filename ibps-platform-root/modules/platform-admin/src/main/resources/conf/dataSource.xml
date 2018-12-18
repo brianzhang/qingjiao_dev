@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSources>
+  <dataSource>
+    <name>def</name>
+    <alias>dataSource_default</alias>
+	
+	<dbType>mysql</dbType>
+  	<driver>com.mysql.jdbc.Driver</driver>
+
+  <driverUrl>jdbc:mysql://127.0.0.1:3306/new-grad?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+     <user>root</user>
+     <password>root</password>
+
+
+      <!-- 	<dbType>mysql</dbType>
+            <driver>com.mysql.jdbc.Driver</driver>-->
+<!--
+	<driverUrl>jdbc:mysql://202.118.177.98:3306/grad?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+-->
+       <!--<driverUrl>jdbc:mysql://202.118.177.98:3306/grad-pg4?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+         <user>root</user>
+         <password>Heu_530530</password>-->
+     <!--    <dbType>mysql</dbType>
+         <driver>com.mysql.jdbc.Driver</driver>-->
+	
+    
+    <status>actived</status>
+    <isDefault>true</isDefault>
+    <variables>
+      <testOnBorrow>false</testOnBorrow>
+      <testWhileIdle>true</testWhileIdle>
+      <validationQuery>select 1 from  IBPS_PARTY_USER</validationQuery>
+      <maxPoolPreparedStatementPerConnectionSize>20</maxPoolPreparedStatementPerConnectionSize>
+      <removeAbandonedTimeout>1800</removeAbandonedTimeout>
+      <testOnReturn>false</testOnReturn>
+      <maxActive>20</maxActive>
+      <logAbandoned>true</logAbandoned>
+      <poolPreparedStatements>true</poolPreparedStatements>
+      <minIdle>3</minIdle>
+      <maxWait>3600000</maxWait>
+      <removeAbandoned>true</removeAbandoned>
+      <timeBetweenEvictionRunsMillis>3600000</timeBetweenEvictionRunsMillis>
+      <minEvictableIdleTimeMillis>300000</minEvictableIdleTimeMillis>
+      <initialSize>3</initialSize>
+      <filters>stat</filters>
+    </variables>
+  </dataSource>
+  
+<dataSource>
+    <name>mysql</name>
+    <alias>mysql</alias>
+
+ 	<dbType>mysql</dbType>
+  	<driver>com.mysql.jdbc.Driver</driver>
+	<driverUrl>jdbc:mysql://127.0.0.1:3306/ibps_171218?useUnicode=true&amp;characterEncoding=utf-8</driverUrl>
+    <user>root</user>
+    <password></password>
+    
+    <status>actived</status>
+    <isDefault>false</isDefault>
+    <variables>
+      <testOnBorrow>false</testOnBorrow>
+      <testWhileIdle>true</testWhileIdle>
+      <validationQuery>select 1 from  IBPS_PARTY_USER</validationQuery>
+      <maxPoolPreparedStatementPerConnectionSize>20</maxPoolPreparedStatementPerConnectionSize>
+      <removeAbandonedTimeout>1800</removeAbandonedTimeout>
+      <testOnReturn>false</testOnReturn>
+      <maxActive>20</maxActive>
+      <logAbandoned>true</logAbandoned>
+      <poolPreparedStatements>true</poolPreparedStatements>
+      <minIdle>3</minIdle>
+      <maxWait>3600000</maxWait>
+      <removeAbandoned>true</removeAbandoned>
+      <timeBetweenEvictionRunsMillis>3600000</timeBetweenEvictionRunsMillis>
+      <minEvictableIdleTimeMillis>300000</minEvictableIdleTimeMillis>
+      <initialSize>3</initialSize>
+      <filters>stat</filters>
+    </variables>
+  </dataSource>
+  
+</dataSources>

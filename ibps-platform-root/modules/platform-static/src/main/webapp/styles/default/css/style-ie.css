@@ -1,0 +1,98 @@
+/* a few ie8/9 specific changes */
+.navbar .navbar-inner , .navbar .btn-navbar {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+.dropdown-menu li > a,
+.dropdown-submenu > a  {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+.btn {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+.progress , .progress .bar {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+
+/* following is for ie8 only */
+@media \0screen {
+
+html {
+ /* to fix it when inside iframe */
+ position: absolute;
+ width: 100%;
+}
+
+.sidebar-fixed:before {
+ left: 0;
+}
+/* it doesn't show up in ie8, so let's make it visible at least when inside .container */
+.sidebar .nav-list > li:before {
+	z-index: 4444;
+	left: -3px;
+}
+
+
+
+input[type=checkbox].ibps , input[type=radio].ibps,
+label input[type=checkbox].ibps , label input[type=radio].ibps,
+input[type=checkbox].ibps.ibps-switch , input[type=radio].ibps.ibps-switch,
+label input[type=checkbox].ibps.ibps-switch , label input[type=radio].ibps.ibps-switch 
+ {
+	position: static !important;
+	width: auto !important;
+	height: auto !important;
+	z-index: auto !important;
+}
+
+input[type=checkbox].ibps + .lbl, input[type=radio].ibps + .lbl,
+input[type=checkbox].ibps ~ .lbl, input[type=radio].ibps ~ .lbl {
+	min-height: auto !important;
+	min-width: auto !important;
+	width: auto !important;
+	height: auto !important;
+	position: static !important;
+}
+input[type=checkbox].ibps.ibps-switch  {
+	width: auto !important;
+}
+input[type=checkbox].ibps.ibps-switch + .lbl,
+input[type=checkbox].ibps.ibps-switch ~ .lbl {
+	margin: 0 !important;
+	min-height: auto !important;
+}
+.checkbox label input.ibps[type="checkbox"] + .lbl,
+.radio label input.ibps[type="radio"] + .lbl,
+.checkbox label input.ibps[type="checkbox"] ~ .lbl,
+.radio label input.ibps[type="radio"] ~ .lbl {
+	margin-left: auto;
+}
+
+
+[class*="input-"] {
+	max-width: none !important;
+}
+
+.radio-inline {
+	padding-left: 15px !important;
+}
+
+.checkbox-inline {
+	padding-left: 15px !important;
+}
+
+
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  display: none;
+}
+
+
+
+ .btn-group > .btn-app:first-child {
+	margin-right: 24px;
+ }
+ .btn-group > .btn-app.dropdown-toggle:first-child {
+	margin-right: auto;
+ }
+
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.test.demo.persistence.entity.UrlFormPo">
+	<resultMap id="UrlFormPo" type="com.lc.ibps.test.demo.persistence.entity.UrlFormPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="text" column="TEXT_" jdbcType="VARCHAR"/>
+		<result property="textarea" column="TEXTAREA_" jdbcType="VARCHAR"/>
+		<result property="number" column="NUMBER_" jdbcType="NUMERIC"/>
+		<result property="hide" column="HIDE_" jdbcType="VARCHAR"/>
+		<result property="time" column="TIME_" jdbcType="TIMESTAMP"/>
+		<result property="editor" column="EDITOR_" jdbcType="CLOB"/>
+		<result property="radio" column="RADIO_" jdbcType="VARCHAR"/>
+		<result property="checkBox" column="CHECK_BOX_" jdbcType="VARCHAR"/>
+		<result property="select" column="SELECT_" jdbcType="VARCHAR"/>
+		<result property="dic" column="DIC_" jdbcType="VARCHAR"/>
+		<result property="autoNum" column="AUTO_NUM_" jdbcType="VARCHAR"/>
+		<result property="att" column="ATT_" jdbcType="VARCHAR"/>
+		<result property="selector" column="SELECTOR_" jdbcType="VARCHAR"/>
+		<result property="customDialog" column="CUSTOM_DIALOG_" jdbcType="VARCHAR"/>
+		<result property="add" column="ADD_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,TEXT_,TEXTAREA_,NUMBER_,HIDE_,TIME_,EDITOR_,RADIO_,CHECK_BOX_,SELECT_,DIC_,AUTO_NUM_,ATT_,SELECTOR_,CUSTOM_DIALOG_,ADD_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormPo">
+		INSERT INTO DEMO_URL_FORM
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR}, #{textarea,jdbcType=VARCHAR}, #{number,jdbcType=NUMERIC}, #{hide,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{editor,jdbcType=CLOB}, #{radio,jdbcType=VARCHAR}, #{checkBox,jdbcType=VARCHAR}, #{select,jdbcType=VARCHAR}, #{dic,jdbcType=VARCHAR}, #{autoNum,jdbcType=VARCHAR}, #{att,jdbcType=VARCHAR}, #{selector,jdbcType=VARCHAR}, #{customDialog,jdbcType=VARCHAR}, #{add,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="UrlFormPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FORM 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="UrlFormPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FORM
+		<where>
+			<if test="whereSql!=null">
+				${whereSql}
+			</if>
+		</where>
+		<if test="orderBySql!=null">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="orderBySql==null">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="UrlFormPo">
+		SELECT <include refid="columns"/> FROM DEMO_URL_FORM
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.test.demo.persistence.entity.UrlFormPo">
+		UPDATE DEMO_URL_FORM SET
+		TEXT_=#{text,jdbcType=VARCHAR},
+		TEXTAREA_=#{textarea,jdbcType=VARCHAR},
+		NUMBER_=#{number,jdbcType=NUMERIC},
+		HIDE_=#{hide,jdbcType=VARCHAR},
+		TIME_=#{time,jdbcType=TIMESTAMP},
+		EDITOR_=#{editor,jdbcType=CLOB},
+		RADIO_=#{radio,jdbcType=VARCHAR},
+		CHECK_BOX_=#{checkBox,jdbcType=VARCHAR},
+		SELECT_=#{select,jdbcType=VARCHAR},
+		DIC_=#{dic,jdbcType=VARCHAR},
+		AUTO_NUM_=#{autoNum,jdbcType=VARCHAR},
+		ATT_=#{att,jdbcType=VARCHAR},
+		SELECTOR_=#{selector,jdbcType=VARCHAR},
+		CUSTOM_DIALOG_=#{customDialog,jdbcType=VARCHAR},
+		ADD_=#{add,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM DEMO_URL_FORM 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

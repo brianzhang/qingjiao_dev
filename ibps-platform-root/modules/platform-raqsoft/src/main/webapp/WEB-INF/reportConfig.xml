@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<reportConfig>
+    <config>
+      <name>logConfig</name>
+      <value>/WEB-INF/runqianReportLog.properties</value>
+    </config>
+    <config>
+      <name>license</name>
+      <value>/WEB-INF/classes/conf/runqianWindowServer.lic</value>
+    </config>
+    <config>
+      <name>reportFileHome</name>
+      <value>/reportFiles</value>
+    </config>
+    <!-- 配置文件中第一个配置为即时报表的主配置 -->
+	<jdbc-ds-configs>
+		<jdbc-ds-config>
+			<name>druid</name>
+			<db-type>MYSQL</db-type>
+			<!--<connection-url>jdbc:mysql://172.16.0.127:3306/gradback0413?useUnicode=true&amp;characterEncoding=utf-8</connection-url>-->
+			<!--<driver-class>com.mysql.jdbc.Driver</driver-class>-->
+			<!--<user-name>user124</user-name>-->
+			<!--<password>123</password>-->
+           <!-- <connection-url>jdbc:mysql://202.118.177.98:3306/grad-pg4?useUnicode=true&amp;characterEncoding=utf-8</connection-url>
+            <driver-class>com.mysql.jdbc.Driver</driver-class>
+            <user-name>root</user-name>
+            <password>Heu_530530</password>-->
+
+            <connection-url>jdbc:mysql://172.16.0.129:3309/gradback2?useUnicode=true&amp;characterEncoding=utf-8</connection-url>
+            <driver-class>com.mysql.jdbc.Driver</driver-class>
+            <user-name>user124</user-name>
+            <password>123</password>
+
+			<db-charset>utf-8</db-charset>
+			<client-charset>utf-8</client-charset>
+			<extend-properties></extend-properties>
+		</jdbc-ds-config>
+	</jdbc-ds-configs>
+	<!-- <config> -->
+	<!-- <name>JNDIPrefix</name> -->
+	<!-- <value>java:comp/env</value> -->
+	<!-- </config> -->
+	<!-- <config> -->
+	<!-- <name>dataSource</name> -->
+	<!-- <value></value> -->
+	<!-- </config> -->
+    <config>
+      <name>dataSource</name>
+      <value></value>
+    </config>
+	<config>
+      <name>jspCharset</name>
+      <value>utf-8</value>
+    </config>
+	<config>
+      <name>alwaysReloadDefine</name>
+      <value>yes</value>
+    </config>
+    <config>
+      <name>cachedParamsTimeout</name>
+      <value>120</value>
+    </config>
+    <config>
+      <name>cachedReportDir</name>
+      <value>E:\work\report\cached</value>
+    </config>
+    <config>
+      <name>cachedIdPrefix</name>
+      <value>A</value>
+    </config>
+    <config>
+      <name>cachedReportTimeout</name>
+      <value>120</value>
+    </config>
+    <config>
+      <name>maxCellNum</name>
+      <value>100000</value>
+    </config>
+    <config>
+      <name>maxConcurrentForReport</name>
+      <value>100</value>
+    </config>
+    <config>
+      <name>maxWaitForReport</name>
+      <value>10</value>
+    </config>
+    <config>
+      <name>maxWaitTimeForReport</name>
+      <value>300</value>
+    </config>
+    <config>
+      <name>appUrlPrefix</name>
+      <value></value>
+    </config>
+	<config>
+      <name>windir</name>
+      <value></value>
+    </config>
+    <config>
+      <name>errorPage</name>
+      <value>/myErrorPage.jsp</value>
+    </config>
+	    <config>
+      <name>webServerType</name>
+      <value></value>
+    </config>
+    <config> 
+      <name>jreInstallName</name> 
+      <value>/report/jar/jre-7u25-windows-i586.exe#Version=1,7,0,0</value> 
+    </config> 
+    <config> 
+      <name>jreVersion</name> 
+      <value>1.7</value> 
+    </config> 
+    <config>
+      <name>clusterMember</name>
+      <value></value>
+    </config>
+    <config>
+      <name>isCachedFileShared</name>
+      <value></value>
+    </config>
+    <config>
+      <name>olapGraphProfile</name>
+      <value></value>
+    </config>
+    <config>
+      <name>olapDir</name>
+      <value></value>
+    </config>
+   <config> 
+      <name>numberFormatClass</name> 
+      <value></value> 
+   </config> 
+    <config> 
+      <name>defaultCellNum</name> 
+      <value></value> 
+    </config> 
+    <config> 
+      <name>dsRowLimitEnabled</name> 
+      <value>no</value> 
+   </config> 
+   <config> 
+      <name>dsMaxRowNum</name> 
+      <value></value> 
+   </config>
+</reportConfig>
