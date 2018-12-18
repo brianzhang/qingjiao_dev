@@ -5,7 +5,7 @@ import java.util.Date;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import com.lc.ibps.base.framework.persistence.entity.AbstractPo;
-import scala.reflect.internal.Trees;
+
 
 
 /**

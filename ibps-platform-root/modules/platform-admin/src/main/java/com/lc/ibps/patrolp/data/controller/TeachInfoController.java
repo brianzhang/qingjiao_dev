@@ -318,7 +318,7 @@ public class TeachInfoController extends GenericController{
 	 *
 	 * @param request
 	 * @param response
-	 * @param  teachInfo
+	 //* @param  teachInfo
 	 * @throws Exception
 	 */
 	@RequestMapping("save")

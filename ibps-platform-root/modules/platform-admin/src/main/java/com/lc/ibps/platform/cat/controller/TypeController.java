@@ -147,7 +147,7 @@ public class TypeController extends GenericController {
 	 *
 	 * @param request
 	 * @param response
-	 * @param subsystem
+	 //* @param subsystem
 	 * @throws Exception
 	 */
 	@RequestMapping("save")
@@ -180,7 +180,7 @@ public class TypeController extends GenericController {
 		
 		try {
 			Type type = typeRepository.newInstance();
-			resultMsg = type.saveType(typeVo, ContextUtil.getCurrentUserId());
+			//resultMsg = type.saveType(typeVo, ContextUtil.getCurrentUserId());
 			writeResultMessage(response.getWriter(), resultMsg, ResultMessage.SUCCESS);
 		} catch (Exception e) {
 			resultMsg = "对分类操作失败:";
@@ -214,6 +214,7 @@ public class TypeController extends GenericController {
 		String id = RequestUtil.getString(request, "id");
 		String curUserId = ContextUtil.getCurrentUserId();
 		List<TypePo> typeList = typeRepository.getOwnerByParentId(id,curUserId);
+
 		return getAutoView().addObject("typeList", typeList);
 	}
 

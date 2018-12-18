@@ -9,6 +9,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import com.lc.ibps.auth.utils.SubSystemUtil;
 import org.dom4j.Document;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,7 @@ import com.lc.ibps.api.base.model.User;
 import com.lc.ibps.api.base.query.FieldSort;
 import com.lc.ibps.api.base.query.QueryFilter;
 import com.lc.ibps.api.base.query.QueryOP;
-import com.lc.ibps.auth.utils.SubSystemUtil;
+//import com.lc.ibps.auth.utils.SubSystemUtil;
 import com.lc.ibps.base.core.entity.ResultMessage;
 import com.lc.ibps.base.core.util.BeanUtils;
 import com.lc.ibps.base.core.util.Dom4jUtil;
@@ -235,7 +237,7 @@ public class ResourcesController extends GenericController {
 	 * 
 	 * @param request
 	 * @param response
-	 * @param resources
+	 //* @param resources
 	 * @throws Exception
 	 */
 	@RequestMapping("save")
@@ -387,7 +389,7 @@ public class ResourcesController extends GenericController {
 	 * 
 	 * 保存资源排序
 	 *
-	 * @param ids
+	// * @param ids
 	 * @return
 	 * @throws Exception
 	 */
@@ -408,9 +410,9 @@ public class ResourcesController extends GenericController {
 	 * 
 	 * 保存资源移动
 	 *
-	 * @param id
+	 //* @param id
 	 *            要移动的菜单
-	 * @param destinationId
+	// * @param destinationId
 	 *            移动到菜单的位置
 	 * @return
 	 * @throws Exception

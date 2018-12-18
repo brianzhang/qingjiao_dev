@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import com.lc.ibps.auth.utils.SubSystemUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lc.ibps.api.base.model.User;
 import com.lc.ibps.api.base.query.QueryFilter;
-import com.lc.ibps.auth.utils.SubSystemUtil;
+
 import com.lc.ibps.base.core.entity.ResultMessage;
 import com.lc.ibps.base.core.util.string.StringUtil;
 import com.lc.ibps.base.framework.page.PageList;
@@ -112,7 +114,7 @@ public class DesktopMyLayoutController extends GenericController {
 	 *
 	 * @param request
 	 * @param response
-	 * @param subsystem
+	 //* @param subsystem
 	 * @throws Exception
 	 */
 	@RequestMapping("save")

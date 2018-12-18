@@ -13,12 +13,14 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hrbeu.heu.WordUtil;
 import com.lc.ibps.api.org.service.IPartyEntityService;
 import com.lc.ibps.bishe.groupuser.controller.GroupUserController;
 import com.lc.ibps.bishes.group.persistence.entity.GradGroupPo;
 import com.lc.ibps.bishes.group.repository.GradGroupRepository;
 import com.lc.ibps.bishes.groupuser.persistence.entity.GroupUserPo;
 import com.lc.ibps.bishes.groupuser.repository.GroupUserRepository;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -104,7 +106,7 @@ import com.utils.OrgUtil;
 import com.utils.freemarker.TemplateParseUtil;
 
 import ex.scala.utils4j.ExMap;
-import ex.scala.utils4j.WordUtil;
+
 import freemarker.template.TemplateException;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -780,14 +782,14 @@ public class UrlZhiYuanController extends GenericUploadController{
 				String[ ] tdPaths =null;
 				for (PartyEntityTreePo team:pos) {
 					String tdPath = new String();
-					if(team.id.equals(fzrPositions)) {
-						tdPath = team.path;
+					if(team.getId().equals(fzrPositions)) {
+						tdPath = team.getPath();
 						 tdPaths = tdPath.split("\\.");//用.分隔开，其中taPaths[1]就是团队i
 					}
 				}
 				for (PartyEntityTreePo team:pos) {
-					if(team.parentId!=null&&team.parentId.equals(tdPaths[1])){
-						map.put(team.id,team.id);//找到团队下的小组的id
+					if(team.getParentId()!=null&&team.getParentId().equals(tdPaths[1])){
+						map.put(team.getId(),team.getId());//找到团队下的小组的id
 					}
 				}
 
@@ -1579,7 +1581,7 @@ public class UrlZhiYuanController extends GenericUploadController{
                 str=str.replaceAll(">", "&gt;");  
                 urlZhiYuanPo.setZyckzl(str);
     		}
-    		    byte[] fbs = WordUtil.fmWord(urlZhiYuanPo , ctx+"/WordWorkspace/ftl/", "template.ftl");	
+    		    byte[] fbs = WordUtil.fmWord(urlZhiYuanPo , ctx+"/WordWorkspace/ftl/", "template.ftl");
         	    String litishufile = urlZhiYuanPo.getLitishufile();
              	String xh = urlZhiYuanPo.getXh();
              	String name = urlZhiYuanPo.getName();

@@ -68,7 +68,8 @@ public class EmployeeDicQueryServiceImpl implements EmployeeDicQueryService{
 			for(TypePo t:types){
 				for(EmployeeDicPo e:pos){
 					if(t.getId().equals(e.getDicId())){
-						t.setChecked(true);
+						//t.setChecked(true);
+
 					}
 				}
 			}

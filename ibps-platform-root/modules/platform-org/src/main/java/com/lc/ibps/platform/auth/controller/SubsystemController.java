@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import com.lc.ibps.auth.utils.SubSystemUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lc.ibps.api.auth.service.ISubSysQueryService;
 import com.lc.ibps.api.auth.service.ISubSysService;
 import com.lc.ibps.api.base.query.QueryFilter;
-import com.lc.ibps.auth.utils.SubSystemUtil;
+//import com.lc.ibps.auth.utils.SubSystemUtil;
 import com.lc.ibps.base.core.entity.ResultMessage;
 import com.lc.ibps.base.core.exception.BaseException;
 import com.lc.ibps.base.core.util.AppUtil;
@@ -191,7 +193,7 @@ public class SubsystemController extends GenericController {
 	 * 
 	 * @param request
 	 * @param response
-	 * @param subsystem
+	 //* @param subsystem
 	 * @throws Exception
 	 */
 	@RequestMapping("save")

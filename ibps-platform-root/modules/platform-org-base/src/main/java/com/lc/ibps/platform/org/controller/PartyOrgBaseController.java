@@ -569,13 +569,13 @@ public class PartyOrgBaseController extends GenericController {
 		List<PartyEntityTreePo> result = new ArrayList<PartyEntityTreePo>();
 		if(BeanUtils.isNotEmpty(ids)){
 			for (PartyEntityTreePo partyEntityPo : partyEntityList) {
-				if(ids.contains(partyEntityPo.getId())||partyEntityPo.parentId==null){
+				if(ids.contains(partyEntityPo.getId())||partyEntityPo.getParentId()==null){
 					result.add(partyEntityPo);
 				}
 			}
 			//不以树结构显示
 			for (PartyEntityTreePo partyEntityPo : result) {
-				if(partyEntityPo.parentId==null) continue;
+				if(partyEntityPo.getParentId()==null) continue;
 				partyEntityPo.setParentId("0");
 			}
 		}else{

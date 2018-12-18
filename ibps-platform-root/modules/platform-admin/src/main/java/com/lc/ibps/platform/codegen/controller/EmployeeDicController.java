@@ -161,7 +161,7 @@ public class EmployeeDicController extends GenericController{
 	 *
 	 * @param request
 	 * @param response
-	 * @param  employeeDic
+	 //* @param  employeeDic
 	 * @throws Exception
 	 */
 	@RequestMapping("save")
@@ -209,8 +209,8 @@ public class EmployeeDicController extends GenericController{
 	public List<TypePo> dicTree(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//判断用户角色
 		String userId = RequestUtil.getString(request, "userId");		
-		List<TypePo> raw = typeRepository.getDicTree();
-		
+		//List<TypePo> raw = typeRepository.getDicTree();
+
 		
 		//声明需要显示的typeKey
 		List<String> typeKeys = new ArrayList();
@@ -227,9 +227,10 @@ public class EmployeeDicController extends GenericController{
 				break;
 			default:break;
 		}
-		List<TypePo> types = filtTypes( raw ,request , typeKeys);
+		//List<TypePo> types = filtTypes( raw ,request , typeKeys);
 		
-		return TypePo.fromJsonArrayString(employeeDicQueryService.dicTree(userId, types));
+		//return TypePo.fromJsonArrayString(employeeDicQueryService.dicTree(userId, types));
+		return null;
 	}
 	
 	/**

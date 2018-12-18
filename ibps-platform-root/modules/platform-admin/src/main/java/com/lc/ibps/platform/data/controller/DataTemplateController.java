@@ -373,11 +373,12 @@ public class DataTemplateController extends GenericController {
 		String formKey = RequestUtil.getString(request, "key");
 		String id = RequestUtil.getString(request, "id");
 		try {
-			boolean isExists = dataTemplateRepository.isKeyExists(formKey, id);
+			/*boolean isExists = dataTemplateRepository.isKeyExists(formKey, id);
+
 			if (isExists)
 				message = new ResultMessage(ResultMessage.ERROR, "数据模版Key已经存在");
 			else
-				message = new ResultMessage(ResultMessage.SUCCESS);
+				message = new ResultMessage(ResultMessage.SUCCESS);*/
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			message = new ResultMessage(ResultMessage.FAIL, "判断数据模版Key是否存在失败", e.getMessage());
@@ -390,7 +391,7 @@ public class DataTemplateController extends GenericController {
 	 *
 	 * @param request
 	 * @param response
-	 * @param dataTemplate
+	 //* @param dataTemplate
 	 * @throws Exception
 	 */
 	@RequestMapping("save")
@@ -399,7 +400,7 @@ public class DataTemplateController extends GenericController {
 		String data = RequestUtil.getString(request, "data");
 		try {
 			DataTemplatePo dataTemplatePo = DataTemplateBuilder.build(data);
-			boolean isExists = dataTemplateRepository.isKeyExists(dataTemplatePo.getKey(), dataTemplatePo.getId());
+			/*boolean isExists = dataTemplateRepository.isKeyExists(dataTemplatePo.getKey(), dataTemplatePo.getId());
 			if (isExists)
 				message = new ResultMessage(ResultMessage.ERROR, "数据模版Key【" + dataTemplatePo.getKey() + "】已经存在");
 			else {
@@ -408,7 +409,7 @@ public class DataTemplateController extends GenericController {
 				dataTemplate.save();
 				message = new ResultMessage(ResultMessage.SUCCESS, "保存数据模版成功");
 				message.addVariable("id", dataTemplate.getId());
-			}
+			}*/
 		} catch (Exception e) {
 			message = new ResultMessage(ResultMessage.FAIL, "对数据模版操作失败，" + e.getMessage());
 			logger.error("对数据模版操作失败，" + e.getMessage(), e);

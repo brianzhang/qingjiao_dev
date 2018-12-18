@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.utils.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,15 +77,12 @@ import com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo;
 import com.lc.ibps.urlZhiYuan.urlZhiYuant.repository.UrlZhiYuanRepository;
 import com.sun.star.lib.uno.environments.remote.Job;
 import com.sun.xml.bind.CycleRecoverable.Context;
-import com.utils.AdminUtil;
-import com.utils.Constants;
-import com.utils.DateUtil;
-import com.utils.FileUtil;
-import com.utils.SDateUtil;
+
 import java.net.URLDecoder;
 import net.lingala.zip4j.util.Zip4jUtil;
 import net.minidev.json.JSONArray;
 import net.sf.json.JSONObject;
+import com.utils.SDateUtil;
 
 /**
  * 教师课程 控制类
@@ -714,7 +712,7 @@ public class CrsTchController extends GenericController implements Constants {
 	 *
 	 * @param request
 	 * @param response
-	 * @param crsTch
+	 //* @param crsTch
 	 * @throws IOException
 	 * @throws Exception
 	 */

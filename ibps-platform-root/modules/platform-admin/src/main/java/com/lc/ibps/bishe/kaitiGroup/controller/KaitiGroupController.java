@@ -301,7 +301,7 @@ public class KaitiGroupController extends GenericController{
 	 *
 	 * @param request
 	 * @param response
-	 * @param  kaitiGroup
+	 //* @param  kaitiGroup
 	 * @throws Exception
 	 */
 	@RequestMapping("save")

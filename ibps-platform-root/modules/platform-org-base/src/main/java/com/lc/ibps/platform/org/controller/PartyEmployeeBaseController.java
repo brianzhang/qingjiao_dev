@@ -380,8 +380,8 @@ public class PartyEmployeeBaseController  extends GenericController{
 	 	
 	 	List<PartyUserGroupPo> empGroupList = 
 	 			PartyUserGroupPo.fromJsonArrayString(groupService.findByUserIdJson(id));
-	 	
-	 	PartyUserGroupBuilder.build(empGroupList,id);
+		//PartyUserGroupBuilder.build(empGroupList,id);
+	 	PartyUserGroupBuilder.build(empGroupList);
 	 	
 	 	logger.debug("com.lc.ibps.platform.org.controller.PartyEmployeeController.empGroupListJson()"
 	 			+ "--->"

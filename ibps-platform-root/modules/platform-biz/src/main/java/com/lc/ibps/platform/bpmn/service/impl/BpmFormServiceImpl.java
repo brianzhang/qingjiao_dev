@@ -395,7 +395,7 @@ public class BpmFormServiceImpl implements BpmFormService {
 	
 	/**
 	 * 获取全局的表单信息
-	 * @param instance
+	 //* @param instance
 	 * @return
 	 */
 	private IForm getGlobal(String defId){
@@ -453,5 +453,7 @@ public class BpmFormServiceImpl implements BpmFormService {
 				cmd.setFormOptions(FormDefDataBuilder.buildFormOptionData(formDefPo,cmd.getBusData()));
 		}
 	}
+
+
 
 }

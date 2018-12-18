@@ -213,7 +213,7 @@ public class ScheduleInfoController extends GenericController{
 	 *
 	 * @param request
 	 * @param response
-	 * @param  scheduleInfo
+	// * @param  scheduleInfo
 	 * @throws Exception
 	 */
 	@RequestMapping("save")
