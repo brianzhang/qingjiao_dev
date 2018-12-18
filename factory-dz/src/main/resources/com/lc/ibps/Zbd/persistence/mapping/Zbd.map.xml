@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Zbd.persistence.entity.ZbdPo">
+	<resultMap id="ZbdPo" type="com.lc.ibps.pgs.Zbd.persistence.entity.ZbdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="demand_id" column="DEMAND_ID" jdbcType="VARCHAR"/>
+		<result property="zhi_biao_dian_id_" column="ZHI_BIAO_DIAN_ID_" jdbcType="VARCHAR"/>
+		<result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+		<result property="history" column="HISTORY" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,DEMAND_ID,ZHI_BIAO_DIAN_ID_,CONTENT,HISTORY
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Zbd.persistence.entity.ZbdPo">
+		INSERT INTO T_ZBD
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{demand_id,jdbcType=VARCHAR}, #{zhi_biao_dian_id_,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{history,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ZbdPo">
+		SELECT <include refid="columns"/> FROM T_ZBD 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ZbdPo">
+		SELECT <include refid="columns"/> FROM T_ZBD
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ZbdPo">
+		SELECT <include refid="columns"/> FROM T_ZBD
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Zbd.persistence.entity.ZbdPo">
+		UPDATE T_ZBD SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		DEMAND_ID=#{demand_id,jdbcType=VARCHAR},
+		ZHI_BIAO_DIAN_ID_=#{zhi_biao_dian_id_,jdbcType=VARCHAR},
+		CONTENT=#{content,jdbcType=VARCHAR},
+		HISTORY=#{history,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZBD 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

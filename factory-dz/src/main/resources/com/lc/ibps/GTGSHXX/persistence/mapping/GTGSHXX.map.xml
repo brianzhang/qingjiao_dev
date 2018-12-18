@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.GTGSHXX.persistence.entity.GTGSHXXPo">
+	<resultMap id="GTGSHXXPo" type="com.lc.ibps.loans.GTGSHXX.persistence.entity.GTGSHXXPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="yyzzhm" column="YYZZHM" jdbcType="VARCHAR"/>
+		<result property="yyzznjsj" column="YYZZNJSJ" jdbcType="VARCHAR"/>
+		<result property="clsj" column="CLSJ" jdbcType="VARCHAR"/>
+		<result property="jyfw" column="JYFW" jdbcType="VARCHAR"/>
+		<result property="jyfs" column="JYFS" jdbcType="VARCHAR"/>
+		<result property="mdzh" column="MDZH" jdbcType="VARCHAR"/>
+		<result property="mddz" column="MDDZ" jdbcType="VARCHAR"/>
+		<result property="jygm" column="JYGM" jdbcType="VARCHAR"/>
+		<result property="jbzhkhx" column="JBZHKHX" jdbcType="VARCHAR"/>
+		<result property="jbzh" column="JBZH" jdbcType="VARCHAR"/>
+		<result property="jymj" column="JYMJ" jdbcType="VARCHAR"/>
+		<result property="glzhlx" column="GLZHLX" jdbcType="VARCHAR"/>
+		<result property="cyrs" column="CYRS" jdbcType="NUMERIC"/>
+		<result property="zcxs" column="ZCXS" jdbcType="VARCHAR"/>
+		<result property="yyyf" column="YYYF" jdbcType="VARCHAR"/>
+		<result property="ghjg" column="GHJG" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="hhrmc" column="HHRMC" jdbcType="VARCHAR"/>
+		<result property="zjlx" column="ZJLX" jdbcType="VARCHAR"/>
+		<result property="zjyxqx" column="ZJYXQX" jdbcType="VARCHAR"/>
+		<result property="zjhm" column="ZJHM" jdbcType="VARCHAR"/>
+		<result property="hjdz" column="HJDZ" jdbcType="VARCHAR"/>
+		<result property="khxb" column="KHXB" jdbcType="VARCHAR"/>
+		<result property="mz" column="MZ" jdbcType="VARCHAR"/>
+		<result property="lxdh" column="LXDH" jdbcType="VARCHAR"/>
+		<result property="hhfs" column="HHFS" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,YYZZHM,YYZZNJSJ,CLSJ,JYFW,JYFS,MDZH,MDDZ,JYGM,JBZHKHX,JBZH,JYMJ,GLZHLX,CYRS,ZCXS,YYYF,GHJG,BZ,HHRMC,ZJLX,ZJYXQX,ZJHM,HJDZ,KHXB,MZ,LXDH,HHFS
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.GTGSHXX.persistence.entity.GTGSHXXPo">
+		INSERT INTO T_GTGSHXXB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{yyzzhm,jdbcType=VARCHAR}, #{yyzznjsj,jdbcType=VARCHAR}, #{clsj,jdbcType=VARCHAR}, #{jyfw,jdbcType=VARCHAR}, #{jyfs,jdbcType=VARCHAR}, #{mdzh,jdbcType=VARCHAR}, #{mddz,jdbcType=VARCHAR}, #{jygm,jdbcType=VARCHAR}, #{jbzhkhx,jdbcType=VARCHAR}, #{jbzh,jdbcType=VARCHAR}, #{jymj,jdbcType=VARCHAR}, #{glzhlx,jdbcType=VARCHAR}, #{cyrs,jdbcType=NUMERIC}, #{zcxs,jdbcType=VARCHAR}, #{yyyf,jdbcType=VARCHAR}, #{ghjg,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR}, #{hhrmc,jdbcType=VARCHAR}, #{zjlx,jdbcType=VARCHAR}, #{zjyxqx,jdbcType=VARCHAR}, #{zjhm,jdbcType=VARCHAR}, #{hjdz,jdbcType=VARCHAR}, #{khxb,jdbcType=VARCHAR}, #{mz,jdbcType=VARCHAR}, #{lxdh,jdbcType=VARCHAR}, #{hhfs,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="GTGSHXXPo">
+		SELECT <include refid="columns"/> FROM T_GTGSHXXB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="GTGSHXXPo">
+		SELECT <include refid="columns"/> FROM T_GTGSHXXB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="GTGSHXXPo">
+		SELECT <include refid="columns"/> FROM T_GTGSHXXB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.GTGSHXX.persistence.entity.GTGSHXXPo">
+		UPDATE T_GTGSHXXB SET
+		YYZZHM=#{yyzzhm,jdbcType=VARCHAR},
+		YYZZNJSJ=#{yyzznjsj,jdbcType=VARCHAR},
+		CLSJ=#{clsj,jdbcType=VARCHAR},
+		JYFW=#{jyfw,jdbcType=VARCHAR},
+		JYFS=#{jyfs,jdbcType=VARCHAR},
+		MDZH=#{mdzh,jdbcType=VARCHAR},
+		MDDZ=#{mddz,jdbcType=VARCHAR},
+		JYGM=#{jygm,jdbcType=VARCHAR},
+		JBZHKHX=#{jbzhkhx,jdbcType=VARCHAR},
+		JBZH=#{jbzh,jdbcType=VARCHAR},
+		JYMJ=#{jymj,jdbcType=VARCHAR},
+		GLZHLX=#{glzhlx,jdbcType=VARCHAR},
+		CYRS=#{cyrs,jdbcType=NUMERIC},
+		ZCXS=#{zcxs,jdbcType=VARCHAR},
+		YYYF=#{yyyf,jdbcType=VARCHAR},
+		GHJG=#{ghjg,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		HHRMC=#{hhrmc,jdbcType=VARCHAR},
+		ZJLX=#{zjlx,jdbcType=VARCHAR},
+		ZJYXQX=#{zjyxqx,jdbcType=VARCHAR},
+		ZJHM=#{zjhm,jdbcType=VARCHAR},
+		HJDZ=#{hjdz,jdbcType=VARCHAR},
+		KHXB=#{khxb,jdbcType=VARCHAR},
+		MZ=#{mz,jdbcType=VARCHAR},
+		LXDH=#{lxdh,jdbcType=VARCHAR},
+		HHFS=#{hhfs,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_GTGSHXXB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

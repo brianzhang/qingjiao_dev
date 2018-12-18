@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.bishes.kaitiGroup.persistence.entity.KaitiGroupPo">
+	<resultMap id="KaitiGroupPo" type="com.lc.ibps.bishes.kaitiGroup.persistence.entity.KaitiGroupPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="tdid" column="TDID" jdbcType="VARCHAR"/>
+		<result property="daBianShiJian" column="DA_BIAN_SHI_JIAN_" jdbcType="TIMESTAMP"/>
+		<result property="daBianDeDian" column="DA_BIAN_DE_DIAN_" jdbcType="VARCHAR"/>
+		<result property="daBianXiaoZu" column="DA_BIAN_XIAO_ZU_" jdbcType="VARCHAR"/>
+		<result property="dbfzr" column="DBFZR" jdbcType="VARCHAR"/>
+		<result property="dbgroupId" column="DBGROUP_ID" jdbcType="VARCHAR"/>
+		<result property="dbfzrId" column="DBFZR_ID" jdbcType="VARCHAR"/>
+		<result property="ktsj" column="KTSJ" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,UPDATE_BY_,UPDATE_TIME_,TDID,DA_BIAN_SHI_JIAN_,DA_BIAN_DE_DIAN_,DA_BIAN_XIAO_ZU_,DBFZR,DBGROUP_ID,DBFZR_ID,KTSJ
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.bishes.kaitiGroup.persistence.entity.KaitiGroupPo">
+		INSERT INTO T_KTXZ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
+		 #{updateTime,jdbcType=TIMESTAMP}, #{tdid,jdbcType=VARCHAR}, #{daBianShiJian,jdbcType=TIMESTAMP},
+		  #{daBianDeDian,jdbcType=VARCHAR}, 
+		  #{daBianXiaoZu,jdbcType=VARCHAR},
+		 #{dbfzr,jdbcType=VARCHAR},
+		  #{dbgroupId,jdbcType=VARCHAR},
+		   #{dbfzrId,jdbcType=VARCHAR},
+		    #{ktsj,jdbcType=VARCHAR}
+		 )
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="KaitiGroupPo">
+		SELECT <include refid="columns"/> FROM T_KTXZ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	<select id="getByktGroupId" parameterType="java.lang.String" resultMap="KaitiGroupPo">
+		SELECT *
+		FROM T_KTXZ
+		WHERE
+		DBGROUP_ID=#{dbgroupid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="KaitiGroupPo">
+		SELECT <include refid="columns"/> FROM T_KTXZ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="KaitiGroupPo">
+		SELECT <include refid="columns"/> FROM T_KTXZ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.bishes.kaitiGroup.persistence.entity.KaitiGroupPo">
+		UPDATE T_KTXZ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		TDID=#{tdid,jdbcType=VARCHAR},
+		DA_BIAN_SHI_JIAN_=#{daBianShiJian,jdbcType=TIMESTAMP},
+		DA_BIAN_DE_DIAN_=#{daBianDeDian,jdbcType=VARCHAR},
+		DA_BIAN_XIAO_ZU_=#{daBianXiaoZu,jdbcType=VARCHAR},
+		DBFZR=#{dbfzr,jdbcType=VARCHAR},
+		DBGROUP_ID=#{dbgroupId,jdbcType=VARCHAR},
+		DBFZR_ID=#{dbfzrId,jdbcType=VARCHAR},
+		KTSJ=#{ktsj,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_KTXZ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.xinDaiLIiuCheng.liucheng.persistence.entity.XinDaiLiuChengPo">
+	<resultMap id="XinDaiLiuChengPo" type="com.lc.ibps.xinDaiLIiuCheng.liucheng.persistence.entity.XinDaiLiuChengPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="customer" column="CUSTOMER" jdbcType="VARCHAR"/>
+		<result property="zjlx" column="ZJLX" jdbcType="VARCHAR"/>
+		<result property="sfid" column="SFID" jdbcType="VARCHAR"/>
+		<result property="dklb" column="DKLB" jdbcType="VARCHAR"/>
+		<result property="wj" column="WJ" jdbcType="VARCHAR"/>
+		<result property="dkje" column="DKJE" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CUSTOMER,ZJLX,SFID,DKLB,WJ,DKJE
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.xinDaiLIiuCheng.liucheng.persistence.entity.XinDaiLiuChengPo">
+		INSERT INTO T_XDLC
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{customer,jdbcType=VARCHAR}, #{zjlx,jdbcType=VARCHAR}, #{sfid,jdbcType=VARCHAR}, #{dklb,jdbcType=VARCHAR}, #{wj,jdbcType=VARCHAR}, #{dkje,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="XinDaiLiuChengPo">
+		SELECT <include refid="columns"/> FROM T_XDLC 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdId"   parameterType="java.lang.String" resultMap="XinDaiLiuChengPo">
+		SELECT CUSTOMER,WJ FROM T_XDLC 
+		WHERE 
+		ID_=#{jdid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="XinDaiLiuChengPo">
+		SELECT <include refid="columns"/> FROM T_XDLC
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="XinDaiLiuChengPo">
+		SELECT <include refid="columns"/> FROM T_XDLC
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.xinDaiLIiuCheng.liucheng.persistence.entity.XinDaiLiuChengPo">
+		UPDATE T_XDLC SET
+		CUSTOMER=#{customer,jdbcType=VARCHAR},
+		ZJLX=#{zjlx,jdbcType=VARCHAR},
+		SFID=#{sfid,jdbcType=VARCHAR},
+		DKLB=#{dklb,jdbcType=VARCHAR},
+		WJ=#{wj,jdbcType=VARCHAR},
+		DKJE=#{dkje,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_XDLC 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

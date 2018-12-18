@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.grads.course.persistence.entity.CrsTchPo">
+	<resultMap id="CrsTchPo"
+		type="com.lc.ibps.grads.course.persistence.entity.CrsTchPo">
+		<id property="id" column="ID_CRS_TCH" jdbcType="VARCHAR" />
+		<result property="tchNum" column="TCH_NUM" jdbcType="VARCHAR" />
+		<result property="tchName" column="NAME_" jdbcType="VARCHAR" />
+		<result property="crsName" column="NAME" jdbcType="VARCHAR" />
+		<result property="crsNum" column="CRS_NUM" jdbcType="VARCHAR" />
+		<result property="term" column="TERM" jdbcType="VARCHAR" />
+		<result property="time" column="TIME" jdbcType="VARCHAR" />
+		<result property="location" column="LOCATION" jdbcType="VARCHAR" />
+		<result property="clazz" column="CLAZZ" jdbcType="VARCHAR" />
+		<result property="paramid" column="PARAMID" jdbcType="VARCHAR" />
+		<result property="startTime" column="START_TIME" jdbcType="TIMESTAMP" />
+		<result property="uniManage" column="UNI_MANAGE" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<sql id="columns">
+		ID_CRS_TCH,TCH_NUM,CRS_NUM,TERM,TIME,LOCATION,CLAZZ,PARAMID,START_TIME,UNI_MANAGE
+	</sql>
+
+	<insert id="create"
+		parameterType="com.lc.ibps.grads.course.persistence.entity.CrsTchPo">
+		INSERT INTO T_CRS_TCH
+		(
+		<include refid="columns" />
+		)
+		VALUES
+		(#{id,jdbcType=VARCHAR},
+		#{tchNum,jdbcType=VARCHAR},
+		#{crsNum,jdbcType=VARCHAR},
+		#{term,jdbcType=VARCHAR},
+		#{time,jdbcType=VARCHAR},
+		#{location,jdbcType=VARCHAR},
+		#{clazz,jdbcType=VARCHAR},
+		#{paramid,jdbcType=VARCHAR},
+		#{startTime,jdbcType=TIMESTAMP},
+		#{uniManage,jdbcType=VARCHAR})
+	</insert>
+
+	<select id="get" parameterType="java.lang.String" resultMap="CrsTchPo">
+		SELECT distinct
+		<include refid="columns" />
+		,NAME FROM T_CRS_TCH ,T_COURSE
+		WHERE
+		ID_CRS_TCH=#{id} AND NUM=CRS_NUM
+	</select>
+
+	<select id="getByCol" parameterType="java.util.HashMap"
+		resultMap="CrsTchPo">
+		SELECT distinct
+		<include refid="columns" />
+		,NAME,NAME_ FROM T_CRS_TCH ,T_COURSE , IBPS_PARTY_ENTITY
+		WHERE CRS_NUM=NUM and IBPS_PARTY_ENTITY.PARTY_ALIAS_ = T_CRS_TCH.TCH_NUM AND
+		<foreach collection="relationMap" index="k" item="v"
+			separator="and">
+			${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+		ORDER BY start_time DESC
+	</select>
+	
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsTchPo">
+		SELECT distinct
+		<include refid="columns" />
+		,NAME FROM T_CRS_TCH ,T_COURSE
+		<where>
+			CRS_NUM=NUM
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				AND ${whereSql}
+			</if>
+
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_CRS_TCH DESC
+		</if>
+	</select>
+
+	<select id="findByIds" resultMap="CrsTchPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_CRS_TCH
+		WHERE ID_ in
+		<foreach item="id" index="index" collection="ids" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+		ORDER BY ID_CRS_TCH DESC
+	</select>
+
+	<update id="update"
+		parameterType="com.lc.ibps.grads.course.persistence.entity.CrsTchPo">
+		UPDATE T_CRS_TCH SET
+		TCH_NUM=#{tchNum,jdbcType=VARCHAR},
+		CRS_NUM=#{crsNum,jdbcType=VARCHAR},
+		TERM=#{term,jdbcType=VARCHAR},
+		TIME=#{time,jdbcType=VARCHAR},
+		LOCATION=#{location,jdbcType=VARCHAR},
+		CLAZZ=#{clazz,jdbcType=VARCHAR},
+		PARAMID=#{paramid,jdbcType=VARCHAR},
+		START_TIME=#{startTime,jdbcType=TIMESTAMP},
+		UNI_MANAGE=#{uniManage,jdbcType=VARCHAR}
+		WHERE
+		ID_CRS_TCH=#{id}
+	</update>
+
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_CRS_TCH
+		WHERE
+		ID_CRS_TCH=#{id}
+	</delete>
+
+
+</mapper>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.ZYXX.persistence.entity.ZYXXBPo">
+	<resultMap id="ZYXXBPo" type="com.lc.ibps.loans.ZYXX.persistence.entity.ZYXXBPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="zynsr" column="ZYNSR" jdbcType="VARCHAR"/>
+		<result property="nsr" column="NSR" jdbcType="NUMERIC"/>
+		<result property="sfbxyg" column="SFBXYG" jdbcType="VARCHAR"/>
+		<result property="schzsj" column="SCHZSJ" jdbcType="VARCHAR"/>
+		<result property="schzje" column="SCHZJE" jdbcType="VARCHAR"/>
+		<result property="gzdwmc" column="GZDWMC" jdbcType="VARCHAR"/>
+		<result property="dwdz" column="DWDZ" jdbcType="VARCHAR"/>
+		<result property="dwyb" column="DWYB" jdbcType="VARCHAR"/>
+		<result property="dwssxy" column="DWSSXY" jdbcType="VARCHAR"/>
+		<result property="dwxz" column="DWXZ" jdbcType="VARCHAR"/>
+		<result property="zw" column="ZW" jdbcType="VARCHAR"/>
+		<result property="zc" column="ZC" jdbcType="VARCHAR"/>
+		<result property="ysr" column="YSR" jdbcType="VARCHAR"/>
+		<result property="gwxz" column="GWXZ" jdbcType="VARCHAR"/>
+		<result property="dwdh" column="DWDH" jdbcType="VARCHAR"/>
+		<result property="bdwgzqsny" column="BDWGZQSNY" jdbcType="VARCHAR"/>
+		<result property="gzzh" column="GZZH" jdbcType="VARCHAR"/>
+		<result property="gzzhkhx" column="GZZHKHX" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,ZYNSR,NSR,SFBXYG,SCHZSJ,SCHZJE,GZDWMC,DWDZ,DWYB,DWSSXY,DWXZ,ZW,ZC,YSR,GWXZ,DWDH,BDWGZQSNY,GZZH,GZZHKHX
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.ZYXX.persistence.entity.ZYXXBPo">
+		INSERT INTO T_ZYXXB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{zynsr,jdbcType=VARCHAR}, #{nsr,jdbcType=NUMERIC}, #{sfbxyg,jdbcType=VARCHAR}, #{schzsj,jdbcType=VARCHAR}, #{schzje,jdbcType=VARCHAR}, #{gzdwmc,jdbcType=VARCHAR}, #{dwdz,jdbcType=VARCHAR}, #{dwyb,jdbcType=VARCHAR}, #{dwssxy,jdbcType=VARCHAR}, #{dwxz,jdbcType=VARCHAR}, #{zw,jdbcType=VARCHAR}, #{zc,jdbcType=VARCHAR}, #{ysr,jdbcType=VARCHAR}, #{gwxz,jdbcType=VARCHAR}, #{dwdh,jdbcType=VARCHAR}, #{bdwgzqsny,jdbcType=VARCHAR}, #{gzzh,jdbcType=VARCHAR}, #{gzzhkhx,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ZYXXBPo">
+		SELECT <include refid="columns"/> FROM T_ZYXXB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ZYXXBPo">
+		SELECT <include refid="columns"/> FROM T_ZYXXB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ZYXXBPo">
+		SELECT <include refid="columns"/> FROM T_ZYXXB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.ZYXX.persistence.entity.ZYXXBPo">
+		UPDATE T_ZYXXB SET
+		ZYNSR=#{zynsr,jdbcType=VARCHAR},
+		NSR=#{nsr,jdbcType=NUMERIC},
+		SFBXYG=#{sfbxyg,jdbcType=VARCHAR},
+		SCHZSJ=#{schzsj,jdbcType=VARCHAR},
+		SCHZJE=#{schzje,jdbcType=VARCHAR},
+		GZDWMC=#{gzdwmc,jdbcType=VARCHAR},
+		DWDZ=#{dwdz,jdbcType=VARCHAR},
+		DWYB=#{dwyb,jdbcType=VARCHAR},
+		DWSSXY=#{dwssxy,jdbcType=VARCHAR},
+		DWXZ=#{dwxz,jdbcType=VARCHAR},
+		ZW=#{zw,jdbcType=VARCHAR},
+		ZC=#{zc,jdbcType=VARCHAR},
+		YSR=#{ysr,jdbcType=VARCHAR},
+		GWXZ=#{gwxz,jdbcType=VARCHAR},
+		DWDH=#{dwdh,jdbcType=VARCHAR},
+		BDWGZQSNY=#{bdwgzqsny,jdbcType=VARCHAR},
+		GZZH=#{gzzh,jdbcType=VARCHAR},
+		GZZHKHX=#{gzzhkhx,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZYXXB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

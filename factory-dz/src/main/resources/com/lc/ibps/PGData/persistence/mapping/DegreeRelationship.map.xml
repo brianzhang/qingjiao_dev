@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.DegreeRelationshipPo">
+	<resultMap id="DegreeRelationshipPo" type="com.lc.ibps.pgs.PGData.persistence.entity.DegreeRelationshipPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="over_eval_figure" column="OVER_EVAL_FIGURE" jdbcType="VARCHAR"/>
+		<result property="low_eval_figure" column="LOW_EVAL_FIGURE" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,OVER_EVAL_FIGURE,LOW_EVAL_FIGURE
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.DegreeRelationshipPo">
+		INSERT INTO T_P_DCDDYGX
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{over_eval_figure,jdbcType=VARCHAR}, #{low_eval_figure,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DegreeRelationshipPo">
+		SELECT <include refid="columns"/> FROM T_P_DCDDYGX 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DegreeRelationshipPo">
+		SELECT <include refid="columns"/> FROM T_P_DCDDYGX
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DegreeRelationshipPo">
+		SELECT <include refid="columns"/> FROM T_P_DCDDYGX
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.DegreeRelationshipPo">
+		UPDATE T_P_DCDDYGX SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		OVER_EVAL_FIGURE=#{over_eval_figure,jdbcType=VARCHAR},
+		LOW_EVAL_FIGURE=#{low_eval_figure,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_DCDDYGX 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

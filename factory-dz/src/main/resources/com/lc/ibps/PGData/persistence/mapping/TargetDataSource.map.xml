@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.TargetDataSourcePo">
+	<resultMap id="TargetDataSourcePo" type="com.lc.ibps.pgs.PGData.persistence.entity.TargetDataSourcePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="type" column="TYPE" jdbcType="VARCHAR"/>
+		<result property="source" column="SOURCE" jdbcType="VARCHAR"/>
+		<result property="content" column="CONTENT" jdbcType="CLOB"/>
+		<result property="form" column="FORM" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON_" jdbcType="BLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,TYPE,SOURCE,CONTENT,FORM,JSON_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TargetDataSourcePo">
+		INSERT INTO T_P_PYMBHLXPJSJLY
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{createTime,jdbcType=TIMESTAMP}, 
+		#{type,jdbcType=VARCHAR}, 
+		#{source,jdbcType=VARCHAR}, 
+		#{content,jdbcType=CLOB}, 
+		#{form,jdbcType=VARCHAR},
+		#{json,jdbcType=BLOB}
+		)
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TargetDataSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_PYMBHLXPJSJLY 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TargetDataSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_PYMBHLXPJSJLY
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TargetDataSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_PYMBHLXPJSJLY
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TargetDataSourcePo">
+		UPDATE T_P_PYMBHLXPJSJLY SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		TYPE=#{type,jdbcType=VARCHAR},
+		SOURCE=#{source,jdbcType=VARCHAR},
+		CONTENT=#{content,jdbcType=CLOB},
+		FORM=#{form,jdbcType=VARCHAR},
+		JSON_=#{json,jdbcType=BLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_PYMBHLXPJSJLY 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<!-- 测试搜索代码
+    <select id="getJson_"   parameterType="java.lang.String"  resultMap="TargetDataSourcePo">
+        SELECT json_ ,id_
+        FROM   T_P_PYMBHLXPJSJLY
+        WHERE  id_=#{Id} AND json_ IS NOT NULL
+    </select>
+	 -->
+	
+	
+	
+</mapper>

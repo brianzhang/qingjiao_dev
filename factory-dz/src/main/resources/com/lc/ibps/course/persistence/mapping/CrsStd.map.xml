@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.grads.course.persistence.entity.CrsStdPo">
+	<resultMap id="CrsStdPo" type="com.lc.ibps.grads.course.persistence.entity.CrsStdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="stdNum" column="STD_NUM" jdbcType="VARCHAR"/>
+		<result property="crsTchId" column="CRS_TCH_ID" jdbcType="VARCHAR"/>
+		<result property="score" column="SCORE" jdbcType="NUMERIC"/>
+		<result property="term" column="TERM" jdbcType="VARCHAR"/>
+		<result property="stdName" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="tchNum" column="TCH_NUM" jdbcType="VARCHAR"/>
+		<result property="crsName" column="NAME" jdbcType="VARCHAR"/>
+		<result property="location" column="LOCATION" jdbcType="VARCHAR"/>
+		<result property="time" column="TIME" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		T_CRS_STD.ID_,STD_NUM,CRS_TCH_ID,SCORE
+	</sql>
+	
+	
+
+	
+	<insert id="create" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsStdPo">
+		INSERT INTO T_CRS_STD
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{stdNum,jdbcType=VARCHAR}, #{crsTchId,jdbcType=VARCHAR}, #{score,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CrsStdPo">
+		SELECT <include refid="columns"/> ,TERM
+		FROM T_CRS_STD , T_CRS_TCH
+		WHERE 
+		T_CRS_STD.ID_=#{id} AND
+		CRS_TCH_ID = T_CRS_TCH.ID_CRS_TCH
+	</select>
+	<select id="getByCol"   parameterType="java.util.HashMap" resultMap="CrsStdPo">
+		SELECT <include refid="columns"/>,NAME_ FROM T_CRS_STD,IBPS_PARTY_ENTITY
+		WHERE STD_NUM = IBPS_PARTY_ENTITY.PARTY_ALIAS_ AND
+		<foreach collection="relationMap" index="k" item="v" separator="and" >
+		    ${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+	</select>
+	
+	<select id="getByColPG"   parameterType="java.util.HashMap" resultMap="CrsStdPo">
+		SELECT <include refid="columns"/>,NAME_ FROM T_CRS_STD,IBPS_PARTY_ENTITY
+		WHERE STD_NUM = IBPS_PARTY_ENTITY.PARTY_ALIAS_ AND
+		<foreach collection="relationMap" index="k" item="v" separator="and" >
+		    ${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+	</select>
+	
+	<select id="getBysjStd"   parameterType="java.util.HashMap" resultMap="CrsStdPo">
+		SELECT <include refid="columns"/> FROM T_CRS_STD
+		WHERE crs_tch_id LIKE "%bysj%"
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsStdPo">
+		SELECT distinct <include refid="columns"/>  ,TERM,LOCATION,TIME,TCH_NUM,NAME_,T_COURSE.NAME
+		FROM T_CRS_STD ,T_CRS_TCH , IBPS_PARTY_ENTITY ,T_COURSE
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+			AND CRS_TCH_ID = T_CRS_TCH.ID_CRS_TCH
+			AND STD_NUM = IBPS_PARTY_ENTITY.PARTY_ALIAS_
+			AND CRS_NUM = NUM
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY STD_NUM ASC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CrsStdPo">
+		SELECT <include refid="columns"/> FROM T_CRS_STD
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsStdPo">
+		UPDATE T_CRS_STD SET
+		STD_NUM=#{stdNum,jdbcType=VARCHAR},
+		CRS_TCH_ID=#{crsTchId,jdbcType=VARCHAR},
+		SCORE=#{score,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_CRS_STD 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

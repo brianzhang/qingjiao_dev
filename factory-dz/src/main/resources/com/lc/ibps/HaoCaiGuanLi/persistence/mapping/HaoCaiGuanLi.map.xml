@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.repair.HaoCaiGuanLi.persistence.entity.HaoCaiGuanLiPo">
+	<resultMap id="HaoCaiGuanLiPo" type="com.lc.ibps.repair.HaoCaiGuanLi.persistence.entity.HaoCaiGuanLiPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="haoCaiTuPian" column="HAO_CAI_TU_PIAN_" jdbcType="VARCHAR"/>
+		<result property="haoCaiBianHao" column="HAO_CAI_BIAN_HAO_" jdbcType="VARCHAR"/>
+		<result property="haoCaiMingCheng" column="MING_CHENG_" jdbcType="VARCHAR"/>
+		<result property="danJia" column="DAN_JIA_" jdbcType="VARCHAR"/>
+		<result property="chanWei" column="CHAN_WEI_" jdbcType="VARCHAR"/>
+		<result property="zhongLeiBianHao" column="ZHONG_LEI_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,HAO_CAI_TU_PIAN_,HAO_CAI_BIAN_HAO_,MING_CHENG_,DAN_JIA_,CHAN_WEI_,ZHONG_LEI_,CREATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.repair.HaoCaiGuanLi.persistence.entity.HaoCaiGuanLiPo">
+		INSERT INTO T_HCGLB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{haoCaiTuPian,jdbcType=VARCHAR}, #{haoCaiBianHao,jdbcType=VARCHAR}, #{haoCaiMingCheng,jdbcType=VARCHAR}, #{danJia,jdbcType=VARCHAR}, #{chanWei,jdbcType=VARCHAR}, #{zhongLeiBianHao,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="HaoCaiGuanLiPo">
+		SELECT <include refid="columns"/> FROM T_HCGLB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="HaoCaiGuanLiPo">
+		SELECT <include refid="columns"/> FROM T_HCGLB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="HaoCaiGuanLiPo">
+		SELECT <include refid="columns"/> FROM T_HCGLB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.repair.HaoCaiGuanLi.persistence.entity.HaoCaiGuanLiPo">
+		UPDATE T_HCGLB SET
+		HAO_CAI_TU_PIAN_=#{haoCaiTuPian,jdbcType=VARCHAR},
+		HAO_CAI_BIAN_HAO_=#{haoCaiBianHao,jdbcType=VARCHAR},
+		MING_CHENG_=#{haoCaiMingCheng,jdbcType=VARCHAR},
+		DAN_JIA_=#{danJia,jdbcType=VARCHAR},
+		CHAN_WEI_=#{chanWei,jdbcType=VARCHAR},
+		ZHONG_LEI_=#{zhongLeiBianHao,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_HCGLB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

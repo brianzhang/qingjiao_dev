@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.dyrInfo.persistence.entity.DyrPo">
+	<resultMap id="DyrPo" type="com.lc.ibps.loans.dyrInfo.persistence.entity.DyrPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="dyr" column="DYR" jdbcType="VARCHAR"/>
+		<result property="sfyhjzm" column="SFYHJZM" jdbcType="VARCHAR"/>
+		<result property="dyrzjlx" column="DYRZJLX" jdbcType="VARCHAR"/>
+		<result property="dyrzjhm" column="DYRZJHM" jdbcType="VARCHAR"/>
+		<result property="dyrdkkh" column="DYRDKKH" jdbcType="VARCHAR"/>
+		<result property="dywsfgy" column="DYWSFGY" jdbcType="VARCHAR"/>
+		<result property="dywgyqr" column="DYWGYQR" jdbcType="VARCHAR"/>
+		<result property="gyfs" column="GYFS" jdbcType="VARCHAR"/>
+		<result property="dywmc" column="DYWMC" jdbcType="VARCHAR"/>
+		<result property="dywwz" column="DYWWZ" jdbcType="VARCHAR"/>
+		<result property="dywzl" column="DYWZL" jdbcType="VARCHAR"/>
+		<result property="fwydj" column="FWYDJ" jdbcType="VARCHAR"/>
+		<result property="fwjg" column="FWJG" jdbcType="VARCHAR"/>
+		<result property="fccs" column="FCCS" jdbcType="VARCHAR"/>
+		<result property="fcszcs" column="FCSZCS" jdbcType="VARCHAR"/>
+		<result property="dywbh" column="DYWBH" jdbcType="VARCHAR"/>
+		<result property="dywsfyytdsyqzs" column="DYWSFYYTDSYQZS" jdbcType="VARCHAR"/>
+		<result property="dywfctdsyqrmc" column="DYWFCTDSYQRMC" jdbcType="VARCHAR"/>
+		<result property="dyfctdsyqzh" column="DYFCTDSYQZH" jdbcType="VARCHAR"/>
+		<result property="dyfctdsyqlx" column="DYFCTDSYQLX" jdbcType="VARCHAR"/>
+		<result property="dyfctdsyqmj" column="DYFCTDSYQMJ" jdbcType="VARCHAR"/>
+		<result property="dyfctdsyqsf" column="DYFCTDSYQSF" jdbcType="VARCHAR"/>
+		<result property="dyfctdsyqdyfs" column="DYFCTDSYQDYFS" jdbcType="VARCHAR"/>
+		<result property="dywxxms" column="DYWXXMS" jdbcType="VARCHAR"/>
+		<result property="dywxgzmwj" column="DYWXGZMWJ" jdbcType="VARCHAR"/>
+		<result property="gfhtDywcqzhSyqzh" column="GFHT_DYWCQZH_SYQZH" jdbcType="VARCHAR"/>
+		<result property="fzjg" column="FZJG" jdbcType="VARCHAR"/>
+		<result property="dywyzgzj" column="DYWYZGZJ" jdbcType="VARCHAR"/>
+		<result property="mjS" column="MJ_S" jdbcType="VARCHAR"/>
+		<result property="jcGzsj" column="JC_GZSJ" jdbcType="VARCHAR"/>
+		<result property="dywsynx" column="DYWSYNX" jdbcType="VARCHAR"/>
+		<result property="sksynx" column="SKSYNX" jdbcType="VARCHAR"/>
+		<result property="zjl" column="ZJL" jdbcType="VARCHAR"/>
+		<result property="dywsfpg" column="DYWSFPG" jdbcType="VARCHAR"/>
+		<result property="dywpgjg" column="DYWPGJG" jdbcType="VARCHAR"/>
+		<result property="pgff" column="PGFF" jdbcType="VARCHAR"/>
+		<result property="dywpgrq" column="DYWPGRQ" jdbcType="TIMESTAMP"/>
+		<result property="pgjlsyyxqx" column="PGJLSYYXQX" jdbcType="VARCHAR"/>
+		<result property="gdywdkje" column="GDYWDKJE" jdbcType="VARCHAR"/>
+		<result property="pgjz" column="PGJZ" jdbcType="VARCHAR"/>
+		<result property="dyl" column="DYL" jdbcType="VARCHAR"/>
+		<result property="dywsfjxdydj" column="DYWSFJXDYDJ" jdbcType="VARCHAR"/>
+		<result property="dywdjjg" column="DYWDJJG" jdbcType="VARCHAR"/>
+		<result property="dydjwjhTxqr" column="DYDJWJH_TXQR" jdbcType="VARCHAR"/>
+		<result property="dyjz" column="DYJZ" jdbcType="VARCHAR"/>
+		<result property="dydjr" column="DYDJR" jdbcType="TIMESTAMP"/>
+		<result property="dydqr" column="DYDQR" jdbcType="TIMESTAMP"/>
+		<result property="dywsfbx" column="DYWSFBX" jdbcType="VARCHAR"/>
+		<result property="bxjgmc" column="BXJGMC" jdbcType="VARCHAR"/>
+		<result property="dywbxdh" column="DYWBXDH" jdbcType="VARCHAR"/>
+		<result property="bxje" column="BXJE" jdbcType="VARCHAR"/>
+		<result property="bxsxr" column="BXSXR" jdbcType="TIMESTAMP"/>
+		<result property="bxdqr" column="BXDQR" jdbcType="TIMESTAMP"/>
+		<result property="dysyrmc" column="DYSYRMC" jdbcType="VARCHAR"/>
+		<result property="dywsfblgz" column="DYWSFBLGZ" jdbcType="VARCHAR"/>
+		<result property="gzjg" column="GZJG" jdbcType="VARCHAR"/>
+		<result property="gzrq" column="GZRQ" jdbcType="TIMESTAMP"/>
+		<result property="gzsbh" column="GZSBH" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,DYR,SFYHJZM,DYRZJLX,DYRZJHM,DYRDKKH,DYWSFGY,DYWGYQR,GYFS,DYWMC,DYWWZ,DYWZL,FWYDJ,FWJG,FCCS,FCSZCS,DYWBH,DYWSFYYTDSYQZS,DYWFCTDSYQRMC,DYFCTDSYQZH,DYFCTDSYQLX,DYFCTDSYQMJ,DYFCTDSYQSF,DYFCTDSYQDYFS,DYWXXMS,DYWXGZMWJ,GFHT_DYWCQZH_SYQZH,FZJG,DYWYZGZJ,MJ_S,JC_GZSJ,DYWSYNX,SKSYNX,ZJL,DYWSFPG,DYWPGJG,PGFF,DYWPGRQ,PGJLSYYXQX,GDYWDKJE,PGJZ,DYL,DYWSFJXDYDJ,DYWDJJG,DYDJWJH_TXQR,DYJZ,DYDJR,DYDQR,DYWSFBX,BXJGMC,DYWBXDH,BXJE,BXSXR,BXDQR,DYSYRMC,DYWSFBLGZ,GZJG,GZRQ,GZSBH,BZ,JDID
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.dyrInfo.persistence.entity.DyrPo">
+		INSERT INTO T_DYR
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{dyr,jdbcType=VARCHAR}, #{sfyhjzm,jdbcType=VARCHAR}, #{dyrzjlx,jdbcType=VARCHAR}, #{dyrzjhm,jdbcType=VARCHAR}, #{dyrdkkh,jdbcType=VARCHAR}, #{dywsfgy,jdbcType=VARCHAR}, #{dywgyqr,jdbcType=VARCHAR}, #{gyfs,jdbcType=VARCHAR}, #{dywmc,jdbcType=VARCHAR}, #{dywwz,jdbcType=VARCHAR}, #{dywzl,jdbcType=VARCHAR}, #{fwydj,jdbcType=VARCHAR}, #{fwjg,jdbcType=VARCHAR}, #{fccs,jdbcType=VARCHAR}, #{fcszcs,jdbcType=VARCHAR}, #{dywbh,jdbcType=VARCHAR}, #{dywsfyytdsyqzs,jdbcType=VARCHAR}, #{dywfctdsyqrmc,jdbcType=VARCHAR}, #{dyfctdsyqzh,jdbcType=VARCHAR}, #{dyfctdsyqlx,jdbcType=VARCHAR}, #{dyfctdsyqmj,jdbcType=VARCHAR}, #{dyfctdsyqsf,jdbcType=VARCHAR}, #{dyfctdsyqdyfs,jdbcType=VARCHAR}, #{dywxxms,jdbcType=VARCHAR}, #{dywxgzmwj,jdbcType=VARCHAR}, #{gfhtDywcqzhSyqzh,jdbcType=VARCHAR}, #{fzjg,jdbcType=VARCHAR}, #{dywyzgzj,jdbcType=VARCHAR}, #{mjS,jdbcType=VARCHAR}, #{jcGzsj,jdbcType=VARCHAR}, #{dywsynx,jdbcType=VARCHAR}, #{sksynx,jdbcType=VARCHAR}, #{zjl,jdbcType=VARCHAR}, #{dywsfpg,jdbcType=VARCHAR}, #{dywpgjg,jdbcType=VARCHAR}, #{pgff,jdbcType=VARCHAR}, #{dywpgrq,jdbcType=TIMESTAMP}, #{pgjlsyyxqx,jdbcType=VARCHAR}, #{gdywdkje,jdbcType=VARCHAR}, #{pgjz,jdbcType=VARCHAR}, #{dyl,jdbcType=VARCHAR}, #{dywsfjxdydj,jdbcType=VARCHAR}, #{dywdjjg,jdbcType=VARCHAR}, #{dydjwjhTxqr,jdbcType=VARCHAR}, #{dyjz,jdbcType=VARCHAR}, #{dydjr,jdbcType=TIMESTAMP}, #{dydqr,jdbcType=TIMESTAMP}, #{dywsfbx,jdbcType=VARCHAR}, #{bxjgmc,jdbcType=VARCHAR}, #{dywbxdh,jdbcType=VARCHAR}, #{bxje,jdbcType=VARCHAR}, #{bxsxr,jdbcType=TIMESTAMP}, #{bxdqr,jdbcType=TIMESTAMP}, #{dysyrmc,jdbcType=VARCHAR}, #{dywsfblgz,jdbcType=VARCHAR}, #{gzjg,jdbcType=VARCHAR}, #{gzrq,jdbcType=TIMESTAMP}, #{gzsbh,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DyrPo">
+		SELECT <include refid="columns"/> FROM T_DYR 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+     <select id="getByJdId" parameterType="java.util.Map" resultMap="DyrPo">
+		SELECT * FROM T_DYR 
+		WHERE 
+		 JDID=#{jdid}
+	</select>
+	
+	<select id="getByJdIdAndshengfenId" parameterType="java.util.Map" resultMap="DyrPo">
+		SELECT * FROM T_DYR 
+		WHERE 
+		 JDID=#{jdid} AND DYRZJHM=#{zjhm}
+	</select>	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DyrPo">
+		SELECT <include refid="columns"/> FROM T_DYR
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DyrPo">
+		SELECT <include refid="columns"/> FROM T_DYR
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.dyrInfo.persistence.entity.DyrPo">
+		UPDATE T_DYR SET
+		DYR=#{dyr,jdbcType=VARCHAR},
+		SFYHJZM=#{sfyhjzm,jdbcType=VARCHAR},
+		DYRZJLX=#{dyrzjlx,jdbcType=VARCHAR},
+		DYRZJHM=#{dyrzjhm,jdbcType=VARCHAR},
+		DYRDKKH=#{dyrdkkh,jdbcType=VARCHAR},
+		DYWSFGY=#{dywsfgy,jdbcType=VARCHAR},
+		DYWGYQR=#{dywgyqr,jdbcType=VARCHAR},
+		GYFS=#{gyfs,jdbcType=VARCHAR},
+		DYWMC=#{dywmc,jdbcType=VARCHAR},
+		DYWWZ=#{dywwz,jdbcType=VARCHAR},
+		DYWZL=#{dywzl,jdbcType=VARCHAR},
+		FWYDJ=#{fwydj,jdbcType=VARCHAR},
+		FWJG=#{fwjg,jdbcType=VARCHAR},
+		FCCS=#{fccs,jdbcType=VARCHAR},
+		FCSZCS=#{fcszcs,jdbcType=VARCHAR},
+		DYWBH=#{dywbh,jdbcType=VARCHAR},
+		DYWSFYYTDSYQZS=#{dywsfyytdsyqzs,jdbcType=VARCHAR},
+		DYWFCTDSYQRMC=#{dywfctdsyqrmc,jdbcType=VARCHAR},
+		DYFCTDSYQZH=#{dyfctdsyqzh,jdbcType=VARCHAR},
+		DYFCTDSYQLX=#{dyfctdsyqlx,jdbcType=VARCHAR},
+		DYFCTDSYQMJ=#{dyfctdsyqmj,jdbcType=VARCHAR},
+		DYFCTDSYQSF=#{dyfctdsyqsf,jdbcType=VARCHAR},
+		DYFCTDSYQDYFS=#{dyfctdsyqdyfs,jdbcType=VARCHAR},
+		DYWXXMS=#{dywxxms,jdbcType=VARCHAR},
+		DYWXGZMWJ=#{dywxgzmwj,jdbcType=VARCHAR},
+		GFHT_DYWCQZH_SYQZH=#{gfhtDywcqzhSyqzh,jdbcType=VARCHAR},
+		FZJG=#{fzjg,jdbcType=VARCHAR},
+		DYWYZGZJ=#{dywyzgzj,jdbcType=VARCHAR},
+		MJ_S=#{mjS,jdbcType=VARCHAR},
+		JC_GZSJ=#{jcGzsj,jdbcType=VARCHAR},
+		DYWSYNX=#{dywsynx,jdbcType=VARCHAR},
+		SKSYNX=#{sksynx,jdbcType=VARCHAR},
+		ZJL=#{zjl,jdbcType=VARCHAR},
+		DYWSFPG=#{dywsfpg,jdbcType=VARCHAR},
+		DYWPGJG=#{dywpgjg,jdbcType=VARCHAR},
+		PGFF=#{pgff,jdbcType=VARCHAR},
+		DYWPGRQ=#{dywpgrq,jdbcType=TIMESTAMP},
+		PGJLSYYXQX=#{pgjlsyyxqx,jdbcType=VARCHAR},
+		GDYWDKJE=#{gdywdkje,jdbcType=VARCHAR},
+		PGJZ=#{pgjz,jdbcType=VARCHAR},
+		DYL=#{dyl,jdbcType=VARCHAR},
+		DYWSFJXDYDJ=#{dywsfjxdydj,jdbcType=VARCHAR},
+		DYWDJJG=#{dywdjjg,jdbcType=VARCHAR},
+		DYDJWJH_TXQR=#{dydjwjhTxqr,jdbcType=VARCHAR},
+		DYJZ=#{dyjz,jdbcType=VARCHAR},
+		DYDJR=#{dydjr,jdbcType=TIMESTAMP},
+		DYDQR=#{dydqr,jdbcType=TIMESTAMP},
+		DYWSFBX=#{dywsfbx,jdbcType=VARCHAR},
+		BXJGMC=#{bxjgmc,jdbcType=VARCHAR},
+		DYWBXDH=#{dywbxdh,jdbcType=VARCHAR},
+		BXJE=#{bxje,jdbcType=VARCHAR},
+		BXSXR=#{bxsxr,jdbcType=TIMESTAMP},
+		BXDQR=#{bxdqr,jdbcType=TIMESTAMP},
+		DYSYRMC=#{dysyrmc,jdbcType=VARCHAR},
+		DYWSFBLGZ=#{dywsfblgz,jdbcType=VARCHAR},
+		GZJG=#{gzjg,jdbcType=VARCHAR},
+		GZRQ=#{gzrq,jdbcType=TIMESTAMP},
+		GZSBH=#{gzsbh,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_DYR 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.repair.bxhcb.persistence.entity.BxhcbPo">
+	<resultMap id="BxhcbPo" type="com.lc.ibps.repair.bxhcb.persistence.entity.BxhcbPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="bxdId" column="B_X_D_I_D_" jdbcType="VARCHAR"/>
+		<result property="haoCaiMingCheng" column="HAO_CAI_MING" jdbcType="VARCHAR"/>
+		<result property="haoCaiShuLiang" column="HAO_CAI_SHU_LIANG_" jdbcType="NUMERIC"/>
+		<result property="totalPrice" column="TOTAL_PRICE_" jdbcType="DOUBLE"/>
+		<result property="beiZhu" column="BEI_ZHU_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,B_X_D_I_D_,HAO_CAI_MING,HAO_CAI_SHU_LIANG_,TOTAL_PRICE_,BEI_ZHU_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.repair.bxhcb.persistence.entity.BxhcbPo">
+		INSERT INTO T_BXHCB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{bxdId,jdbcType=VARCHAR}, #{haoCaiMingCheng,jdbcType=VARCHAR}, #{haoCaiShuLiang,jdbcType=NUMERIC},#{totalPrice,jdbcType=DOUBLE},#{beiZhu,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BxhcbPo">
+		SELECT <include refid="columns"/> FROM T_BXHCB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="BxhcbPo">
+		SELECT <include refid="columns"/> FROM T_BXHCB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BxhcbPo">
+		SELECT <include refid="columns"/> FROM T_BXHCB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.repair.bxhcb.persistence.entity.BxhcbPo">
+		UPDATE T_BXHCB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		B_X_D_I_D_=#{bxdId,jdbcType=VARCHAR},
+		HAO_CAI_MING=#{haoCaiMingCheng,jdbcType=VARCHAR},
+		HAO_CAI_SHU_LIANG_=#{haoCaiShuLiang,jdbcType=NUMERIC},
+		TOTAL_PRICE_=#{totalPrice,jdbcType=DOUBLE},
+		BEI_ZHU_=#{beiZhu,jdbcType=VARCHAR},
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BXHCB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

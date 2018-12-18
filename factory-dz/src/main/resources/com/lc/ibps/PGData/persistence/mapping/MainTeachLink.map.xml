@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.MainTeachLinkPo">
+	<resultMap id="MainTeachLinkPo" type="com.lc.ibps.pgs.PGData.persistence.entity.MainTeachLinkPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="link_name" column="LINK_NAME" jdbcType="VARCHAR"/>
+		<result property="quality_dem_node" column="QUALITY_DEM_NODE" jdbcType="VARCHAR"/>
+		<result property="test_principal" column="TEST_PRINCIPAL" jdbcType="VARCHAR"/>
+		<result property="basic_data" column="BASIC_DATA" jdbcType="VARCHAR"/>
+		<result property="record_text" column="RECORD_TEXT" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,LINK_NAME,QUALITY_DEM_NODE,TEST_PRINCIPAL,BASIC_DATA,RECORD_TEXT
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.MainTeachLinkPo">
+		INSERT INTO T_P_ZYJXHJDPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{link_name,jdbcType=VARCHAR}, #{quality_dem_node,jdbcType=VARCHAR}, #{test_principal,jdbcType=VARCHAR}, #{basic_data,jdbcType=VARCHAR}, #{record_text,jdbcType=CLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="MainTeachLinkPo">
+		SELECT <include refid="columns"/> FROM T_P_ZYJXHJDPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="MainTeachLinkPo">
+		SELECT <include refid="columns"/> FROM T_P_ZYJXHJDPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="MainTeachLinkPo">
+		SELECT <include refid="columns"/> FROM T_P_ZYJXHJDPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.MainTeachLinkPo">
+		UPDATE T_P_ZYJXHJDPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		LINK_NAME=#{link_name,jdbcType=VARCHAR},
+		QUALITY_DEM_NODE=#{quality_dem_node,jdbcType=VARCHAR},
+		TEST_PRINCIPAL=#{test_principal,jdbcType=VARCHAR},
+		BASIC_DATA=#{basic_data,jdbcType=VARCHAR},
+		RECORD_TEXT=#{record_text,jdbcType=CLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_ZYJXHJDPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

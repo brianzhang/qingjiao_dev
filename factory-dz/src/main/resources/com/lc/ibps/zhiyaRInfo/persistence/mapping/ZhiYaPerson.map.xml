@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.zhiyaRInfo.persistence.entity.ZhiYaPersonPo">
+	<resultMap id="ZhiYaPersonPo" type="com.lc.ibps.loans.zhiyaRInfo.persistence.entity.ZhiYaPersonPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="zywsyrmc" column="ZYWSYRMC" jdbcType="VARCHAR"/>
+		<result property="sfyhjzm" column="SFYHJZM" jdbcType="VARCHAR"/>
+		<result property="zyrzjlx" column="ZYRZJLX" jdbcType="VARCHAR"/>
+		<result property="zyrzjhm" column="ZYRZJHM" jdbcType="VARCHAR"/>
+		<result property="zywsfgy" column="ZYWSFGY" jdbcType="VARCHAR"/>
+		<result property="zwgyqr" column="ZWGYQR" jdbcType="VARCHAR"/>
+		<result property="gyfs" column="GYFS" jdbcType="VARCHAR"/>
+		<result property="zywzl" column="ZYWZL" jdbcType="VARCHAR"/>
+		<result property="pjdzh" column="PJDZH" jdbcType="VARCHAR"/>
+		<result property="zqje" column="ZQJE" jdbcType="NUMERIC"/>
+		<result property="sfblhyzf" column="SFBLHYZF" jdbcType="VARCHAR"/>
+		<result property="bxcdzh" column="BXCDZH" jdbcType="VARCHAR"/>
+		<result property="zqkssj" column="ZQKSSJ" jdbcType="TIMESTAMP"/>
+		<result property="zqjzsj" column="ZQJZSJ" jdbcType="TIMESTAMP"/>
+		<result property="zfdw" column="ZFDW" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="zywsl" column="ZYWSL" jdbcType="VARCHAR"/>
+		<result property="zywsfypg" column="ZYWSFYPG" jdbcType="VARCHAR"/>
+		<result property="pgjg" column="PGJG" jdbcType="VARCHAR"/>
+		<result property="pgff" column="PGFF" jdbcType="VARCHAR"/>
+		<result property="pgrq" column="PGRQ" jdbcType="TIMESTAMP"/>
+		<result property="pgjlyxqx" column="PGJLYXQX" jdbcType="VARCHAR"/>
+		<result property="gzywdkje" column="GZYWDKJE" jdbcType="NUMERIC"/>
+		<result property="pgjz" column="PGJZ" jdbcType="NUMERIC"/>
+		<result property="zyl" column="ZYL" jdbcType="NUMERIC"/>
+		<result property="sfjxzydj" column="SFJXZYDJ" jdbcType="VARCHAR"/>
+		<result property="zywsfbzx" column="ZYWSFBZX" jdbcType="VARCHAR"/>
+		<result property="bxjg" column="BXJG" jdbcType="VARCHAR"/>
+		<result property="bxje" column="BXJE" jdbcType="NUMERIC"/>
+		<result property="dysyrmc" column="DYSYRMC" jdbcType="VARCHAR"/>
+		<result property="zywsfblgz" column="ZYWSFBLGZ" jdbcType="VARCHAR"/>
+		<result property="gzjg" column="GZJG" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="zyrpozjlx" column="ZYRPOZJLX" jdbcType="VARCHAR"/>
+		<result property="zyrpomc" column="ZYRPOMC" jdbcType="VARCHAR"/>
+		<result property="zjhm" column="ZJHM" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,ZYWSYRMC,SFYHJZM,ZYRZJLX,ZYRZJHM,ZYWSFGY,ZWGYQR,GYFS,ZYWZL,PJDZH,ZQJE,SFBLHYZF,BXCDZH,ZQKSSJ,ZQJZSJ,ZFDW,BZ,ZYWSL,ZYWSFYPG,PGJG,PGFF,PGRQ,PGJLYXQX,GZYWDKJE,PGJZ,ZYL,SFJXZYDJ,ZYWSFBZX,BXJG,BXJE,DYSYRMC,ZYWSFBLGZ,GZJG,JDID,ZYRPOZJLX,ZYRPOMC,ZJHM
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.zhiyaRInfo.persistence.entity.ZhiYaPersonPo">
+		INSERT INTO T_ZYR
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{zywsyrmc,jdbcType=VARCHAR}, #{sfyhjzm,jdbcType=VARCHAR}, #{zyrzjlx,jdbcType=VARCHAR}, #{zyrzjhm,jdbcType=VARCHAR}, #{zywsfgy,jdbcType=VARCHAR}, #{zwgyqr,jdbcType=VARCHAR}, #{gyfs,jdbcType=VARCHAR}, #{zywzl,jdbcType=VARCHAR}, #{pjdzh,jdbcType=VARCHAR}, #{zqje,jdbcType=NUMERIC}, #{sfblhyzf,jdbcType=VARCHAR}, #{bxcdzh,jdbcType=VARCHAR}, #{zqkssj,jdbcType=TIMESTAMP}, #{zqjzsj,jdbcType=TIMESTAMP}, #{zfdw,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR}, #{zywsl,jdbcType=VARCHAR}, #{zywsfypg,jdbcType=VARCHAR}, #{pgjg,jdbcType=VARCHAR}, #{pgff,jdbcType=VARCHAR}, #{pgrq,jdbcType=TIMESTAMP}, #{pgjlyxqx,jdbcType=VARCHAR}, #{gzywdkje,jdbcType=NUMERIC}, #{pgjz,jdbcType=NUMERIC}, #{zyl,jdbcType=NUMERIC}, #{sfjxzydj,jdbcType=VARCHAR}, #{zywsfbzx,jdbcType=VARCHAR}, #{bxjg,jdbcType=VARCHAR}, #{bxje,jdbcType=NUMERIC}, #{dysyrmc,jdbcType=VARCHAR}, #{zywsfblgz,jdbcType=VARCHAR}, #{gzjg,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR}, #{zyrpozjlx,jdbcType=VARCHAR}, #{zyrpomc,jdbcType=VARCHAR}, #{zjhm,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ZhiYaPersonPo">
+		SELECT <include refid="columns"/> FROM T_ZYR 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdId"   parameterType="java.lang.String" resultMap="ZhiYaPersonPo">
+		SELECT * FROM T_ZYR 
+		WHERE 
+		JDID=#{jdxxID}
+	</select>
+	
+	<select id="getByJdIdAndshengfenId"   parameterType="java.lang.String" resultMap="ZhiYaPersonPo">
+		SELECT * FROM T_ZYR 
+		WHERE 
+		JDID=#{jdxxID} AND ZYRZJHM=#{zjhm}
+	</select>
+	
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ZhiYaPersonPo">
+		SELECT <include refid="columns"/> FROM T_ZYR
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ZhiYaPersonPo">
+		SELECT <include refid="columns"/> FROM T_ZYR
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.zhiyaRInfo.persistence.entity.ZhiYaPersonPo">
+		UPDATE T_ZYR SET
+		ZYWSYRMC=#{zywsyrmc,jdbcType=VARCHAR},
+		SFYHJZM=#{sfyhjzm,jdbcType=VARCHAR},
+		ZYRZJLX=#{zyrzjlx,jdbcType=VARCHAR},
+		ZYRZJHM=#{zyrzjhm,jdbcType=VARCHAR},
+		ZYWSFGY=#{zywsfgy,jdbcType=VARCHAR},
+		ZWGYQR=#{zwgyqr,jdbcType=VARCHAR},
+		GYFS=#{gyfs,jdbcType=VARCHAR},
+		ZYWZL=#{zywzl,jdbcType=VARCHAR},
+		PJDZH=#{pjdzh,jdbcType=VARCHAR},
+		ZQJE=#{zqje,jdbcType=NUMERIC},
+		SFBLHYZF=#{sfblhyzf,jdbcType=VARCHAR},
+		BXCDZH=#{bxcdzh,jdbcType=VARCHAR},
+		ZQKSSJ=#{zqkssj,jdbcType=TIMESTAMP},
+		ZQJZSJ=#{zqjzsj,jdbcType=TIMESTAMP},
+		ZFDW=#{zfdw,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		ZYWSL=#{zywsl,jdbcType=VARCHAR},
+		ZYWSFYPG=#{zywsfypg,jdbcType=VARCHAR},
+		PGJG=#{pgjg,jdbcType=VARCHAR},
+		PGFF=#{pgff,jdbcType=VARCHAR},
+		PGRQ=#{pgrq,jdbcType=TIMESTAMP},
+		PGJLYXQX=#{pgjlyxqx,jdbcType=VARCHAR},
+		GZYWDKJE=#{gzywdkje,jdbcType=NUMERIC},
+		PGJZ=#{pgjz,jdbcType=NUMERIC},
+		ZYL=#{zyl,jdbcType=NUMERIC},
+		SFJXZYDJ=#{sfjxzydj,jdbcType=VARCHAR},
+		ZYWSFBZX=#{zywsfbzx,jdbcType=VARCHAR},
+		BXJG=#{bxjg,jdbcType=VARCHAR},
+		BXJE=#{bxje,jdbcType=NUMERIC},
+		DYSYRMC=#{dysyrmc,jdbcType=VARCHAR},
+		ZYWSFBLGZ=#{zywsfblgz,jdbcType=VARCHAR},
+		GZJG=#{gzjg,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		ZYRPOZJLX=#{zyrpozjlx,jdbcType=VARCHAR},
+		ZYRPOMC=#{zyrpomc,jdbcType=VARCHAR},
+		ZJHM=#{zjhm,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZYR 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

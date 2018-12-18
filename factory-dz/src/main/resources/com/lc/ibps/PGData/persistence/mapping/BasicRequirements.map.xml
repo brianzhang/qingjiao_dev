@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.BasicRequirementsPo">
+	<resultMap id="BasicRequirementsPo" type="com.lc.ibps.pgs.PGData.persistence.entity.BasicRequirementsPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="difficulty1" column="DIFFICULTY1" jdbcType="VARCHAR"/>
+		<result property="score1" column="SCORE1" jdbcType="VARCHAR"/>
+		<result property="difficulty2" column="DIFFICULTY2" jdbcType="VARCHAR"/>
+		<result property="score2" column="SCORE2" jdbcType="VARCHAR"/>
+		<result property="test" column="TEST" jdbcType="VARCHAR"/>
+		<result property="score3" column="SCORE3" jdbcType="VARCHAR"/>
+		<result property="attendance" column="ATTENDANCE" jdbcType="VARCHAR"/>
+		<result property="prepare" column="PREPARE" jdbcType="VARCHAR"/>
+		<result property="operate" column="OPERATE" jdbcType="VARCHAR"/>
+		<result property="report" column="REPORT" jdbcType="VARCHAR"/>
+		<result property="score4" column="SCORE4" jdbcType="VARCHAR"/>
+		<result property="ppt" column="PPT" jdbcType="VARCHAR"/>
+		<result property="document" column="DOCUMENT" jdbcType="VARCHAR"/>
+		<result property="presentation" column="PRESENTATION" jdbcType="VARCHAR"/>
+		<result property="score5" column="SCORE5" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,DIFFICULTY1,SCORE1,DIFFICULTY2,SCORE2,TEST,SCORE3,ATTENDANCE,PREPARE,OPERATE,REPORT,SCORE4,PPT,DOCUMENT,PRESENTATION,SCORE5
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.BasicRequirementsPo">
+		INSERT INTO T_P_JBYQB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{difficulty1,jdbcType=VARCHAR}, #{score1,jdbcType=VARCHAR}, #{difficulty2,jdbcType=VARCHAR}, #{score2,jdbcType=VARCHAR}, #{test,jdbcType=VARCHAR}, #{score3,jdbcType=VARCHAR}, #{attendance,jdbcType=VARCHAR}, #{prepare,jdbcType=VARCHAR}, #{operate,jdbcType=VARCHAR}, #{report,jdbcType=VARCHAR}, #{score4,jdbcType=VARCHAR}, #{ppt,jdbcType=VARCHAR}, #{document,jdbcType=VARCHAR}, #{presentation,jdbcType=VARCHAR}, #{score5,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BasicRequirementsPo">
+		SELECT <include refid="columns"/> FROM T_P_JBYQB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="BasicRequirementsPo">
+		SELECT <include refid="columns"/> FROM T_P_JBYQB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BasicRequirementsPo">
+		SELECT <include refid="columns"/> FROM T_P_JBYQB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.BasicRequirementsPo">
+		UPDATE T_P_JBYQB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		DIFFICULTY1=#{difficulty1,jdbcType=VARCHAR},
+		SCORE1=#{score1,jdbcType=VARCHAR},
+		DIFFICULTY2=#{difficulty2,jdbcType=VARCHAR},
+		SCORE2=#{score2,jdbcType=VARCHAR},
+		TEST=#{test,jdbcType=VARCHAR},
+		SCORE3=#{score3,jdbcType=VARCHAR},
+		ATTENDANCE=#{attendance,jdbcType=VARCHAR},
+		PREPARE=#{prepare,jdbcType=VARCHAR},
+		OPERATE=#{operate,jdbcType=VARCHAR},
+		REPORT=#{report,jdbcType=VARCHAR},
+		SCORE4=#{score4,jdbcType=VARCHAR},
+		PPT=#{ppt,jdbcType=VARCHAR},
+		DOCUMENT=#{document,jdbcType=VARCHAR},
+		PRESENTATION=#{presentation,jdbcType=VARCHAR},
+		SCORE5=#{score5,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_JBYQB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.TargetFBSourcePo">
+	<resultMap id="TargetFBSourcePo" type="com.lc.ibps.pgs.PGData.persistence.entity.TargetFBSourcePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="time" column="TIME" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="job" column="JOB" jdbcType="VARCHAR"/>
+		<result property="position" column="POSITION" jdbcType="VARCHAR"/>
+		<result property="content" column="CONTENT" jdbcType="CLOB"/>
+		<result property="advice" column="ADVICE" jdbcType="CLOB"/>
+		<result property="form" column="FORM" jdbcType="VARCHAR"/>
+		<result property="remark" column="REMARK" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,TIME,NAME,JOB,POSITION,CONTENT,ADVICE,FORM,REMARK
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TargetFBSourcePo">
+		INSERT INTO T_P_FKYJSJLY
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{time,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{content,jdbcType=CLOB}, #{advice,jdbcType=CLOB}, #{form,jdbcType=VARCHAR}, #{remark,jdbcType=CLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TargetFBSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_FKYJSJLY 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TargetFBSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_FKYJSJLY
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TargetFBSourcePo">
+		SELECT <include refid="columns"/> FROM T_P_FKYJSJLY
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TargetFBSourcePo">
+		UPDATE T_P_FKYJSJLY SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		TIME=#{time,jdbcType=VARCHAR},
+		NAME=#{name,jdbcType=VARCHAR},
+		JOB=#{job,jdbcType=VARCHAR},
+		POSITION=#{position,jdbcType=VARCHAR},
+		CONTENT=#{content,jdbcType=CLOB},
+		ADVICE=#{advice,jdbcType=CLOB},
+		FORM=#{form,jdbcType=VARCHAR},
+		REMARK=#{remark,jdbcType=CLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_FKYJSJLY 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

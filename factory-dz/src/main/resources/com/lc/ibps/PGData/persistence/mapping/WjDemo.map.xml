@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.WjDemoPo">
+	<resultMap id="WjDemoPo" type="com.lc.ibps.pgs.PGData.persistence.entity.WjDemoPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>	
+		<result property="wjtype" column="WJTYPE" jdbcType="VARCHAR"/>
+		<result property="userid" column="USERID" jdbcType="VARCHAR"/>
+		<result property="username" column="USERNAME" jdbcType="VARCHAR"/>
+		<result property="identy" column="IDENTY" jdbcType="VARCHAR"/>
+		<result property="event" column="EVENT" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON_" jdbcType="BLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,IP_,CREATE_BY_,CREATE_TIME_,UPDATE_BY_,UPDATE_TIME_,WJTYPE,USERID,USERNAME,IDENTY,EVENT,JSON_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.WjDemoPo">
+		INSERT INTO T_P_WJDC_TEST
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{ip,jdbcType=VARCHAR}, 
+		#{createBy,jdbcType=VARCHAR}, 
+		#{createTime,jdbcType=TIMESTAMP}, 
+		#{updateBy,jdbcType=VARCHAR}, 
+		#{updateTime,jdbcType=TIMESTAMP}, 
+		#{wjtype,jdbcType=VARCHAR}, 
+		#{userid,jdbcType=VARCHAR}, 
+		#{username,jdbcType=VARCHAR},
+		#{identy,jdbcType=VARCHAR}, 
+		#{event,jdbcType=VARCHAR},
+		#{json,jdbcType=BLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="WjDemoPo">
+		SELECT <include refid="columns"/> FROM T_P_WJDC_TEST 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="WjDemoPo">
+		SELECT <include refid="columns"/> FROM T_P_WJDC_TEST
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="WjDemoPo">
+		SELECT <include refid="columns"/> FROM T_P_WJDC_TEST
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.WjDemoPo">
+		UPDATE T_P_WJDC_TEST SET
+		IP_=#{ip,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		WJTYPE=#{wjtype,jdbcType=VARCHAR},
+		USERID=#{userid,jdbcType=VARCHAR},
+		USERNAME=#{username,jdbcType=VARCHAR},
+		IDENTY=#{identy,jdbcType=VARCHAR}, 
+		EVENT=#{event,jdbcType=VARCHAR},		
+		JSON_=#{json,jdbcType=BLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_WJDC_TEST 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="getByWjtype" parameterType="java.lang.String" resultMap="WjDemoPo">
+	SELECT <include refid="columns"/> FROM T_P_WJDC_TEST 
+		WHERE 
+		WJTYPE=#{type}
+	</select>
+</mapper>

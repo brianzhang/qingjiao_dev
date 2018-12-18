@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Report.persistence.entity.MeasurePo">
+	<resultMap id="MeasurePo" type="com.lc.ibps.pgs.Report.persistence.entity.MeasurePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="content1" column="CONTENT1" jdbcType="VARCHAR"/>
+		<result property="content2" column="CONTENT2" jdbcType="VARCHAR"/>
+		<result property="organizer" column="ORGANIZER" jdbcType="VARCHAR"/>
+		<result property="evalutionResult" column="EVALUTION_RESULT" jdbcType="VARCHAR"/>
+		<result property="evalutionWay" column="EVALUTION_WAY" jdbcType="VARCHAR"/>
+		<result property="executor" column="EXECUTOR" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,CONTENT1,CONTENT2,ORGANIZER,EVALUTION_RESULT,EVALUTION_WAY,EXECUTOR
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Report.persistence.entity.MeasurePo">
+		INSERT INTO T_P_KHHLXJXPJBYYQPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{content1,jdbcType=VARCHAR}, #{content2,jdbcType=VARCHAR}, #{organizer,jdbcType=VARCHAR}, #{evalutionResult,jdbcType=VARCHAR}, #{evalutionWay,jdbcType=VARCHAR}, #{executor,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="MeasurePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXJXPJBYYQPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="MeasurePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXJXPJBYYQPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="MeasurePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXJXPJBYYQPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Report.persistence.entity.MeasurePo">
+		UPDATE T_P_KHHLXJXPJBYYQPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		CONTENT1=#{content1,jdbcType=VARCHAR},
+		CONTENT2=#{content2,jdbcType=VARCHAR},
+		ORGANIZER=#{organizer,jdbcType=VARCHAR},
+		EVALUTION_RESULT=#{evalutionResult,jdbcType=VARCHAR},
+		EVALUTION_WAY=#{evalutionWay,jdbcType=VARCHAR},
+		EXECUTOR=#{executor,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_KHHLXJXPJBYYQPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

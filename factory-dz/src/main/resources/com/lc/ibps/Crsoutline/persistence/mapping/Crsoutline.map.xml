@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Crsoutline.persistence.entity.CrsoutlinePo">
+	<resultMap id="CrsoutlinePo" type="com.lc.ibps.pgs.Crsoutline.persistence.entity.CrsoutlinePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+	<!-- 
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="crsNum" column="CRS_NUM" jdbcType="VARCHAR"/>
+		<result property="crs_ch_name" column="CRS_CH_NAME" jdbcType="VARCHAR"/>
+    -->
+        <result property="num" column="NUM" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="period" column="PERIOD" jdbcType="NUMERIC"/>
+		<result property="credit" column="CREDIT" jdbcType="DOUBLE"/>
+		
+		<result property="crs_en_name" column="CRS_EN_NAME" jdbcType="VARCHAR"/>
+		<result property="crs_properties" column="CRS_PROPERTIES" jdbcType="VARCHAR"/>
+		<result property="crs_major" column="CRS_MAJOR" jdbcType="VARCHAR"/>
+		<result property="crs_term" column="CRS_TERM" jdbcType="VARCHAR"/>
+		<result property="crs_aim" column="CRS_AIM" jdbcType="CLOB"/>
+		<result property="tch_claim" column="TCH_CLAIM" jdbcType="CLOB"/>
+		<result property="tch_con_hours" column="TCH_CON_HOURS" jdbcType="CLOB"/>
+		<result property="tch_method" column="TCH_METHOD" jdbcType="VARCHAR"/>
+		<result property="exp_con" column="EXP_CON" jdbcType="VARCHAR"/>
+		<result property="pre_crs" column="PRE_CRS" jdbcType="VARCHAR"/>
+		<result property="fliow_crs" column="FLIOW_CRS" jdbcType="VARCHAR"/>
+		<result property="crs_refer" column="CRS_REFER" jdbcType="CLOB"/>
+		<result property="assess_way" column="ASSESS_WAY" jdbcType="CLOB"/>
+		<result property="tch_base_demand" column="TCH_BASE_DEMAND" jdbcType="CLOB"/>
+		<result property="exam_type" column="EXAM_TYPE" jdbcType="VARCHAR"/>
+		<result property="power_ratio" column="POWER_RATIO" jdbcType="VARCHAR"/>
+		<result property="tch_base_demand_1" column="TCH_BASE_DEMAND_1" jdbcType="CLOB"/>
+		<result property="tch_base_demand_2" column="TCH_BASE_DEMAND_2" jdbcType="CLOB"/>
+		<result property="exam_type_1" column="EXAM_TYPE_1" jdbcType="VARCHAR"/>
+		<result property="exam_type_2" column="EXAM_TYPE_2" jdbcType="VARCHAR"/>
+		<result property="power_ratio_1" column="POWER_RATIO_1" jdbcType="VARCHAR"/>
+		<result property="power_ratio_2" column="POWER_RATIO_2" jdbcType="VARCHAR"/>
+		<!--  
+		<result property="period" column="period" jdbcType="VARCHAR"/>
+		<result property="credit" column="credit" jdbcType="VARCHAR"/>
+		-->
+		<result property="theory_hours" column="THEORY_HOURS" jdbcType="VARCHAR"/>
+		<result property="exp_hour" column="EXP_HOUR" jdbcType="VARCHAR"/>
+		<result property="up_hour" column="UP_HOUR" jdbcType="VARCHAR"/>
+		<result property="other_hour" column="OTHER_HOUR" jdbcType="VARCHAR"/>
+		<result property="beiZhu" column="BEI_ZHU_" jdbcType="VARCHAR"/>
+		<result property="first_year_1" column="FIRST_YEAR_1" jdbcType="VARCHAR"/>
+		<result property="first_year_2" column="FIRST_YEAR_2" jdbcType="VARCHAR"/>
+		<result property="second_year_3" column="SECOND_YEAR_3" jdbcType="VARCHAR"/>
+		<result property="second_year_4" column="SECOND_YEAR_4" jdbcType="VARCHAR"/>
+		<result property="third_year_5" column="THIRD_YEAR_5" jdbcType="VARCHAR"/>
+		<result property="third_year_6" column="THIRD_YEAR_6" jdbcType="VARCHAR"/>
+		<result property="four_year_7" column="FOUR_YEAR_7" jdbcType="VARCHAR"/>
+		<result property="four_year_8" column="FOUR_YEAR_8" jdbcType="VARCHAR"/>
+		<result property="number" column="NUMBER" jdbcType="VARCHAR"/>
+		<result property="crs_proper_EN" column="CRS_PROPER_EN" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,NUM,NAME,CRS_EN_NAME,CRS_PROPERTIES,CRS_MAJOR,CRS_TERM,CRS_AIM,TCH_CLAIM,TCH_CON_HOURS,TCH_METHOD,EXP_CON,PRE_CRS,FLIOW_CRS,CRS_REFER,ASSESS_WAY,TCH_BASE_DEMAND,EXAM_TYPE,POWER_RATIO,TCH_BASE_DEMAND_1,TCH_BASE_DEMAND_2,EXAM_TYPE_1,EXAM_TYPE_2,POWER_RATIO_1,POWER_RATIO_2,PERIOD,CREDIT,THEORY_HOURS,EXP_HOUR,UP_HOUR,OTHER_HOUR,BEI_ZHU_,FIRST_YEAR_1,FIRST_YEAR_2,SECOND_YEAR_3,SECOND_YEAR_4,THIRD_YEAR_5,THIRD_YEAR_6,FOUR_YEAR_7,FOUR_YEAR_8,NUMBER,CRS_PROPER_EN
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Crsoutline.persistence.entity.CrsoutlinePo">
+		INSERT INTO T_COURSE
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{crs_en_name,jdbcType=VARCHAR}, #{crs_properties,jdbcType=VARCHAR}, #{crs_major,jdbcType=VARCHAR}, #{crs_term,jdbcType=VARCHAR}, #{crs_aim,jdbcType=CLOB}, #{tch_claim,jdbcType=CLOB}, #{tch_con_hours,jdbcType=CLOB}, #{tch_method,jdbcType=VARCHAR}, #{exp_con,jdbcType=VARCHAR}, #{pre_crs,jdbcType=VARCHAR}, #{fliow_crs,jdbcType=VARCHAR}, #{crs_refer,jdbcType=CLOB}, #{assess_way,jdbcType=CLOB}, #{tch_base_demand,jdbcType=CLOB}, #{exam_type,jdbcType=VARCHAR}, #{power_ratio,jdbcType=VARCHAR}, #{tch_base_demand_1,jdbcType=CLOB}, #{tch_base_demand_2,jdbcType=CLOB}, #{exam_type_1,jdbcType=VARCHAR}, #{exam_type_2,jdbcType=VARCHAR}, #{power_ratio_1,jdbcType=VARCHAR}, #{power_ratio_2,jdbcType=VARCHAR}, #{period,jdbcType=VARCHAR}, #{credit,jdbcType=VARCHAR}, #{theory_hours,jdbcType=VARCHAR}, #{exp_hour,jdbcType=VARCHAR}, #{up_hour,jdbcType=VARCHAR}, #{other_hour,jdbcType=VARCHAR}, #{beiZhu,jdbcType=VARCHAR}, #{first_year_1,jdbcType=VARCHAR}, #{first_year_2,jdbcType=VARCHAR}, #{second_year_3,jdbcType=VARCHAR}, #{second_year_4,jdbcType=VARCHAR}, #{third_year_5,jdbcType=VARCHAR}, #{third_year_6,jdbcType=VARCHAR}, #{four_year_7,jdbcType=VARCHAR}, #{four_year_8,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, #{crs_proper_EN,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CrsoutlinePo">
+		SELECT <include refid="columns"/> FROM T_COURSE 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsoutlinePo">
+		SELECT <include refid="columns"/> FROM T_COURSE
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CrsoutlinePo">
+		SELECT <include refid="columns"/> FROM T_COURSE
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Crsoutline.persistence.entity.CrsoutlinePo">
+		UPDATE T_COURSE SET
+		NUM=#{num,jdbcType=VARCHAR},
+		NAME=#{name,jdbcType=VARCHAR},
+		CRS_EN_NAME=#{crs_en_name,jdbcType=VARCHAR},
+		CRS_PROPERTIES=#{crs_properties,jdbcType=VARCHAR},
+		CRS_MAJOR=#{crs_major,jdbcType=VARCHAR},
+		CRS_TERM=#{crs_term,jdbcType=VARCHAR},
+		CRS_AIM=#{crs_aim,jdbcType=CLOB},
+		TCH_CLAIM=#{tch_claim,jdbcType=CLOB},
+		TCH_CON_HOURS=#{tch_con_hours,jdbcType=CLOB},
+		TCH_METHOD=#{tch_method,jdbcType=VARCHAR},
+		EXP_CON=#{exp_con,jdbcType=VARCHAR},
+		PRE_CRS=#{pre_crs,jdbcType=VARCHAR},
+		FLIOW_CRS=#{fliow_crs,jdbcType=VARCHAR},
+		CRS_REFER=#{crs_refer,jdbcType=CLOB},
+		ASSESS_WAY=#{assess_way,jdbcType=CLOB},
+		TCH_BASE_DEMAND=#{tch_base_demand,jdbcType=CLOB},
+		EXAM_TYPE=#{exam_type,jdbcType=VARCHAR},
+		POWER_RATIO=#{power_ratio,jdbcType=VARCHAR},
+		TCH_BASE_DEMAND_1=#{tch_base_demand_1,jdbcType=CLOB},
+		TCH_BASE_DEMAND_2=#{tch_base_demand_2,jdbcType=CLOB},
+		EXAM_TYPE_1=#{exam_type_1,jdbcType=VARCHAR},
+		EXAM_TYPE_2=#{exam_type_2,jdbcType=VARCHAR},
+		POWER_RATIO_1=#{power_ratio_1,jdbcType=VARCHAR},
+		POWER_RATIO_2=#{power_ratio_2,jdbcType=VARCHAR},
+		PERIOD=#{period,jdbcType=VARCHAR},
+		CREDIT=#{credit,jdbcType=VARCHAR},
+		THEORY_HOURS=#{theory_hours,jdbcType=VARCHAR},
+		EXP_HOUR=#{exp_hour,jdbcType=VARCHAR},
+		UP_HOUR=#{up_hour,jdbcType=VARCHAR},
+		OTHER_HOUR=#{other_hour,jdbcType=VARCHAR},
+		BEI_ZHU_=#{beiZhu,jdbcType=VARCHAR},
+		FIRST_YEAR_1=#{first_year_1,jdbcType=VARCHAR},
+		FIRST_YEAR_2=#{first_year_2,jdbcType=VARCHAR},
+		SECOND_YEAR_3=#{second_year_3,jdbcType=VARCHAR},
+		SECOND_YEAR_4=#{second_year_4,jdbcType=VARCHAR},
+		THIRD_YEAR_5=#{third_year_5,jdbcType=VARCHAR},
+		THIRD_YEAR_6=#{third_year_6,jdbcType=VARCHAR},
+		FOUR_YEAR_7=#{four_year_7,jdbcType=VARCHAR},
+		FOUR_YEAR_8=#{four_year_8,jdbcType=VARCHAR},
+		NUMBER=#{number,jdbcType=VARCHAR},
+		CRS_PROPER_EN=#{crs_proper_EN,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_COURSE 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

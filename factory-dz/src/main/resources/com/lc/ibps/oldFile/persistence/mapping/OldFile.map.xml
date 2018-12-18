@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.bishes.oldFile.persistence.entity.OldFilePo">
+	<resultMap id="OldFilePo" type="com.lc.ibps.bishes.oldFile.persistence.entity.OldFilePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="xh" column="XH" jdbcType="VARCHAR"/>
+		<result property="filecategory" column="FILECATEGORY" jdbcType="VARCHAR"/>
+		<result property="fileid" column="FILEID" jdbcType="VARCHAR"/>
+		<result property="fileVersion" column="FILE_VERSION" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="comment" column="comment_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,XH,FILECATEGORY,FILEID,FILE_VERSION,CREATE_TIME_,COMMENT_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.bishes.oldFile.persistence.entity.OldFilePo">
+		INSERT INTO T_OLDFILE
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{xh,jdbcType=VARCHAR}, #{filecategory,jdbcType=VARCHAR}, #{fileid,jdbcType=VARCHAR}, #{fileVersion,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP},#{comment,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="OldFilePo">
+		SELECT <include refid="columns"/> FROM T_OLDFILE 
+		WHERE 
+		ID_=#{id}
+	</select>
+
+
+	<select id="getBySql" parameterType="java.lang.String" resultMap="OldFilePo">
+		SELECT
+		<include refid="columns" />
+		FROM t_oldfile
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="OldFilePo">
+		SELECT <include refid="columns"/> FROM T_OLDFILE
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="OldFilePo">
+		SELECT <include refid="columns"/> FROM T_OLDFILE
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.bishes.oldFile.persistence.entity.OldFilePo">
+		UPDATE T_OLDFILE SET
+		XH=#{xh,jdbcType=VARCHAR},
+		FILECATEGORY=#{filecategory,jdbcType=VARCHAR},
+		FILEID=#{fileid,jdbcType=VARCHAR},
+		FILE_VERSION=#{fileVersion,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		COMMENT_=#{comment,jdbcType=VARCHAR},
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_OLDFILE 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

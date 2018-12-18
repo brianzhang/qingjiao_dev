@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Byyq.persistence.entity.ByyqPo">
+	<resultMap id="ByyqPo" type="com.lc.ibps.pgs.Byyq.persistence.entity.ByyqPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="pro_id" column="PRO_ID" jdbcType="VARCHAR"/>
+		<result property="pro_name" column="PRO_NAME" jdbcType="VARCHAR"/>
+		<result property="demand_title" column="DEMAND_TITLE" jdbcType="VARCHAR"/>
+		<result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+		<result property="num" column="NUM" jdbcType="NUMERIC"/>
+		<result property="history" column="HISTORY" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,PRO_ID,PRO_NAME,DEMAND_TITLE,CONTENT,NUM,HISTORY
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Byyq.persistence.entity.ByyqPo">
+		INSERT INTO T_BYYQ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{pro_id,jdbcType=VARCHAR}, #{pro_name,jdbcType=VARCHAR}, #{demand_title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{num,jdbcType=NUMERIC}, #{history,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ByyqPo">
+		SELECT <include refid="columns"/> FROM T_BYYQ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ByyqPo">
+		SELECT <include refid="columns"/> FROM T_BYYQ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ByyqPo">
+		SELECT <include refid="columns"/> FROM T_BYYQ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Byyq.persistence.entity.ByyqPo">
+		UPDATE T_BYYQ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		PRO_ID=#{pro_id,jdbcType=VARCHAR},
+		PRO_NAME=#{pro_name,jdbcType=VARCHAR},
+		DEMAND_TITLE=#{demand_title,jdbcType=VARCHAR},
+		CONTENT=#{content,jdbcType=VARCHAR},
+		NUM=#{num,jdbcType=NUMERIC},
+		HISTORY=#{history,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BYYQ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

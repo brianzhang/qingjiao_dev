@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.patrols.data.persistence.entity.PatrolDetailPo">
+	<resultMap id="PatrolDetailPo" type="com.lc.ibps.patrols.data.persistence.entity.PatrolDetailPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="pgId" column="PG_ID_" jdbcType="VARCHAR"/>
+		<result property="className" column="CLASS_NAME_" jdbcType="VARCHAR"/>
+		<result property="actTch" column="ACT_TCH_" jdbcType="VARCHAR"/>
+		<result property="reason" column="REASON_" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,PG_ID_,CLASS_NAME_,ACT_TCH_,REASON_,STATUS_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.patrols.data.persistence.entity.PatrolDetailPo">
+		INSERT INTO T_PATROL_DETAIL
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{pgId,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR}, #{actTch,jdbcType=VARCHAR}, #{reason,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PatrolDetailPo">
+		SELECT <include refid="columns"/> FROM T_PATROL_DETAIL 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="exGetBy" parameterType="java.util.HashMap"
+		resultMap="PatrolDetailPo">
+		SELECT
+		<include refid="columns" /> <if test="@Ognl@isNotEmpty(exFields)"><foreach collection="exFields"  item="v" ><if test="v != null and v != '' "> , ${ v } </if></foreach></if>
+		FROM T_PATROL_DETAIL <if test="@Ognl@isNotEmpty(exTableList)"><foreach collection="exTableList"  item="v" ><if test="v != null and v != '' "> , ${ v } </if></foreach></if>
+		WHERE 
+		<foreach collection="relationMap" index="k" item="v"
+			separator="and">
+			${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+		<if test="@Ognl@isNotEmpty(orderByMap)">
+			ORDER BY <foreach collection="orderByMap" index="k" item="v" separator="and"> ${k} ${v} </foreach>
+		</if>
+	</select>
+	
+	
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PatrolDetailPo">
+		SELECT <include refid="columns"/> FROM T_PATROL_DETAIL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PatrolDetailPo">
+		SELECT <include refid="columns"/> FROM T_PATROL_DETAIL
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.patrols.data.persistence.entity.PatrolDetailPo">
+		UPDATE T_PATROL_DETAIL SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		PG_ID_=#{pgId,jdbcType=VARCHAR},
+		CLASS_NAME_=#{className,jdbcType=VARCHAR},
+		ACT_TCH_=#{actTch,jdbcType=VARCHAR},
+		REASON_=#{reason,jdbcType=VARCHAR},
+		STATUS_=#{status,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PATROL_DETAIL 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PingJia.persistence.entity.PingJiaPo">
+	<resultMap id="PingJiaPo" type="com.lc.ibps.pgs.PingJia.persistence.entity.PingJiaPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="zhouQi" column="ZHOU_QI_" jdbcType="VARCHAR"/>
+		<result property="pingJieRen" column="PING_JIE_REN_" jdbcType="VARCHAR"/>
+		<result property="juanFen" column="JUAN_FEN_" jdbcType="VARCHAR"/>
+		<result property="pingJieJiZhi" column="PING_JIE_JI_ZHI_" jdbcType="CLOB"/>
+		<result property="fangAnID" column="FANG_AN_I_D_" jdbcType="VARCHAR"/>
+		<result property="mingCheng" column="MING_CHENG_" jdbcType="VARCHAR"/>
+		<result property="pingJia" column="PING_JIA_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,ZHOU_QI_,PING_JIE_REN_,JUAN_FEN_,PING_JIE_JI_ZHI_,FANG_AN_I_D_,MING_CHENG_,PING_JIA_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PingJia.persistence.entity.PingJiaPo">
+		INSERT INTO T_PYMBPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{zhouQi,jdbcType=VARCHAR}, #{pingJieRen,jdbcType=VARCHAR}, #{juanFen,jdbcType=VARCHAR}, #{pingJieJiZhi,jdbcType=CLOB}, #{fangAnID,jdbcType=VARCHAR}, #{mingCheng,jdbcType=VARCHAR}, #{pingJia,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PingJiaPo">
+		SELECT <include refid="columns"/> FROM T_PYMBPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PingJiaPo">
+		SELECT <include refid="columns"/> FROM T_PYMBPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PingJiaPo">
+		SELECT <include refid="columns"/> FROM T_PYMBPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PingJia.persistence.entity.PingJiaPo">
+		UPDATE T_PYMBPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		ZHOU_QI_=#{zhouQi,jdbcType=VARCHAR},
+		PING_JIE_REN_=#{pingJieRen,jdbcType=VARCHAR},
+		JUAN_FEN_=#{juanFen,jdbcType=VARCHAR},
+		PING_JIE_JI_ZHI_=#{pingJieJiZhi,jdbcType=CLOB},
+		FANG_AN_I_D_=#{fangAnID,jdbcType=VARCHAR},
+		MING_CHENG_=#{mingCheng,jdbcType=VARCHAR},
+		PING_JIA_=#{pingJia,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PYMBPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

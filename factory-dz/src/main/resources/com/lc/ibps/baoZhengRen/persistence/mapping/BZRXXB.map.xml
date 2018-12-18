@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.baoZhengRen.persistence.entity.BZRXXBPo">
+	<resultMap id="BZRXXBPo" type="com.lc.ibps.loans.baoZhengRen.persistence.entity.BZRXXBPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="bzlx" column="BZLX" jdbcType="VARCHAR"/>
+		<result property="bzrmc" column="BZRMC" jdbcType="VARCHAR"/>
+		<result property="bzrzjlx" column="BZRZJLX" jdbcType="VARCHAR"/>
+		<result property="zjhm" column="ZJHM" jdbcType="VARCHAR"/>
+		<result property="lxdh" column="LXDH" jdbcType="VARCHAR"/>
+		<result property="sfbxgsbx" column="SFBXGSBX" jdbcType="VARCHAR"/>
+		<result property="bzfs" column="BZFS" jdbcType="VARCHAR"/>
+		<result property="bzje" column="BZJE" jdbcType="NUMERIC"/>
+		<result property="bzbl" column="BZBL" jdbcType="NUMERIC"/>
+		<result property="yjkrgx" column="YJKRGX" jdbcType="VARCHAR"/>
+		<result property="bzrpomc" column="BZRPOMC" jdbcType="VARCHAR"/>
+		<result property="bzrpozjlx" column="BZRPOZJLX" jdbcType="VARCHAR"/>
+		<result property="bzrpozjhm" column="BZRPOZJHM" jdbcType="VARCHAR"/>
+		<result property="sjjzdz" column="SJJZDZ" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="lxrxm" column="LXRXM" jdbcType="VARCHAR"/>
+		<result property="lxryjkrgx" column="LXRYJKRGX" jdbcType="VARCHAR"/>
+		<result property="lxrlxdh" column="LXRLXDH" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,BZLX,BZRMC,BZRZJLX,ZJHM,LXDH,SFBXGSBX,BZFS,BZJE,BZBL,YJKRGX,BZRPOMC,BZRPOZJLX,BZRPOZJHM,SJJZDZ,BZ,LXRXM,LXRYJKRGX,LXRLXDH,JDID
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.baoZhengRen.persistence.entity.BZRXXBPo">
+		INSERT INTO T_BZRXXB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{bzlx,jdbcType=VARCHAR}, #{bzrmc,jdbcType=VARCHAR}, #{bzrzjlx,jdbcType=VARCHAR}, #{zjhm,jdbcType=VARCHAR}, #{lxdh,jdbcType=VARCHAR}, #{sfbxgsbx,jdbcType=VARCHAR}, #{bzfs,jdbcType=VARCHAR}, #{bzje,jdbcType=NUMERIC}, #{bzbl,jdbcType=NUMERIC}, #{yjkrgx,jdbcType=VARCHAR}, #{bzrpomc,jdbcType=VARCHAR}, #{bzrpozjlx,jdbcType=VARCHAR}, #{bzrpozjhm,jdbcType=VARCHAR}, #{sjjzdz,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR}, #{lxrxm,jdbcType=VARCHAR}, #{lxryjkrgx,jdbcType=VARCHAR}, #{lxrlxdh,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BZRXXBPo">
+		SELECT <include refid="columns"/> FROM T_BZRXXB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	
+    <select id="getByJdidAndZjhm" parameterType="java.util.Map" resultMap="BZRXXBPo">
+		SELECT * FROM T_BZRXXB 
+		WHERE 
+		 JDID=#{jdid} AND ZJHM=#{zjhm}
+	</select>
+    <select id="query" parameterType="java.util.Map" resultMap="BZRXXBPo">
+		SELECT <include refid="columns"/> FROM T_BZRXXB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BZRXXBPo">
+		SELECT <include refid="columns"/> FROM T_BZRXXB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.baoZhengRen.persistence.entity.BZRXXBPo">
+		UPDATE T_BZRXXB SET
+		BZLX=#{bzlx,jdbcType=VARCHAR},
+		BZRMC=#{bzrmc,jdbcType=VARCHAR},
+		BZRZJLX=#{bzrzjlx,jdbcType=VARCHAR},
+		ZJHM=#{zjhm,jdbcType=VARCHAR},
+		LXDH=#{lxdh,jdbcType=VARCHAR},
+		SFBXGSBX=#{sfbxgsbx,jdbcType=VARCHAR},
+		BZFS=#{bzfs,jdbcType=VARCHAR},
+		BZJE=#{bzje,jdbcType=NUMERIC},
+		BZBL=#{bzbl,jdbcType=NUMERIC},
+		YJKRGX=#{yjkrgx,jdbcType=VARCHAR},
+		BZRPOMC=#{bzrpomc,jdbcType=VARCHAR},
+		BZRPOZJLX=#{bzrpozjlx,jdbcType=VARCHAR},
+		BZRPOZJHM=#{bzrpozjhm,jdbcType=VARCHAR},
+		SJJZDZ=#{sjjzdz,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		LXRXM=#{lxrxm,jdbcType=VARCHAR},
+		LXRYJKRGX=#{lxryjkrgx,jdbcType=VARCHAR},
+		LXRLXDH=#{lxrlxdh,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BZRXXB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.components.model.persistence.entity.BusinessModelPo">
+	<resultMap id="BusinessModelPo" type="com.lc.ibps.components.model.persistence.entity.BusinessModelPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="propModelId" column="PROP_MODEL_ID_" jdbcType="VARCHAR"/>
+		<result property="param" column="PARAM_" jdbcType="CLOB"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,NAME_,PROP_MODEL_ID_,PARAM_,CREATE_TIME_,UPDATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.components.model.persistence.entity.BusinessModelPo">
+		INSERT INTO T_BUSINESS_MODEL
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{propModelId,jdbcType=VARCHAR}, #{param,jdbcType=CLOB}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BusinessModelPo">
+		SELECT <include refid="columns"/> FROM T_BUSINESS_MODEL 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="BusinessModelPo">
+		SELECT <include refid="columns"/> FROM T_BUSINESS_MODEL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BusinessModelPo">
+		SELECT <include refid="columns"/> FROM T_BUSINESS_MODEL
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.components.model.persistence.entity.BusinessModelPo">
+		UPDATE T_BUSINESS_MODEL SET
+		NAME_=#{name,jdbcType=VARCHAR},
+		PROP_MODEL_ID_=#{propModelId,jdbcType=VARCHAR},
+		PARAM_=#{param,jdbcType=CLOB},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BUSINESS_MODEL 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.grads.course.persistence.entity.IllegalPo">
+	<resultMap id="IllegalPo" type="com.lc.ibps.grads.course.persistence.entity.IllegalPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="userid" column="USERID_" jdbcType="VARCHAR"/>
+		<result property="stdNum" column="STD_NUM_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,USERID_,STD_NUM_,NAME_,CREATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.grads.course.persistence.entity.IllegalPo">
+		INSERT INTO T_ILLEGAL
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{stdNum,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="IllegalPo">
+		SELECT <include refid="columns"/> FROM T_ILLEGAL 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByCols"   parameterType="java.util.HashMap" resultMap="IllegalPo">
+		SELECT <include refid="columns"/> FROM T_ILLEGAL 
+		WHERE 
+		<foreach collection="relationMap" index="k" item="v" separator="and" >
+		    ${k}
+		    <choose>
+		        <when test="_mode != null">${_mode} concat('%',#{v},'%')</when>
+		        <otherwise>=#{v}</otherwise>
+		    </choose>
+		</foreach>
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="IllegalPo">
+		SELECT <include refid="columns"/> FROM T_ILLEGAL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="IllegalPo">
+		SELECT <include refid="columns"/> FROM T_ILLEGAL
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.grads.course.persistence.entity.IllegalPo">
+		UPDATE T_ILLEGAL SET
+		USERID_=#{userid,jdbcType=VARCHAR},
+		STD_NUM_=#{stdNum,jdbcType=VARCHAR},
+		NAME_=#{name,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ILLEGAL 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

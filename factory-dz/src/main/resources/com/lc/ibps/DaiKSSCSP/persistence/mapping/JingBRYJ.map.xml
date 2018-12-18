@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.JingBRYJPo">
+	<resultMap id="JingBRYJPo" type="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.JingBRYJPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="jksqr" column="JKSQR" jdbcType="VARCHAR"/>
+		<result property="sxje" column="SXJE" jdbcType="NUMERIC"/>
+		<result property="sxqx" column="SXQX" jdbcType="VARCHAR"/>
+		<result property="dbfs" column="DBFS" jdbcType="VARCHAR"/>
+		<result property="dklx" column="DKLX" jdbcType="VARCHAR"/>
+		<result property="dkje" column="DKJE" jdbcType="NUMERIC"/>
+		<result property="dkqx" column="DKQX" jdbcType="VARCHAR"/>
+		<result property="yll" column="YLL" jdbcType="NUMERIC"/>
+		<result property="ghfs" column="GHFS" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="jbdcrid" column="JBDCRID" jdbcType="VARCHAR"/>
+		<result property="jbrqz" column="JBRQZ" jdbcType="VARCHAR"/>
+		<result property="jbrqzsj" column="JBRQZSJ" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,JKSQR,SXJE,SXQX,DBFS,DKLX,DKJE,DKQX,YLL,GHFS,JDID,JBDCRID,JBRQZ,JBRQZSJ
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.JingBRYJPo">
+		INSERT INTO T_JBDCRYJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{jksqr,jdbcType=VARCHAR}, #{sxje,jdbcType=NUMERIC}, #{sxqx,jdbcType=VARCHAR}, #{dbfs,jdbcType=VARCHAR}, #{dklx,jdbcType=VARCHAR}, #{dkje,jdbcType=NUMERIC}, #{dkqx,jdbcType=VARCHAR}, #{yll,jdbcType=NUMERIC}, #{ghfs,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR}, #{jbdcrid,jdbcType=VARCHAR}, #{jbrqz,jdbcType=VARCHAR}, #{jbrqzsj,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="JingBRYJPo">
+		SELECT <include refid="columns"/> FROM T_JBDCRYJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdid" parameterType="java.util.Map" resultMap="JingBRYJPo">
+		SELECT * FROM T_JBDCRYJ 
+		WHERE 
+		 JDID=#{jdid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="JingBRYJPo">
+		SELECT <include refid="columns"/> FROM T_JBDCRYJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="JingBRYJPo">
+		SELECT <include refid="columns"/> FROM T_JBDCRYJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.JingBRYJPo">
+		UPDATE T_JBDCRYJ SET
+		JKSQR=#{jksqr,jdbcType=VARCHAR},
+		SXJE=#{sxje,jdbcType=NUMERIC},
+		SXQX=#{sxqx,jdbcType=VARCHAR},
+		DBFS=#{dbfs,jdbcType=VARCHAR},
+		DKLX=#{dklx,jdbcType=VARCHAR},
+		DKJE=#{dkje,jdbcType=NUMERIC},
+		DKQX=#{dkqx,jdbcType=VARCHAR},
+		YLL=#{yll,jdbcType=NUMERIC},
+		GHFS=#{ghfs,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		JBDCRID=#{jbdcrid,jdbcType=VARCHAR},
+		JBRQZ=#{jbrqz,jdbcType=VARCHAR},
+		JBRQZSJ=#{jbrqzsj,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_JBDCRYJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

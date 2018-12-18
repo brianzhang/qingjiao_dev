@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.components.codegen.persistence.entity.PageFormPo">
+	<resultMap id="PageFormPo" type="com.lc.ibps.components.codegen.persistence.entity.PageFormPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="pageKey" column="PAGE_KEY_" jdbcType="VARCHAR"/>
+		<result property="formKey" column="FORM_KEY_" jdbcType="VARCHAR"/>
+		<result property="comment" column="COMMENT_" jdbcType="VARCHAR"/>
+		<result property="ip" column="IP_" jdbcType="VARCHAR"/>
+		<result property="createBy" column="CREATE_BY_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateBy" column="UPDATE_BY_" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,PAGE_KEY_,FORM_KEY_,COMMENT_,IP_,CREATE_BY_,CREATE_TIME_,UPDATE_BY_,UPDATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.components.codegen.persistence.entity.PageFormPo">
+		INSERT INTO T_PAGE_FORM
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{pageKey,jdbcType=VARCHAR}, #{formKey,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PageFormPo">
+		SELECT <include refid="columns"/> FROM T_PAGE_FORM 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByPageKey"   parameterType="java.lang.String" resultMap="PageFormPo">
+		SELECT <include refid="columns"/> FROM T_PAGE_FORM 
+		WHERE 
+		PAGE_KEY_=#{pageKey}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PageFormPo">
+		SELECT <include refid="columns"/> FROM T_PAGE_FORM
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PageFormPo">
+		SELECT <include refid="columns"/> FROM T_PAGE_FORM
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.components.codegen.persistence.entity.PageFormPo">
+		UPDATE T_PAGE_FORM SET
+		PAGE_KEY_=#{pageKey,jdbcType=VARCHAR},
+		FORM_KEY_=#{formKey,jdbcType=VARCHAR},
+		COMMENT_= #{comment,jdbcType=VARCHAR},
+		IP_=#{ip,jdbcType=VARCHAR},
+		CREATE_BY_=#{createBy,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_BY_=#{updateBy,jdbcType=VARCHAR},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PAGE_FORM 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

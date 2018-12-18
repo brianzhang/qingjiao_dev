@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.bishes.teacherAndStudent.persistence.entity.TeacherAndStudentPo">
+	<resultMap id="TeacherAndStudentPo" type="com.lc.ibps.bishes.teacherAndStudent.persistence.entity.TeacherAndStudentPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="js" column="JS" jdbcType="VARCHAR"/>
+		<result property="jsid" column="JSID" jdbcType="VARCHAR"/>
+		<result property="team" column="TEAM" jdbcType="VARCHAR"/>
+		<result property="teamId" column="TEAM_ID" jdbcType="VARCHAR"/>
+		<result property="amount" column="AMOUNT" jdbcType="NUMERIC"/>
+		<result property="xs" column="XS" jdbcType="VARCHAR"/>
+		<result property="teacherId" column="TEACHER_ID" jdbcType="VARCHAR"/>
+		<result property="file" column="FILE" jdbcType="VARCHAR"/>
+		<result property="uploadTime" column="UPLOAD_TIME" jdbcType="TIMESTAMP"/>
+		<result property="wjm" column="WJM" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,JS,JSID,TEAM,TEAM_ID,AMOUNT,XS,TEACHER_ID,FILE,UPLOAD_TIME,WJM
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.bishes.teacherAndStudent.persistence.entity.TeacherAndStudentPo">
+		INSERT INTO T_TDDSXS
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{js,jdbcType=VARCHAR}, #{jsid,jdbcType=VARCHAR}, #{team,jdbcType=VARCHAR}, #{teamId,jdbcType=VARCHAR}, #{amount,jdbcType=NUMERIC}, #{xs,jdbcType=VARCHAR}, #{teacherId,jdbcType=VARCHAR}, #{file,jdbcType=VARCHAR}, #{uploadTime,jdbcType=TIMESTAMP},#{wjm,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TeacherAndStudentPo">
+		SELECT <include refid="columns"/> FROM T_TDDSXS 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJsid"   parameterType="java.lang.String" resultMap="TeacherAndStudentPo">
+		SELECT * FROM T_TDDSXS 
+		WHERE 
+		JSID=#{jsid}
+	</select>
+	<select id="getByGroupId" parameterType="java.util.Map" resultMap="TeacherAndStudentPo">
+		SELECT *
+		FROM T_TDDSXS
+		WHERE
+		TEAM_ID=#{groupid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TeacherAndStudentPo">
+		SELECT <include refid="columns"/> FROM T_TDDSXS
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TeacherAndStudentPo">
+		SELECT <include refid="columns"/> FROM T_TDDSXS
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.bishes.teacherAndStudent.persistence.entity.TeacherAndStudentPo">
+		UPDATE T_TDDSXS SET
+		JS=#{js,jdbcType=VARCHAR},
+		JSID=#{jsid,jdbcType=VARCHAR},
+		TEAM=#{team,jdbcType=VARCHAR},
+		TEAM_ID=#{teamId,jdbcType=VARCHAR},
+		AMOUNT=#{amount,jdbcType=NUMERIC},
+		XS=#{xs,jdbcType=VARCHAR},
+		TEACHER_ID=#{teacherId,jdbcType=VARCHAR},
+		FILE=#{file,jdbcType=VARCHAR},
+		UPLOAD_TIME=#{uploadTime,jdbcType=TIMESTAMP},
+		WJM=#{wjm,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_TDDSXS 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

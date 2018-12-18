@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.PJObjectPo">
+	<resultMap id="PJObjectPo" type="com.lc.ibps.pgs.PGData.persistence.entity.PJObjectPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="school_number" column="SCHOOL_NUMBER" jdbcType="VARCHAR"/>
+		<result property="std_name" column="STD_NAME" jdbcType="VARCHAR"/>
+		<result property="classnum" column="CLASS" jdbcType="VARCHAR"/>
+		<result property="final_paper1" column="FINAL_PAPER1" jdbcType="VARCHAR"/>
+		<result property="final_paper2" column="FINAL_PAPER2" jdbcType="VARCHAR"/>
+		<result property="final_paper3" column="FINAL_PAPER3" jdbcType="VARCHAR"/>
+		<result property="final_paper4" column="FINAL_PAPER4" jdbcType="VARCHAR"/>
+		<result property="experiment" column="EXPERIMENT" jdbcType="VARCHAR"/>
+		<result property="subject_present" column="SUBJECT_PRESENT" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,SCHOOL_NUMBER,STD_NAME,CLASS,FINAL_PAPER1,FINAL_PAPER2,FINAL_PAPER3,FINAL_PAPER4,EXPERIMENT,SUBJECT_PRESENT
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.PJObjectPo">
+		INSERT INTO T_P_PJDX
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{school_number,jdbcType=VARCHAR}, #{std_name,jdbcType=VARCHAR}, #{classnum,jdbcType=VARCHAR}, #{final_paper1,jdbcType=VARCHAR},  #{final_paper2,jdbcType=VARCHAR}, #{final_paper3,jdbcType=VARCHAR}, #{final_paper4,jdbcType=VARCHAR},#{experiment,jdbcType=VARCHAR}, #{subject_present,jdbcType=CLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PJObjectPo">
+		SELECT <include refid="columns"/> FROM T_P_PJDX 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PJObjectPo">
+		SELECT <include refid="columns"/> FROM T_P_PJDX
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PJObjectPo">
+		SELECT <include refid="columns"/> FROM T_P_PJDX
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.PJObjectPo">
+		UPDATE T_P_PJDX SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		SCHOOL_NUMBER=#{school_number,jdbcType=VARCHAR},
+		STD_NAME=#{std_name,jdbcType=VARCHAR},
+		CLASS=#{classnum,jdbcType=VARCHAR},
+		FINAL_PAPER1=#{final_paper1,jdbcType=VARCHAR},
+		FINAL_PAPER2=#{final_paper2,jdbcType=VARCHAR},
+		FINAL_PAPER3=#{final_paper3,jdbcType=VARCHAR},
+		FINAL_PAPER4=#{final_paper4,jdbcType=VARCHAR},
+		EXPERIMENT=#{experiment,jdbcType=VARCHAR},
+		SUBJECT_PRESENT=#{subject_present,jdbcType=CLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_PJDX 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.patrols.data.persistence.entity.TeachInfoPo">
+	<resultMap id="TeachInfoPo" type="com.lc.ibps.patrols.data.persistence.entity.TeachInfoPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="scheduleId" column="SCHEDULE_ID_" jdbcType="VARCHAR"/>
+		<result property="tchId" column="TCH_ID_" jdbcType="VARCHAR"/>
+		<result property="classxxId" column="CLASSXX_ID_" jdbcType="VARCHAR"/>
+		<result property="day" column="DAY_" jdbcType="VARCHAR"/>
+		<result property="section" column="SECTION_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,SCHEDULE_ID_,TCH_ID_,CLASSXX_ID_,DAY_,SECTION_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.patrols.data.persistence.entity.TeachInfoPo">
+		INSERT INTO T_SK_INF
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{scheduleId,jdbcType=VARCHAR}, #{tchId,jdbcType=VARCHAR}, #{classxxId,jdbcType=VARCHAR}, #{day,jdbcType=VARCHAR}, #{section,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TeachInfoPo">
+		SELECT <include refid="columns"/> FROM T_SK_INF 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="exGetBy" parameterType="java.util.HashMap"
+		resultMap="TeachInfoPo">
+		SELECT
+		<include refid="columns" /> <if test="@Ognl@isNotEmpty(exFields)"><foreach collection="exFields"  item="v" ><if test="v != null and v != '' "> , ${ v } </if></foreach></if>
+		FROM T_SK_INF <if test="@Ognl@isNotEmpty(exTableList)"><foreach collection="exTableList"  item="v" ><if test="v != null and v != '' "> , ${ v } </if></foreach></if>
+		WHERE 
+		<foreach collection="relationMap" index="k" item="v"
+			separator="and">
+			${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+		<if test="@Ognl@isNotEmpty(orderByMap)">
+			ORDER BY <foreach collection="orderByMap" index="k" item="v" separator="and"> ${k} ${v} </foreach>
+		</if>
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TeachInfoPo">
+		SELECT <include refid="columns"/> FROM T_SK_INF
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TeachInfoPo">
+		SELECT <include refid="columns"/> FROM T_SK_INF
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.patrols.data.persistence.entity.TeachInfoPo">
+		UPDATE T_SK_INF SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		SCHEDULE_ID_=#{scheduleId,jdbcType=VARCHAR},
+		TCH_ID_=#{tchId,jdbcType=VARCHAR},
+		CLASSXX_ID_=#{classxxId,jdbcType=VARCHAR},
+		DAY_=#{day,jdbcType=VARCHAR},
+		SECTION_=#{section,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_SK_INF 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

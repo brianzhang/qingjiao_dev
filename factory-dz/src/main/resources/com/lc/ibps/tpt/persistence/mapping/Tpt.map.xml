@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.patrols.tpt.persistence.entity.TptPo">
+	<resultMap id="TptPo" type="com.lc.ibps.patrols.tpt.persistence.entity.TptPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="tptName" column="TPTNAME" jdbcType="VARCHAR"/>
+		<result property="tptLb" column="TPTLB" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,TPTNAME,TPTLB,JSON
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.patrols.tpt.persistence.entity.TptPo">
+		INSERT INTO T_TPT
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{tptName,jdbcType=VARCHAR}, #{tptLb,jdbcType=VARCHAR}, #{json,jdbcType=CLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TptPo">
+		SELECT <include refid="columns"/> FROM T_TPT 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TptPo">
+		SELECT <include refid="columns"/> FROM T_TPT
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TptPo">
+		SELECT <include refid="columns"/> FROM T_TPT
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.patrols.tpt.persistence.entity.TptPo">
+		UPDATE T_TPT SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		TPTNAME=#{tptName,jdbcType=VARCHAR},
+		TPTLB=#{tptLb,jdbcType=VARCHAR},
+		JSON=#{json,jdbcType=CLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_TPT 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.repair.bxzt.persistence.entity.BxztPo">
+	<resultMap id="BxztPo" type="com.lc.ibps.repair.bxzt.persistence.entity.BxztPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="baoXiuID" column="BAO_XIU_I_D_" jdbcType="VARCHAR"/>
+		<result property="bxdState" column="BAO_XIU_SHAN_" jdbcType="VARCHAR"/>
+		<result property="clr" column="CHU_LI_REN_" jdbcType="VARCHAR"/>
+		<result property="beiZhu" column="BEI_ZHU_" jdbcType="VARCHAR"/>
+		<result property="pgdx" column="PGDX" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,BAO_XIU_I_D_,BAO_XIU_SHAN_,CHU_LI_REN_,BEI_ZHU_,PGDX
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.repair.bxzt.persistence.entity.BxztPo">
+		INSERT INTO T_BXZT
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{baoXiuID,jdbcType=VARCHAR}, #{bxdState,jdbcType=VARCHAR}, #{clr,jdbcType=VARCHAR}, #{beiZhu,jdbcType=VARCHAR},#{pgdx,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BxztPo">
+		SELECT <include refid="columns"/> FROM T_BXZT 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="BxztPo">
+		SELECT <include refid="columns"/> FROM T_BXZT
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BxztPo">
+		SELECT <include refid="columns"/> FROM T_BXZT
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.repair.bxzt.persistence.entity.BxztPo">
+		UPDATE T_BXZT SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		BAO_XIU_I_D_=#{baoXiuID,jdbcType=VARCHAR},
+		BAO_XIU_SHAN_=#{bxdState,jdbcType=VARCHAR},
+		CHU_LI_REN_=#{clr,jdbcType=VARCHAR},
+		BEI_ZHU_=#{beiZhu,jdbcType=VARCHAR},
+		PGDX=#{pgdx,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BXZT 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="getByBxdId" parameterType="java.lang.String" resultMap="BxztPo">
+		SELECT <include refid="columns"/> FROM T_BXZT 
+		WHERE 
+		BAO_XIU_I_D_=#{baoXiuID}
+	</select>
+	
+	
+	<select id="getByBxdIdAndZt" parameterType="java.lang.String" resultMap="BxztPo">
+		SELECT <include refid="columns"/> FROM T_BXZT 
+		WHERE 
+		BAO_XIU_I_D_=#{baoXiuID} AND
+		BAO_XIU_SHAN_=#{bxdState}
+	</select>
+	
+</mapper>

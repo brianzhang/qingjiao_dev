@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.repair.repair.persistence.entity.BxdPo">
+	<resultMap id="BxdPo" type="com.lc.ibps.repair.repair.persistence.entity.BxdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="bxqy" column="BAO_XIU_QU_YU_" jdbcType="VARCHAR"/>
+		<result property="xxdz" column="XIANG_XI_DE_ZHI_" jdbcType="VARCHAR"/>
+		<result property="bxxm" column="BAO_XIU_XIANG_MU_" jdbcType="VARCHAR"/>
+		<result property="bxxx" column="BAO_XIU_XIANG_XI_" jdbcType="VARCHAR"/>
+		<result property="yysj" column="YU_YAO_SHI_JIAN_" jdbcType="VARCHAR"/>
+		<result property="bxr" column="BAO_XIU_REN_" jdbcType="VARCHAR"/>
+		<result property="lxfs" column="LIAN_XI_FANG_SHI_" jdbcType="VARCHAR"/>
+		<result property="sctp" column="SCTP" jdbcType="VARCHAR"/>
+		<result property="gdlx" column="GONG_DAN_LEI_XING_" jdbcType="VARCHAR"/>
+		<result property="gdzt" column="GDZT" jdbcType="VARCHAR"/>
+		<result property="slr" column="SHOU_LI_REN_" jdbcType="VARCHAR"/>
+		<result property="zxr" column="ZHI_HENG_REN_" jdbcType="VARCHAR"/>
+		<result property="wxg" column="WEI_XIU_GONG_" jdbcType="VARCHAR"/>
+		<result property="mbid" column="MU_BAN_I_D_" jdbcType="VARCHAR"/>
+		<result property="bxqy2" column="BXQY2" jdbcType="VARCHAR"/>
+		<result property="bxqy3" column="BXQY3" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="subid" column="SUBID" jdbcType="VARCHAR"/>
+		<result property="subbh" column="SUBBH" jdbcType="VARCHAR"/>
+		<result property="isZd" column="ISZD" jdbcType="VARCHAR"/>
+		<result property="bxxm2" column="BXXM2" jdbcType="VARCHAR"/>
+		<result property="yysj2" column="YYSJ2" jdbcType="VARCHAR"/>
+		<result property="bxxm3" column="BXXM3" jdbcType="VARCHAR"/>
+		<result property="building" column="BUILDING" jdbcType="VARCHAR"/>
+		
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,BAO_XIU_QU_YU_,XIANG_XI_DE_ZHI_,BAO_XIU_XIANG_MU_,BAO_XIU_XIANG_XI_,YU_YAO_SHI_JIAN_,BAO_XIU_REN_,LIAN_XI_FANG_SHI_,SCTP,GONG_DAN_LEI_XING_,GDZT,SHOU_LI_REN_,ZHI_HENG_REN_,WEI_XIU_GONG_,MU_BAN_I_D_,BXQY2,BXQY3,BZ,SUBID,SUBBH,ISZD,BXXM2,YYSJ2,BXXM3,BUILDING
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.repair.repair.persistence.entity.BxdPo">
+		INSERT INTO T_BXD
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{bxqy,jdbcType=VARCHAR}, #{xxdz,jdbcType=VARCHAR}, #{bxxm,jdbcType=VARCHAR}, #{bxxx,jdbcType=VARCHAR}, #{yysj,jdbcType=VARCHAR}, #{bxr,jdbcType=VARCHAR}, #{lxfs,jdbcType=VARCHAR}, #{sctp,jdbcType=VARCHAR}, #{gdlx,jdbcType=VARCHAR}, #{gdzt,jdbcType=VARCHAR}, #{slr,jdbcType=VARCHAR}, #{zxr,jdbcType=VARCHAR}, #{wxg,jdbcType=VARCHAR}, #{mbid,jdbcType=VARCHAR},#{bxqy2,jdbcType=VARCHAR},#{bxqy3,jdbcType=VARCHAR},#{bz,jdbcType=VARCHAR},#{subid,jdbcType=VARCHAR},#{subbh,jdbcType=VARCHAR},#{isZd,jdbcType=VARCHAR},#{bxxm2,jdbcType=VARCHAR},#{yysj2,jdbcType=VARCHAR},#{bxxm3,jdbcType=VARCHAR},#{building,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="BxdPo">
+		SELECT <include refid="columns"/> FROM T_BXD 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="BxdPo">
+		SELECT <include refid="columns"/> FROM T_BXD
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="BxdPo">
+		SELECT <include refid="columns"/> FROM T_BXD
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.repair.repair.persistence.entity.BxdPo">
+		UPDATE T_BXD SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		BAO_XIU_QU_YU_=#{bxqy,jdbcType=VARCHAR},
+		XIANG_XI_DE_ZHI_=#{xxdz,jdbcType=VARCHAR},
+		BAO_XIU_XIANG_MU_=#{bxxm,jdbcType=VARCHAR},
+		BAO_XIU_XIANG_XI_=#{bxxx,jdbcType=VARCHAR},
+		YU_YAO_SHI_JIAN_=#{yysj,jdbcType=VARCHAR},
+		BAO_XIU_REN_=#{bxr,jdbcType=VARCHAR},
+		LIAN_XI_FANG_SHI_=#{lxfs,jdbcType=VARCHAR},
+		SCTP=#{sctp,jdbcType=VARCHAR},
+		GONG_DAN_LEI_XING_=#{gdlx,jdbcType=VARCHAR},
+		GDZT=#{gdzt,jdbcType=VARCHAR},
+		SHOU_LI_REN_=#{slr,jdbcType=VARCHAR},
+		ZHI_HENG_REN_=#{zxr,jdbcType=VARCHAR},
+		WEI_XIU_GONG_=#{wxg,jdbcType=VARCHAR},
+		MU_BAN_I_D_=#{mbid,jdbcType=VARCHAR},
+		BXQY2=#{bxqy2,jdbcType=VARCHAR},
+		BXQY3=#{bxqy3,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		SUBID=#{subid,jdbcType=VARCHAR},
+		SUBBH=#{subbh,jdbcType=VARCHAR},
+		ISZD=#{isZd,jdbcType=VARCHAR},
+		BXXM2=#{bxxm2,jdbcType=VARCHAR},
+		YYSJ2=#{yysj2,jdbcType=VARCHAR},
+		BXXM3=#{bxxm3,jdbcType=VARCHAR},
+		BUILDING=#{building,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BXD 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="getByGdzt" parameterType="java.lang.String"  resultMap="BxdPo">
+		SELECT * from t_bxd b WHERE b.gdzt = #{gdzt}
+	</select>
+	
+	<select id="getBySubBxdIdAndGdlx" parameterType="java.util.HashMap"  resultMap="BxdPo">
+		SELECT * from t_bxd b WHERE b.SUBID = #{subid} AND
+		b.GONG_DAN_LEI_XING_ = #{gdlx}
+	</select>
+	
+
+	
+	
+</mapper>

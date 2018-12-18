@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.bishes.audit.persistence.entity.LabelDefPo">
+	<resultMap id="LabelDefPo" type="com.lc.ibps.bishes.audit.persistence.entity.LabelDefPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="labelName" column="LABEL_NAME_" jdbcType="VARCHAR"/>
+		<result property="typeId" column="type_id_" jdbcType="VARCHAR"/>
+		<result property="orgId" column="ORG_ID_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,LABEL_NAME_,TYPE_ID_,ORG_ID_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.bishes.audit.persistence.entity.LabelDefPo">
+		INSERT INTO T_LABEL_DEF
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{labelName,jdbcType=VARCHAR},#{typeId,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="LabelDefPo">
+		SELECT <include refid="columns"/> FROM T_LABEL_DEF 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getBySql"   parameterType="java.lang.String" resultMap="LabelDefPo">
+		SELECT <include refid="columns"/> FROM T_LABEL_DEF 
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="LabelDefPo">
+		SELECT <include refid="columns"/> FROM T_LABEL_DEF
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="LabelDefPo">
+		SELECT <include refid="columns"/> FROM T_LABEL_DEF
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.bishes.audit.persistence.entity.LabelDefPo">
+		UPDATE T_LABEL_DEF SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		LABEL_NAME_=#{labelName,jdbcType=VARCHAR},
+		TYPE_ID_=#{typeId,jdbcType=VARCHAR},
+		ORG_ID_=#{orgId,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_LABEL_DEF 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

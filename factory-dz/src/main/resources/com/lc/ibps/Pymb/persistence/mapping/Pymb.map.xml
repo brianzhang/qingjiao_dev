@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Pymb.persistence.entity.PymbPo">
+	<resultMap id="PymbPo" type="com.lc.ibps.pgs.Pymb.persistence.entity.PymbPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="updateTime" column="UPDATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="school_local" column="SCHOOL_LOCAL" jdbcType="CLOB"/>
+		<result property="pro_local" column="PRO_LOCAL" jdbcType="CLOB"/>
+		<result property="subject_zhi_cheng_" column="SUBJECT_ZHI_CHENG_" jdbcType="CLOB"/>
+		<result property="social_demand" column="SOCIAL_DEMAND" jdbcType="CLOB"/>
+		<result property="pro_name" column="PRO_NAME" jdbcType="VARCHAR"/>
+		<result property="pro_id" column="PRO_ID" jdbcType="VARCHAR"/>
+		<result property="history" column="HISTORY" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,UPDATE_TIME_,SCHOOL_LOCAL,PRO_LOCAL,SUBJECT_ZHI_CHENG_,SOCIAL_DEMAND,PRO_NAME,PRO_ID,HISTORY
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Pymb.persistence.entity.PymbPo">
+		INSERT INTO T_PYMB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{school_local,jdbcType=CLOB}, #{pro_local,jdbcType=CLOB}, #{subject_zhi_cheng_,jdbcType=CLOB}, #{social_demand,jdbcType=CLOB}, #{pro_name,jdbcType=VARCHAR}, #{pro_id,jdbcType=VARCHAR}, #{history,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PymbPo">
+		SELECT <include refid="columns"/> FROM T_PYMB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PymbPo">
+		SELECT <include refid="columns"/> FROM T_PYMB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PymbPo">
+		SELECT <include refid="columns"/> FROM T_PYMB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Pymb.persistence.entity.PymbPo">
+		UPDATE T_PYMB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		UPDATE_TIME_=#{updateTime,jdbcType=TIMESTAMP},
+		SCHOOL_LOCAL=#{school_local,jdbcType=CLOB},
+		PRO_LOCAL=#{pro_local,jdbcType=CLOB},
+		SUBJECT_ZHI_CHENG_=#{subject_zhi_cheng_,jdbcType=CLOB},
+		SOCIAL_DEMAND=#{social_demand,jdbcType=CLOB},
+		PRO_NAME=#{pro_name,jdbcType=VARCHAR},
+		PRO_ID=#{pro_id,jdbcType=VARCHAR},
+		HISTORY=#{history,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PYMB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

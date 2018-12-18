@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ShenCRYJPo">
+	<resultMap id="ShenCRYJPo" type="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ShenCRYJPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="sqzlsfyx" column="SQZLSFYX" jdbcType="VARCHAR"/>
+		<result property="jksqrchnl" column="JKSQRCHNL" jdbcType="VARCHAR"/>
+		<result property="jksqrsrhs" column="JKSQRSRHS" jdbcType="VARCHAR"/>
+		<result property="dbrsfhs" column="DBRSFHS" jdbcType="VARCHAR"/>
+		<result property="dbrdbnl" column="DBRDBNL" jdbcType="VARCHAR"/>
+		<result property="jksqr" column="JKSQR" jdbcType="VARCHAR"/>
+		<result property="sxje" column="SXJE" jdbcType="NUMERIC"/>
+		<result property="sxqx" column="SXQX" jdbcType="VARCHAR"/>
+		<result property="dbfs" column="DBFS" jdbcType="VARCHAR"/>
+		<result property="dklb" column="DKLB" jdbcType="VARCHAR"/>
+		<result property="dkje" column="DKJE" jdbcType="NUMERIC"/>
+		<result property="dkqx" column="DKQX" jdbcType="VARCHAR"/>
+		<result property="yll" column="YLL" jdbcType="NUMERIC"/>
+		<result property="ghfs" column="GHFS" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="scrid" column="SCRID" jdbcType="VARCHAR"/>
+		<result property="scrqz" column="SCRQZ" jdbcType="VARCHAR"/>
+		<result property="scrqzsj" column="SCRQZSJ" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,SQZLSFYX,JKSQRCHNL,JKSQRSRHS,DBRSFHS,DBRDBNL,JKSQR,SXJE,SXQX,DBFS,DKLB,DKJE,DKQX,YLL,GHFS,JDID,SCRID,SCRQZ,SCRQZSJ
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ShenCRYJPo">
+		INSERT INTO T_SCRYJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{sqzlsfyx,jdbcType=VARCHAR}, #{jksqrchnl,jdbcType=VARCHAR}, #{jksqrsrhs,jdbcType=VARCHAR}, #{dbrsfhs,jdbcType=VARCHAR}, #{dbrdbnl,jdbcType=VARCHAR}, #{jksqr,jdbcType=VARCHAR}, #{sxje,jdbcType=NUMERIC}, #{sxqx,jdbcType=VARCHAR}, #{dbfs,jdbcType=VARCHAR}, #{dklb,jdbcType=VARCHAR}, #{dkje,jdbcType=NUMERIC}, #{dkqx,jdbcType=VARCHAR}, #{yll,jdbcType=NUMERIC}, #{ghfs,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR}, #{scrid,jdbcType=VARCHAR}, #{scrqz,jdbcType=VARCHAR}, #{scrqzsj,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ShenCRYJPo">
+		SELECT <include refid="columns"/> FROM T_SCRYJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdid" parameterType="java.util.Map" resultMap="ShenCRYJPo">
+		SELECT * FROM T_SCRYJ 
+		WHERE 
+		 JDID=#{jdid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ShenCRYJPo">
+		SELECT <include refid="columns"/> FROM T_SCRYJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ShenCRYJPo">
+		SELECT <include refid="columns"/> FROM T_SCRYJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ShenCRYJPo">
+		UPDATE T_SCRYJ SET
+		SQZLSFYX=#{sqzlsfyx,jdbcType=VARCHAR},
+		JKSQRCHNL=#{jksqrchnl,jdbcType=VARCHAR},
+		JKSQRSRHS=#{jksqrsrhs,jdbcType=VARCHAR},
+		DBRSFHS=#{dbrsfhs,jdbcType=VARCHAR},
+		DBRDBNL=#{dbrdbnl,jdbcType=VARCHAR},
+		JKSQR=#{jksqr,jdbcType=VARCHAR},
+		SXJE=#{sxje,jdbcType=NUMERIC},
+		SXQX=#{sxqx,jdbcType=VARCHAR},
+		DBFS=#{dbfs,jdbcType=VARCHAR},
+		DKLB=#{dklb,jdbcType=VARCHAR},
+		DKJE=#{dkje,jdbcType=NUMERIC},
+		DKQX=#{dkqx,jdbcType=VARCHAR},
+		YLL=#{yll,jdbcType=NUMERIC},
+		GHFS=#{ghfs,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		SCRID=#{scrid,jdbcType=VARCHAR},
+		SCRQZ=#{scrqz,jdbcType=VARCHAR},
+		SCRQZSJ=#{scrqzsj,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_SCRYJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

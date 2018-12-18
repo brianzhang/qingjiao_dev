@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.lyzygls.Shengzhanglv.persistence.entity.ShangzhanglvPo">
+	<resultMap id="ShangzhanglvPo" type="com.lc.ibps.lyzygls.Shengzhanglv.persistence.entity.ShangzhanglvPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="bianHao" column="BIAN_HAO_" jdbcType="VARCHAR"/>
+		<result property="linFenLeiXing" column="LIN_FEN_LEI_XING_" jdbcType="VARCHAR"/>
+		<result property="lingZu" column="LING_ZU_" jdbcType="VARCHAR"/>
+		<result property="shengZhangLu" column="SHENG_ZHANG_LU_" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,BIAN_HAO_,LIN_FEN_LEI_XING_,LING_ZU_,SHENG_ZHANG_LU_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.lyzygls.Shengzhanglv.persistence.entity.ShangzhanglvPo">
+		INSERT INTO T_SZLB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{bianHao,jdbcType=VARCHAR}, #{linFenLeiXing,jdbcType=VARCHAR}, #{lingZu,jdbcType=VARCHAR}, #{shengZhangLu,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ShangzhanglvPo">
+		SELECT <include refid="columns"/> FROM T_SZLB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ShangzhanglvPo">
+		SELECT <include refid="columns"/> FROM T_SZLB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ShangzhanglvPo">
+		SELECT <include refid="columns"/> FROM T_SZLB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.lyzygls.Shengzhanglv.persistence.entity.ShangzhanglvPo">
+		UPDATE T_SZLB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		BIAN_HAO_=#{bianHao,jdbcType=VARCHAR},
+		LIN_FEN_LEI_XING_=#{linFenLeiXing,jdbcType=VARCHAR},
+		LING_ZU_=#{lingZu,jdbcType=VARCHAR},
+		SHENG_ZHANG_LU_=#{shengZhangLu,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_SZLB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

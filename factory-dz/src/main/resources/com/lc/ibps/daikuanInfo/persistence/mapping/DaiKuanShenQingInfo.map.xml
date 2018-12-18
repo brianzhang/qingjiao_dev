@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.daikuanInfo.persistence.entity.DaiKuanShenQingInfoPo">
+	<resultMap id="DaiKuanShenQingInfoPo" type="com.lc.ibps.loans.daikuanInfo.persistence.entity.DaiKuanShenQingInfoPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="sqsxed" column="SQSXED" jdbcType="VARCHAR"/>
+		<result property="sqsxqx" column="SQSXQX" jdbcType="VARCHAR"/>
+		<result property="sxze" column="SXZE" jdbcType="NUMERIC"/>
+		<result property="khmc" column="KHMC" jdbcType="VARCHAR"/>
+		<result property="cpmc" column="CPMC" jdbcType="VARCHAR"/>
+		<result property="sqje" column="SQJE" jdbcType="NUMERIC"/>
+		<result property="dkxs" column="DKXS" jdbcType="VARCHAR"/>
+		<result property="qxlb" column="QXLB" jdbcType="VARCHAR"/>
+		<result property="dkqx" column="DKQX" jdbcType="VARCHAR"/>
+		<result property="dbfs" column="DBFS" jdbcType="VARCHAR"/>
+		<result property="htxz" column="HTXZ" jdbcType="VARCHAR"/>
+		<result property="xdll" column="XDLL" jdbcType="NUMERIC"/>
+		<result property="zxll" column="ZXLL" jdbcType="NUMERIC"/>
+		<result property="jzll" column="JZLL" jdbcType="NUMERIC"/>
+		<result property="sfyh" column="SFYH" jdbcType="VARCHAR"/>
+		<result property="lldzfs" column="LLDZFS" jdbcType="VARCHAR"/>
+		<result property="fdbl" column="FDBL" jdbcType="NUMERIC"/>
+		<result property="jxfs" column="JXFS" jdbcType="VARCHAR"/>
+		<result property="hkly" column="HKLY" jdbcType="VARCHAR"/>
+		<result property="sfyhkjh" column="SFYHKJH" jdbcType="VARCHAR"/>
+		<result property="sfzfcnhk" column="SFZFCNHK" jdbcType="VARCHAR"/>
+		<result property="sfhzxmdk" column="SFHZXMDK" jdbcType="VARCHAR"/>
+		<result property="sfsndk" column="SFSNDK" jdbcType="VARCHAR"/>
+		<result property="sndklb" column="SNDKLB" jdbcType="VARCHAR"/>
+		<result property="sndkyt" column="SNDKYT" jdbcType="VARCHAR"/>
+		<result property="dktx" column="DKTX" jdbcType="VARCHAR"/>
+		<result property="dkyt" column="DKYT" jdbcType="VARCHAR"/>
+		<result property="dkytmx" column="DKYTMX" jdbcType="VARCHAR"/>
+		<result property="sfjsdxt" column="SFJSDXT" jdbcType="VARCHAR"/>
+		<result property="lxrmc" column="LXRMC" jdbcType="VARCHAR"/>
+		<result property="lxrsjh" column="LXRSJH" jdbcType="VARCHAR"/>
+		<result property="zffs" column="ZFFS" jdbcType="VARCHAR"/>
+		<result property="sfzdkk" column="SFZDKK" jdbcType="VARCHAR"/>
+		<result property="zdkkzh" column="ZDKKZH" jdbcType="VARCHAR"/>
+		<result property="hkfs" column="HKFS" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,SQSXED,SQSXQX,SXZE,KHMC,CPMC,SQJE,DKXS,QXLB,DKQX,DBFS,HTXZ,XDLL,ZXLL,JZLL,SFYH,LLDZFS,FDBL,JXFS,HKLY,SFYHKJH,SFZFCNHK,SFHZXMDK,SFSNDK,SNDKLB,SNDKYT,DKTX,DKYT,DKYTMX,SFJSDXT,LXRMC,LXRSJH,ZFFS,SFZDKK,ZDKKZH,HKFS,JDID
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.daikuanInfo.persistence.entity.DaiKuanShenQingInfoPo">
+		INSERT INTO T_SXSQ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{sqsxed,jdbcType=VARCHAR}, #{sqsxqx,jdbcType=VARCHAR}, #{sxze,jdbcType=NUMERIC}, #{khmc,jdbcType=VARCHAR}, #{cpmc,jdbcType=VARCHAR}, #{sqje,jdbcType=NUMERIC}, #{dkxs,jdbcType=VARCHAR}, #{qxlb,jdbcType=VARCHAR},#{dkqx,jdbcType=VARCHAR}, #{dbfs,jdbcType=VARCHAR}, #{htxz,jdbcType=VARCHAR}, #{xdll,jdbcType=NUMERIC}, #{zxll,jdbcType=NUMERIC}, #{jzll,jdbcType=NUMERIC}, #{sfyh,jdbcType=VARCHAR}, #{lldzfs,jdbcType=VARCHAR}, #{fdbl,jdbcType=NUMERIC}, #{jxfs,jdbcType=VARCHAR}, #{hkly,jdbcType=VARCHAR}, #{sfyhkjh,jdbcType=VARCHAR}, #{sfzfcnhk,jdbcType=VARCHAR}, #{sfhzxmdk,jdbcType=VARCHAR}, #{sfsndk,jdbcType=VARCHAR}, #{sndklb,jdbcType=VARCHAR}, #{sndkyt,jdbcType=VARCHAR}, #{dktx,jdbcType=VARCHAR}, #{dkyt,jdbcType=VARCHAR}, #{dkytmx,jdbcType=VARCHAR}, #{sfjsdxt,jdbcType=VARCHAR}, #{lxrmc,jdbcType=VARCHAR}, #{lxrsjh,jdbcType=VARCHAR}, #{zffs,jdbcType=VARCHAR}, #{sfzdkk,jdbcType=VARCHAR}, #{zdkkzh,jdbcType=VARCHAR}, #{hkfs,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DaiKuanShenQingInfoPo">
+		SELECT <include refid="columns"/> FROM T_SXSQ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DaiKuanShenQingInfoPo">
+		SELECT <include refid="columns"/> FROM T_SXSQ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+
+    <select id="getByJdId"   resultMap="DaiKuanShenQingInfoPo">
+		SELECT *  FROM T_SXSQ
+			WHERE 
+			JDID=#{jdid}		
+	</select>	
+	
+	<select id="findByIds"   resultMap="DaiKuanShenQingInfoPo">
+		SELECT <include refid="columns"/> FROM T_SXSQ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.daikuanInfo.persistence.entity.DaiKuanShenQingInfoPo">
+		UPDATE T_SXSQ SET
+		SQSXED=#{sqsxed,jdbcType=VARCHAR},
+		SQSXQX=#{sqsxqx,jdbcType=VARCHAR},
+		SXZE=#{sxze,jdbcType=NUMERIC},
+		KHMC=#{khmc,jdbcType=VARCHAR},
+		CPMC=#{cpmc,jdbcType=VARCHAR},
+		SQJE=#{sqje,jdbcType=NUMERIC},
+		DKXS=#{dkxs,jdbcType=VARCHAR},
+		QXLB=#{qxlb,jdbcType=VARCHAR},
+		DKQX=#{dkqx,jdbcType=VARCHAR},
+		DBFS=#{dbfs,jdbcType=VARCHAR},
+		HTXZ=#{htxz,jdbcType=VARCHAR},
+		XDLL=#{xdll,jdbcType=NUMERIC},
+		ZXLL=#{zxll,jdbcType=NUMERIC},
+		JZLL=#{jzll,jdbcType=NUMERIC},
+		SFYH=#{sfyh,jdbcType=VARCHAR},
+		LLDZFS=#{lldzfs,jdbcType=VARCHAR},
+		FDBL=#{fdbl,jdbcType=NUMERIC},
+		JXFS=#{jxfs,jdbcType=VARCHAR},
+		HKLY=#{hkly,jdbcType=VARCHAR},
+		SFYHKJH=#{sfyhkjh,jdbcType=VARCHAR},
+		SFZFCNHK=#{sfzfcnhk,jdbcType=VARCHAR},
+		SFHZXMDK=#{sfhzxmdk,jdbcType=VARCHAR},
+		SFSNDK=#{sfsndk,jdbcType=VARCHAR},
+		SNDKLB=#{sndklb,jdbcType=VARCHAR},
+		SNDKYT=#{sndkyt,jdbcType=VARCHAR},
+		DKTX=#{dktx,jdbcType=VARCHAR},
+		DKYT=#{dkyt,jdbcType=VARCHAR},
+		DKYTMX=#{dkytmx,jdbcType=VARCHAR},
+		SFJSDXT=#{sfjsdxt,jdbcType=VARCHAR},
+		LXRMC=#{lxrmc,jdbcType=VARCHAR},
+		LXRSJH=#{lxrsjh,jdbcType=VARCHAR},
+		ZFFS=#{zffs,jdbcType=VARCHAR},
+		SFZDKK=#{sfzdkk,jdbcType=VARCHAR},
+		ZDKKZH=#{zdkkzh,jdbcType=VARCHAR},
+		HKFS=#{hkfs,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_SXSQ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

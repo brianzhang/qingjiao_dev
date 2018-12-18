@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.DataSs.persistence.entity.DataSsPo">
+	<resultMap id="DataSsPo" type="com.lc.ibps.pgs.DataSs.persistence.entity.DataSsPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="pingJieID" column="PING_JIE_I_D_" jdbcType="VARCHAR"/>
+		<result property="shuJuLeiXing" column="SHU_JU_LEI_XING_" jdbcType="VARCHAR"/>
+		<result property="shuoJuLaiYuan" column="SHUO_JU_LAI_YUAN_" jdbcType="VARCHAR"/>
+		<result property="pingJieNeiRong" column="PING_JIE_NEI_RONG_" jdbcType="CLOB"/>
+		<result property="pingJiaXingShi" column="PING_JIA_XING_SHI_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,PING_JIE_I_D_,SHU_JU_LEI_XING_,SHUO_JU_LAI_YUAN_,PING_JIE_NEI_RONG_,PING_JIA_XING_SHI_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.DataSs.persistence.entity.DataSsPo">
+		INSERT INTO T_SJLY
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{pingJieID,jdbcType=VARCHAR}, #{shuJuLeiXing,jdbcType=VARCHAR}, #{shuoJuLaiYuan,jdbcType=VARCHAR}, #{pingJieNeiRong,jdbcType=CLOB}, #{pingJiaXingShi,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DataSsPo">
+		SELECT <include refid="columns"/> FROM T_SJLY 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DataSsPo">
+		SELECT <include refid="columns"/> FROM T_SJLY
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DataSsPo">
+		SELECT <include refid="columns"/> FROM T_SJLY
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.DataSs.persistence.entity.DataSsPo">
+		UPDATE T_SJLY SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		PING_JIE_I_D_=#{pingJieID,jdbcType=VARCHAR},
+		SHU_JU_LEI_XING_=#{shuJuLeiXing,jdbcType=VARCHAR},
+		SHUO_JU_LAI_YUAN_=#{shuoJuLaiYuan,jdbcType=VARCHAR},
+		PING_JIE_NEI_RONG_=#{pingJieNeiRong,jdbcType=CLOB},
+		PING_JIA_XING_SHI_=#{pingJiaXingShi,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_SJLY 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

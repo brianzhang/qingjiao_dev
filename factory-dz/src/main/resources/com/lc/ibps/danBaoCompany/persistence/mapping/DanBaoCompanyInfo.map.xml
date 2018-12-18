@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.danBaoCompany.persistence.entity.DanBaoCompanyInfoPo">
+	<resultMap id="DanBaoCompanyInfoPo" type="com.lc.ibps.loans.danBaoCompany.persistence.entity.DanBaoCompanyInfoPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="dbgskhmc" column="DBGSKHMC" jdbcType="VARCHAR"/>
+		<result property="dbxz" column="DBXZ" jdbcType="VARCHAR"/>
+		<result property="fzr" column="FZR" jdbcType="VARCHAR"/>
+		<result property="lxdh" column="LXDH" jdbcType="VARCHAR"/>
+		<result property="dbjyzgxkz" column="DBJYZGXKZ" jdbcType="VARCHAR"/>
+		<result property="bzjzh" column="BZJZH" jdbcType="VARCHAR"/>
+		<result property="bzjfzh" column="BZJFZH" jdbcType="VARCHAR"/>
+		<result property="bzjje" column="BZJJE" jdbcType="NUMERIC"/>
+		<result property="yxfdbs" column="YXFDBS" jdbcType="VARCHAR"/>
+		<result property="kbjg" column="KBJG" jdbcType="VARCHAR"/>
+		<result property="sxrq" column="SXRQ" jdbcType="TIMESTAMP"/>
+		<result property="dqrq" column="DQRQ" jdbcType="TIMESTAMP"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="dbgskhh" column="DBGSKHH" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,DBGSKHMC,DBXZ,FZR,LXDH,DBJYZGXKZ,BZJZH,BZJFZH,BZJJE,YXFDBS,KBJG,SXRQ,DQRQ,JDID,DBGSKHH
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.danBaoCompany.persistence.entity.DanBaoCompanyInfoPo">
+		INSERT INTO T_DBGS
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{dbgskhmc,jdbcType=VARCHAR}, #{dbxz,jdbcType=VARCHAR}, #{fzr,jdbcType=VARCHAR}, #{lxdh,jdbcType=VARCHAR}, #{dbjyzgxkz,jdbcType=VARCHAR}, #{bzjzh,jdbcType=VARCHAR}, #{bzjfzh,jdbcType=VARCHAR}, #{bzjje,jdbcType=NUMERIC}, #{yxfdbs,jdbcType=VARCHAR}, #{kbjg,jdbcType=VARCHAR}, #{sxrq,jdbcType=TIMESTAMP}, #{dqrq,jdbcType=TIMESTAMP}, #{jdid,jdbcType=VARCHAR}, #{dbgskhh,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DanBaoCompanyInfoPo">
+		SELECT <include refid="columns"/> FROM T_DBGS 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+    <select id="getByJdidAndGsmc" parameterType="java.util.Map" resultMap="DanBaoCompanyInfoPo">
+		SELECT * FROM T_DBGS 
+		WHERE 
+		 JDID=#{jdid} AND DBGSKHMC=#{gsmc}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DanBaoCompanyInfoPo">
+		SELECT <include refid="columns"/> FROM T_DBGS
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DanBaoCompanyInfoPo">
+		SELECT <include refid="columns"/> FROM T_DBGS
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.danBaoCompany.persistence.entity.DanBaoCompanyInfoPo">
+		UPDATE T_DBGS SET
+		DBGSKHMC=#{dbgskhmc,jdbcType=VARCHAR},
+		DBXZ=#{dbxz,jdbcType=VARCHAR},
+		FZR=#{fzr,jdbcType=VARCHAR},
+		LXDH=#{lxdh,jdbcType=VARCHAR},
+		DBJYZGXKZ=#{dbjyzgxkz,jdbcType=VARCHAR},
+		BZJZH=#{bzjzh,jdbcType=VARCHAR},
+		BZJFZH=#{bzjfzh,jdbcType=VARCHAR},
+		BZJJE=#{bzjje,jdbcType=NUMERIC},
+		YXFDBS=#{yxfdbs,jdbcType=VARCHAR},
+		KBJG=#{kbjg,jdbcType=VARCHAR},
+		SXRQ=#{sxrq,jdbcType=TIMESTAMP},
+		DQRQ=#{dqrq,jdbcType=TIMESTAMP},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		DBGSKHH=#{dbgskhh,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_DBGS 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

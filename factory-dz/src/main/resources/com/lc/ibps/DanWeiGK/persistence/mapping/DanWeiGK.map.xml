@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.lyzygls.DanWeiGK.persistence.entity.DanWeiGKPo">
+	<resultMap id="DanWeiGKPo" type="com.lc.ibps.lyzygls.DanWeiGK.persistence.entity.DanWeiGKPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="mingChen" column="MING_CHEN_" jdbcType="VARCHAR"/>
+		<result property="mianJi" column="MIAN_JI_" jdbcType="NUMERIC"/>
+		<result property="jingDu" column="JING_DU_" jdbcType="VARCHAR"/>
+		<result property="weiDuo" column="WEI_DUO_" jdbcType="VARCHAR"/>
+		<result property="shanXi" column="SHAN_XI_" jdbcType="VARCHAR"/>
+		<result property="shuiXi" column="SHUI_XI_" jdbcType="VARCHAR"/>
+		<result property="pingYuan" column="PING_YUAN_" jdbcType="VARCHAR"/>
+		<result property="haiBa" column="HAI_BA_" jdbcType="NUMERIC"/>
+		<result property="qiWen" column="QI_WEN_" jdbcType="NUMERIC"/>
+		<result property="nianJiWen" column="NIAN_JI_WEN_" jdbcType="NUMERIC"/>
+		<result property="riZhaoShiShuo" column="RI_ZHAO_SHI_SHUO_" jdbcType="NUMERIC"/>
+		<result property="zhuYaoTuRang" column="ZHU_YAO_TU_RANG_" jdbcType="VARCHAR"/>
+		<result property="zhiWuChongLei" column="ZHI_WU_CHONG_LEI_" jdbcType="NUMERIC"/>
+		<result property="tiaoZhaNianDuo" column="TIAO_ZHA_NIAN_DUO_" jdbcType="VARCHAR"/>
+		<result property="luRuNianDu" column="LU_RU_NIAN_DU_" jdbcType="VARCHAR"/>
+		<result property="kuSunShuai" column="KU_SUN_SHUAI_" jdbcType="NUMERIC"/>
+		<result property="shengChangLu" column="SHENG_CHANG_LU_" jdbcType="NUMERIC"/>
+		<result property="linFenLeiXing" column="LIN_FEN_LEI_XING_" jdbcType="VARCHAR"/>
+		<result property="lingZu" column="LING_ZU_" jdbcType="VARCHAR"/>
+		<result property="shengZhangLu" column="SHENG_ZHANG_LU_" jdbcType="VARCHAR"/>
+		<result property="linDe" column="LIN_DE_" jdbcType="VARCHAR"/>
+		<result property="linMu" column="LIN_MU_" jdbcType="VARCHAR"/>
+		<result property="mianJi1" column="MIAN_JI1_" jdbcType="VARCHAR"/>
+		<result property="xuJi1" column="XU_JI1_" jdbcType="VARCHAR"/>
+		<result property="mianJi2" column="MIAN_JI2_" jdbcType="VARCHAR"/>
+		<result property="xuJi2" column="XU_JI2_" jdbcType="VARCHAR"/>
+		<result property="pingJun" column="PING_JUN_" jdbcType="VARCHAR"/>
+		<result property="wuShuangQi" column="WU_SHUANG_QI_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,MING_CHEN_,MIAN_JI_,JING_DU_,WEI_DUO_,SHAN_XI_,SHUI_XI_,PING_YUAN_,HAI_BA_,QI_WEN_,NIAN_JI_WEN_,RI_ZHAO_SHI_SHUO_,ZHU_YAO_TU_RANG_,ZHI_WU_CHONG_LEI_,TIAO_ZHA_NIAN_DUO_,LU_RU_NIAN_DU_,KU_SUN_SHUAI_,SHENG_CHANG_LU_,LIN_FEN_LEI_XING_,LING_ZU_,SHENG_ZHANG_LU_,LIN_DE_,LIN_MU_,MIAN_JI1_,XU_JI1_,MIAN_JI2_,XU_JI2_,PING_JUN_,WU_SHUANG_QI_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.lyzygls.DanWeiGK.persistence.entity.DanWeiGKPo">
+		INSERT INTO T_DWGK
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{mingChen,jdbcType=VARCHAR}, #{mianJi,jdbcType=NUMERIC}, #{jingDu,jdbcType=VARCHAR}, #{weiDuo,jdbcType=VARCHAR}, #{shanXi,jdbcType=VARCHAR}, #{shuiXi,jdbcType=VARCHAR}, #{pingYuan,jdbcType=VARCHAR}, #{haiBa,jdbcType=NUMERIC}, #{qiWen,jdbcType=NUMERIC}, #{nianJiWen,jdbcType=NUMERIC}, #{riZhaoShiShuo,jdbcType=NUMERIC}, #{zhuYaoTuRang,jdbcType=VARCHAR}, #{zhiWuChongLei,jdbcType=NUMERIC}, #{tiaoZhaNianDuo,jdbcType=VARCHAR}, #{luRuNianDu,jdbcType=VARCHAR}, #{kuSunShuai,jdbcType=NUMERIC}, #{shengChangLu,jdbcType=NUMERIC}, #{linFenLeiXing,jdbcType=VARCHAR}, #{lingZu,jdbcType=VARCHAR}, #{shengZhangLu,jdbcType=VARCHAR}, #{linDe,jdbcType=VARCHAR}, #{linMu,jdbcType=VARCHAR}, #{mianJi1,jdbcType=VARCHAR}, #{xuJi1,jdbcType=VARCHAR}, #{mianJi2,jdbcType=VARCHAR}, #{xuJi2,jdbcType=VARCHAR}, #{pingJun,jdbcType=VARCHAR}, #{wuShuangQi,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DanWeiGKPo">
+		SELECT <include refid="columns"/> FROM T_DWGK 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DanWeiGKPo">
+		SELECT <include refid="columns"/> FROM T_DWGK
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DanWeiGKPo">
+		SELECT <include refid="columns"/> FROM T_DWGK
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.lyzygls.DanWeiGK.persistence.entity.DanWeiGKPo">
+		UPDATE T_DWGK SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		MING_CHEN_=#{mingChen,jdbcType=VARCHAR},
+		MIAN_JI_=#{mianJi,jdbcType=NUMERIC},
+		JING_DU_=#{jingDu,jdbcType=VARCHAR},
+		WEI_DUO_=#{weiDuo,jdbcType=VARCHAR},
+		SHAN_XI_=#{shanXi,jdbcType=VARCHAR},
+		SHUI_XI_=#{shuiXi,jdbcType=VARCHAR},
+		PING_YUAN_=#{pingYuan,jdbcType=VARCHAR},
+		HAI_BA_=#{haiBa,jdbcType=NUMERIC},
+		QI_WEN_=#{qiWen,jdbcType=NUMERIC},
+		NIAN_JI_WEN_=#{nianJiWen,jdbcType=NUMERIC},
+		RI_ZHAO_SHI_SHUO_=#{riZhaoShiShuo,jdbcType=NUMERIC},
+		ZHU_YAO_TU_RANG_=#{zhuYaoTuRang,jdbcType=VARCHAR},
+		ZHI_WU_CHONG_LEI_=#{zhiWuChongLei,jdbcType=NUMERIC},
+		TIAO_ZHA_NIAN_DUO_=#{tiaoZhaNianDuo,jdbcType=VARCHAR},
+		LU_RU_NIAN_DU_=#{luRuNianDu,jdbcType=VARCHAR},
+		KU_SUN_SHUAI_=#{kuSunShuai,jdbcType=NUMERIC},
+		SHENG_CHANG_LU_=#{shengChangLu,jdbcType=NUMERIC},
+		LIN_FEN_LEI_XING_=#{linFenLeiXing,jdbcType=VARCHAR},
+		LING_ZU_=#{lingZu,jdbcType=VARCHAR},
+		SHENG_ZHANG_LU_=#{shengZhangLu,jdbcType=VARCHAR},
+		LIN_DE_=#{linDe,jdbcType=VARCHAR},
+		LIN_MU_=#{linMu,jdbcType=VARCHAR},
+		MIAN_JI1_=#{mianJi1,jdbcType=VARCHAR},
+		XU_JI1_=#{xuJi1,jdbcType=VARCHAR},
+		MIAN_JI2_=#{mianJi2,jdbcType=VARCHAR},
+		XU_JI2_=#{xuJi2,jdbcType=VARCHAR},
+		PING_JUN_=#{pingJun,jdbcType=VARCHAR},
+		WU_SHUANG_QI_=#{wuShuangQi,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_DWGK 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

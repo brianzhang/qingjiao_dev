@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.TeachingfeedbackPo">
+	<resultMap id="TeachingfeedbackPo" type="com.lc.ibps.pgs.PGData.persistence.entity.TeachingfeedbackPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="course_id" column="COURSE_ID" jdbcType="VARCHAR"/>
+		<result property="course_name" column="COURSE_NAME" jdbcType="VARCHAR"/>
+		<result property="teacher" column="TEACHER" jdbcType="VARCHAR"/>
+		<result property="time" column="TIME" jdbcType="TIMESTAMP"/>
+		<result property="judge_result1_1" column="JUDGE_RESULT1_1" jdbcType="VARCHAR"/>
+		<result property="judge_result1_2" column="JUDGE_RESULT1_2" jdbcType="VARCHAR"/>
+		<result property="judge_result2_1" column="JUDGE_RESULT2_1" jdbcType="VARCHAR"/>
+		<result property="judge_result2_2" column="JUDGE_RESULT2_2" jdbcType="VARCHAR"/>
+		<result property="judge_result3_1" column="JUDGE_RESULT3_1" jdbcType="VARCHAR"/>
+		<result property="judge_result3_1_1" column="JUDGE_RESULT3_1_1" jdbcType="VARCHAR"/>
+		<result property="judge_result3_2" column="JUDGE_RESULT3_2" jdbcType="VARCHAR"/>
+		<result property="judge_result3_2_1" column="JUDGE_RESULT3_2_1" jdbcType="VARCHAR"/>
+		<result property="judge_result4_1" column="JUDGE_RESULT4_1" jdbcType="VARCHAR"/>
+		<result property="judge_result4_2" column="JUDGE_RESULT4_2" jdbcType="VARCHAR"/>
+		<result property="judge_result5" column="JUDGE_RESULT5" jdbcType="VARCHAR"/>
+		<result property="judge_result6" column="JUDGE_RESULT6" jdbcType="VARCHAR"/>
+		<result property="evalution_name" column="EVALUTION_NAME" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,COURSE_ID,COURSE_NAME,TEACHER,TIME,JUDGE_RESULT1_1,JUDGE_RESULT1_2,JUDGE_RESULT2_1,JUDGE_RESULT2_2,JUDGE_RESULT3_1,JUDGE_RESULT3_1_1,JUDGE_RESULT3_2,JUDGE_RESULT3_2_1,JUDGE_RESULT4_1,JUDGE_RESULT4_2,JUDGE_RESULT5,JUDGE_RESULT6,EVALUTION_NAME
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TeachingfeedbackPo">
+		INSERT INTO T_P_XXAQZYKTJXFKB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{course_id,jdbcType=VARCHAR}, #{course_name,jdbcType=VARCHAR}, #{teacher,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{judge_result1_1,jdbcType=VARCHAR}, #{judge_result1_2,jdbcType=VARCHAR}, #{judge_result2_1,jdbcType=VARCHAR}, #{judge_result2_2,jdbcType=VARCHAR}, #{judge_result3_1,jdbcType=VARCHAR}, #{judge_result3_1_1,jdbcType=VARCHAR}, #{judge_result3_2,jdbcType=VARCHAR}, #{judge_result3_2_1,jdbcType=VARCHAR}, #{judge_result4_1,jdbcType=VARCHAR}, #{judge_result4_2,jdbcType=VARCHAR}, #{judge_result5,jdbcType=VARCHAR}, #{judge_result6,jdbcType=VARCHAR}, #{evalution_name,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="TeachingfeedbackPo">
+		SELECT <include refid="columns"/> FROM T_P_XXAQZYKTJXFKB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="TeachingfeedbackPo">
+		SELECT <include refid="columns"/> FROM T_P_XXAQZYKTJXFKB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="TeachingfeedbackPo">
+		SELECT <include refid="columns"/> FROM T_P_XXAQZYKTJXFKB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.TeachingfeedbackPo">
+		UPDATE T_P_XXAQZYKTJXFKB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		COURSE_ID=#{course_id,jdbcType=VARCHAR},
+		COURSE_NAME=#{course_name,jdbcType=VARCHAR},
+		TEACHER=#{teacher,jdbcType=VARCHAR},
+		TIME=#{time,jdbcType=TIMESTAMP},
+		JUDGE_RESULT1_1=#{judge_result1_1,jdbcType=VARCHAR},
+		JUDGE_RESULT1_2=#{judge_result1_2,jdbcType=VARCHAR},
+		JUDGE_RESULT2_1=#{judge_result2_1,jdbcType=VARCHAR},
+		JUDGE_RESULT2_2=#{judge_result2_2,jdbcType=VARCHAR},
+		JUDGE_RESULT3_1=#{judge_result3_1,jdbcType=VARCHAR},
+		JUDGE_RESULT3_1_1=#{judge_result3_1_1,jdbcType=VARCHAR},
+		JUDGE_RESULT3_2=#{judge_result3_2,jdbcType=VARCHAR},
+		JUDGE_RESULT3_2_1=#{judge_result3_2_1,jdbcType=VARCHAR},
+		JUDGE_RESULT4_1=#{judge_result4_1,jdbcType=VARCHAR},
+		JUDGE_RESULT4_2=#{judge_result4_2,jdbcType=VARCHAR},
+		JUDGE_RESULT5=#{judge_result5,jdbcType=VARCHAR},
+		JUDGE_RESULT6=#{judge_result6,jdbcType=VARCHAR},
+		EVALUTION_NAME=#{evalution_name,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_XXAQZYKTJXFKB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

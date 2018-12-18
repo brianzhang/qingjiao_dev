@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.zhiyarenAll.persistence.entity.ZhiYaRenAllPo">
+	<resultMap id="ZhiYaRenAllPo" type="com.lc.ibps.loans.zhiyarenAll.persistence.entity.ZhiYaRenAllPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="dblb" column="DBLB" jdbcType="VARCHAR"/>
+		<result property="mc" column="MC" jdbcType="VARCHAR"/>
+		<result property="zjlx" column="ZJLX" jdbcType="VARCHAR"/>
+		<result property="zjhm" column="ZJHM" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,DBLB,MC,ZJLX,ZJHM,JDID
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.zhiyarenAll.persistence.entity.ZhiYaRenAllPo">
+		INSERT INTO T_ZYR_ALL
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{dblb,jdbcType=VARCHAR}, #{mc,jdbcType=VARCHAR}, #{zjlx,jdbcType=VARCHAR}, #{zjhm,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ZhiYaRenAllPo">
+		SELECT <include refid="columns"/> FROM T_ZYR_ALL 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ZhiYaRenAllPo">
+		SELECT <include refid="columns"/> FROM T_ZYR_ALL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ZhiYaRenAllPo">
+		SELECT <include refid="columns"/> FROM T_ZYR_ALL
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<select id="getByJdId"   resultMap="ZhiYaRenAllPo">
+		SELECT * FROM T_ZYR_ALL
+			WHERE
+			JDID=#{jdid}	
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.zhiyarenAll.persistence.entity.ZhiYaRenAllPo">
+		UPDATE T_ZYR_ALL SET
+		DBLB=#{dblb,jdbcType=VARCHAR},
+		MC=#{mc,jdbcType=VARCHAR},
+		ZJLX=#{zjlx,jdbcType=VARCHAR},
+		ZJHM=#{zjhm,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZYR_ALL 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.CrsAchievePo">
+	<resultMap id="CrsAchievePo" type="com.lc.ibps.pgs.PGData.persistence.entity.CrsAchievePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="result1" column="RESULT1" jdbcType="VARCHAR"/>
+		<result property="principle1" column="PRINCIPLE1" jdbcType="VARCHAR"/>
+		<result property="normative" column="NORMATIVE" jdbcType="VARCHAR"/>
+		<result property="integrity" column="INTEGRITY" jdbcType="VARCHAR"/>
+		<result property="analyze1" column="ANALYZE1" jdbcType="VARCHAR"/>
+		<result property="analyze2" column="ANALYZE2" jdbcType="VARCHAR"/>
+		<result property="remark" column="REMARK" jdbcType="VARCHAR"/>
+		<result property="manager" column="MANAGER" jdbcType="VARCHAR"/>
+		<result property="result2" column="RESULT2" jdbcType="VARCHAR"/>
+		<result property="opinion" column="OPINION" jdbcType="CLOB"/>
+		<result property="principle2" column="PRINCIPLE2" jdbcType="VARCHAR"/>
+		<result property="cover" column="COVER" jdbcType="VARCHAR"/>
+		<result property="crs_id" column="CRS_ID" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON_" jdbcType="BLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,RESULT1,PRINCIPLE1,NORMATIVE,INTEGRITY,ANALYZE1,ANALYZE2,REMARK,MANAGER,RESULT2,OPINION,PRINCIPLE2,COVER,CRS_ID,JSON_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.CrsAchievePo">
+		INSERT INTO T_P_KCDCDHLXPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{createTime,jdbcType=TIMESTAMP}, 
+		#{result1,jdbcType=VARCHAR}, 
+		#{principle1,jdbcType=VARCHAR}, 
+		#{normative,jdbcType=VARCHAR}, 
+		#{integrity,jdbcType=VARCHAR}, 
+		#{analyze1,jdbcType=VARCHAR}, 
+		#{analyze2,jdbcType=VARCHAR}, 
+		#{remark,jdbcType=VARCHAR}, 
+		#{manager,jdbcType=VARCHAR}, 
+		#{result2,jdbcType=VARCHAR}, 
+		#{opinion,jdbcType=CLOB}, 
+		#{principle2,jdbcType=VARCHAR}, 
+		#{cover,jdbcType=VARCHAR},
+		#{crs_id,jdbcType=VARCHAR},
+		#{json,jdbcType=BLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CrsAchievePo">
+		SELECT <include refid="columns"/> FROM T_P_KCDCDHLXPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsAchievePo">
+		SELECT <include refid="columns"/> FROM T_P_KCDCDHLXPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CrsAchievePo">
+		SELECT <include refid="columns"/> FROM T_P_KCDCDHLXPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.CrsAchievePo">
+		UPDATE T_P_KCDCDHLXPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		RESULT1=#{result1,jdbcType=VARCHAR},
+		PRINCIPLE1=#{principle1,jdbcType=VARCHAR},
+		NORMATIVE=#{normative,jdbcType=VARCHAR},
+		INTEGRITY=#{integrity,jdbcType=VARCHAR},
+		ANALYZE1=#{analyze1,jdbcType=VARCHAR},
+		ANALYZE2=#{analyze2,jdbcType=VARCHAR},
+		REMARK=#{remark,jdbcType=VARCHAR},
+		MANAGER=#{manager,jdbcType=VARCHAR},
+		RESULT2=#{result2,jdbcType=VARCHAR},
+		OPINION=#{opinion,jdbcType=CLOB},
+		PRINCIPLE2=#{principle2,jdbcType=VARCHAR},
+		COVER=#{cover,jdbcType=VARCHAR},		
+		CRS_ID=#{crs_id,jdbcType=VARCHAR},
+		JSON_=#{json,jdbcType=BLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_KCDCDHLXPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	<!-- 测试搜索代码-->
+    <select id="getJson_"   parameterType="java.lang.String"  resultMap="CrsAchievePo">
+        SELECT json ,id_
+        FROM   T_P_KCDCDHLXPJ
+        WHERE  id_=#{Id} AND json IS NOT NULL
+    </select> 
+	
+	
+</mapper>

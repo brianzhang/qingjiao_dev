@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ZhuDCRYJPo">
+	<resultMap id="ZhuDCRYJPo" type="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ZhuDCRYJPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="jkrmc" column="JKRMC" jdbcType="VARCHAR"/>
+		<result property="jkrxydj" column="JKRXYDJ" jdbcType="VARCHAR"/>
+		<result property="dywxz" column="DYWXZ" jdbcType="NUMERIC"/>
+		<result property="zywxz" column="ZYWXZ" jdbcType="NUMERIC"/>
+		<result property="xyxtcxsj" column="XYXTCXSJ" jdbcType="TIMESTAMP"/>
+		<result property="xdxtglxtcx" column="XDXTGLXTCX" jdbcType="VARCHAR"/>
+		<result property="rmyxgrzxsjkcx" column="RMYXGRZXSJKCX" jdbcType="VARCHAR"/>
+		<result property="dqdcfs" column="DQDCFS" jdbcType="VARCHAR"/>
+		<result property="zlqbzs" column="ZLQBZS" jdbcType="VARCHAR"/>
+		<result property="sqrzsyhs" column="SQRZSYHS" jdbcType="VARCHAR"/>
+		<result property="sqrzsdz" column="SQRZSDZ" jdbcType="VARCHAR"/>
+		<result property="sqrsryhs" column="SQRSRYHS" jdbcType="VARCHAR"/>
+		<result property="yjsr" column="YJSR" jdbcType="NUMERIC"/>
+		<result property="jkrlxfs" column="JKRLXFS" jdbcType="VARCHAR"/>
+		<result property="jkrpolxfs" column="JKRPOLXFS" jdbcType="VARCHAR"/>
+		<result property="dbrlxfs" column="DBRLXFS" jdbcType="VARCHAR"/>
+		<result property="dbrpolxfs" column="DBRPOLXFS" jdbcType="VARCHAR"/>
+		<result property="gyrlxfs" column="GYRLXFS" jdbcType="VARCHAR"/>
+		<result property="hsdbwfs" column="HSDBWFS" jdbcType="VARCHAR"/>
+		<result property="dbrsfmq" column="DBRSFMQ" jdbcType="VARCHAR"/>
+		<result property="dkxgqksm" column="DKXGQKSM" jdbcType="VARCHAR"/>
+		<result property="fxyc" column="FXYC" jdbcType="VARCHAR"/>
+		<result property="ncqdfxkzcs" column="NCQDFXKZCS" jdbcType="VARCHAR"/>
+		<result property="sxje" column="SXJE" jdbcType="NUMERIC"/>
+		<result property="sxqx" column="SXQX" jdbcType="VARCHAR"/>
+		<result property="dbfs" column="DBFS" jdbcType="VARCHAR"/>
+		<result property="dkfs" column="DKFS" jdbcType="VARCHAR"/>
+		<result property="dkje" column="DKJE" jdbcType="NUMERIC"/>
+		<result property="dkqx" column="DKQX" jdbcType="VARCHAR"/>
+		<result property="yll" column="YLL" jdbcType="NUMERIC"/>
+		<result property="ghfs" column="GHFS" jdbcType="VARCHAR"/>
+		<result property="zdcrqm" column="ZDCRQM" jdbcType="VARCHAR"/>
+		<result property="zdcrqzsj" column="ZDCRQZSJ" jdbcType="TIMESTAMP"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="zdcrid" column="ZDCRID" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,JKRMC,JKRXYDJ,DYWXZ,ZYWXZ,XYXTCXSJ,XDXTGLXTCX,RMYXGRZXSJKCX,DQDCFS,ZLQBZS,SQRZSYHS,SQRZSDZ,SQRSRYHS,YJSR,JKRLXFS,JKRPOLXFS,DBRLXFS,DBRPOLXFS,GYRLXFS,HSDBWFS,DBRSFMQ,DKXGQKSM,FXYC,NCQDFXKZCS,SXJE,SXQX,DBFS,DKFS,DKJE,DKQX,YLL,GHFS,ZDCRQM,ZDCRQZSJ,JDID,ZDCRID
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ZhuDCRYJPo">
+		INSERT INTO T_ZDCRYJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{jkrmc,jdbcType=VARCHAR}, #{jkrxydj,jdbcType=VARCHAR}, #{dywxz,jdbcType=NUMERIC}, #{zywxz,jdbcType=NUMERIC}, #{xyxtcxsj,jdbcType=TIMESTAMP}, #{xdxtglxtcx,jdbcType=VARCHAR}, #{rmyxgrzxsjkcx,jdbcType=VARCHAR}, #{dqdcfs,jdbcType=VARCHAR}, #{zlqbzs,jdbcType=VARCHAR}, #{sqrzsyhs,jdbcType=VARCHAR}, #{sqrzsdz,jdbcType=VARCHAR}, #{sqrsryhs,jdbcType=VARCHAR}, #{yjsr,jdbcType=NUMERIC}, #{jkrlxfs,jdbcType=VARCHAR}, #{jkrpolxfs,jdbcType=VARCHAR}, #{dbrlxfs,jdbcType=VARCHAR}, #{dbrpolxfs,jdbcType=VARCHAR}, #{gyrlxfs,jdbcType=VARCHAR}, #{hsdbwfs,jdbcType=VARCHAR}, #{dbrsfmq,jdbcType=VARCHAR}, #{dkxgqksm,jdbcType=VARCHAR}, #{fxyc,jdbcType=VARCHAR}, #{ncqdfxkzcs,jdbcType=VARCHAR}, #{sxje,jdbcType=NUMERIC}, #{sxqx,jdbcType=VARCHAR}, #{dbfs,jdbcType=VARCHAR}, #{dkfs,jdbcType=VARCHAR}, #{dkje,jdbcType=NUMERIC}, #{dkqx,jdbcType=VARCHAR}, #{yll,jdbcType=NUMERIC}, #{ghfs,jdbcType=VARCHAR}, #{zdcrqm,jdbcType=VARCHAR}, #{zdcrqzsj,jdbcType=TIMESTAMP}, #{jdid,jdbcType=VARCHAR}, #{zdcrid,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="ZhuDCRYJPo">
+		SELECT <include refid="columns"/> FROM T_ZDCRYJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdid" parameterType="java.util.Map" resultMap="ZhuDCRYJPo">
+		SELECT * FROM T_ZDCRYJ 
+		WHERE 
+		 JDID=#{jdid}
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="ZhuDCRYJPo">
+		SELECT <include refid="columns"/> FROM T_ZDCRYJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="ZhuDCRYJPo">
+		SELECT <include refid="columns"/> FROM T_ZDCRYJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.DaiKSSCSP.persistence.entity.ZhuDCRYJPo">
+		UPDATE T_ZDCRYJ SET
+		JKRMC=#{jkrmc,jdbcType=VARCHAR},
+		JKRXYDJ=#{jkrxydj,jdbcType=VARCHAR},
+		DYWXZ=#{dywxz,jdbcType=NUMERIC},
+		ZYWXZ=#{zywxz,jdbcType=NUMERIC},
+		XYXTCXSJ=#{xyxtcxsj,jdbcType=TIMESTAMP},
+		XDXTGLXTCX=#{xdxtglxtcx,jdbcType=VARCHAR},
+		RMYXGRZXSJKCX=#{rmyxgrzxsjkcx,jdbcType=VARCHAR},
+		DQDCFS=#{dqdcfs,jdbcType=VARCHAR},
+		ZLQBZS=#{zlqbzs,jdbcType=VARCHAR},
+		SQRZSYHS=#{sqrzsyhs,jdbcType=VARCHAR},
+		SQRZSDZ=#{sqrzsdz,jdbcType=VARCHAR},
+		SQRSRYHS=#{sqrsryhs,jdbcType=VARCHAR},
+		YJSR=#{yjsr,jdbcType=NUMERIC},
+		JKRLXFS=#{jkrlxfs,jdbcType=VARCHAR},
+		JKRPOLXFS=#{jkrpolxfs,jdbcType=VARCHAR},
+		DBRLXFS=#{dbrlxfs,jdbcType=VARCHAR},
+		DBRPOLXFS=#{dbrpolxfs,jdbcType=VARCHAR},
+		GYRLXFS=#{gyrlxfs,jdbcType=VARCHAR},
+		HSDBWFS=#{hsdbwfs,jdbcType=VARCHAR},
+		DBRSFMQ=#{dbrsfmq,jdbcType=VARCHAR},
+		DKXGQKSM=#{dkxgqksm,jdbcType=VARCHAR},
+		FXYC=#{fxyc,jdbcType=VARCHAR},
+		NCQDFXKZCS=#{ncqdfxkzcs,jdbcType=VARCHAR},
+		SXJE=#{sxje,jdbcType=NUMERIC},
+		SXQX=#{sxqx,jdbcType=VARCHAR},
+		DBFS=#{dbfs,jdbcType=VARCHAR},
+		DKFS=#{dkfs,jdbcType=VARCHAR},
+		DKJE=#{dkje,jdbcType=NUMERIC},
+		DKQX=#{dkqx,jdbcType=VARCHAR},
+		YLL=#{yll,jdbcType=NUMERIC},
+		GHFS=#{ghfs,jdbcType=VARCHAR},
+		ZDCRQM=#{zdcrqm,jdbcType=VARCHAR},
+		ZDCRQZSJ=#{zdcrqzsj,jdbcType=TIMESTAMP},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		ZDCRID=#{zdcrid,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZDCRYJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

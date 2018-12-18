@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.codegen.persistence.entity.SjfxPo">
+	<resultMap id="SjfxPo" type="com.lc.ibps.pgs.codegen.persistence.entity.SjfxPo">
+		<id property="id" column="ID" jdbcType="VARCHAR"/>
+		<result property="keChengMingChen" column="KE_CHENG_MING_CHEN" jdbcType="VARCHAR"/>
+		<result property="keChengDaiMa" column="KE_CHENG_DAI_MA_" jdbcType="VARCHAR"/>
+		<result property="keChengXingZhi" column="KE_CHENG_XING_ZHI_" jdbcType="VARCHAR"/>
+		<result property="xueFen" column="XUE_FEN_" jdbcType="VARCHAR"/>
+		<result property="renKeJiaoShi" column="REN_KE_JIAO_SHI_" jdbcType="VARCHAR"/>
+		<result property="banJiMingCheng" column="BAN_JI_MING_CHENG_" jdbcType="VARCHAR"/>
+		<result property="kaoHuXingShi" column="KAO_HU_XING_SHI_" jdbcType="VARCHAR"/>
+		<result property="kaoShiRiQi" column="KAO_SHI_RI_QI_" jdbcType="VARCHAR"/>
+		<result property="renShu" column="REN_SHU_" jdbcType="VARCHAR"/>
+		<result property="renShuo1" column="REN_SHU_1" jdbcType="VARCHAR"/>
+		<result property="renShu2" column="REN_SHU_2" jdbcType="VARCHAR"/>
+		<result property="renShuoSan" column="REN_SHUO_3" jdbcType="VARCHAR"/>
+		<result property="renShuSi" column="REN_SHU_4" jdbcType="VARCHAR"/>
+		<result property="renShuoWu" column="REN_SHUO_5" jdbcType="VARCHAR"/>
+		<result property="biLi1" column="BI_LI1_" jdbcType="VARCHAR"/>
+		<result property="biLi2" column="BI_LI2_" jdbcType="VARCHAR"/>
+		<result property="biLi3" column="BI_LI3_" jdbcType="VARCHAR"/>
+		<result property="biLi4" column="BI_LI4_" jdbcType="VARCHAR"/>
+		<result property="biLi5" column="BI_LI5_" jdbcType="VARCHAR"/>
+		<result property="pingYunChengJi" column="PING_YUN_CHENG_JI_" jdbcType="VARCHAR"/>
+		<result property="biaoZhunChai" column="BIAO_ZHUN_CHAI_" jdbcType="VARCHAR"/>
+		<result property="nanDuo1" column="NAN_DUO1_" jdbcType="VARCHAR"/>
+		<result property="nanDuo2" column="NAN_DUO2_" jdbcType="VARCHAR"/>
+		<result property="nanDuo3" column="NAN_DUO3_" jdbcType="VARCHAR"/>
+		<result property="nanDu4" column="NAN_DU4_" jdbcType="VARCHAR"/>
+		<result property="nanDu5" column="NAN_DU5_" jdbcType="VARCHAR"/>
+		<result property="ouFenDuo1" column="OU_FEN_DUO1_" jdbcType="VARCHAR"/>
+		<result property="ouFenDuo2" column="OU_FEN_DUO2_" jdbcType="VARCHAR"/>
+		<result property="ouFenDuo3" column="OU_FEN_DUO3_" jdbcType="VARCHAR"/>
+		<result property="ouFenDuo4" column="OU_FEN_DUO4_" jdbcType="VARCHAR"/>
+		<result property="xiaoGuoFenXi" column="XIAO_GUO_FEN_XI_" jdbcType="VARCHAR"/>
+		<result property="gaiJinCuoShi" column="GAI_JIN_CUO_SHI_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID,KE_CHENG_MING_CHEN,KE_CHENG_DAI_MA_,KE_CHENG_XING_ZHI_,XUE_FEN_,REN_KE_JIAO_SHI_,BAN_JI_MING_CHENG_,KAO_HU_XING_SHI_,KAO_SHI_RI_QI_,REN_SHU_,REN_SHU_1,REN_SHU_2,REN_SHUO_3,REN_SHU_4,REN_SHUO_5,BI_LI1_,BI_LI2_,BI_LI3_,BI_LI4_,BI_LI5_,PING_YUN_CHENG_JI_,BIAO_ZHUN_CHAI_,NAN_DUO1_,NAN_DUO2_,NAN_DUO3_,NAN_DU4_,NAN_DU5_,OU_FEN_DUO1_,OU_FEN_DUO2_,OU_FEN_DUO3_,OU_FEN_DUO4_,XIAO_GUO_FEN_XI_,GAI_JIN_CUO_SHI_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.codegen.persistence.entity.SjfxPo">
+		INSERT INTO T_XY_SJFXBG
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{keChengMingChen,jdbcType=VARCHAR}, #{keChengDaiMa,jdbcType=VARCHAR}, #{keChengXingZhi,jdbcType=VARCHAR}, #{xueFen,jdbcType=VARCHAR}, #{renKeJiaoShi,jdbcType=VARCHAR}, #{banJiMingCheng,jdbcType=VARCHAR}, #{kaoHuXingShi,jdbcType=VARCHAR}, #{kaoShiRiQi,jdbcType=VARCHAR}, #{renShu,jdbcType=VARCHAR}, #{renShuo1,jdbcType=VARCHAR}, #{renShu2,jdbcType=VARCHAR}, #{renShuoSan,jdbcType=VARCHAR}, #{renShuSi,jdbcType=VARCHAR}, #{renShuoWu,jdbcType=VARCHAR}, #{biLi1,jdbcType=VARCHAR}, #{biLi2,jdbcType=VARCHAR}, #{biLi3,jdbcType=VARCHAR}, #{biLi4,jdbcType=VARCHAR}, #{biLi5,jdbcType=VARCHAR}, #{pingYunChengJi,jdbcType=VARCHAR}, #{biaoZhunChai,jdbcType=VARCHAR}, #{nanDuo1,jdbcType=VARCHAR}, #{nanDuo2,jdbcType=VARCHAR}, #{nanDuo3,jdbcType=VARCHAR}, #{nanDu4,jdbcType=VARCHAR}, #{nanDu5,jdbcType=VARCHAR}, #{ouFenDuo1,jdbcType=VARCHAR}, #{ouFenDuo2,jdbcType=VARCHAR}, #{ouFenDuo3,jdbcType=VARCHAR}, #{ouFenDuo4,jdbcType=VARCHAR}, #{xiaoGuoFenXi,jdbcType=VARCHAR}, #{gaiJinCuoShi,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="SjfxPo">
+		SELECT <include refid="columns"/> FROM T_XY_SJFXBG 
+		WHERE 
+		ID=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="SjfxPo">
+		SELECT <include refid="columns"/> FROM T_XY_SJFXBG
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="SjfxPo">
+		SELECT <include refid="columns"/> FROM T_XY_SJFXBG
+			WHERE ID in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.codegen.persistence.entity.SjfxPo">
+		UPDATE T_XY_SJFXBG SET
+		KE_CHENG_MING_CHEN=#{keChengMingChen,jdbcType=VARCHAR},
+		KE_CHENG_DAI_MA_=#{keChengDaiMa,jdbcType=VARCHAR},
+		KE_CHENG_XING_ZHI_=#{keChengXingZhi,jdbcType=VARCHAR},
+		XUE_FEN_=#{xueFen,jdbcType=VARCHAR},
+		REN_KE_JIAO_SHI_=#{renKeJiaoShi,jdbcType=VARCHAR},
+		BAN_JI_MING_CHENG_=#{banJiMingCheng,jdbcType=VARCHAR},
+		KAO_HU_XING_SHI_=#{kaoHuXingShi,jdbcType=VARCHAR},
+		KAO_SHI_RI_QI_=#{kaoShiRiQi,jdbcType=VARCHAR},
+		REN_SHU_=#{renShu,jdbcType=VARCHAR},
+		REN_SHU_1=#{renShuo1,jdbcType=VARCHAR},
+		REN_SHU_2=#{renShu2,jdbcType=VARCHAR},
+		REN_SHUO_3=#{renShuoSan,jdbcType=VARCHAR},
+		REN_SHU_4=#{renShuSi,jdbcType=VARCHAR},
+		REN_SHUO_5=#{renShuoWu,jdbcType=VARCHAR},
+		BI_LI1_=#{biLi1,jdbcType=VARCHAR},
+		BI_LI2_=#{biLi2,jdbcType=VARCHAR},
+		BI_LI3_=#{biLi3,jdbcType=VARCHAR},
+		BI_LI4_=#{biLi4,jdbcType=VARCHAR},
+		BI_LI5_=#{biLi5,jdbcType=VARCHAR},
+		PING_YUN_CHENG_JI_=#{pingYunChengJi,jdbcType=VARCHAR},
+		BIAO_ZHUN_CHAI_=#{biaoZhunChai,jdbcType=VARCHAR},
+		NAN_DUO1_=#{nanDuo1,jdbcType=VARCHAR},
+		NAN_DUO2_=#{nanDuo2,jdbcType=VARCHAR},
+		NAN_DUO3_=#{nanDuo3,jdbcType=VARCHAR},
+		NAN_DU4_=#{nanDu4,jdbcType=VARCHAR},
+		NAN_DU5_=#{nanDu5,jdbcType=VARCHAR},
+		OU_FEN_DUO1_=#{ouFenDuo1,jdbcType=VARCHAR},
+		OU_FEN_DUO2_=#{ouFenDuo2,jdbcType=VARCHAR},
+		OU_FEN_DUO3_=#{ouFenDuo3,jdbcType=VARCHAR},
+		OU_FEN_DUO4_=#{ouFenDuo4,jdbcType=VARCHAR},
+		XIAO_GUO_FEN_XI_=#{xiaoGuoFenXi,jdbcType=VARCHAR},
+		GAI_JIN_CUO_SHI_=#{gaiJinCuoShi,jdbcType=VARCHAR}
+		WHERE
+		ID=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_XY_SJFXBG 
+		WHERE
+		ID=#{id}
+	</delete>
+	
+	
+</mapper>

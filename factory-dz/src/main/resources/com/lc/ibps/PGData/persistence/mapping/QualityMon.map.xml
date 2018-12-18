@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.QualityMonPo">
+	<resultMap id="QualityMonPo" type="com.lc.ibps.pgs.PGData.persistence.entity.QualityMonPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="monitory" column="MONITORY" jdbcType="VARCHAR"/>
+		<result property="quality" column="QUALITY" jdbcType="VARCHAR"/>
+		<result property="evaluation_method" column="EVALUATION_METHOD" jdbcType="VARCHAR"/>
+		<result property="evalution_period" column="EVALUTION_PERIOD" jdbcType="VARCHAR"/>
+		<result property="exector" column="EXECTOR" jdbcType="VARCHAR"/>
+		<result property="measures" column="MEASURES" jdbcType="CLOB"/>
+		<result property="responsible" column="RESPONSIBLE" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,MONITORY,QUALITY,EVALUATION_METHOD,EVALUTION_PERIOD,EXECTOR,MEASURES,RESPONSIBLE
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.QualityMonPo">
+		INSERT INTO T_P_MXDCDDZLJKTX
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{monitory,jdbcType=VARCHAR}, #{quality,jdbcType=VARCHAR}, #{evaluation_method,jdbcType=VARCHAR}, #{evalution_period,jdbcType=VARCHAR}, #{exector,jdbcType=VARCHAR}, #{measures,jdbcType=CLOB}, #{responsible,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="QualityMonPo">
+		SELECT <include refid="columns"/> FROM T_P_MXDCDDZLJKTX 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="QualityMonPo">
+		SELECT <include refid="columns"/> FROM T_P_MXDCDDZLJKTX
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="QualityMonPo">
+		SELECT <include refid="columns"/> FROM T_P_MXDCDDZLJKTX
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.QualityMonPo">
+		UPDATE T_P_MXDCDDZLJKTX SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		MONITORY=#{monitory,jdbcType=VARCHAR},
+		QUALITY=#{quality,jdbcType=VARCHAR},
+		EVALUATION_METHOD=#{evaluation_method,jdbcType=VARCHAR},
+		EVALUTION_PERIOD=#{evalution_period,jdbcType=VARCHAR},
+		EXECTOR=#{exector,jdbcType=VARCHAR},
+		MEASURES=#{measures,jdbcType=CLOB},
+		RESPONSIBLE=#{responsible,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_MXDCDDZLJKTX 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

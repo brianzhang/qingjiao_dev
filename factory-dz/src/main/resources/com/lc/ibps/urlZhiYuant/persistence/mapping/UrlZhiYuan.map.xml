@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo">
+	<resultMap id="UrlZhiYuanPo"
+		type="com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR" />
+		<result property="td1" column="TD1" jdbcType="VARCHAR" />
+		<result property="td1id" column="TD1ID" jdbcType="VARCHAR" />
+		<result property="js1" column="JS1" jdbcType="VARCHAR" />
+		<result property="js1id" column="JS1ID" jdbcType="VARCHAR" />
+		<result property="td2" column="TD2" jdbcType="VARCHAR" />
+		<result property="td2id" column="TD2ID" jdbcType="VARCHAR" />
+		<result property="js2" column="JS2" jdbcType="VARCHAR" />
+		<result property="js2id" column="JS2ID" jdbcType="VARCHAR" />
+		<result property="td3" column="TD3" jdbcType="VARCHAR" />
+		<result property="td3id" column="TD3ID" jdbcType="VARCHAR" />
+		<result property="js3" column="JS3" jdbcType="VARCHAR" />
+		<result property="js3id" column="JS3ID" jdbcType="VARCHAR" />
+		<result property="xh" column="XH" jdbcType="VARCHAR" />
+		<result property="classr" column="CLASSR" jdbcType="VARCHAR" />
+		<result property="name" column="NAME" jdbcType="VARCHAR" />
+		<result property="finalteacher" column="FINALTEACHER" jdbcType="VARCHAR" />
+		<result property="finalteacherId" column="FINALTEACHERID" jdbcType="VARCHAR" />
+		<result property="finaltd" column="FINALTD" jdbcType="VARCHAR" />
+		<result property="finaltdId" column="FINALTDID" jdbcType="VARCHAR" />
+		<result property="ktdbjhmd" column="KTDBJHMD" jdbcType="VARCHAR"/>
+		<result property="yx" column="YX" jdbcType="VARCHAR"/>
+		<result property="zc" column="ZC" jdbcType="VARCHAR"/>
+		<result property="sbsj" column="SBSJ" jdbcType="TIMESTAMP"/>
+		<result property="tmmc" column="TMMC" jdbcType="VARCHAR"/>
+		<result property="tmly" column="TMLY" jdbcType="VARCHAR"/>
+		<result property="tmlx" column="TMLX" jdbcType="VARCHAR"/>
+		<result property="ktnjjdwt" column="KTNJJDWT" jdbcType="VARCHAR"/>
+		<result property="rjhj" column="RJHJ" jdbcType="VARCHAR"/>
+		<result property="yjhj" column="YJHJ" jdbcType="VARCHAR"/>
+		<result property="ktyqmbhcg" column="KTYQMBHCG" jdbcType="VARCHAR"/>
+		<result property="ktcgjzywcdgzrw" column="KTCGJZYWCDGZRW" jdbcType="VARCHAR"/>
+		<result property="bktdcgxs" column="BKTDCGXS" jdbcType="VARCHAR"/>
+		<result property="nf" column="NF" jdbcType="VARCHAR"/>
+		<result property="tmdyzy" column="TMDYZY" jdbcType="VARCHAR"/>
+		<result property="sjjs" column="SJJS" jdbcType="VARCHAR"/>
+		<result property="ydwx" column="YDWX" jdbcType="VARCHAR"/>
+		<result property="jbyq" column="JBYQ" jdbcType="VARCHAR"/>
+		<result property="tzzs" column="TZZS" jdbcType="VARCHAR"/>
+		<result property="dlbks" column="DLBKS" jdbcType="VARCHAR"/>
+		<result property="dsbjzs" column="DSBJZS" jdbcType="VARCHAR"/>
+		<result property="zyckzl" column="ZYCKZL" jdbcType="VARCHAR"/>
+		<result property="fzx" column="FZX" jdbcType="VARCHAR"/>
+		<result property="litishufile" column="LITISHUFILE" jdbcType="VARCHAR"/>
+		<result property="renwushufile" column="RENWUSHUFILE" jdbcType="VARCHAR"/>
+		<result property="gzmd" column="GZMD" jdbcType="VARCHAR"/>
+		<result property="gznrjjtyq" column="GZNRJJTYQ" jdbcType="VARCHAR"/>
+		<result property="gzjdfp" column="GZJDFP" jdbcType="VARCHAR"/>
+		<result property="zddyfs" column="ZDDYFS" jdbcType="VARCHAR"/>
+		<result property="kt_bgrq" column="KT_BGRQ" jdbcType="VARCHAR"/>
+		<result property="kt_bjsm" column="KT_BJSM" jdbcType="VARCHAR"/>
+		<result property="kt_zynr" column="KT_ZYNR" jdbcType="VARCHAR"/>
+		<result property="kt_fajdjap" column="KT_FAJDJAP" jdbcType="VARCHAR"/>
+		<result property="kt_gzfa" column="KT_GZFA" jdbcType="VARCHAR"/>
+		<result property="kaitifile" column="KAITIFILE" jdbcType="VARCHAR"/>
+		<result property="kaiti_zyzl" column="KAITI_ZYZL" jdbcType="VARCHAR"/>
+		<result property="renwushu_zyzl" column="RENWUSHU_ZYZL" jdbcType="VARCHAR"/>
+		<result property="labelId" column="label_id_" jdbcType="VARCHAR"/>
+		<result property="zqBatch" column="zq_batch_" jdbcType="VARCHAR"/>
+		<result property="zqResult" column="zq_result_" jdbcType="VARCHAR"/>
+		<result property="zqGrade" column="zq_grade_" jdbcType="BLOB"/>
+		
+		<result property="dbBatch" column="db_batch_" jdbcType="VARCHAR"/>
+		<result property="dbResult" column="db_result_" jdbcType="VARCHAR"/>
+		<result property="dbGrade" column="db_grade_" jdbcType="BLOB"/>
+		
+		<result property="judgeTch" column="judge_tch_" jdbcType="VARCHAR"/>
+		<result property="finalTchOpinion" column="final_tch_opinion_" jdbcType="VARCHAR"/>
+		<result property="judgeTchOpinion" column="judge_tch_opinion_" jdbcType="VARCHAR"/>
+		<result property="finalTchComment" column="final_tch_comment_" jdbcType="VARCHAR"/>
+		<result property="judgeTchComment" column="judge_tch_comment_" jdbcType="VARCHAR"/>
+		<result property="normalPaperId" column="normal_paper_id_" jdbcType="VARCHAR"/>
+		<result property="anonymousPaperId" column="anonymous_paper_id_" jdbcType="VARCHAR"/>
+		<result property="isDb" column="is_db_" jdbcType="VARCHAR"/>
+		<result property="finalTchDate" column="final_tch_date_" jdbcType="DATE"/>
+		<result property="judgeTchDate" column="judge_tch_date_" jdbcType="DATE"/>
+		<result property="judgeTchName" column="judge_tch_name_" jdbcType="VARCHAR"/>
+
+		<result property="oneDb" column="one_db_" jdbcType="VARCHAR"/>
+		<result property="twoDb" column="two_db_" jdbcType="VARCHAR"/>
+		<result property="threeDb" column="three_db_" jdbcType="VARCHAR"/>
+		<result property="fourDb" column="four_db_" jdbcType="VARCHAR"/>
+		<result property="fiveDb" column="five_db_" jdbcType="VARCHAR"/>
+		<result property="totalDb" column="total_db_" jdbcType="VARCHAR"/>
+		<result property="masterComment" column="master_comment_" jdbcType="VARCHAR"/>
+		<result property="masterName" column="master_name_" jdbcType="VARCHAR"/>
+		<result property="masterData" column="master_data_" jdbcType="DATE"/>
+
+
+ 		<result property="orgId" column="ORGID" jdbcType="VARCHAR"/>
+	</resultMap>
+
+
+
+	<sql id="columns">
+		ID_,TD1,TD1ID,JS1,JS1ID,TD2,TD2ID,JS2,JS2ID,TD3,TD3ID,JS3,JS3ID,XH,CLASSR,NAME,FINALTEACHER,FINALTEACHERID,FINALTD,FINALTDID,KTDBJHMD,YX,ZC,SBSJ,TMMC,TMLY,TMLX,KTNJJDWT,RJHJ,YJHJ,KTYQMBHCG,KTCGJZYWCDGZRW,BKTDCGXS,NF,TMDYZY,SJJS,YDWX,JBYQ,TZZS,DLBKS,DSBJZS,ZYCKZL,FZX,LITISHUFILE,RENWUSHUFILE,GZMD,GZNRJJTYQ,GZJDFP,ZDDYFS,KT_BGRQ,KT_BJSM,KT_ZYNR,KT_FAJDJAP,KT_GZFA,KAITIFILE,KAITI_ZYZL,RENWUSHU_ZYZL,LABEL_ID_,
+		zq_batch_,zq_result_,zq_grade_,db_batch_,db_result_,db_grade_,judge_tch_,final_tch_opinion_,judge_tch_opinion_,
+		final_tch_comment_,judge_tch_comment_,normal_paper_id_,anonymous_paper_id_,is_db_,final_tch_date_,judge_tch_date_,judge_tch_name_,
+		one_db_,two_db_,three_db_,four_db_,five_db_,total_db_,master_comment_,master_name_,master_data_,ORGID
+	</sql>
+
+	<insert id="create"
+		parameterType="com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo">
+		INSERT INTO T_ZYURL
+		(
+		<include refid="columns" />
+		)
+		VALUES
+		(#{id,jdbcType=VARCHAR}, 
+		#{td1,jdbcType=VARCHAR}, 
+		#{td1id,jdbcType=VARCHAR},
+		#{js1,jdbcType=VARCHAR}, 
+		#{js1id,jdbcType=VARCHAR},
+		#{td2,jdbcType=VARCHAR}, 
+		#{td2id,jdbcType=VARCHAR},
+		#{js2,jdbcType=VARCHAR}, 
+		#{js2id,jdbcType=VARCHAR},
+		#{td3,jdbcType=VARCHAR}, 
+		#{td3id,jdbcType=VARCHAR},
+		#{js3,jdbcType=VARCHAR}, 
+		#{js3id,jdbcType=VARCHAR},
+		#{xh,jdbcType=VARCHAR},
+		#{classr,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{finalteacher,jdbcType=VARCHAR},
+		#{finalteacherId,jdbcType=VARCHAR},
+		#{finaltd,jdbcType=VARCHAR},
+		#{finaltdId,jdbcType=VARCHAR},
+		#{ktdbjhmd,jdbcType=VARCHAR}, 
+		#{yx,jdbcType=VARCHAR}, 
+		#{zc,jdbcType=VARCHAR}, 
+		#{sbsj,jdbcType=TIMESTAMP}, 
+		#{tmmc,jdbcType=VARCHAR}, 
+		#{tmly,jdbcType=VARCHAR}, 
+		#{tmlx,jdbcType=VARCHAR}, 
+		#{ktnjjdwt,jdbcType=VARCHAR}, 
+		#{rjhj,jdbcType=VARCHAR}, 
+		#{yjhj,jdbcType=VARCHAR}, 
+		#{ktyqmbhcg,jdbcType=VARCHAR}, 
+		#{ktcgjzywcdgzrw,jdbcType=VARCHAR}, 
+		#{bktdcgxs,jdbcType=VARCHAR}, 
+		#{nf,jdbcType=VARCHAR}, 
+		#{tmdyzy,jdbcType=VARCHAR},
+		#{sjjs,jdbcType=VARCHAR},
+		#{ydwx,jdbcType=VARCHAR},
+		#{jbyq,jdbcType=VARCHAR},
+		#{tzzs,jdbcType=VARCHAR},
+		#{dlbks,jdbcType=VARCHAR},
+		#{dsbjzs,jdbcType=VARCHAR},
+		#{zyckzl,jdbcType=VARCHAR},
+		#{fzx,jdbcType=VARCHAR},
+		#{litishufile,jdbcType=VARCHAR},
+		#{renwushufile,jdbcType=VARCHAR},
+		#{gzmd,jdbcType=VARCHAR},
+		#{gznrjjtyq,jdbcType=VARCHAR},
+		#{gzjdfp,jdbcType=VARCHAR},
+		#{zddyfs,jdbcType=VARCHAR},
+		#{kt_bgrq,jdbcType=VARCHAR},
+		#{kt_bjsm,jdbcType=VARCHAR},
+		#{kt_zynr,jdbcType=VARCHAR},
+		#{kt_fajdjap,jdbcType=VARCHAR},
+		#{kt_gzfa,jdbcType=VARCHAR},
+		#{kaitifile,jdbcType=VARCHAR},
+		#{kaiti_zyzl,jdbcType=VARCHAR},
+		#{renwushu_zyzl,jdbcType=VARCHAR},
+		#{labelId,jdbcType=VARCHAR},
+		#{zqBatch,jdbcType=VARCHAR},
+		#{zqResult,jdbcType=VARCHAR},
+		#{zqGrade,jdbcType=VARCHAR},
+		
+		#{dbBatch,jdbcType=VARCHAR},
+		#{dbResult,jdbcType=VARCHAR},
+		#{dbGrade,jdbcType=VARCHAR},
+		
+		#{judgeTch,jdbcType=VARCHAR},
+		#{finalTchOpinion,jdbcType=VARCHAR},
+		#{judgeTchOpinion,jdbcType=VARCHAR},
+		#{finalTchComment,jdbcType=VARCHAR},
+		#{judgeTchComment,jdbcType=VARCHAR},
+		#{normalPaperId,jdbcType=VARCHAR},
+		#{anonymousPaperId,jdbcType=VARCHAR},
+		#{isDb,jdbcType=VARCHAR},
+		#{finalTchDate,jdbcType=DATE},
+		#{judgeTchDate,jdbcType=DATE},
+		#{judgeTchName,jdbcType=VARCHAR},
+
+ 		#{orgId,jdbcType=VARCHAR},
+
+		#{oneDb,jdbcType=VARCHAR},
+		#{twoDb,jdbcType=VARCHAR},
+		#{threeDb,jdbcType=VARCHAR},
+		#{fourDb,jdbcType=VARCHAR},
+		#{fiveDb,jdbcType=VARCHAR},
+		#{totalDb,jdbcType=VARCHAR},
+		#{masterComment,jdbcType=VARCHAR},
+		#{masterName,jdbcType=VARCHAR},
+		#{masterData,jdbcType=DATE}
+		
+		
+		)
+	</insert>
+
+
+	<select id="get" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		WHERE
+		ID_=#{id}
+	</select>
+
+	<select id="getByxh" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		WHERE
+		XH=#{xh}
+	</select>
+<select id="getBy_xh" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		WHERE
+		XH=#{arg}
+	</select>
+	<select id="getByBizKey" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT *
+		FROM T_ZYURL
+		WHERE
+		ID_=#{bizkey}
+	</select>
+	<select id="getByFinaltdId" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT *
+		FROM T_ZYURL
+		WHERE
+		FINALTDID=#{tdid}
+	</select>
+	
+	<select id="getByFinalTchId" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT *
+		FROM T_ZYURL
+		WHERE
+		finalteacherId=#{tchId}
+	</select>
+	
+	<select id="getAllJudgeTchId" parameterType="java.lang.String" resultType="String">
+		SELECT DISTINCT finalteacherId
+		FROM T_ZYURL
+		WHERE
+		orgId = #{orgId}
+	</select>
+	
+	<select id="getByStuNum" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT * FROM `t_zyurl` where xh =#{stunum}
+	</select>
+	<select id="query" parameterType="java.util.Map" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+
+	<select id="getBySql" parameterType="java.lang.String" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+	</select>
+
+
+	<select id="getNumByLabel"   parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT count(*) FROM T_ZYURL 
+		WHERE 
+		LABEL_ID_ like #{labelId}
+	</select>
+
+	<select id="findByIds" resultMap="UrlZhiYuanPo">
+		SELECT
+		<include refid="columns" />
+		FROM T_ZYURL
+		WHERE ID_ in
+		<foreach item="id" index="index" collection="ids" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+		ORDER BY ID_ DESC
+	</select>
+
+	<update id="update"
+		parameterType="com.lc.ibps.urlZhiYuan.urlZhiYuant.persistence.entity.UrlZhiYuanPo">
+		UPDATE T_ZYURL SET
+		TD1=#{td1,jdbcType=VARCHAR},
+		TD1ID=#{td1id,jdbcType=VARCHAR},
+		JS1=#{js1,jdbcType=VARCHAR},
+		JS1ID=#{js1id,jdbcType=VARCHAR},
+		TD2=#{td2,jdbcType=VARCHAR},
+		TD2ID=#{td2id,jdbcType=VARCHAR},
+		JS2=#{js2,jdbcType=VARCHAR},
+		JS2ID=#{js2id,jdbcType=VARCHAR},
+		TD3=#{td3,jdbcType=VARCHAR},
+		TD3ID=#{td3id,jdbcType=VARCHAR},
+		JS3=#{js3,jdbcType=VARCHAR},
+		JS3ID=#{js3id,jdbcType=VARCHAR},
+		XH=#{xh,jdbcType=VARCHAR},
+		CLASSR=#{classr,jdbcType=VARCHAR},
+		NAME=#{name,jdbcType=VARCHAR},
+		FINALTEACHER=#{finalteacher,jdbcType=VARCHAR},
+		FINALTEACHERID=#{finalteacherId,jdbcType=VARCHAR},
+		FINALTD=#{finaltd,jdbcType=VARCHAR},
+		FINALTDID=#{finaltdId,jdbcType=VARCHAR},
+		KTDBJHMD=#{ktdbjhmd,jdbcType=VARCHAR},
+		YX=#{yx,jdbcType=VARCHAR},
+		ZC=#{zc,jdbcType=VARCHAR},
+		SBSJ=#{sbsj,jdbcType=TIMESTAMP},
+		TMMC=#{tmmc,jdbcType=VARCHAR},
+		TMLY=#{tmly,jdbcType=VARCHAR},
+		TMLX=#{tmlx,jdbcType=VARCHAR},
+		KTNJJDWT=#{ktnjjdwt,jdbcType=VARCHAR},
+		RJHJ=#{rjhj,jdbcType=VARCHAR},
+		YJHJ=#{yjhj,jdbcType=VARCHAR},
+		KTYQMBHCG=#{ktyqmbhcg,jdbcType=VARCHAR},
+		KTCGJZYWCDGZRW=#{ktcgjzywcdgzrw,jdbcType=VARCHAR},
+		BKTDCGXS=#{bktdcgxs,jdbcType=VARCHAR},
+		NF=#{nf,jdbcType=VARCHAR},
+		TMDYZY=#{tmdyzy,jdbcType=VARCHAR},
+		SJJS=#{sjjs,jdbcType=VARCHAR},
+		YDWX=#{ydwx,jdbcType=VARCHAR},
+		JBYQ=#{jbyq,jdbcType=VARCHAR},
+		TZZS=#{tzzs,jdbcType=VARCHAR},
+		DLBKS=#{dlbks,jdbcType=VARCHAR},
+		DSBJZS=#{dsbjzs,jdbcType=VARCHAR},
+		ZYCKZL=#{zyckzl,jdbcType=VARCHAR},
+		FZX=#{fzx,jdbcType=VARCHAR},
+		LITISHUFILE=#{litishufile,jdbcType=VARCHAR},
+		RENWUSHUFILE=#{renwushufile,jdbcType=VARCHAR},
+		GZMD=#{gzmd,jdbcType=VARCHAR},
+		GZNRJJTYQ=#{gznrjjtyq,jdbcType=VARCHAR},
+		GZJDFP=#{gzjdfp,jdbcType=VARCHAR},
+		ZDDYFS=#{zddyfs,jdbcType=VARCHAR},
+		KT_BGRQ=#{kt_bgrq,jdbcType=VARCHAR},
+		KT_BJSM=#{kt_bjsm,jdbcType=VARCHAR},
+		KT_ZYNR=#{kt_zynr,jdbcType=VARCHAR},
+		KT_FAJDJAP=#{kt_fajdjap,jdbcType=VARCHAR},
+		KT_GZFA=#{kt_gzfa,jdbcType=VARCHAR},
+		KAITIFILE=#{kaitifile,jdbcType=VARCHAR},
+		KAITI_ZYZL=#{kaiti_zyzl,jdbcType=VARCHAR},
+		RENWUSHU_ZYZL=#{renwushu_zyzl,jdbcType=VARCHAR},
+		LABEL_ID_=#{labelId,jdbcType=VARCHAR},
+		
+		zq_batch_=#{zqBatch,jdbcType=VARCHAR},
+		zq_result_=#{zqResult,jdbcType=VARCHAR},
+		zq_grade_=#{zqGrade,jdbcType=VARCHAR},
+
+		db_batch_=#{dbBatch,jdbcType=VARCHAR},
+		db_result_=#{dbResult,jdbcType=VARCHAR},
+		db_grade_=#{dbGrade,jdbcType=VARCHAR},		
+
+		judge_tch_=#{judgeTch,jdbcType=VARCHAR},
+		final_tch_opinion_=#{finalTchOpinion,jdbcType=VARCHAR},
+		judge_tch_opinion_=#{judgeTchOpinion,jdbcType=VARCHAR},
+		final_tch_comment_=#{finalTchComment,jdbcType=VARCHAR},
+		judge_tch_comment_=#{judgeTchComment,jdbcType=VARCHAR},
+		normal_paper_id_=#{normalPaperId,jdbcType=VARCHAR},
+		anonymous_paper_id_=#{anonymousPaperId,jdbcType=VARCHAR},	
+		is_db_=#{isDb,jdbcType=VARCHAR},
+		final_tch_date_=#{finalTchDate,jdbcType=DATE},
+		judge_tch_date_=#{judgeTchDate,jdbcType=DATE},
+ 		judge_tch_name_=#{judgeTchName,jdbcType=VARCHAR},
+
+ 		ORGID=#{orgId,jdbcType=VARCHAR},
+
+ 		one_db_=#{oneDb,jdbcType=VARCHAR},
+ 		two_db_=#{twoDb,jdbcType=VARCHAR},
+ 		three_db_=#{threeDb,jdbcType=VARCHAR},
+ 		four_db_=#{fourDb,jdbcType=VARCHAR},
+ 		five_db_=#{fiveDb,jdbcType=VARCHAR},
+ 		total_db_=#{totalDb,jdbcType=VARCHAR},
+ 		master_comment_=#{masterComment,jdbcType=VARCHAR},
+ 		master_name_=#{masterName,jdbcType=VARCHAR},
+ 		master_data_=#{masterData,jdbcType=DATE}
+ 		
+		WHERE
+		ID_=#{id}
+
+	</update>
+
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_ZYURL
+		WHERE
+		ID_=#{id}
+	</delete>
+
+	<update id="compoundLabel" parameterType="String">
+	UPDATE T_ZYURL set label_id_ = REPLACE (label_id_,#{oldLabelId},#{newLabelId}) where orgId = #{orgId};
+	</update>
+
+
+</mapper>

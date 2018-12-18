@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Report.persistence.entity.JxjdPo">
+	<resultMap id="JxjdPo" type="com.lc.ibps.pgs.Report.persistence.entity.JxjdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="crs_id" column="CRS_ID" jdbcType="VARCHAR"/>
+		<result property="crs_name" column="CRS_NAME" jdbcType="VARCHAR"/>
+		<result property="crs_unit" column="CRS_UNIT" jdbcType="VARCHAR"/>
+		<result property="teachinghours" column="TEACHINGHOURS" jdbcType="VARCHAR"/>
+		<result property="teachingcontent" column="TEACHINGCONTENT" jdbcType="VARCHAR"/>
+		<result property="remark" column="REMARK" jdbcType="VARCHAR"/>
+		<result property="author" column="AUTHOR" jdbcType="VARCHAR"/>
+		<result property="sign" column="SIGN" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,CRS_ID,CRS_NAME,CRS_UNIT,TEACHINGHOURS,TEACHINGCONTENT,REMARK,AUTHOR,SIGN
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Report.persistence.entity.JxjdPo">
+		INSERT INTO T_BKKCJXJDB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{crs_id,jdbcType=VARCHAR}, #{crs_name,jdbcType=VARCHAR},#{crs_unit,jdbcType=VARCHAR}, #{teachinghours,jdbcType=VARCHAR}, #{teachingcontent,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{sign,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="JxjdPo">
+		SELECT <include refid="columns"/> FROM T_BKKCJXJDB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="JxjdPo">
+		SELECT <include refid="columns"/> FROM T_BKKCJXJDB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="JxjdPo">
+		SELECT <include refid="columns"/> FROM T_BKKCJXJDB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Report.persistence.entity.JxjdPo">
+		UPDATE T_BKKCJXJDB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		CRS_ID=#{crs_id,jdbcType=VARCHAR},
+		CRS_NAME=#{crs_name,jdbcType=VARCHAR},
+		CRS_UNIT=#{crs_unit,jdbcType=VARCHAR},
+		TEACHINGHOURS=#{teachinghours,jdbcType=VARCHAR},
+		TEACHINGCONTENT=#{teachingcontent,jdbcType=VARCHAR},
+		REMARK=#{remark,jdbcType=VARCHAR},
+		AUTHOR=#{author,jdbcType=VARCHAR},
+		SIGN=#{sign,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_BKKCJXJDB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.EvaluatePo">
+	<resultMap id="EvaluatePo" type="com.lc.ibps.pgs.PGData.persistence.entity.EvaluatePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="crs_id" column="CRS_ID" jdbcType="VARCHAR"/>
+		<result property="teacher" column="TEACHER" jdbcType="VARCHAR"/>
+		<result property="forms" column="FORMS" jdbcType="VARCHAR"/>
+		<result property="proportion1" column="PROPORTION1" jdbcType="VARCHAR"/>
+		<result property="proportion2" column="PROPORTION2" jdbcType="VARCHAR"/>
+		<result property="proportion3" column="PROPORTION3" jdbcType="VARCHAR"/>
+		<result property="decide" column="DECIDE" jdbcType="VARCHAR"/>
+		<result property="other" column="OTHER" jdbcType="VARCHAR"/>
+		<result property="result" column="RESULT" jdbcType="VARCHAR"/>
+		<result property="ws" column="WS" jdbcType="VARCHAR"/>
+		<result property="principle" column="PRINCIPLE" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,CRS_ID,TEACHER,FORMS,PROPORTION1,PROPORTION2,PROPORTION3,DECIDE,OTHER,RESULT,WS,PRINCIPLE
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.EvaluatePo">
+		INSERT INTO T_P_KHHLXPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{crs_id,jdbcType=VARCHAR}, #{teacher,jdbcType=VARCHAR}, #{forms,jdbcType=VARCHAR}, #{proportion1,jdbcType=VARCHAR}, #{proportion2,jdbcType=VARCHAR}, #{proportion3,jdbcType=VARCHAR}, #{decide,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, #{result,jdbcType=VARCHAR}, #{ws,jdbcType=VARCHAR}, #{principle,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="EvaluatePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="EvaluatePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="EvaluatePo">
+		SELECT <include refid="columns"/> FROM T_P_KHHLXPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.EvaluatePo">
+		UPDATE T_P_KHHLXPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		CRS_ID=#{crs_id,jdbcType=VARCHAR},
+		TEACHER=#{teacher,jdbcType=VARCHAR},
+		FORMS=#{forms,jdbcType=VARCHAR},
+		PROPORTION1=#{proportion1,jdbcType=VARCHAR},
+		PROPORTION2=#{proportion2,jdbcType=VARCHAR},
+		PROPORTION3=#{proportion3,jdbcType=VARCHAR},
+		DECIDE=#{decide,jdbcType=VARCHAR},
+		OTHER=#{other,jdbcType=VARCHAR},
+		RESULT=#{result,jdbcType=VARCHAR},
+		WS=#{ws,jdbcType=VARCHAR},
+		PRINCIPLE=#{principle,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_KHHLXPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.files.persistence.entity.FilePo">
+	<resultMap id="FilePo" type="com.lc.ibps.loans.files.persistence.entity.FilePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="filePath" column="FILE_PATH" jdbcType="VARCHAR"/>
+		<result property="jdid" column="JDID" jdbcType="VARCHAR"/>
+		<result property="viewer" column="VIEWER" jdbcType="VARCHAR"/>
+		<result property="uploader" column="UPLOADER" jdbcType="VARCHAR"/>
+		<result property="time" column="TIME" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,NAME,FILE_PATH,JDID,VIEWER,UPLOADER,TIME
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.files.persistence.entity.FilePo">
+		INSERT INTO T_FILE
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, #{jdid,jdbcType=VARCHAR}, #{viewer,jdbcType=VARCHAR}, #{uploader,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="FilePo">
+		SELECT <include refid="columns"/> FROM T_FILE 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByJdid"   parameterType="java.lang.String" resultMap="FilePo">
+		SELECT *  FROM T_FILE 
+		WHERE 
+		JDID=#{jdid}
+	</select>
+	
+	<select id="getByMap"   parameterType="java.util.HashMap" resultMap="FilePo">
+		SELECT <include refid="columns"/> FROM T_FILE
+		WHERE 
+		JDID=#{arg}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="FilePo">
+		SELECT <include refid="columns"/> FROM T_FILE
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="FilePo">
+		SELECT <include refid="columns"/> FROM T_FILE
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.files.persistence.entity.FilePo">
+		UPDATE T_FILE SET
+		NAME=#{name,jdbcType=VARCHAR},
+		FILE_PATH=#{filePath,jdbcType=VARCHAR},
+		JDID=#{jdid,jdbcType=VARCHAR},
+		VIEWER=#{viewer,jdbcType=VARCHAR},
+		UPLOADER=#{uploader,jdbcType=VARCHAR},
+		TIME=#{time,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_FILE 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

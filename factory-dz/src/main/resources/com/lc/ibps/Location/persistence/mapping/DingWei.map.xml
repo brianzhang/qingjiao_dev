@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.Location.persistence.entity.DingWeiPo">
+	<resultMap id="DingWeiPo" type="com.lc.ibps.pgs.Location.persistence.entity.DingWeiPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="banXueDingWei" column="BAN_XUE_DING_WEI_" jdbcType="CLOB"/>
+		<result property="zhuanYeDingWei" column="ZHUAN_YE_DING_WEI_" jdbcType="CLOB"/>
+		<result property="xueKeZhiCheng" column="XUE_KE_ZHI_CHENG_" jdbcType="CLOB"/>
+		<result property="sheHuiXuQiu" column="SHE_HUI_XU_QIU_" jdbcType="CLOB"/>
+		<result property="fangAnID" column="FANG_AN_I_D_" jdbcType="VARCHAR"/>
+		<result property="fangMingCheng" column="FANG_MING_CHENG_" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,BAN_XUE_DING_WEI_,ZHUAN_YE_DING_WEI_,XUE_KE_ZHI_CHENG_,SHE_HUI_XU_QIU_,FANG_AN_I_D_,FANG_MING_CHENG_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.Location.persistence.entity.DingWeiPo">
+		INSERT INTO T_PYDWB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{banXueDingWei,jdbcType=CLOB}, #{zhuanYeDingWei,jdbcType=CLOB}, #{xueKeZhiCheng,jdbcType=CLOB}, #{sheHuiXuQiu,jdbcType=CLOB}, #{fangAnID,jdbcType=VARCHAR}, #{fangMingCheng,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="DingWeiPo">
+		SELECT <include refid="columns"/> FROM T_PYDWB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="DingWeiPo">
+		SELECT <include refid="columns"/> FROM T_PYDWB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="DingWeiPo">
+		SELECT <include refid="columns"/> FROM T_PYDWB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.Location.persistence.entity.DingWeiPo">
+		UPDATE T_PYDWB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		BAN_XUE_DING_WEI_=#{banXueDingWei,jdbcType=CLOB},
+		ZHUAN_YE_DING_WEI_=#{zhuanYeDingWei,jdbcType=CLOB},
+		XUE_KE_ZHI_CHENG_=#{xueKeZhiCheng,jdbcType=CLOB},
+		SHE_HUI_XU_QIU_=#{sheHuiXuQiu,jdbcType=CLOB},
+		FANG_AN_I_D_=#{fangAnID,jdbcType=VARCHAR},
+		FANG_MING_CHENG_=#{fangMingCheng,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_PYDWB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

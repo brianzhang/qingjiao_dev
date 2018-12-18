@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.lyzygls.XiaoBan.persistence.entity.XiaoBanPo">
+	<resultMap id="XiaoBanPo" type="com.lc.ibps.lyzygls.XiaoBan.persistence.entity.XiaoBanPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="idd" column="IDD" jdbcType="VARCHAR"/>
+		<result property="lbh" column="LBH" jdbcType="VARCHAR"/>
+		<result property="xbh" column="XBH" jdbcType="VARCHAR"/>
+		<result property="ejlz" column="EJLZ" jdbcType="VARCHAR"/>
+		<result property="ejlz1" column="EJLZ1" jdbcType="VARCHAR"/>
+		<result property="ejlz2" column="EJLZ2" jdbcType="VARCHAR"/>
+		<result property="dl" column="DL" jdbcType="VARCHAR"/>
+		<result property="dl1" column="DL1" jdbcType="VARCHAR"/>
+		<result property="dq" column="DQ" jdbcType="VARCHAR"/>
+		<result property="lq" column="LQ" jdbcType="VARCHAR"/>
+		<result property="qy" column="QY" jdbcType="VARCHAR"/>
+		<result property="mj" column="MJ" jdbcType="NUMERIC"/>
+		<result property="zs" column="ZS" jdbcType="VARCHAR"/>
+		<result property="xj" column="XJ" jdbcType="VARCHAR"/>
+		<result property="lz" column="LZ" jdbcType="VARCHAR"/>
+		<result property="lflx" column="LFLX" jdbcType="VARCHAR"/>
+		<result property="szzc" column="SZZC" jdbcType="VARCHAR"/>
+		<result property="ybd" column="YBD" jdbcType="NUMERIC"/>
+		<result property="jycs" column="JYCS" jdbcType="VARCHAR"/>
+		<result property="lj" column="LJ" jdbcType="VARCHAR"/>
+		<result property="ll" column="LL" jdbcType="VARCHAR"/>
+		<result property="xiongjing" column="XIONGJING" jdbcType="VARCHAR"/>
+		<result property="sg" column="SG" jdbcType="NUMERIC"/>
+		<result property="dqsyq" column="DQSYQ" jdbcType="VARCHAR"/>
+		<result property="lqsyq" column="LQSYQ" jdbcType="VARCHAR"/>
+		<result property="gclb" column="GCLB" jdbcType="VARCHAR"/>
+		<result property="tr" column="TR" jdbcType="VARCHAR"/>
+		<result property="zrd" column="ZRD" jdbcType="VARCHAR"/>
+		<result property="bz" column="BZ" jdbcType="VARCHAR"/>
+		<result property="qljg" column="QLJG" jdbcType="VARCHAR"/>
+		<result property="ldlx" column="LDLX" jdbcType="VARCHAR"/>
+		<result property="ysspjg" column="YSSPJG" jdbcType="NUMERIC"/>
+		<result property="dm" column="DM" jdbcType="VARCHAR"/>
+		<result property="kdmxjl" column="KDMXJL" jdbcType="VARCHAR"/>
+		<result property="zyxm" column="ZYXM" jdbcType="VARCHAR"/>
+		<result property="xmgd" column="XMGD" jdbcType="VARCHAR"/>
+		<result property="zydbw" column="ZYDBW" jdbcType="VARCHAR"/>
+		<result property="dbwgd" column="DBWGD" jdbcType="VARCHAR"/>
+		<result property="px" column="PX" jdbcType="VARCHAR"/>
+		<result property="pw" column="PW" jdbcType="VARCHAR"/>
+		<result property="pd" column="PD" jdbcType="VARCHAR"/>
+		<result property="a1chd" column="A1CHD" jdbcType="VARCHAR"/>
+		<result property="hb" column="HB" jdbcType="VARCHAR"/>
+		<result property="smd" column="SMD" jdbcType="VARCHAR"/>
+		<result property="fycfnd" column="FYCFND" jdbcType="VARCHAR"/>
+		<result property="zlgxnd" column="ZLGXND" jdbcType="VARCHAR"/>
+		<result property="gqzs" column="GQZS" jdbcType="VARCHAR"/>
+		<result property="gqxj" column="GQXJ" jdbcType="VARCHAR"/>
+		<result property="gqczmd" column="GQCZMD" jdbcType="VARCHAR"/>
+		<result property="rglbcl" column="RGLBCL" jdbcType="VARCHAR"/>
+		<result property="pjmdzcj" column="PJMDZCJ" jdbcType="VARCHAR"/>
+		<result property="ssmzs" column="SSMZS" jdbcType="VARCHAR"/>
+		<result property="ssmxj" column="SSMXJ" jdbcType="VARCHAR"/>
+		<result property="ssmpjxj" column="SSMPJXJ" jdbcType="VARCHAR"/>
+		<result property="drjy" column="DRJY" jdbcType="VARCHAR"/>
+		<result property="drjyts1" column="DRJYTS1" jdbcType="VARCHAR"/>
+		<result property="drjyts2" column="DRJYTS2" jdbcType="VARCHAR"/>
+		<result property="drjyts3" column="DRJYTS3" jdbcType="VARCHAR"/>
+		<result property="szzcpx" column="SZZCPX" jdbcType="VARCHAR"/>
+		<result property="gpshzb" column="GPSHZB" jdbcType="NUMERIC"/>
+		<result property="gpszzb" column="GPSZZB" jdbcType="NUMERIC"/>
+		<result property="trabchd" column="TRABCHD" jdbcType="VARCHAR"/>
+		<result property="szl" column="SZL" jdbcType="NUMERIC"/>
+		<result property="ksl" column="KSL" jdbcType="VARCHAR"/>
+		<result property="szliang" column="SZLIANG" jdbcType="VARCHAR"/>
+		<result property="fzcxhl" column="FZCXHL" jdbcType="VARCHAR"/>
+		<result property="dwbh" column="DWBH" jdbcType="VARCHAR"/>
+		<result property="ssmszl" column="SSMSZL" jdbcType="VARCHAR"/>
+		<result property="ghfmbz" column="GHFMBZ" jdbcType="VARCHAR"/>
+		<result property="lxsrfcmbz" column="LXSRFCMBZ" jdbcType="VARCHAR"/>
+		<result property="xznd" column="XZND" jdbcType="VARCHAR"/>
+		<result property="ghzlmj" column="GHZLMJ" jdbcType="VARCHAR"/>
+		<result property="ghfymj" column="GHFYMJ" jdbcType="VARCHAR"/>
+		<result property="kjd" column="KJD" jdbcType="VARCHAR"/>
+		<result property="dwj" column="DWJ" jdbcType="VARCHAR"/>
+		<result property="sq" column="SQ" jdbcType="VARCHAR"/>
+		<result property="gcxz" column="GCXZ" jdbcType="VARCHAR"/>
+		<result property="bhdj" column="BHDJ" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,IDD,LBH,XBH,EJLZ,EJLZ1,EJLZ2,DL,DL1,DQ,LQ,QY,MJ,ZS,XJ,LZ,LFLX,SZZC,YBD,JYCS,LJ,LL,XIONGJING,SG,DQSYQ,LQSYQ,GCLB,TR,ZRD,BZ,QLJG,LDLX,YSSPJG,DM,KDMXJL,ZYXM,XMGD,ZYDBW,DBWGD,PX,PW,PD,A1CHD,HB,SMD,FYCFND,ZLGXND,GQZS,GQXJ,GQCZMD,RGLBCL,PJMDZCJ,SSMZS,SSMXJ,SSMPJXJ,DRJY,DRJYTS1,DRJYTS2,DRJYTS3,SZZCPX,GPSHZB,GPSZZB,TRABCHD,SZL,KSL,SZLIANG,FZCXHL,DWBH,SSMSZL,GHFMBZ,LXSRFCMBZ,XZND,GHZLMJ,GHFYMJ,KJD,DWJ,SQ,GCXZ,BHDJ
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.lyzygls.XiaoBan.persistence.entity.XiaoBanPo">
+		INSERT INTO T_XB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{idd,jdbcType=VARCHAR}, #{lbh,jdbcType=VARCHAR}, #{xbh,jdbcType=VARCHAR}, #{ejlz,jdbcType=VARCHAR}, #{ejlz1,jdbcType=VARCHAR}, #{ejlz2,jdbcType=VARCHAR}, #{dl,jdbcType=VARCHAR}, #{dl1,jdbcType=VARCHAR}, #{dq,jdbcType=VARCHAR}, #{lq,jdbcType=VARCHAR}, #{qy,jdbcType=VARCHAR}, #{mj,jdbcType=NUMERIC}, #{zs,jdbcType=VARCHAR}, #{xj,jdbcType=VARCHAR}, #{lz,jdbcType=VARCHAR}, #{lflx,jdbcType=VARCHAR}, #{szzc,jdbcType=VARCHAR}, #{ybd,jdbcType=NUMERIC}, #{jycs,jdbcType=VARCHAR}, #{lj,jdbcType=VARCHAR}, #{ll,jdbcType=VARCHAR}, #{xiongjing,jdbcType=VARCHAR}, #{sg,jdbcType=NUMERIC}, #{dqsyq,jdbcType=VARCHAR}, #{lqsyq,jdbcType=VARCHAR}, #{gclb,jdbcType=VARCHAR}, #{tr,jdbcType=VARCHAR}, #{zrd,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR}, #{qljg,jdbcType=VARCHAR}, #{ldlx,jdbcType=VARCHAR}, #{ysspjg,jdbcType=NUMERIC}, #{dm,jdbcType=VARCHAR}, #{kdmxjl,jdbcType=VARCHAR}, #{zyxm,jdbcType=VARCHAR}, #{xmgd,jdbcType=VARCHAR}, #{zydbw,jdbcType=VARCHAR}, #{dbwgd,jdbcType=VARCHAR}, #{px,jdbcType=VARCHAR}, #{pw,jdbcType=VARCHAR}, #{pd,jdbcType=VARCHAR}, #{a1chd,jdbcType=VARCHAR}, #{hb,jdbcType=VARCHAR}, #{smd,jdbcType=VARCHAR}, #{fycfnd,jdbcType=VARCHAR}, #{zlgxnd,jdbcType=VARCHAR}, #{gqzs,jdbcType=VARCHAR}, #{gqxj,jdbcType=VARCHAR}, #{gqczmd,jdbcType=VARCHAR}, #{rglbcl,jdbcType=VARCHAR}, #{pjmdzcj,jdbcType=VARCHAR}, #{ssmzs,jdbcType=VARCHAR}, #{ssmxj,jdbcType=VARCHAR}, #{ssmpjxj,jdbcType=VARCHAR}, #{drjy,jdbcType=VARCHAR}, #{drjyts1,jdbcType=VARCHAR}, #{drjyts2,jdbcType=VARCHAR}, #{drjyts3,jdbcType=VARCHAR}, #{szzcpx,jdbcType=VARCHAR}, #{gpshzb,jdbcType=NUMERIC}, #{gpszzb,jdbcType=NUMERIC}, #{trabchd,jdbcType=VARCHAR}, #{szl,jdbcType=NUMERIC}, #{ksl,jdbcType=VARCHAR}, #{szliang,jdbcType=VARCHAR}, #{fzcxhl,jdbcType=VARCHAR}, #{dwbh,jdbcType=VARCHAR}, #{ssmszl,jdbcType=VARCHAR}, #{ghfmbz,jdbcType=VARCHAR}, #{lxsrfcmbz,jdbcType=VARCHAR}, #{xznd,jdbcType=VARCHAR}, #{ghzlmj,jdbcType=VARCHAR}, #{ghfymj,jdbcType=VARCHAR}, #{kjd,jdbcType=VARCHAR}, #{dwj,jdbcType=VARCHAR}, #{sq,jdbcType=VARCHAR}, #{gcxz,jdbcType=VARCHAR}, #{bhdj,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="XiaoBanPo">
+		SELECT <include refid="columns"/> FROM T_XB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="XiaoBanPo">
+		SELECT <include refid="columns"/> FROM T_XB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="XiaoBanPo">
+		SELECT <include refid="columns"/> FROM T_XB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.lyzygls.XiaoBan.persistence.entity.XiaoBanPo">
+		UPDATE T_XB SET
+		IDD=#{idd,jdbcType=VARCHAR},
+		LBH=#{lbh,jdbcType=VARCHAR},
+		XBH=#{xbh,jdbcType=VARCHAR},
+		EJLZ=#{ejlz,jdbcType=VARCHAR},
+		EJLZ1=#{ejlz1,jdbcType=VARCHAR},
+		EJLZ2=#{ejlz2,jdbcType=VARCHAR},
+		DL=#{dl,jdbcType=VARCHAR},
+		DL1=#{dl1,jdbcType=VARCHAR},
+		DQ=#{dq,jdbcType=VARCHAR},
+		LQ=#{lq,jdbcType=VARCHAR},
+		QY=#{qy,jdbcType=VARCHAR},
+		MJ=#{mj,jdbcType=NUMERIC},
+		ZS=#{zs,jdbcType=VARCHAR},
+		XJ=#{xj,jdbcType=VARCHAR},
+		LZ=#{lz,jdbcType=VARCHAR},
+		LFLX=#{lflx,jdbcType=VARCHAR},
+		SZZC=#{szzc,jdbcType=VARCHAR},
+		YBD=#{ybd,jdbcType=NUMERIC},
+		JYCS=#{jycs,jdbcType=VARCHAR},
+		LJ=#{lj,jdbcType=VARCHAR},
+		LL=#{ll,jdbcType=VARCHAR},
+		XIONGJING=#{xiongjing,jdbcType=VARCHAR},
+		SG=#{sg,jdbcType=NUMERIC},
+		DQSYQ=#{dqsyq,jdbcType=VARCHAR},
+		LQSYQ=#{lqsyq,jdbcType=VARCHAR},
+		GCLB=#{gclb,jdbcType=VARCHAR},
+		TR=#{tr,jdbcType=VARCHAR},
+		ZRD=#{zrd,jdbcType=VARCHAR},
+		BZ=#{bz,jdbcType=VARCHAR},
+		QLJG=#{qljg,jdbcType=VARCHAR},
+		LDLX=#{ldlx,jdbcType=VARCHAR},
+		YSSPJG=#{ysspjg,jdbcType=NUMERIC},
+		DM=#{dm,jdbcType=VARCHAR},
+		KDMXJL=#{kdmxjl,jdbcType=VARCHAR},
+		ZYXM=#{zyxm,jdbcType=VARCHAR},
+		XMGD=#{xmgd,jdbcType=VARCHAR},
+		ZYDBW=#{zydbw,jdbcType=VARCHAR},
+		DBWGD=#{dbwgd,jdbcType=VARCHAR},
+		PX=#{px,jdbcType=VARCHAR},
+		PW=#{pw,jdbcType=VARCHAR},
+		PD=#{pd,jdbcType=VARCHAR},
+		A1CHD=#{a1chd,jdbcType=VARCHAR},
+		HB=#{hb,jdbcType=VARCHAR},
+		SMD=#{smd,jdbcType=VARCHAR},
+		FYCFND=#{fycfnd,jdbcType=VARCHAR},
+		ZLGXND=#{zlgxnd,jdbcType=VARCHAR},
+		GQZS=#{gqzs,jdbcType=VARCHAR},
+		GQXJ=#{gqxj,jdbcType=VARCHAR},
+		GQCZMD=#{gqczmd,jdbcType=VARCHAR},
+		RGLBCL=#{rglbcl,jdbcType=VARCHAR},
+		PJMDZCJ=#{pjmdzcj,jdbcType=VARCHAR},
+		SSMZS=#{ssmzs,jdbcType=VARCHAR},
+		SSMXJ=#{ssmxj,jdbcType=VARCHAR},
+		SSMPJXJ=#{ssmpjxj,jdbcType=VARCHAR},
+		DRJY=#{drjy,jdbcType=VARCHAR},
+		DRJYTS1=#{drjyts1,jdbcType=VARCHAR},
+		DRJYTS2=#{drjyts2,jdbcType=VARCHAR},
+		DRJYTS3=#{drjyts3,jdbcType=VARCHAR},
+		SZZCPX=#{szzcpx,jdbcType=VARCHAR},
+		GPSHZB=#{gpshzb,jdbcType=NUMERIC},
+		GPSZZB=#{gpszzb,jdbcType=NUMERIC},
+		TRABCHD=#{trabchd,jdbcType=VARCHAR},
+		SZL=#{szl,jdbcType=NUMERIC},
+		KSL=#{ksl,jdbcType=VARCHAR},
+		SZLIANG=#{szliang,jdbcType=VARCHAR},
+		FZCXHL=#{fzcxhl,jdbcType=VARCHAR},
+		DWBH=#{dwbh,jdbcType=VARCHAR},
+		SSMSZL=#{ssmszl,jdbcType=VARCHAR},
+		GHFMBZ=#{ghfmbz,jdbcType=VARCHAR},
+		LXSRFCMBZ=#{lxsrfcmbz,jdbcType=VARCHAR},
+		XZND=#{xznd,jdbcType=VARCHAR},
+		GHZLMJ=#{ghzlmj,jdbcType=VARCHAR},
+		GHFYMJ=#{ghfymj,jdbcType=VARCHAR},
+		KJD=#{kjd,jdbcType=VARCHAR},
+		DWJ=#{dwj,jdbcType=VARCHAR},
+		SQ=#{sq,jdbcType=VARCHAR},
+		GCXZ=#{gcxz,jdbcType=VARCHAR},
+		BHDJ=#{bhdj,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_XB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.repair.WXGHaoCaiShiYong.persistence.entity.HaoCaiShiYongPo">
+	<resultMap id="HaoCaiShiYongPo" type="com.lc.ibps.repair.WXGHaoCaiShiYong.persistence.entity.HaoCaiShiYongPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="haoCaiBianHao" column="HAO_CAI_BIAN_HAO_" jdbcType="VARCHAR"/>
+		<result property="haoCaiMingCheng" column="MING_CHENG_" jdbcType="VARCHAR"/>
+		<result property="zhongLeiBianHao" column="BIAN_HAO_" jdbcType="VARCHAR"/>
+		<result property="shuoLiang" column="SHUO_LIANG_" jdbcType="NUMERIC"/>
+		<result property="chanWei" column="CHAN_WEI_" jdbcType="VARCHAR"/>
+		<result property="haoCaiZongJia" column="HAO_CAI_ZONG_JIA_" jdbcType="NUMERIC"/>
+		<result property="gongChong" column="GONG_CHONG_" jdbcType="VARCHAR"/>
+		<result property="buMen" column="BU_MEN_" jdbcType="VARCHAR"/>
+		<result property="weiXiuGong" column="WEI_XIU_GONG_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,HAO_CAI_BIAN_HAO_,MING_CHENG_,BIAN_HAO_,SHUO_LIANG_,CHAN_WEI_,HAO_CAI_ZONG_JIA_,GONG_CHONG_,BU_MEN_,WEI_XIU_GONG_,CREATE_TIME_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.repair.WXGHaoCaiShiYong.persistence.entity.HaoCaiShiYongPo">
+		INSERT INTO T_WXGHCSYB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{haoCaiBianHao,jdbcType=VARCHAR}, #{haoCaiMingCheng,jdbcType=VARCHAR}, #{zhongLeiBianHao,jdbcType=VARCHAR}, #{shuoLiang,jdbcType=NUMERIC}, #{chanWei,jdbcType=VARCHAR}, #{haoCaiZongJia,jdbcType=NUMERIC}, #{gongChong,jdbcType=VARCHAR}, #{buMen,jdbcType=VARCHAR}, #{weiXiuGong,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="HaoCaiShiYongPo">
+		SELECT <include refid="columns"/> FROM T_WXGHCSYB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="HaoCaiShiYongPo">
+		SELECT <include refid="columns"/> FROM T_WXGHCSYB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="HaoCaiShiYongPo">
+		SELECT <include refid="columns"/> FROM T_WXGHCSYB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.repair.WXGHaoCaiShiYong.persistence.entity.HaoCaiShiYongPo">
+		UPDATE T_WXGHCSYB SET
+		HAO_CAI_BIAN_HAO_=#{haoCaiBianHao,jdbcType=VARCHAR},
+		MING_CHENG_=#{haoCaiMingCheng,jdbcType=VARCHAR},
+		BIAN_HAO_=#{zhongLeiBianHao,jdbcType=VARCHAR},
+		SHUO_LIANG_=#{shuoLiang,jdbcType=NUMERIC},
+		CHAN_WEI_=#{chanWei,jdbcType=VARCHAR},
+		HAO_CAI_ZONG_JIA_=#{haoCaiZongJia,jdbcType=NUMERIC},
+		GONG_CHONG_=#{gongChong,jdbcType=VARCHAR},
+		BU_MEN_=#{buMen,jdbcType=VARCHAR},
+		WEI_XIU_GONG_=#{weiXiuGong,jdbcType=VARCHAR},
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_WXGHCSYB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

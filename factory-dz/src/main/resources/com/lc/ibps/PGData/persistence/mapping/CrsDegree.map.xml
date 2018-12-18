@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.CrsDegreePo">
+	<resultMap id="CrsDegreePo" type="com.lc.ibps.pgs.PGData.persistence.entity.CrsDegreePo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="course_id" column="COURSE_ID" jdbcType="VARCHAR"/>
+		<result property="rationality" column="RATIONALITY" jdbcType="VARCHAR"/>
+		<result property="course_principal" column="COURSE_PRINCIPAL" jdbcType="VARCHAR"/>
+		<result property="standardability" column="STANDARDABILITY" jdbcType="VARCHAR"/>
+		<result property="integrality" column="INTEGRALITY" jdbcType="VARCHAR"/>
+		<result property="paper_analysis" column="PAPER_ANALYSIS" jdbcType="CLOB"/>
+		<result property="course_analysis" column="COURSE_ANALYSIS" jdbcType="VARCHAR"/>
+		<result property="complete_cover" column="COMPLETE_COVER" jdbcType="VARCHAR"/>
+		<result property="education_manager" column="EDUCATION_MANAGER" jdbcType="VARCHAR"/>
+		<result property="judgement_result" column="JUDGEMENT_RESULT" jdbcType="VARCHAR"/>
+		<result property="change_advice" column="CHANGE_ADVICE" jdbcType="VARCHAR"/>
+		<result property="major_principal" column="MAJOR_PRINCIPAL" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON_" jdbcType="BLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,COURSE_ID,RATIONALITY,COURSE_PRINCIPAL,STANDARDABILITY,INTEGRALITY,PAPER_ANALYSIS,COURSE_ANALYSIS,COMPLETE_COVER,EDUCATION_MANAGER,JUDGEMENT_RESULT,CHANGE_ADVICE,MAJOR_PRINCIPAL,JSON_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.CrsDegreePo">
+		INSERT INTO T_P_ZYKCDCDHLXPJ
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{createTime,jdbcType=TIMESTAMP}, 
+		#{course_id,jdbcType=VARCHAR}, 
+		#{rationality,jdbcType=VARCHAR}, 
+		#{course_principal,jdbcType=VARCHAR}, 
+		#{standardability,jdbcType=VARCHAR}, 
+		#{integrality,jdbcType=VARCHAR}, 
+		#{paper_analysis,jdbcType=CLOB}, 
+		#{course_analysis,jdbcType=VARCHAR}, 
+		#{complete_cover,jdbcType=VARCHAR}, 
+		#{education_manager,jdbcType=VARCHAR}, 
+		#{judgement_result,jdbcType=VARCHAR}, 
+		#{change_advice,jdbcType=VARCHAR}, 
+		#{major_principal,jdbcType=VARCHAR},
+		#{json,jdbcType=BLOB})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CrsDegreePo">
+		SELECT <include refid="columns"/> FROM T_P_ZYKCDCDHLXPJ 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsDegreePo">
+		SELECT <include refid="columns"/> FROM T_P_ZYKCDCDHLXPJ
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CrsDegreePo">
+		SELECT <include refid="columns"/> FROM T_P_ZYKCDCDHLXPJ
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.CrsDegreePo">
+		UPDATE T_P_ZYKCDCDHLXPJ SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		COURSE_ID=#{course_id,jdbcType=VARCHAR},
+		RATIONALITY=#{rationality,jdbcType=VARCHAR},
+		COURSE_PRINCIPAL=#{course_principal,jdbcType=VARCHAR},
+		STANDARDABILITY=#{standardability,jdbcType=VARCHAR},
+		INTEGRALITY=#{integrality,jdbcType=VARCHAR},
+		PAPER_ANALYSIS=#{paper_analysis,jdbcType=CLOB},
+		COURSE_ANALYSIS=#{course_analysis,jdbcType=VARCHAR},
+		COMPLETE_COVER=#{complete_cover,jdbcType=VARCHAR},
+		EDUCATION_MANAGER=#{education_manager,jdbcType=VARCHAR},
+		JUDGEMENT_RESULT=#{judgement_result,jdbcType=VARCHAR},
+		CHANGE_ADVICE=#{change_advice,jdbcType=VARCHAR},
+		MAJOR_PRINCIPAL=#{major_principal,jdbcType=VARCHAR},
+		JSON_=#{json,jdbcType=BLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_ZYKCDCDHLXPJ 
+		WHERE
+		ID_=#{id}
+	</delete>
+	<!-- 测试搜索代码 -->
+    <select id="getJson_"   parameterType="java.lang.String"  resultMap="CrsDegreePo">
+        SELECT json ,id_
+        FROM   T_P_ZYKCDCDHLXPJ
+        WHERE  course_id=#{course_id} AND json IS NOT NULL
+    </select>
+	
+	
+</mapper>

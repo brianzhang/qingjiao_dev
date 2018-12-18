@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.lyzygls.Xiuzheng.persistence.entity.XiuzhengPo">
+	<resultMap id="XiuzhengPo" type="com.lc.ibps.lyzygls.Xiuzheng.persistence.entity.XiuzhengPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="linDi" column="LIN_DI_" jdbcType="VARCHAR"/>
+		<result property="linMu" column="LIN_MU_" jdbcType="VARCHAR"/>
+		<result property="quNianMianJi" column="QU_NIAN_MIAN_JI_" jdbcType="NUMERIC"/>
+		<result property="quNianXuJi" column="QU_NIAN_XU_JI_" jdbcType="NUMERIC"/>
+		<result property="xiuZhengMianJi" column="XIU_ZHENG_MIAN_JI_" jdbcType="NUMERIC"/>
+		<result property="xiuZhengXuJi" column="XIU_ZHENG_XU_JI_" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,LIN_DI_,LIN_MU_,QU_NIAN_MIAN_JI_,QU_NIAN_XU_JI_,XIU_ZHENG_MIAN_JI_,XIU_ZHENG_XU_JI_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.lyzygls.Xiuzheng.persistence.entity.XiuzhengPo">
+		INSERT INTO T_XZB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{linDi,jdbcType=VARCHAR}, #{linMu,jdbcType=VARCHAR}, #{quNianMianJi,jdbcType=NUMERIC}, #{quNianXuJi,jdbcType=NUMERIC}, #{xiuZhengMianJi,jdbcType=NUMERIC}, #{xiuZhengXuJi,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="XiuzhengPo">
+		SELECT <include refid="columns"/> FROM T_XZB 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="XiuzhengPo">
+		SELECT <include refid="columns"/> FROM T_XZB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="XiuzhengPo">
+		SELECT <include refid="columns"/> FROM T_XZB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.lyzygls.Xiuzheng.persistence.entity.XiuzhengPo">
+		UPDATE T_XZB SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		LIN_DI_=#{linDi,jdbcType=VARCHAR},
+		LIN_MU_=#{linMu,jdbcType=VARCHAR},
+		QU_NIAN_MIAN_JI_=#{quNianMianJi,jdbcType=NUMERIC},
+		QU_NIAN_XU_JI_=#{quNianXuJi,jdbcType=NUMERIC},
+		XIU_ZHENG_MIAN_JI_=#{xiuZhengMianJi,jdbcType=NUMERIC},
+		XIU_ZHENG_XU_JI_=#{xiuZhengXuJi,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_XZB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.pgs.PGData.persistence.entity.PJProcessPo">
+	<resultMap id="PJProcessPo" type="com.lc.ibps.pgs.PGData.persistence.entity.PJProcessPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="createTime" column="CREATE_TIME_" jdbcType="TIMESTAMP"/>
+		<result property="course_id" column="COURSE_ID" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="evaluation_term" column="EVALUATION_TERM" jdbcType="VARCHAR"/>
+		<result property="evaluation_object" column="EVALUATION_OBJECT" jdbcType="VARCHAR"/>
+		<result property="aim_figure" column="AIM_FIGURE" jdbcType="VARCHAR"/>
+		<result property="evaluation_figure" column="EVALUATION_FIGURE" jdbcType="VARCHAR"/>
+		<result property="evaluation" column="EVALUATION" jdbcType="VARCHAR"/>
+		<result property="evaluation_time" column="EVALUATION_TIME" jdbcType="VARCHAR"/>
+		<result property="calculation_pro" column="CALCULATION_PRO" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,CREATE_TIME_,COURSE_ID,NAME,EVALUATION_TERM,EVALUATION_OBJECT,AIM_FIGURE,EVALUATION_FIGURE,EVALUATION,EVALUATION_TIME,CALCULATION_PRO
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.PJProcessPo">
+		INSERT INTO T_P_PJGC
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{course_id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{evaluation_term,jdbcType=VARCHAR}, #{evaluation_object,jdbcType=VARCHAR}, #{aim_figure,jdbcType=VARCHAR}, #{evaluation_figure,jdbcType=VARCHAR}, #{evaluation,jdbcType=VARCHAR}, #{evaluation_time,jdbcType=VARCHAR}, #{calculation_pro,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="PJProcessPo">
+		SELECT <include refid="columns"/> FROM T_P_PJGC 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="PJProcessPo">
+		SELECT <include refid="columns"/> FROM T_P_PJGC
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="PJProcessPo">
+		SELECT <include refid="columns"/> FROM T_P_PJGC
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.pgs.PGData.persistence.entity.PJProcessPo">
+		UPDATE T_P_PJGC SET
+		CREATE_TIME_=#{createTime,jdbcType=TIMESTAMP},
+		COURSE_ID=#{course_id,jdbcType=VARCHAR},
+		NAME=#{name,jdbcType=VARCHAR},
+		EVALUATION_TERM=#{evaluation_term,jdbcType=VARCHAR},
+		EVALUATION_OBJECT=#{evaluation_object,jdbcType=VARCHAR},
+		AIM_FIGURE=#{aim_figure,jdbcType=VARCHAR},
+		EVALUATION_FIGURE=#{evaluation_figure,jdbcType=VARCHAR},
+		EVALUATION=#{evaluation,jdbcType=VARCHAR},
+		EVALUATION_TIME=#{evaluation_time,jdbcType=VARCHAR},
+		CALCULATION_PRO=#{calculation_pro,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_P_PJGC 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

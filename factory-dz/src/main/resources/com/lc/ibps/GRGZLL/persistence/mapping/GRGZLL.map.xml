@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.loans.GRGZLL.persistence.entity.GRGZLLPo">
+	<resultMap id="GRGZLLPo" type="com.lc.ibps.loans.GRGZLL.persistence.entity.GRGZLLPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="khh" column="KHH" jdbcType="VARCHAR"/>
+		<result property="khmc" column="KHMC" jdbcType="VARCHAR"/>
+		<result property="ksrq" column="KSRQ" jdbcType="VARCHAR"/>
+		<result property="szdw" column="SZDW" jdbcType="VARCHAR"/>
+		<result property="szbm" column="SZBM" jdbcType="VARCHAR"/>
+		<result property="jsrq" column="JSRQ" jdbcType="VARCHAR"/>
+		<result property="dwxz" column="DWXZ" jdbcType="VARCHAR"/>
+		<result property="csxyms" column="CSXYMS" jdbcType="VARCHAR"/>
+		<result property="drzw" column="DRZW" jdbcType="VARCHAR"/>
+		<result property="dwyb" column="DWYB" jdbcType="VARCHAR"/>
+		<result property="dwdh" column="DWDH" jdbcType="VARCHAR"/>
+		<result property="dwdz" column="DWDZ" jdbcType="VARCHAR"/>
+		<result property="ysr" column="YSR" jdbcType="NUMERIC"/>
+		<result property="bzz" column="BZZ" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="columns">
+		ID_,KHH,KHMC,KSRQ,SZDW,SZBM,JSRQ,DWXZ,CSXYMS,DRZW,DWYB,DWDH,DWDZ,YSR,BZZ
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.loans.GRGZLL.persistence.entity.GRGZLLPo">
+		INSERT INTO T_GRLL
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, #{khh,jdbcType=VARCHAR}, #{khmc,jdbcType=VARCHAR}, #{ksrq,jdbcType=VARCHAR}, #{szdw,jdbcType=VARCHAR}, #{szbm,jdbcType=VARCHAR}, #{jsrq,jdbcType=VARCHAR}, #{dwxz,jdbcType=VARCHAR}, #{csxyms,jdbcType=VARCHAR}, #{drzw,jdbcType=VARCHAR}, #{dwyb,jdbcType=VARCHAR}, #{dwdh,jdbcType=VARCHAR}, #{dwdz,jdbcType=VARCHAR}, #{ysr,jdbcType=NUMERIC}, #{bzz,jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="GRGZLLPo">
+		SELECT <include refid="columns"/> FROM T_GRLL 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="GRGZLLPo">
+		SELECT <include refid="columns"/> FROM T_GRLL
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="GRGZLLPo">
+		SELECT <include refid="columns"/> FROM T_GRLL
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.loans.GRGZLL.persistence.entity.GRGZLLPo">
+		UPDATE T_GRLL SET
+		KHH=#{khh,jdbcType=VARCHAR},
+		KHMC=#{khmc,jdbcType=VARCHAR},
+		KSRQ=#{ksrq,jdbcType=VARCHAR},
+		SZDW=#{szdw,jdbcType=VARCHAR},
+		SZBM=#{szbm,jdbcType=VARCHAR},
+		JSRQ=#{jsrq,jdbcType=VARCHAR},
+		DWXZ=#{dwxz,jdbcType=VARCHAR},
+		CSXYMS=#{csxyms,jdbcType=VARCHAR},
+		DRZW=#{drzw,jdbcType=VARCHAR},
+		DWYB=#{dwyb,jdbcType=VARCHAR},
+		DWDH=#{dwdh,jdbcType=VARCHAR},
+		DWDZ=#{dwdz,jdbcType=VARCHAR},
+		YSR=#{ysr,jdbcType=NUMERIC},
+		BZZ=#{bzz,jdbcType=VARCHAR}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_GRLL 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	
+</mapper>

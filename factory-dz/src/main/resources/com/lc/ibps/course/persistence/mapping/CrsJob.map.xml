@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">
+	<resultMap id="CrsJobPo" type="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="title" column="TITLE" jdbcType="VARCHAR"/>
+		<result property="crsTchId" column="CRS_TCH_ID" jdbcType="VARCHAR"/>
+		<result property="startStopTime" column="START_STOP_TIME" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS" jdbcType="NUMERIC"/>
+		<result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+		<result property="scorePower" column="SCORE_POWER" jdbcType="NUMERIC"/>
+		<result property="isTrans" column="IS_TRANS" jdbcType="NUMERIC"/>
+		<result property="category" column="CATEGORY" jdbcType="NUMERIC"/>
+		<result property="tchNd" column="TOTAL_TEACHER_NEED" jdbcType="NUMERIC"/>
+		<result property="stdNd" column="TOTAL_STUDENT_NEED" jdbcType="NUMERIC"/>
+		<result property="tchFnsh" column="TOTAL_TEACHER_FINISH" jdbcType="NUMERIC"/>
+		<result property="stdFnsh" column="TOTAL_STUDENT_FINISH" jdbcType="NUMERIC"/>
+		<result property="tchAllFnsh" column="TEACHER_ALL" jdbcType="NUMERIC"/>
+		<result property="stdAllFnsh" column="STUDENT_ALL" jdbcType="NUMERIC"/>
+		<result property="createdTime" column="CREATEDTIME" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="UPDATETIME" jdbcType="DATE"/>
+		<result property="createBy" column="CREATEBY" jdbcType="VARCHAR"/>
+		<result property="crsName" column="NAME" jdbcType="VARCHAR"/>
+		<result property="modelFile" column="MODEL_FILE_" jdbcType="VARCHAR"/>
+		<result property="unSubmitNum" column="UN_SUBMIT_NUM" jdbcType="NUMERIC"/>
+		<result property="submitNum" column="SUBMIT_NUM" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<sql id="columns">
+		T_CRS_JOB.ID_,TITLE,CRS_TCH_ID,START_STOP_TIME,T_CRS_JOB.STATUS,CONTENT,SCORE_POWER,IS_TRANS,T_CRS_JOB.CATEGORY,TOTAL_TEACHER_NEED,TOTAL_STUDENT_NEED, TOTAL_TEACHER_FINISH,TOTAL_STUDENT_FINISH,TEACHER_ALL,STUDENT_ALL,T_CRS_JOB.CREATEDTIME, T_CRS_JOB.UPDATETIME,T_CRS_JOB.CREATEBY,MODEL_FILE_,UN_SUBMIT_NUM,SUBMIT_NUM
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">
+		INSERT INTO T_CRS_JOB
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{title,jdbcType=VARCHAR}, 
+		#{crsTchId,jdbcType=VARCHAR}, 
+		#{startStopTime,jdbcType=VARCHAR},
+		#{status,jdbcType=NUMERIC}, 
+		#{content,jdbcType=VARCHAR}, 
+		#{scorePower,jdbcType=NUMERIC}, 
+		#{isTrans,jdbcType=NUMERIC}, 
+		#{category,jdbcType=NUMERIC},
+		#{tchNd,jdbcType=NUMERIC},
+		#{stdNd,jdbcType=NUMERIC},
+		#{tchFnsh,jdbcType=NUMERIC},
+		#{stdFnsh,jdbcType=NUMERIC},
+		#{tchAllFnsh,jdbcType=NUMERIC},
+		#{stdAllFnsh,jdbcType=NUMERIC},
+		#{createdTime,jdbcType=DATE},
+		#{updateTime,jdbcType=DATE},
+		#{createBy,jdbcType=VARCHAR},
+		#{modelFile,jdbcType=VARCHAR},
+		#{unSubmitNum,jdbcType=NUMERIC},
+		#{submitNum,jdbcType=NUMERIC})
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="CrsJobPo">
+		SELECT distinct <include refid="columns"/>,T_COURSE.NAME FROM T_CRS_JOB ,T_COURSE,T_CRS_TCH
+		WHERE 
+		T_CRS_JOB.ID_=#{id} AND
+		T_CRS_TCH.ID_CRS_TCH=CRS_TCH_ID AND
+		T_COURSE.NUM=CRS_NUM
+	</select>
+	<select id="getByCol"   parameterType="java.util.HashMap" resultMap="CrsJobPo">
+		SELECT distinct <include refid="columns"/> FROM T_CRS_JOB
+		WHERE 
+		<foreach collection="relationMap" index="k" item="v" separator="and" >
+		    ${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+		ORDER BY START_STOP_TIME ASC
+	</select>
+	
+	<select id="query" parameterType="java.util.Map" resultMap="CrsJobPo">
+		SELECT <include refid="columns"/> FROM T_CRS_JOB
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY START_STOP_TIME ASC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="CrsJobPo">
+		SELECT <include refid="columns"/> FROM T_CRS_JOB
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">
+		UPDATE T_CRS_JOB SET
+		TITLE=#{title,jdbcType=VARCHAR},
+		CRS_TCH_ID=#{crsTchId,jdbcType=VARCHAR},
+		START_STOP_TIME=#{startStopTime,jdbcType=VARCHAR},
+		STATUS=#{status,jdbcType=NUMERIC},
+		CONTENT=#{content,jdbcType=VARCHAR},
+		SCORE_POWER=#{scorePower,jdbcType=NUMERIC},
+		IS_TRANS=#{isTrans,jdbcType=NUMERIC},
+		CATEGORY=#{category,jdbcType=NUMERIC},
+		TOTAL_TEACHER_NEED=#{tchNd,jdbcType=NUMERIC},
+		TOTAL_STUDENT_NEED=#{stdNd,jdbcType=NUMERIC},
+		TOTAL_TEACHER_FINISH=#{tchFnsh,jdbcType=NUMERIC},
+		TOTAL_STUDENT_FINISH=#{stdFnsh,jdbcType=NUMERIC},
+		TEACHER_ALL=#{tchAllFnsh,jdbcType=NUMERIC},
+		STUDENT_ALL=#{stdAllFnsh,jdbcType=NUMERIC},
+		CREATEDTIME=#{createdTime,jdbcType=DATE},
+		UPDATETIME=#{updateTime,jdbcType=NUMERIC},
+		CREATEBY=#{createBy,jdbcType=NUMERIC},
+		MODEL_FILE_=#{modelFile,jdbcType=NUMERIC},
+		UN_SUBMIT_NUM=#{unSubmitNum,jdbcType=NUMERIC},
+		SUBMIT_NUM=#{submitNum,jdbcType=NUMERIC}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_CRS_JOB 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="selectSubmitUnSubmitNum" parameterType="java.lang.String" resultType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">	
+			select  IFNULL(UNSUBMITNUM,0) UNSUBMITNUM ,IFNULL(SUBMITNUM,0) SUBMITNUM,B.JOBID ID FROM
+			(SELECT ID_ JOBID FROM T_CRS_JOB WHERE CRS_TCH_ID=#{crs_tch_id}) A
+			LEFT JOIN
+			( SELECT COUNT(*) UNSUBMITNUM,JOBID FROM T_JOB_STD
+			WHERE STATUS=0 AND JOBID IN (SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{crs_tch_id})
+			 GROUP BY JOBID) B ON A.JOBID=B.JOBID
+			LEFT JOIN  
+			(SELECT COUNT(*) SUBMITNUM,JOBID FROM T_JOB_STD
+			WHERE STATUS=2 AND JOBID IN (SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{crs_tch_id})
+			GROUP BY JOBID  ) C ON A.JOBID=C.JOBID
+	</select>
+	<select id="selectAllCheck" parameterType="java.lang.String" resultType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">	
+			SELECT COUNT(*) tchAllFnsh,JOBID ID FROM T_JOB_STD WHERE review_status=1 AND JOBID IN (SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{crs_tch_id}) GROUP BY JOBID
+	</select>
+	<select id="selectCheck" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsTchPo" resultType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">	
+		select  IFNULL(tchFnsh,0) tchFnsh, B.ID_ ID  FROM
+       (SELECT COUNT(*) tchFnsh,JOBID  FROM T_JOB_STD WHERE review_status=1 AND STD_NUM IN (SELECT STD_NUM FROM T_CRS_STD WHERE CRS_TCH_ID=#{id,jdbcType=VARCHAR}) GROUP BY JOBID)A 
+	   right join
+	  (SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{uniManage,jdbcType=VARCHAR}) B
+	   on A.JOBID=B.ID_
+	</select>
+	
+	<select id="selectVirUnSub" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsTchPo" resultType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">	
+			select  IFNULL(UNSUBMITNUM,0) UNSUBMITNUM, B.ID_ ID FROM
+			(SELECT COUNT(*) UNSUBMITNUM,JOBID FROM T_JOB_STD WHERE STATUS=0 
+			AND STD_NUM IN (SELECT STD_NUM FROM T_CRS_STD WHERE CRS_TCH_ID=#{id,jdbcType=VARCHAR}) GROUP BY JOBID)A 
+			right join
+			(SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{uniManage,jdbcType=VARCHAR}) B
+			 on A.JOBID=B.ID_
+	</select>
+	
+	<select id="selectVirSub" parameterType="com.lc.ibps.grads.course.persistence.entity.CrsTchPo" resultType="com.lc.ibps.grads.course.persistence.entity.CrsJobPo">	
+			select  IFNULL(SUBMITNUM,0) SUBMITNUM, B.ID_ ID FROM
+			(SELECT COUNT(*) SUBMITNUM,JOBID FROM T_JOB_STD WHERE STATUS=2 
+			AND STD_NUM IN (SELECT STD_NUM FROM T_CRS_STD WHERE CRS_TCH_ID=#{id,jdbcType=VARCHAR}) GROUP BY JOBID)A 
+			right join
+			(SELECT ID_ FROM T_CRS_JOB WHERE CRS_TCH_ID=#{uniManage,jdbcType=VARCHAR}) B
+			 on A.JOBID=B.ID_
+	</select>
+	
+</mapper>

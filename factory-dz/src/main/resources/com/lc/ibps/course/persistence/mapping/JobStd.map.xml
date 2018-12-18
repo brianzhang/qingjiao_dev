@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lc.ibps.grads.course.persistence.entity.JobStdPo">
+	<resultMap id="JobStdPo" type="com.lc.ibps.grads.course.persistence.entity.JobStdPo">
+		<id property="id" column="ID_" jdbcType="VARCHAR"/>
+		<result property="jobid" column="JOBID" jdbcType="VARCHAR"/>
+		<result property="stdNum" column="STD_NUM" jdbcType="VARCHAR"/>
+		<result property="file" column="FILE" jdbcType="VARCHAR"/>
+		<result property="actionTime" column="ACTION_TIME" jdbcType="VARCHAR"/>
+		<result property="score" column="SCORE" jdbcType="NUMERIC"/>
+		<result property="status" column="STATUS" jdbcType="NUMERIC"/>
+		<result property="reviewTime" column="REVIEW_TIME" jdbcType="VARCHAR"/>
+		<result property="reviewStatus" column="REVIEW_STATUS" jdbcType="NUMERIC"/>
+		<result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+		<result property="file_id_" column="FILE_ID_" jdbcType="VARCHAR"/>
+		<result property="comment" column="COMMENT" jdbcType="VARCHAR"/>
+		<result property="filePath" column="FILE_PATH_" jdbcType="VARCHAR"/>
+		<result property="stdName" column="NAME_" jdbcType="VARCHAR"/>
+		<result property="title" column="TITLE" jdbcType="VARCHAR"/>
+		<result property="startStopTime" column="START_STOP_TIME" jdbcType="VARCHAR"/>
+		<result property="scorePower" column="SCORE_POWER" jdbcType="VARCHAR"/>
+		<result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+		<result property="email" column="EMAIL_" jdbcType="VARCHAR"/>
+		<result property="json" column="JSON_" jdbcType="BLOB"/>
+	</resultMap>
+	
+	<sql id="columns">
+		T_JOB_STD.ID_,JOBID,T_JOB_STD.STD_NUM,FILE,ACTION_TIME,T_JOB_STD.SCORE,T_JOB_STD.STATUS,REVIEW_TIME,REVIEW_STATUS,T_JOB_STD.CREATE_TIME,FILE_ID_,COMMENT,T_JOB_STD.JSON_
+	</sql>
+	
+	<insert id="create" parameterType="com.lc.ibps.grads.course.persistence.entity.JobStdPo">
+		INSERT INTO T_JOB_STD
+		(<include refid="columns"/>)
+		VALUES 
+		(#{id,jdbcType=VARCHAR}, 
+		#{jobid,jdbcType=VARCHAR}, 
+		#{stdNum,jdbcType=VARCHAR}, 
+		#{file,jdbcType=VARCHAR}, 
+		#{actionTime,jdbcType=VARCHAR},
+		#{score,jdbcType=NUMERIC}, 
+		#{status,jdbcType=NUMERIC},
+		#{reviewTime,jdbcType=VARCHAR}, 
+		#{reviewStatus,jdbcType=NUMERIC}, 
+		#{createTime,jdbcType=VARCHAR},
+		#{file_id_,jdbcType=VARCHAR},
+		#{comment,jdbcType=VARCHAR},
+		#{json,jdbcType=BLOB}
+		)
+	</insert>
+	
+	<select id="get"   parameterType="java.lang.String" resultMap="JobStdPo">
+		SELECT <include refid="columns"/> FROM T_JOB_STD 
+		WHERE 
+		ID_=#{id}
+	</select>
+	
+	<select id="getByCol"   parameterType="java.util.HashMap" resultMap="JobStdPo">
+		SELECT <include refid="columns" />,IBPS_PARTY_ENTITY.NAME_ ,TITLE,START_STOP_TIME,SCORE_POWER , CONTENT , EMAIL_
+		FROM T_JOB_STD , T_CRS_JOB ,IBPS_PARTY_ENTITY , IBPS_PARTY_EMPLOYEE
+			
+		WHERE T_CRS_JOB.ID_= JOBID AND STD_NUM = IBPS_PARTY_ENTITY.PARTY_ALIAS_ AND IBPS_PARTY_ENTITY.ID_ = IBPS_PARTY_EMPLOYEE.ID_ AND
+		<foreach collection="relationMap" index="k" item="v" separator="and">
+			${k} <if test="v != null and v != '' ">#{v}</if>
+		</foreach>
+		ORDER BY START_STOP_TIME ASC
+	</select>
+	
+	
+	
+	<select id="query" parameterType="java.util.Map" resultMap="JobStdPo">
+		SELECT <include refid="columns"/> FROM T_JOB_STD
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql}
+			</if>
+		</where>
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	
+		<select id="queryJobManaList" parameterType="java.util.Map" resultMap="JobStdPo">
+		SELECT  js.* FROM `t_job_std` js
+		<where>
+			<if test="@Ognl@isNotEmpty(whereSql)">
+				${whereSql} 
+			</if>
+		</where>
+		<!--<if test="@Ognl@isNotEmpty(whereSql)">
+				and 
+			</if>
+			 js.std_num=zy.xh-->
+		<if test="@Ognl@isNotEmpty(orderBySql)">
+			ORDER BY ${orderBySql}
+		</if>
+		<if test="@Ognl@isEmpty(orderBySql)">
+			ORDER BY ID_ DESC
+		</if>
+	</select>
+	
+	<select id="findByIds"   resultMap="JobStdPo">
+		SELECT <include refid="columns"/> FROM T_JOB_STD
+			WHERE ID_ in 
+			<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">  
+				#{id}  
+			</foreach>  		
+			ORDER BY ID_ DESC			
+	</select>	
+	
+	<update id="update" parameterType="com.lc.ibps.grads.course.persistence.entity.JobStdPo">
+		UPDATE T_JOB_STD SET
+		JOBID=#{jobid,jdbcType=VARCHAR},
+		STD_NUM=#{stdNum,jdbcType=VARCHAR},
+		FILE=#{file,jdbcType=VARCHAR},
+		ACTION_TIME=#{actionTime,jdbcType=VARCHAR},
+		REVIEW_TIME=#{reviewTime,jdbcType=VARCHAR},
+		REVIEW_STATUS=#{reviewStatus,jdbcType=NUMERIC},
+		CREATE_TIME=#{createTime,jdbcType=VARCHAR},
+		SCORE=#{score,jdbcType=NUMERIC},
+		STATUS=#{status,jdbcType=NUMERIC},
+		FILE_ID_=#{file_id_,jdbcType=NUMERIC},
+		COMMENT=#{comment,jdbcType=NUMERIC},
+		JSON_=#{json,jdbcType=BLOB}
+		WHERE
+		ID_=#{id}
+	</update>
+	
+	
+	
+	<delete id="remove" parameterType="java.lang.String">
+		DELETE FROM T_JOB_STD 
+		WHERE
+		ID_=#{id}
+	</delete>
+	
+	<select id="findAStdJobs" parameterType="java.util.Map" resultMap="JobStdPo">
+		select <include refid="columns" />,title from t_job_std,t_crs_job 
+		WHERE t_job_std.jobID=t_crs_job.id_ AND crs_tch_id=#{crsTchId}and std_num=#{stdNum} 
+		ORDER BY t_crs_job.start_stop_time ;
+	</select>
+	
+	<select id="findmanaStdJob" parameterType="java.util.Map" resultMap="JobStdPo">
+	SELECT cs.std_num STD_NUM,cs.score SCORE,ip.NAME_  NAME_ from 
+	t_crs_tch ct,t_crs_std cs,t_crs_job cj,ibps_party_entity ip 
+	WHERE ct.uni_manage=#{crsTchId}  and cs.crs_tch_id = ct.id_crs_tch and cj.id_ =#{jobId}  and cs.std_num=ip.PARTY_ALIAS_
+	</select>
+	
+	<select id="joblist" parameterType="java.util.Map" resultMap="JobStdPo">
+	SELECT js.*,zy.finaltd finalTeam,zy.finalteacher finalTeacher FROM `t_job_std` js,t_zyurl zywhere js.std_num=zy.xh and js.std_num in #{stdNum} and js.jobID=#{jobId};
+	</select>
+	
+	<select id="jobmanalist" parameterType="java.util.Map" resultMap="JobStdPo">
+	SELECT js.*,zy.finaltd finalTeam,zy.finalteacher finalTeacher FROM `t_job_std` js,t_zyurl zy where js.std_num=zy.xh and js.jobID=#{jobId};
+	</select>
+	
+	
+	<select id="getUnReview" parameterType="java.util.Map" resultMap="JobStdPo">
+	SELECT * FROM `t_job_std` WHERE std_num in (SELECT std_num FROM t_crs_std WHERE crs_tch_id = #{crsTchId}) AND review_status = '0' AND jobID = #{jobId} ;
+	</select>
+	
+	<select id="getUnSubmit" parameterType="java.util.Map" resultMap="JobStdPo">
+	SELECT * FROM `t_job_std` WHERE std_num in (SELECT std_num FROM t_crs_std WHERE crs_tch_id = #{crsTchId}) AND status = '0' AND jobID = #{jobId} ;
+	</select>
+	<!-- 测试搜索代码 -->
+    <select id="getJson_"   parameterType="java.lang.String"  resultMap="JobStdPo">
+        SELECT json_ ,id_
+        FROM   T_JOB_STD
+        WHERE  jobId=#{jobId} AND json_ IS NOT NULL 
+       
+    </select>
+	<!-- 测试get1函数 -->
+	<select id="get1"   parameterType="java.lang.String" resultMap="JobStdPo">
+		SELECT
+	T_JOB_STD.std_num,t_zyurl.name
+FROM
+	T_JOB_STD,t_zyurl
+WHERE
+	jobId = #{jobId} 
+AND T_JOB_STD.json_ IS  NULL
+AND T_JOB_STD.std_num = t_zyurl.xh
+	</select>
+	
+	
+</mapper>
