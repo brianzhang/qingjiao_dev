@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.activiti:ibps-activiti-spring:2.3.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180417.070827-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180831.041955-87.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180417.070827-4-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180831.041955-87-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180417.070827-4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180831.041955-87-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

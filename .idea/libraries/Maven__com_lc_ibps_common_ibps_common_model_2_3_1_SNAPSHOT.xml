@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.lc.ibps.common:ibps-common-model:2.3.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180918.085512-14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180831.042053-88.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180918.085512-14-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180831.042053-88-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180918.085512-14-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180831.042053-88-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

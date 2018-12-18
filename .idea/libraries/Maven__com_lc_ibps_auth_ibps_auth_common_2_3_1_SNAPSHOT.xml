@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lc.ibps.auth:ibps-auth-common:2.3.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/auth/ibps-auth-common/2.3.1-SNAPSHOT/ibps-auth-common-2.3.1-20180831.042212-87.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/auth/ibps-auth-common/2.3.1-SNAPSHOT/ibps-auth-common-2.3.1-20180831.042212-87-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/auth/ibps-auth-common/2.3.1-SNAPSHOT/ibps-auth-common-2.3.1-20180831.042212-87-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

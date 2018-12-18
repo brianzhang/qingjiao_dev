@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.lc.ibps.bpmn:ibps-bpmn-model:2.3.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180417.071215-6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180831.042622-87.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180417.071215-6-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180831.042622-87-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180417.071215-6-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180831.042622-87-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

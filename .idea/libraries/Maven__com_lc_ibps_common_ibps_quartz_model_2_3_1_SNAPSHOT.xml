@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lc.ibps.common:ibps-quartz-model:2.3.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-quartz-model/2.3.1-SNAPSHOT/ibps-quartz-model-2.3.1-20180831.042049-88.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-quartz-model/2.3.1-SNAPSHOT/ibps-quartz-model-2.3.1-20180831.042049-88-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-quartz-model/2.3.1-SNAPSHOT/ibps-quartz-model-2.3.1-20180831.042049-88-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

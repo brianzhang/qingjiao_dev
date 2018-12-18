@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f731b64-1098-44de-99b1-bb24d2ff03df" name="Default" comment="" />
+    <list default="true" id="2f731b64-1098-44de-99b1-bb24d2ff03df" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/factory-dz/target/" />
     <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-org-base/target/" />
     <ignored path="$PROJECT_DIR$/ibps-platform-root/modules/platform-demo/target/" />
@@ -56,8 +58,8 @@
       <file leaf-file-name="UrlZhiYuanController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-818">
-              <caret line="2274" column="59" lean-forward="false" selection-start-line="2274" selection-start-column="59" selection-end-line="2274" selection-end-column="59" />
+            <state relative-caret-position="421">
+              <caret line="2333" column="27" lean-forward="false" selection-start-line="2333" selection-start-column="22" selection-end-line="2333" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -346,51 +348,6 @@
             <path>
               <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="ibps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="ibps" type="462c0819:PsiDirectoryNode" />
-              <item name="WordWorkspace" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qingjiao_dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ibps-platform-root" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="platform-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="ibps" type="462c0819:PsiDirectoryNode" />
-              <item name="WordWorkspace" type="462c0819:PsiDirectoryNode" />
-              <item name="ftl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1159,12 +1116,12 @@
       <workItem from="1543381967694" duration="28590000" />
       <workItem from="1544173239307" duration="31447000" />
       <workItem from="1544626074568" duration="13595000" />
-      <workItem from="1545100720407" duration="878000" />
+      <workItem from="1545100720407" duration="1319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1315227000" />
+    <option name="totallyTimeSpent" value="1315668000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1834,8 +1791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ibps-platform-root/modules/platform-admin/src/main/java/com/lc/ibps/bishe/urlZhiYuant/controller/UrlZhiYuanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-818">
-          <caret line="2274" column="59" lean-forward="false" selection-start-line="2274" selection-start-column="59" selection-end-line="2274" selection-end-column="59" />
+        <state relative-caret-position="421">
+          <caret line="2333" column="27" lean-forward="false" selection-start-line="2333" selection-start-column="22" selection-end-line="2333" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

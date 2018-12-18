@@ -10,11 +10,9 @@
           <element id="archive" name="ibps-platform-static-2.3.1-SNAPSHOT-classes.jar">
             <element id="module-output" name="ibps-platform-static" />
           </element>
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-web/2.3.1-SNAPSHOT/ibps-base-web-2.3.1-20180508.095525-7.jar" output-file-name="ibps-base-web-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-web/2.3.1-SNAPSHOT/ibps-base-web-2.3.1-20180831.041644-87.jar" output-file-name="ibps-base-web-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: avalon-framework:avalon-framework-api:4.3" />
           <element id="library" level="project" name="Maven: avalon-logkit:avalon-logkit:2.1" />
-          <element id="library" level="project" name="Maven: geronimo-spec:geronimo-spec-javamail:1.3.1-rc3" />
-          <element id="library" level="project" name="Maven: geronimo-spec:geronimo-spec-jms:1.1-rc4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.12.RELEASE" />
@@ -29,11 +27,7 @@
           <element id="library" level="project" name="Maven: nl.bitwalker:UserAgentUtils:1.2.4" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-raqsoft/2.3.1-SNAPSHOT/ibps-report-raqsoft-2.3.1-20180417.071340-3.jar" output-file-name="ibps-report-raqsoft-2.3.1-SNAPSHOT.jar" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.36" />
-          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:sqljdbc4:4.1" />
-          <element id="library" level="project" name="Maven: com.oracle:oracledriver:11.2.0.2" />
-          <element id="library" level="project" name="Maven: postgresql:postgresql:9.0-801.jdbc4" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-raqsoft/2.3.1-SNAPSHOT/ibps-report-raqsoft-2.3.1-20180831.042718-87.jar" output-file-name="ibps-report-raqsoft-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.apache.xmlgraphics:batik-parser:1.7" />
           <element id="library" level="project" name="Maven: org.apache.xmlgraphics:batik-awt-util:1.7" />
           <element id="library" level="project" name="Maven: org.apache.xmlgraphics:batik-util:1.7" />
@@ -80,7 +74,6 @@
           <element id="library" level="project" name="Maven: com.lc.raqsoft:webutil:1.0" />
           <element id="library" level="project" name="Maven: xalan:xalan:2.7.2" />
           <element id="library" level="project" name="Maven: xalan:serializer:2.7.2" />
-          <element id="library" level="project" name="Maven: com.lc.raqsoft:xerces_2_5_0:1.0" />
           <element id="library" level="project" name="Maven: com.lc.raqsoft:barcode:1.0" />
           <element id="library" level="project" name="Maven: com.lc.raqsoft:parser:1.0" />
           <element id="library" level="project" name="Maven: com.lc.raqsoft:pdfbox_073:1.0" />
@@ -94,27 +87,29 @@
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.16" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.16" />
           <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.04" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-biz/2.3.1-SNAPSHOT/ibps-report-biz-2.3.1-20180417.071339-3.jar" output-file-name="ibps-report-biz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-model/2.3.1-SNAPSHOT/ibps-report-model-2.3.1-20180417.071337-5.jar" output-file-name="ibps-report-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180918.085516-13.jar" output-file-name="ibps-org-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-im/2.3.1-SNAPSHOT/ibps-component-im-2.3.1-20180918.085628-8.jar" output-file-name="ibps-component-im-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-im-api/2.3.1-SNAPSHOT/ibps-component-im-api-2.3.1-20180918.085614-10.jar" output-file-name="ibps-component-im-api-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-upload-api/2.3.1-SNAPSHOT/ibps-component-upload-api-2.3.1-20180918.085614-10.jar" output-file-name="ibps-component-upload-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-biz/2.3.1-SNAPSHOT/ibps-report-biz-2.3.1-20180831.042715-87.jar" output-file-name="ibps-report-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/report/ibps-report-model/2.3.1-SNAPSHOT/ibps-report-model-2.3.1-20180831.042711-87.jar" output-file-name="ibps-report-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-model/2.3.1-SNAPSHOT/ibps-org-model-2.3.1-20180831.042101-88.jar" output-file-name="ibps-org-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-im/2.3.1-SNAPSHOT/ibps-component-im-2.3.1-20180831.041758-87.jar" output-file-name="ibps-component-im-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-im-api/2.3.1-SNAPSHOT/ibps-component-im-api-2.3.1-20180831.041733-87.jar" output-file-name="ibps-component-im-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-upload-api/2.3.1-SNAPSHOT/ibps-component-upload-api-2.3.1-20180831.041735-87.jar" output-file-name="ibps-component-upload-api-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework:spring-websocket:4.3.12.RELEASE" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-report/2.3.1-SNAPSHOT/ibps-api-report-2.3.1-20180417.070538-4.jar" output-file-name="ibps-api-report-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-base/2.3.1-SNAPSHOT/ibps-api-base-2.3.1-20180417.070537-4.jar" output-file-name="ibps-api-base-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-report/2.3.1-SNAPSHOT/ibps-api-report-2.3.1-20180831.041542-87.jar" output-file-name="ibps-api-report-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-base/2.3.1-SNAPSHOT/ibps-api-base-2.3.1-20180831.041534-87.jar" output-file-name="ibps-api-base-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.5" />
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-common/2.3.1-SNAPSHOT/ibps-api-common-2.3.1-20180417.070538-4.jar" output-file-name="ibps-api-common-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-org/2.3.1-SNAPSHOT/ibps-api-org-2.3.1-20180417.070538-4.jar" output-file-name="ibps-api-org-2.3.1-SNAPSHOT.jar" />
-          <element id="library" level="project" name="Maven: com.lc.ibps.base:ibps-base-core:2.3.1-SNAPSHOT" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-common/2.3.1-SNAPSHOT/ibps-base-common-2.3.1-20180508.095513-7.jar" output-file-name="ibps-base-common-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-common/2.3.1-SNAPSHOT/ibps-api-common-2.3.1-20180831.041536-87.jar" output-file-name="ibps-api-common-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-org/2.3.1-SNAPSHOT/ibps-api-org-2.3.1-20180831.041539-87.jar" output-file-name="ibps-api-org-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-core/2.3.1-SNAPSHOT/ibps-base-core-2.3.1-20180831.041625-87.jar" output-file-name="ibps-base-core-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-common/2.3.1-SNAPSHOT/ibps-base-common-2.3.1-20180831.041622-87.jar" output-file-name="ibps-base-common-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
           <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.7" />
           <element id="library" level="project" name="Maven: jaxen:jaxen:1.1.6" />
           <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
           <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="library" level="project" name="Maven: net.sf.morph:morph:1.1.1" />
+          <element id="library" level="project" name="Maven: net.sf.composite:composite:1.1" />
           <element id="library" level="project" name="Maven: com.belerweb:pinyin4j:2.5.1" />
           <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy-all:2.1.3" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.2" />
@@ -132,16 +127,17 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-db/2.3.1-SNAPSHOT/ibps-base-db-2.3.1-20180508.095520-7.jar" output-file-name="ibps-base-db-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-db/2.3.1-SNAPSHOT/ibps-base-db-2.3.1-20180831.041638-87.jar" output-file-name="ibps-base-db-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.3.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.4" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-framework/2.3.1-SNAPSHOT/ibps-base-framework-2.3.1-20180508.095515-7.jar" output-file-name="ibps-base-framework-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-framework/2.3.1-SNAPSHOT/ibps-base-framework-2.3.1-20180831.041630-87.jar" output-file-name="ibps-base-framework-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.12.RELEASE" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-framework-ddd/2.3.1-SNAPSHOT/ibps-base-framework-ddd-2.3.1-20180508.095516-7.jar" output-file-name="ibps-base-framework-ddd-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-model/2.3.1-SNAPSHOT/ibps-base-model-2.3.1-20180508.095513-7.jar" output-file-name="ibps-base-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-datasource/2.3.1-SNAPSHOT/ibps-base-datasource-2.3.1-20180508.095517-7.jar" output-file-name="ibps-base-datasource-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-framework-ddd/2.3.1-SNAPSHOT/ibps-base-framework-ddd-2.3.1-20180831.041632-87.jar" output-file-name="ibps-base-framework-ddd-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-model/2.3.1-SNAPSHOT/ibps-base-model-2.3.1-20180831.041627-87.jar" output-file-name="ibps-base-model-2.3.1-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.2.0.Final" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-datasource/2.3.1-SNAPSHOT/ibps-base-datasource-2.3.1-20180831.041633-87.jar" output-file-name="ibps-base-datasource-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: com.cloudhopper.proxool:proxool:0.9.1" />
           <element id="library" level="project" name="Maven: com.cloudhopper.proxool:proxool-cglib:0.9.1" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.18" />
@@ -168,33 +164,27 @@
           <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.7.js2" />
           <element id="library" level="project" name="Maven: com.lowagie:itextasian:2.1.7.js2" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-biz/2.3.1-SNAPSHOT/ibps-bpmn-biz-2.3.1-20180417.071223-3.jar" output-file-name="ibps-bpmn-biz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-act/2.3.1-SNAPSHOT/ibps-bpmn-act-2.3.1-20180417.071218-4.jar" output-file-name="ibps-bpmn-act-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-cache/2.3.1-SNAPSHOT/ibps-component-cache-2.3.1-20180918.085616-11.jar" output-file-name="ibps-component-cache-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-biz/2.3.1-SNAPSHOT/ibps-bpmn-biz-2.3.1-20180831.042647-87.jar" output-file-name="ibps-bpmn-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-act/2.3.1-SNAPSHOT/ibps-bpmn-act-2.3.1-20180831.042627-87.jar" output-file-name="ibps-bpmn-act-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-cache/2.3.1-SNAPSHOT/ibps-component-cache-2.3.1-20180831.041738-87.jar" output-file-name="ibps-component-cache-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: com.googlecode.xmemcached:xmemcached:2.0.0" />
           <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmnbase/ibps-bpmn-api/2.3.1-SNAPSHOT/ibps-bpmn-api-2.3.1-20180417.070737-4.jar" output-file-name="ibps-bpmn-api-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-form/2.3.1-SNAPSHOT/ibps-api-form-2.3.1-20180417.070538-4.jar" output-file-name="ibps-api-form-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180417.070827-4.jar" output-file-name="ibps-activiti-spring-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-engine/2.3.1-SNAPSHOT/ibps-activiti-engine-2.3.1-20180417.070826-4.jar" output-file-name="ibps-activiti-engine-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-bpmn-converter/2.3.1-SNAPSHOT/ibps-activiti-bpmn-converter-2.3.1-20180417.070819-4.jar" output-file-name="ibps-activiti-bpmn-converter-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmnbase/ibps-bpmn-api/2.3.1-SNAPSHOT/ibps-bpmn-api-2.3.1-20180831.041842-87.jar" output-file-name="ibps-bpmn-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-form/2.3.1-SNAPSHOT/ibps-api-form-2.3.1-20180831.041541-87.jar" output-file-name="ibps-api-form-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-spring/2.3.1-SNAPSHOT/ibps-activiti-spring-2.3.1-20180831.041955-87.jar" output-file-name="ibps-activiti-spring-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-engine/2.3.1-SNAPSHOT/ibps-activiti-engine-2.3.1-20180831.041948-87.jar" output-file-name="ibps-activiti-engine-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/org/activiti/ibps-activiti-bpmn-converter/2.3.1-SNAPSHOT/ibps-activiti-bpmn-converter-2.3.1-20180831.041923-87.jar" output-file-name="ibps-activiti-bpmn-converter-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.activiti:activiti-bpmn-model:5.17.0" />
           <element id="library" level="project" name="Maven: org.activiti:activiti-process-validation:5.17.0" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-email:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.1" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180417.071215-6.jar" output-file-name="ibps-bpmn-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-plugin/2.3.1-SNAPSHOT/ibps-bpmn-plugin-2.3.1-20180417.071218-4.jar" output-file-name="ibps-bpmn-plugin-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-service/2.3.1-SNAPSHOT/ibps-base-service-2.3.1-20180508.095523-7.jar" output-file-name="ibps-base-service-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-model/2.3.1-SNAPSHOT/ibps-bpmn-model-2.3.1-20180831.042622-87.jar" output-file-name="ibps-bpmn-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmn/ibps-bpmn-plugin/2.3.1-SNAPSHOT/ibps-bpmn-plugin-2.3.1-20180831.042635-87.jar" output-file-name="ibps-bpmn-plugin-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/base/ibps-base-service/2.3.1-SNAPSHOT/ibps-base-service-2.3.1-20180831.041642-87.jar" output-file-name="ibps-base-service-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-core:2.6.1" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-transports-http:2.6.1" />
-          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-api:2.6.1" />
-          <element id="library" level="project" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.1.2" />
-          <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:3.1.1" />
-          <element id="library" level="project" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.0.2" />
-          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-javamail_1.4_spec:1.7.1" />
-          <element id="library" level="project" name="Maven: wsdl4j:wsdl4j:1.6.2" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-bindings-soap:2.6.1" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-bindings-xml:2.6.1" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-databinding-jaxb:2.6.1" />
@@ -207,8 +197,13 @@
           <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-simple:2.6.1" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-api:2.6.1" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.1.2" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:3.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.0.2" />
+          <element id="library" level="project" name="Maven: wsdl4j:wsdl4j:1.6.2" />
           <element id="library" level="project" name="Maven: org.json:json:20070829" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mq-api/2.3.1-SNAPSHOT/ibps-component-mq-api-2.3.1-20180918.085614-10.jar" output-file-name="ibps-component-mq-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mq-api/2.3.1-SNAPSHOT/ibps-component-mq-api-2.3.1-20180831.041734-87.jar" output-file-name="ibps-component-mq-api-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-web:5.7.0" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-core:5.7.0" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
@@ -235,36 +230,51 @@
           <element id="library" level="project" name="Maven: rome:rome:1.0" />
           <element id="library" level="project" name="Maven: org.apache.xbean:xbean-spring:4.5" />
           <element id="library" level="project" name="Maven: xpp3:xpp3:1.1.4c" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmnbase/ibps-bpmn-plugin-base/2.3.1-SNAPSHOT/ibps-bpmn-plugin-base-2.3.1-20180417.070738-5.jar" output-file-name="ibps-bpmn-plugin-base-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/bpmnbase/ibps-bpmn-plugin-base/2.3.1-SNAPSHOT/ibps-bpmn-plugin-base-2.3.1-20180831.041845-87.jar" output-file-name="ibps-bpmn-plugin-base-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: com.jamesmurty.utils:java-xmlbuilder:1.1" />
           <element id="library" level="project" name="Maven: net.iharder:base64:2.3.8" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-token/2.3.1-SNAPSHOT/ibps-component-token-2.3.1-20180918.085628-8.jar" output-file-name="ibps-component-token-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-preprocess/2.3.1-SNAPSHOT/ibps-component-preprocess-2.3.1-20180918.085616-10.jar" output-file-name="ibps-component-preprocess-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-httpclient/2.3.1-SNAPSHOT/ibps-component-httpclient-2.3.1-20180918.085620-8.jar" output-file-name="ibps-component-httpclient-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-token/2.3.1-SNAPSHOT/ibps-component-token-2.3.1-20180831.041752-87.jar" output-file-name="ibps-component-token-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-preprocess/2.3.1-SNAPSHOT/ibps-component-preprocess-2.3.1-20180831.041749-87.jar" output-file-name="ibps-component-preprocess-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-httpclient/2.3.1-SNAPSHOT/ibps-component-httpclient-2.3.1-20180831.041751-87.jar" output-file-name="ibps-component-httpclient-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: commons-httpclient:commons-httpclient:3.1" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:fluent-hc:4.5.3" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.5.3" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:16.0.1" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-biz/2.3.1-SNAPSHOT/ibps-org-biz-2.3.1-20180918.085541-11.jar" output-file-name="ibps-org-biz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mail/2.3.1-SNAPSHOT/ibps-component-mail-2.3.1-20180918.085614-10.jar" output-file-name="ibps-component-mail-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-biz/2.3.1-SNAPSHOT/ibps-org-biz-2.3.1-20180831.042128-87.jar" output-file-name="ibps-org-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mail/2.3.1-SNAPSHOT/ibps-component-mail-2.3.1-20180831.041740-87.jar" output-file-name="ibps-component-mail-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.1" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-biz/2.3.1-SNAPSHOT/ibps-bo-biz-2.3.1-20180918.080344-5.jar" output-file-name="ibps-bo-biz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-bo/2.3.1-SNAPSHOT/ibps-api-bo-2.3.1-20180417.070538-4.jar" output-file-name="ibps-api-bo-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-biz/2.3.1-SNAPSHOT/ibps-common-biz-2.3.1-20180918.085533-3.jar" output-file-name="ibps-common-biz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180918.085512-14.jar" output-file-name="ibps-common-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-quartz/2.3.1-SNAPSHOT/ibps-component-quartz-2.3.1-20180918.085617-8.jar" output-file-name="ibps-component-quartz-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-quartz-api/2.3.1-SNAPSHOT/ibps-component-quartz-api-2.3.1-20180918.085614-10.jar" output-file-name="ibps-component-quartz-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-codegen-api/2.3.1-SNAPSHOT/ibps-component-codegen-api-2.3.1-20180831.041732-87.jar" output-file-name="ibps-component-codegen-api-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-biz/2.3.1-SNAPSHOT/ibps-bo-biz-2.3.1-20180831.042432-87.jar" output-file-name="ibps-bo-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/api/ibps-api-bo/2.3.1-SNAPSHOT/ibps-api-bo-2.3.1-20180831.041540-87.jar" output-file-name="ibps-api-bo-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-biz/2.3.1-SNAPSHOT/ibps-common-biz-2.3.1-20180831.042121-87.jar" output-file-name="ibps-common-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-common-model/2.3.1-SNAPSHOT/ibps-common-model-2.3.1-20180831.042053-88.jar" output-file-name="ibps-common-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-identity-model/2.3.1-SNAPSHOT/ibps-identity-model-2.3.1-20180831.042050-88.jar" output-file-name="ibps-identity-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-identity-biz/2.3.1-SNAPSHOT/ibps-identity-biz-2.3.1-20180831.042112-88.jar" output-file-name="ibps-identity-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-quartz/2.3.1-SNAPSHOT/ibps-component-quartz-2.3.1-20180831.041742-87.jar" output-file-name="ibps-component-quartz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-quartz-api/2.3.1-SNAPSHOT/ibps-component-quartz-api-2.3.1-20180831.041730-87.jar" output-file-name="ibps-component-quartz-api-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.1" />
           <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-upload/2.3.1-SNAPSHOT/ibps-component-upload-2.3.1-20180918.085626-8.jar" output-file-name="ibps-component-upload-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mq/2.3.1-SNAPSHOT/ibps-component-mq-2.3.1-20180918.085626-8.jar" output-file-name="ibps-component-mq-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-upload/2.3.1-SNAPSHOT/ibps-component-upload-2.3.1-20180831.041754-87.jar" output-file-name="ibps-component-upload-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-mq/2.3.1-SNAPSHOT/ibps-component-mq-2.3.1-20180831.041747-87.jar" output-file-name="ibps-component-mq-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-jms-pool:5.15.2" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.10.2" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-base/2.3.1-SNAPSHOT/ibps-org-base-2.3.1-20180918.085529-11.jar" output-file-name="ibps-org-base-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-base-model/2.3.1-SNAPSHOT/ibps-org-base-model-2.3.1-20180918.085517-13.jar" output-file-name="ibps-org-base-model-2.3.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-model/2.3.1-SNAPSHOT/ibps-bo-model-2.3.1-20180918.080236-5.jar" output-file-name="ibps-bo-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-base/2.3.1-SNAPSHOT/ibps-org-base-2.3.1-20180831.042115-88.jar" output-file-name="ibps-org-base-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-org-base-model/2.3.1-SNAPSHOT/ibps-org-base-model-2.3.1-20180831.042104-88.jar" output-file-name="ibps-org-base-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-file-biz/2.3.1-SNAPSHOT/ibps-file-biz-2.3.1-20180831.042108-88.jar" output-file-name="ibps-file-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-file-model/2.3.1-SNAPSHOT/ibps-file-model-2.3.1-20180831.042055-88.jar" output-file-name="ibps-file-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-msg-biz/2.3.1-SNAPSHOT/ibps-msg-biz-2.3.1-20180831.042111-88.jar" output-file-name="ibps-msg-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-msg-model/2.3.1-SNAPSHOT/ibps-msg-model-2.3.1-20180831.042058-88.jar" output-file-name="ibps-msg-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/components/ibps-component-sms/2.3.1-SNAPSHOT/ibps-component-sms-2.3.1-20180831.041739-87.jar" output-file-name="ibps-component-sms-2.3.1-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.smslib:sms:3.4.5" />
+          <element id="library" level="project" name="Maven: org.smslib:RXTXcomm:1.0" />
+          <element id="library" level="project" name="Maven: taobao:taobao-sdk-java:auto_1455552377940-20160607" />
+          <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.3.1" />
+          <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-dysmsapi:1.0.0" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-quartz-biz/2.3.1-SNAPSHOT/ibps-quartz-biz-2.3.1-20180831.042106-88.jar" output-file-name="ibps-quartz-biz-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/common/ibps-quartz-model/2.3.1-SNAPSHOT/ibps-quartz-model-2.3.1-20180831.042049-88.jar" output-file-name="ibps-quartz-model-2.3.1-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../maven/maven/repository/com/lc/ibps/form/ibps-bo-model/2.3.1-SNAPSHOT/ibps-bo-model-2.3.1-20180831.042304-87.jar" output-file-name="ibps-bo-model-2.3.1-SNAPSHOT.jar" />
           <element id="library" level="project" name="Maven: com.jayway.jsonpath:json-path:2.4.0" />
           <element id="library" level="project" name="Maven: net.minidev:json-smart:2.3" />
           <element id="library" level="project" name="Maven: net.minidev:accessors-smart:1.2" />
